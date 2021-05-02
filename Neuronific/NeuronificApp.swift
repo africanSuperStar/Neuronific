@@ -8,9 +8,13 @@
 import SwiftUI
 
 @main
-struct NeuronificApp: App {
-    var body: some Scene {
-        WindowGroup {
+struct NeuronificApp: App
+{
+    @SceneBuilder
+    var body: some Scene
+    {
+        WindowGroup
+        {
             ContentView()
         }
     }

@@ -35,7 +35,20 @@ import SwiftUI
 
 extension Text
 {
-    public init(data: String) throws
+    public init(url: URL)
+    {
+        if let data = try? Data(contentsOf: url),
+           let jsonString = String(data: data, encoding: .utf8)
+        {
+            self.init(data: jsonString)
+        }
+        else
+        {
+            self.init("")
+        }
+    }
+    
+    public init(data: String)
     {
         if let json = try? JSONParser(data: data),
            let _view = json["view"].string,

@@ -8,47 +8,24 @@
 import SwiftUI
 import Parsec
 
-
-struct ContentView: View
+struct ContentView : View
 {
-    let text = """
-    {
-        "view": "Text",
-        "init": {
-            "content": null,
-            "key": {
-                "localizedStringKey": "",
-                "tableName": null,
-                "bundle": null,
-                "comment": null
-            },
-            "verbatim": "Hello World",
-            "image": null,
-            "date": null
-        },
-        "font": {
-            "isCustom": null,
-            "isBold": false,
-            "isItalic": true,
-            "isMonospacedDigit": null,
-            "isSmallCaps": null,
-            "isLowercaseSmallCaps": true,
-            "isUppercaseSmallCaps": null,
-            "leading": {
-                "init": {
-                    "leading": null
-                }
-            }
-        }
-    }
-    """
-    
+    @EnvironmentObject private var state: UIState
+
+    let url: URL = Bundle.main.url(forResource: "content_view", withExtension: "json")!
+
     var body: some View
     {
-        let text = try? Text(data: text)
-        
-        text
-            .padding()
+        NavigationView
+        {
+            JSONViewer(url: url)
+            
+            VStack(alignment: .center)
+            {
+                Text(url: url)
+                    .foregroundColor(.white)
+            }
+        }
     }
 }
 
