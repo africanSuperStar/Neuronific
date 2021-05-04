@@ -15,7 +15,7 @@ struct ComponentView : View
         {
             reader in
             
-            ZStack(alignment: .center)
+            ZStack(alignment: .top)
             {
                 Rectangle()
                     .fill(
@@ -26,6 +26,8 @@ struct ComponentView : View
                 Color.gray
                     .opacity(0.2)
                     .blur(radius: 3.0, opaque: false)
+                
+                ComponentSelectionAreaView()
             }
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity,  alignment: .center)
             .cornerRadius(Theme.cornerRadius)
