@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import Parsec
 
 #if !os(macOS)
 import MobileCoreServices
@@ -21,10 +22,12 @@ struct JSONCell : View
     /// * note: According to [JSONSerialization](https://developer.apple.com/documentation/foundation/jsonserialization),
     /// acceptable values may be NSArray, NSDictionary, NSNumber, NSString or NSNull...
     private let rawValue: AnyHashable
-
+    
     @State private var isOpen:   Bool = true
     @State private var isRotate: Bool = true
 
+    @EnvironmentObject private var model: FileModel
+    
     internal init(_ keyValue: (key: String, value: AnyHashable))
     {
         self.init(key: keyValue.key, value: keyValue.value)
@@ -66,6 +69,7 @@ struct JSONCell : View
         {
             specificView().padding(.leading, 10)
         }
+        .frame(minWidth: 40, maxWidth: 50, alignment: .leading)
     }
 
     private func leafView(_ stringValue: String) -> some View
@@ -75,33 +79,47 @@ struct JSONCell : View
             HStack(alignment: .center)
             {
                 Text(key)
+                    .contextMenu(ContextMenu(menuItems:
+                    {
+                        Button
+                        {
+                            if var _json = try? JSONSerialization.jsonObject(with: model.contents.data(using: .utf8) ?? Data(), options: []) as? [String: AnyObject]
+                            {
+                                if var _font = _json["font"] as? [String: AnyObject]
+                                {
+                                    _font[key]   = Bool(editableRawValue) as AnyObject?
+                                    _json["font"] = _font                 as AnyObject?
+                                }
+                                
+                                if var _init = _json["init"] as? [String: AnyObject]
+                                {
+                                    _init[key] = editableRawValue as AnyObject?
+                                    _json["init"] = _init         as AnyObject?
+                                }
+                                
+                                model.write(content: _json)
+                            }
+                            
+                        } label: {
+                            Label("Edit", image: "")
+                        }
+                        Button
+                        {
+                            
+                        } label: {
+                            Label("Delete", image: "")
+                        }
+                    }))
                 Spacer()
             }
 
             TextField(stringValue.prefix(60), text: $editableRawValue)
                 .lineSpacing(0)
                 .foregroundColor(Color.gray)
-                .contextMenu(ContextMenu(menuItems:
+                .onChange(of: editableRawValue, perform:
                 {
-                    Button
-                    {
-                        
-                    } label: {
-                        Label("Copy", systemImage: "copy")
-                    }
-                    Button
-                    {
-                        
-                    } label: {
-                        Label("Edit", systemImage: "copy")
-                    }
-                    Button
-                    {
-                        
-                    } label: {
-                        Label("Delete", systemImage: "trash")
-                    }
-                }))
+                    value in
+                })
         }
         .padding(.vertical, 5)
         .padding(.trailing, 10)

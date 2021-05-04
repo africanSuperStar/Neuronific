@@ -12,6 +12,7 @@
 		A523EE83263F440F003977F1 /* JSONTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A523EE82263F440F003977F1 /* JSONTreeView.swift */; };
 		A523EE85263F4526003977F1 /* JSONCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A523EE84263F4526003977F1 /* JSONCell.swift */; };
 		A523EE87263F47B2003977F1 /* content_view.json in Resources */ = {isa = PBXBuildFile; fileRef = A523EE86263F47B2003977F1 /* content_view.json */; };
+		A5338EF9264190AC00E28DAB /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5338EF8264190AC00E28DAB /* Theme.swift */; };
 		A544358026395A0D007A9B31 /* NeuronificApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544357F26395A0D007A9B31 /* NeuronificApp.swift */; };
 		A544358226395A0D007A9B31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544358126395A0D007A9B31 /* ContentView.swift */; };
 		A544358426395A0E007A9B31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A544358326395A0E007A9B31 /* Assets.xcassets */; };
@@ -41,6 +42,13 @@
 		A54435DB26398B7E007A9B31 /* CharacterSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54435DA26398B7E007A9B31 /* CharacterSet.swift */; };
 		A54435DD26398BEA007A9B31 /* CollectionAggregation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54435DC26398BEA007A9B31 /* CollectionAggregation.swift */; };
 		A54435DF26398C2B007A9B31 /* ExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54435DE26398C2B007A9B31 /* ExpressionParser.swift */; };
+		A549567A2641CED2000DC4B9 /* ComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54956792641CED2000DC4B9 /* ComponentView.swift */; };
+		A549567C2641CF00000DC4B9 /* ComponentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A549567B2641CF00000DC4B9 /* ComponentDetailView.swift */; };
+		A549567E2641CF41000DC4B9 /* ComponentViewModifierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A549567D2641CF41000DC4B9 /* ComponentViewModifierView.swift */; };
+		A54956802641CF66000DC4B9 /* NetworkConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A549567F2641CF66000DC4B9 /* NetworkConfigurationView.swift */; };
+		A54956822641CF92000DC4B9 /* NetworkConfigurationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54956812641CF92000DC4B9 /* NetworkConfigurationDetailView.swift */; };
+		A54956842641CFB0000DC4B9 /* SimulatedDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54956832641CFB0000DC4B9 /* SimulatedDeviceView.swift */; };
+		A549568B2641D047000DC4B9 /* FileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A549568A2641D047000DC4B9 /* FileModel.swift */; };
 		A5582619263D031C00116DD2 /* Parsec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A544359426395C96007A9B31 /* Parsec.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		A558261A263D031C00116DD2 /* Parsec.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A544359426395C96007A9B31 /* Parsec.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A558261F263D037600116DD2 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55DA94E263CF998005C3A5B /* JSON.swift */; };
@@ -106,6 +114,7 @@
 		A523EE82263F440F003977F1 /* JSONTreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONTreeView.swift; sourceTree = "<group>"; };
 		A523EE84263F4526003977F1 /* JSONCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONCell.swift; sourceTree = "<group>"; };
 		A523EE86263F47B2003977F1 /* content_view.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = content_view.json; sourceTree = "<group>"; };
+		A5338EF8264190AC00E28DAB /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		A544357C26395A0D007A9B31 /* Neuronific.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neuronific.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A544357F26395A0D007A9B31 /* NeuronificApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuronificApp.swift; sourceTree = "<group>"; };
 		A544358126395A0D007A9B31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -141,6 +150,13 @@
 		A54435DA26398B7E007A9B31 /* CharacterSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSet.swift; sourceTree = "<group>"; };
 		A54435DC26398BEA007A9B31 /* CollectionAggregation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionAggregation.swift; sourceTree = "<group>"; };
 		A54435DE26398C2B007A9B31 /* ExpressionParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionParser.swift; sourceTree = "<group>"; };
+		A54956792641CED2000DC4B9 /* ComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentView.swift; sourceTree = "<group>"; };
+		A549567B2641CF00000DC4B9 /* ComponentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentDetailView.swift; sourceTree = "<group>"; };
+		A549567D2641CF41000DC4B9 /* ComponentViewModifierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentViewModifierView.swift; sourceTree = "<group>"; };
+		A549567F2641CF66000DC4B9 /* NetworkConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfigurationView.swift; sourceTree = "<group>"; };
+		A54956812641CF92000DC4B9 /* NetworkConfigurationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfigurationDetailView.swift; sourceTree = "<group>"; };
+		A54956832641CFB0000DC4B9 /* SimulatedDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedDeviceView.swift; sourceTree = "<group>"; };
+		A549568A2641D047000DC4B9 /* FileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileModel.swift; sourceTree = "<group>"; };
 		A55DA94E263CF998005C3A5B /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		A5759F50263AD28C003172C6 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		A5C7E5EA2639F65B00FCD9A2 /* CombinatorParsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinatorParsers.swift; sourceTree = "<group>"; };
@@ -229,10 +245,14 @@
 		A544357E26395A0D007A9B31 /* Neuronific */ = {
 			isa = PBXGroup;
 			children = (
+				A54956892641D02F000DC4B9 /* FileManager */,
+				A54956882641D026000DC4B9 /* Services */,
+				A54956852641CFE0000DC4B9 /* Scenes */,
 				A523EE7F263F4311003977F1 /* JSONViewer */,
 				A523EE78263F3C18003977F1 /* Environment */,
 				A544357F26395A0D007A9B31 /* NeuronificApp.swift */,
 				A544358126395A0D007A9B31 /* ContentView.swift */,
+				A5338EF8264190AC00E28DAB /* Theme.swift */,
 				A523EE86263F47B2003977F1 /* content_view.json */,
 				A544358326395A0E007A9B31 /* Assets.xcassets */,
 				A544358826395A0E007A9B31 /* Info.plist */,
@@ -304,6 +324,50 @@
 				A54435A526395C96007A9B31 /* Info.plist */,
 			);
 			path = ParsecTests;
+			sourceTree = "<group>";
+		};
+		A54956772641CEAB000DC4B9 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				A54956872641D015000DC4B9 /* Views */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		A54956852641CFE0000DC4B9 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				A54956772641CEAB000DC4B9 /* Dashboard */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		A54956872641D015000DC4B9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A54956792641CED2000DC4B9 /* ComponentView.swift */,
+				A549567B2641CF00000DC4B9 /* ComponentDetailView.swift */,
+				A549567D2641CF41000DC4B9 /* ComponentViewModifierView.swift */,
+				A549567F2641CF66000DC4B9 /* NetworkConfigurationView.swift */,
+				A54956812641CF92000DC4B9 /* NetworkConfigurationDetailView.swift */,
+				A54956832641CFB0000DC4B9 /* SimulatedDeviceView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A54956882641D026000DC4B9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A54956892641D02F000DC4B9 /* FileManager */ = {
+			isa = PBXGroup;
+			children = (
+				A549568A2641D047000DC4B9 /* FileModel.swift */,
+			);
+			path = FileManager;
 			sourceTree = "<group>";
 		};
 		A5582606263CFD5400116DD2 /* Frameworks */ = {
@@ -471,8 +535,16 @@
 				A544358026395A0D007A9B31 /* NeuronificApp.swift in Sources */,
 				A523EE85263F4526003977F1 /* JSONCell.swift in Sources */,
 				A523EE83263F440F003977F1 /* JSONTreeView.swift in Sources */,
+				A549567E2641CF41000DC4B9 /* ComponentViewModifierView.swift in Sources */,
+				A549567C2641CF00000DC4B9 /* ComponentDetailView.swift in Sources */,
+				A549567A2641CED2000DC4B9 /* ComponentView.swift in Sources */,
+				A54956842641CFB0000DC4B9 /* SimulatedDeviceView.swift in Sources */,
+				A54956822641CF92000DC4B9 /* NetworkConfigurationDetailView.swift in Sources */,
+				A549568B2641D047000DC4B9 /* FileModel.swift in Sources */,
 				A523EE7A263F3C24003977F1 /* UIState.swift in Sources */,
+				A54956802641CF66000DC4B9 /* NetworkConfigurationView.swift in Sources */,
 				A523EE81263F4320003977F1 /* JSONViewer.swift in Sources */,
+				A5338EF9264190AC00E28DAB /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,7 +753,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = astrocyte.healthcare.ios.Neuronific;
+				PRODUCT_BUNDLE_IDENTIFIER = org.datbot.ios.Neuronific;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -703,7 +775,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = astrocyte.healthcare.ios.Neuronific;
+				PRODUCT_BUNDLE_IDENTIFIER = org.datbot.ios.Neuronific;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};

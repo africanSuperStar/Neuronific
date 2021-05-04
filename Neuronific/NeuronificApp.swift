@@ -16,6 +16,7 @@ struct NeuronificApp: App
         WindowGroup
         {
             ContentView()
+                .environmentObject(FileModel.shared)
         }
     }
 }

@@ -166,28 +166,58 @@ public enum JSONParser
     
     public subscript(name: String) -> JSONParser
     {
-        guard
-            case ._Object(let dict) = self,
-            let value = dict[name]
-        else
+        get
         {
-            return .Error
+            guard
+                case ._Object(let dict) = self,
+                let value = dict[name]
+            else
+            {
+                return .Error
+            }
+            
+            return value
         }
         
-        return value
-        
+        set
+        {
+            guard
+                case ._Object(var dict) = self
+            else
+            {
+                return
+            }
+            
+            dict[name] = newValue
+        }
     }
     
     public subscript(index: Int) -> JSONParser
     {
-        guard
-            case ._Array(let arr) = self,
-            index >= 0 && index < arr.count
-        else
+        get
         {
-            return .Error
+            guard
+                case ._Array(let arr) = self,
+                index >= 0 && index < arr.count
+            else
+            {
+                return .Error
+            }
+            
+            return arr[index]
         }
         
-        return arr[index]
+        set
+        {
+            guard
+                case ._Array(var arr) = self,
+                index >= 0 && index < arr.count
+            else
+            {
+                return
+            }
+            
+            arr[index] = newValue
+        }
     }
 }

@@ -6,24 +6,38 @@
 //
 
 import SwiftUI
+import Combine
+
 import Parsec
+
 
 struct ContentView : View
 {
     @EnvironmentObject private var state: UIState
-
-    let url: URL = Bundle.main.url(forResource: "content_view", withExtension: "json")!
-
+    @EnvironmentObject private var model: FileModel
+    
     var body: some View
     {
         NavigationView
         {
-            JSONViewer(url: url)
-            
-            VStack(alignment: .center)
+            ComponentView()
+
+            VStack(alignment: .leading)
             {
-                Text(url: url)
-                    .foregroundColor(.white)
+                HStack
+                {
+                    ComponentDetailView()
+                    
+                    VStack(alignment: .center)
+                    {
+                        ComponentViewModifierView()
+                        Spacer()
+                        SimulatedDeviceView()
+                        Spacer()
+                    }
+                    NetworkConfigurationDetailView()
+                }
+                NetworkConfigurationView()
             }
         }
     }
@@ -31,8 +45,11 @@ struct ContentView : View
 
 struct ContentView_Previews: PreviewProvider
 {
+    static var model = FileModel.shared
+    
     static var previews: some View
     {
         ContentView()
+            .environmentObject(FileModel.shared)
     }
 }

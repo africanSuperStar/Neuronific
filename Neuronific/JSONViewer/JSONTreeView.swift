@@ -9,7 +9,9 @@ import SwiftUI
 
 struct JSONTreeView : View
 {
-    private let keyValues: [(key: String, value: AnyHashable)]
+    var json: JSONRepresentable!
+    
+    var keyValues: [(key: String, value: AnyHashable)]
 
     init(_ dictionary: JSON)
     {
@@ -45,7 +47,7 @@ struct JSONTreeView : View
                 JSONCell(self.keyValues[index])
             }
         }
-        .frame(minWidth: 0, maxWidth: .infinity)
+        .frame(minWidth: 40, maxWidth: 50, alignment: .leading)
     }
 }
 
@@ -66,6 +68,18 @@ internal protocol JSONRepresentable
 
 extension JSONRepresentable
 {
+    var dataValue: Data?
+    {
+        do
+        {
+            return try JSONSerialization.data(withJSONObject: self, options: .prettyPrinted)
+        }
+        catch
+        {
+            return nil
+        }
+    }
+    
     var stringValue: String?
     {
         do
@@ -99,5 +113,7 @@ extension JSONTreeView
         default:
             self.init(JSON())
         }
+
+        self.json = json
     }
 }

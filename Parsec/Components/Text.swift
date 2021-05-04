@@ -50,37 +50,47 @@ extension Text
     
     public init(data: String)
     {
-        if let json = try? JSONParser(data: data),
-           let _view = json["view"].string,
-           _view == "Text"
+        self.init("")
+        
+        if let json = try? JSONParser(data: data)
         {
-            if let _content = json["init"]["content"].string
+            self = parseText(json)
+            self = parseFont(json)
+        }
+    }
+    
+    public init(parser: JSONParser)
+    {
+        self.init("")
+        
+        self = parseText(parser)
+        self = parseFont(parser)
+    }
+    
+    public func parseText(_ json: JSONParser) -> Self
+    {
+        if let _view = json["view"].string,
+        _view == "Text"
+        {
+            if let _content = json["init"]["content"].string, !_content.isEmpty
             {
-                self.init(_content)
+                return Self(_content)
             }
-            else if let _key = json["init"]["localizedStringKey"].string
+            else if let _key = json["init"]["localizedStringKey"].string, !_key.isEmpty
             {
-                self.init(LocalizedString(_key))
+                return Self(LocalizedString(_key))
             }
-            else if let _verbatim = json["init"]["verbatim"].string
+            else if let _verbatim = json["init"]["verbatim"].string, !_verbatim.isEmpty
             {
-                self.init(verbatim: _verbatim)
+                return Self(verbatim: _verbatim)
             }
             else if let _image = json["init"]["image"].string
             {
-                self.init(Image(_image))
+                return Self(Image(_image))
             }
-            else
-            {
-                self.init("")
-            }
-    
-            self = parseFont(json)
         }
-        else
-        {
-            self.init("")
-        }
+        
+        return Self("")
     }
 
     public func parseFont(_ json: JSONParser) -> Self
@@ -102,7 +112,7 @@ extension Font
         let _isLowercaseSmallCaps = json["font"]["islowercaseSmallCaps"].bool ?? false
         let _isUppercaseSmallCaps = json["font"]["isUppercaseSmallCaps"].bool ?? false
         
-        var _font = Font.body
+        var _font = Font.title
         
         _isBold               ? _font = _font.bold()               : nil
         _isItalic             ? _font = _font.italic()             : nil
