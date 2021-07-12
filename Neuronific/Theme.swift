@@ -15,6 +15,7 @@ struct Theme
     static let cornerRadius: CGFloat = 10.0
     
     static let tinyPadding:  CGFloat = 2.5
+    static let smallPadding: CGFloat = 4
     static let padding:      CGFloat = 7.5
     static let largePadding: CGFloat = 20
 }

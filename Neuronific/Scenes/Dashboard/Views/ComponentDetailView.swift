@@ -7,18 +7,29 @@
 
 import SwiftUI
 
+class ContentDetail: ObservableObject
+{
+    @Published var text = ""
+}
+
 struct ComponentDetailView : View
 {
+    @ObservedObject var content: ContentDetail
+    
     var body: some View
     {
-        Color.white
-            .opacity(0.1)
-            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity,  alignment: .center)
-            .cornerRadius(Theme.cornerRadius)
-            .padding(.vertical, Theme.padding)
-            .padding(.leading, Theme.padding)
-            .shadow(radius: 10)
-            .frame(maxWidth: 300)
+        ZStack
+        {
+            Text(content.text)
+            
+            Color.white
+                .opacity(0.1)
+        }
+        .cornerRadius(Theme.cornerRadius)
+        .padding(.vertical, Theme.padding)
+        .padding(.leading, Theme.padding)
+        .shadow(radius: 10)
+        .frame(maxWidth: 300)
     }
 }
 
@@ -26,6 +37,6 @@ struct ComponentDetailView_Previews : PreviewProvider
 {
     static var previews: some View
     {
-        ComponentDetailView()
+        ComponentDetailView(content: ContentDetail())
     }
 }

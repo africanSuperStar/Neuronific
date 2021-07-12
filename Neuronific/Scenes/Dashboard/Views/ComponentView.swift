@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ComponentView : View
 {
+    @ObservedObject var content: ContentDetail
+    
     var body: some View
     {
         GeometryReader
@@ -27,7 +29,7 @@ struct ComponentView : View
                     .opacity(0.2)
                     .blur(radius: 3.0, opaque: false)
                 
-                ComponentSelectionAreaView()
+                ComponentSelectionAreaView(content: content)
             }
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity,  alignment: .center)
             .cornerRadius(Theme.cornerRadius)
@@ -42,6 +44,6 @@ struct ComponentView_Previews : PreviewProvider
 {
     static var previews: some View
     {
-        ComponentView()
+        ComponentView(content: ContentDetail())
     }
 }

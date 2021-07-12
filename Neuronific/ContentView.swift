@@ -13,20 +13,22 @@ import Parsec
 
 struct ContentView : View
 {
-    @EnvironmentObject private var state: UIState
-    @EnvironmentObject private var model: FileModel
+    @EnvironmentObject private var state:     UIState
+    @EnvironmentObject private var fileModel: FileModel
+    
+    @StateObject var content = ContentDetail()
     
     var body: some View
     {
         NavigationView
         {
-            ComponentView()
+            ComponentView(content: content)
 
             VStack(alignment: .leading)
             {
                 HStack
                 {
-                    ComponentDetailView()
+                    ComponentDetailView(content: content)
                     
                     VStack(alignment: .center)
                     {
@@ -51,5 +53,6 @@ struct ContentView_Previews: PreviewProvider
     {
         ContentView()
             .environmentObject(FileModel.shared)
+            .environmentObject(TextDragModel.shared)
     }
 }

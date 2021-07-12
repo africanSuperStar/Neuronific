@@ -17,6 +17,7 @@ struct NeuronificApp: App
         {
             ContentView()
                 .environmentObject(FileModel.shared)
+                .environmentObject(TextDragModel.shared)
         }
     }
 }

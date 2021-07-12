@@ -49,6 +49,7 @@ public enum JSONParser
     case _Number(Double)
     case _Bool(Bool)
     case _Null
+    case _Void(() -> Void)
     case _Array([JSONParser])
     case _Object([String: JSONParser])
     case Error
@@ -62,7 +63,7 @@ public enum JSONParser
         let stringLiteral = lexer.stringLiteral
         
         let jstring = JSONParser._String <^> stringLiteral
-        let jnull = symbol("null") *> GenericParser(result: JSONParser._Null)
+        let jnull   = symbol("null") *> GenericParser(result: JSONParser._Null)
         
         let jnumber = JSONParser._Number <^>
             (lexer.float.attempt <|> lexer.integerAsFloat)
@@ -73,6 +74,7 @@ public enum JSONParser
         
         var jarray:  GenericParser <String, (), JSONParser>!
         var jobject: GenericParser <String, (), JSONParser>!
+        var jvoid:   GenericParser <String, (), JSONParser>!
         
         let _ = GenericParser.recursive
         {
@@ -83,11 +85,11 @@ public enum JSONParser
             jarray = JSONParser._Array <^> lexer.brackets(jarrayValues)
             
             let nameValue: GenericParser<String, (), (String, JSONParser)> = stringLiteral >>-
-                {
-                    name in
-                    
-                    symbol(":") *> jvalue.map { value in (name, value) }
-                }
+            {
+                name in
+                
+                symbol(":") *> jvalue.map { value in (name, value) }
+            }
             
             let dictionary: GenericParser<String, (), [String: JSONParser]> = (symbol(",") *> nameValue).manyAccumulator
             {
@@ -162,6 +164,16 @@ public enum JSONParser
         if case ._Null = self { return true }
         
         return false
+    }
+    
+    public var void: () -> Void
+    {
+        if case ._Void(let call) = self
+        {
+            call()
+        }
+        
+        return {}
     }
     
     public subscript(name: String) -> JSONParser
