@@ -12,7 +12,7 @@ extension Text
 {
     enum TextError: Error
     {
-    case moreThanOneInitializer
+        case moreThanOneInitializer
     }
     
     public init?(url: URL)

@@ -20,7 +20,7 @@ class TextDragModel : ObservableObject
             "view": "Text",
             "init": {
                 "description": "Brendon",
-                "content": "Brendon",
+                "content": null,
                 "localizedStringKey": null,
                 "verbatim": null,
                 "image": "test",

@@ -31,6 +31,14 @@ final class TextDragComponent : NSObject, NSItemProviderWriting, NSItemProviderR
         if let data = content.data(using: .utf8)
         {
             Text(data: data)
+                .accessibilityLabel("""
+                {
+                    "modifier": "AccessibilityLabel",
+                    "init": {
+                        "text": "Hello World"
+                    }
+                }
+                """.data(using: .utf8)!)
         }
         else
         {
