@@ -1,4 +1,4 @@
-# Kimpie-macOS
+# Neuronific
 
 This is my attempt at learning about Monadic Parser Combinators.
 
