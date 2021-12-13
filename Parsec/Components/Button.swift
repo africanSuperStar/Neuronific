@@ -26,7 +26,7 @@ import SwiftUI
 
 extension Button
 {
-    public init(url: URL)
+    public init?(url: URL)
     {
         if let data = try? Data(contentsOf: url),
            let jsonString = String(data: data, encoding: .utf8)

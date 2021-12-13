@@ -23,7 +23,7 @@ class TextDragModel : ObservableObject
                 "content": "Brendon",
                 "localizedStringKey": null,
                 "verbatim": null,
-                "image": null,
+                "image": "test",
                 "date": null
             },
             "font": {
@@ -48,11 +48,7 @@ class TextDragModel : ObservableObject
             "view": "Text",
             "init": {
                 "description": "Astrocyte Logo",
-                "content": null,
-                "localizedStringKey": null,
-                "verbatim": null,
-                "image": "test",
-                "date": null
+                "content": "Hello World"
             },
             "font": {
                 "isCustom": null,
@@ -104,11 +100,7 @@ class TextDragModel : ObservableObject
         {
             "view": "Text",
             "init": {
-                "content": "Hello World",
-                "localizedStringKey": null,
-                "verbatim": null,
-                "image": null,
-                "date": null
+                "content": "Hello World"
             },
             "font": {
                 "isCustom": null,

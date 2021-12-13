@@ -53,40 +53,47 @@ struct SelectableComponentView : View
     
     var body: some View
     {
-        Text(data: component.content)
-            .padding(Theme.padding)
-            .frame(minWidth: 130, alignment: .center)
-            .foregroundColor(
-                isHovering ? .white : .black
-            )
-            .background(
-                isHovering ? Color.blue : Color.white
-            )
-            .overlay(
-                RoundedRectangle(cornerRadius: Theme.cornerRadius)
-                    .stroke(
-                        isHovering ? Color.white : Color.blue,
-                        lineWidth: 2
-                    )
-            )
-            .opacity(0.8)
-            .cornerRadius(Theme.cornerRadius)
-            .shadow(radius: Theme.shadowRadius)
-            .onHover(perform:
-            {
-                hovering in
-            
-                isHovering = hovering
-                
-                if isHovering
+        if let data = component.content.data(using: .utf8)
+        {
+            Text(data: data)
+                .padding(Theme.padding)
+                .frame(minWidth: 130, alignment: .center)
+                .foregroundColor(
+                    isHovering ? .white : .black
+                )
+                .background(
+                    isHovering ? Color.blue : Color.white
+                )
+                .overlay(
+                    RoundedRectangle(cornerRadius: Theme.cornerRadius)
+                        .stroke(
+                            isHovering ? Color.white : Color.blue,
+                            lineWidth: 2
+                        )
+                )
+                .opacity(0.8)
+                .cornerRadius(Theme.cornerRadius)
+                .shadow(radius: Theme.shadowRadius)
+                .onHover(perform:
                 {
-                    content.text = component.content
+                    hovering in
+                
+                    isHovering = hovering
+                    
+                    if isHovering
+                    {
+                        content.text = component.content
+                    }
+                })
+                .onDrag
+                {
+                    return NSItemProvider(object: TextDragComponent(content: component.content))
                 }
-            })
-            .onDrag
-            {
-                return NSItemProvider(object: TextDragComponent(content: component.content))
-            }
+        }
+        else
+        {
+            EmptyView()
+        }
     }
 }
 

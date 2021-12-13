@@ -25,9 +25,17 @@ final class TextDragComponent : NSObject, NSItemProviderWriting, NSItemProviderR
        self.content = content
     }
     
-    var view: Text
+    @ViewBuilder
+    var view: some View
     {
-        return Text(data: content)
+        if let data = content.data(using: .utf8)
+        {
+            Text(data: data)
+        }
+        else
+        {
+            EmptyView()            
+        }
     }
        
     static var writableTypeIdentifiersForItemProvider: [String] { ["public.text"] }
