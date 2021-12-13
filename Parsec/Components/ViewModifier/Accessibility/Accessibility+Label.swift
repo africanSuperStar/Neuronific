@@ -51,7 +51,7 @@ extension View
         guard let accessibilityLabel = self.parseAccessibilityLabel(json) as? ModifiedContent<Self, AccessibilityAttachmentModifier>
         else
         {
-            debugPrint("SWIFTUI: Failed to cast Accessibility Label, \(ViewModifierError.failedToCastAccessiblityLabel)")
+            debugPrint("SWIFTUI: Failed to cast Accessibility Label, \(ViewModifierError.failedToCastModifiedContent)")
             
             return self.accessibilityLabel("")
         }
@@ -74,7 +74,7 @@ extension View
             
             if initializerCount.filter({ $0 == true }).count != 1
             {
-                debugPrint("SWIFTUI: Text -> init -> more than 1 initializer, \(ViewModifierError.moreThanOneInitializer)")
+                debugPrint("SWIFTUI: AccessibilityLabel -> init -> more than 1 initializer, \(ViewModifierError.moreThanOneInitializer)")
             }
             
             if let _text = json["init"]["text"].string, !_text.isEmpty

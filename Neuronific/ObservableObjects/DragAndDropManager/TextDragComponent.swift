@@ -35,7 +35,15 @@ final class TextDragComponent : NSObject, NSItemProviderWriting, NSItemProviderR
                 {
                     "modifier": "AccessibilityLabel",
                     "init": {
-                        "text": "Hello World"
+                        "string": "Hello World"
+                    }
+                }
+                """.data(using: .utf8)!)
+                .accessibilityInputLabels("""
+                {
+                    "modifier": "AccessibilityInputLabels",
+                    "init": {
+                        "text": ["Hello World"]
                     }
                 }
                 """.data(using: .utf8)!)

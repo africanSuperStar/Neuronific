@@ -13,5 +13,5 @@ enum ViewModifierError : Error
     case moreThanOneInitializer
     case failedToFindContentsOfURL
     case failedToParseContentOfData
-    case failedToCastAccessiblityLabel
+    case failedToCastModifiedContent
 }
