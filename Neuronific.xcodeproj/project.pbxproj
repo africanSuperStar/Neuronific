@@ -58,6 +58,10 @@
 		A558261F263D037600116DD2 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55DA94E263CF998005C3A5B /* JSON.swift */; };
 		A5582620263D037C00116DD2 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5759F50263AD28C003172C6 /* Text.swift */; };
 		A5976DC327691EF800214A70 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5976DC227691EF800214A70 /* Keyboard.swift */; };
+		A5976DC62769317A00214A70 /* ModifierButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5976DC52769317A00214A70 /* ModifierButtons.swift */; };
+		A5976DC8276931CD00214A70 /* ModifierButton+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5976DC7276931CD00214A70 /* ModifierButton+Data.swift */; };
+		A5976DCA2769334300214A70 /* Button.json in Resources */ = {isa = PBXBuildFile; fileRef = A5976DC92769334300214A70 /* Button.json */; };
+		A5976DCE2769542400214A70 /* Button+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5976DCD2769542400214A70 /* Button+Style.swift */; };
 		A5ACE65926746ADF00FCC855 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ACE65826746ADF00FCC855 /* Button.swift */; };
 		A5C01CB82767C2DD005CBAA8 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C01CB72767C2DD005CBAA8 /* Font.swift */; };
 		A5C01CBB2767DC49005CBAA8 /* Accessibility+Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C01CBA2767DC49005CBAA8 /* Accessibility+Label.swift */; };
@@ -84,7 +88,6 @@
 		A5C7E6082639F96C00FCD9A2 /* GenericParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C7E5F92639F96C00FCD9A2 /* GenericParserTests.swift */; };
 		A5C7E6092639F96C00FCD9A2 /* TestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C7E5FA2639F96C00FCD9A2 /* TestUtilities.swift */; };
 		A5DA1B4C26421A0300760C1E /* TextDragComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DA1B4B26421A0300760C1E /* TextDragComponent.swift */; };
-		A5E121712642A96B00612830 /* TextComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E121702642A96B00612830 /* TextComponentView.swift */; };
 		A5E121732642B36200612830 /* AnyDragModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E121722642B36200612830 /* AnyDragModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -182,6 +185,10 @@
 		A55DA94E263CF998005C3A5B /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		A5759F50263AD28C003172C6 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		A5976DC227691EF800214A70 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		A5976DC52769317A00214A70 /* ModifierButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifierButtons.swift; sourceTree = "<group>"; };
+		A5976DC7276931CD00214A70 /* ModifierButton+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModifierButton+Data.swift"; sourceTree = "<group>"; };
+		A5976DC92769334300214A70 /* Button.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Button.json; sourceTree = "<group>"; };
+		A5976DCD2769542400214A70 /* Button+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Style.swift"; sourceTree = "<group>"; };
 		A5ACE65826746ADF00FCC855 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		A5C01CB72767C2DD005CBAA8 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		A5C01CBA2767DC49005CBAA8 /* Accessibility+Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Accessibility+Label.swift"; sourceTree = "<group>"; };
@@ -208,7 +215,6 @@
 		A5C7E5F92639F96C00FCD9A2 /* GenericParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericParserTests.swift; sourceTree = "<group>"; };
 		A5C7E5FA2639F96C00FCD9A2 /* TestUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtilities.swift; sourceTree = "<group>"; };
 		A5DA1B4B26421A0300760C1E /* TextDragComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDragComponent.swift; sourceTree = "<group>"; };
-		A5E121702642A96B00612830 /* TextComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextComponentView.swift; sourceTree = "<group>"; };
 		A5E121722642B36200612830 /* AnyDragModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyDragModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -366,7 +372,6 @@
 		A54956772641CEAB000DC4B9 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				A5E1216F2642A95800612830 /* ComponentViews */,
 				A54956872641D015000DC4B9 /* Views */,
 			);
 			path = Dashboard;
@@ -383,6 +388,7 @@
 		A54956872641D015000DC4B9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A5976DC42769315100214A70 /* ModifierButtons */,
 				A54956792641CED2000DC4B9 /* ComponentView.swift */,
 				A549567B2641CF00000DC4B9 /* ComponentDetailView.swift */,
 				A549567D2641CF41000DC4B9 /* ComponentViewModifierView.swift */,
@@ -448,6 +454,16 @@
 			path = Colors;
 			sourceTree = "<group>";
 		};
+		A5976DC42769315100214A70 /* ModifierButtons */ = {
+			isa = PBXGroup;
+			children = (
+				A5976DC52769317A00214A70 /* ModifierButtons.swift */,
+				A5976DC7276931CD00214A70 /* ModifierButton+Data.swift */,
+				A5976DC92769334300214A70 /* Button.json */,
+			);
+			path = ModifierButtons;
+			sourceTree = "<group>";
+		};
 		A5C01CB62767C2CE005CBAA8 /* ViewModifier */ = {
 			isa = PBXGroup;
 			children = (
@@ -496,6 +512,7 @@
 			isa = PBXGroup;
 			children = (
 				A5ACE65826746ADF00FCC855 /* Button.swift */,
+				A5976DCD2769542400214A70 /* Button+Style.swift */,
 			);
 			name = Buttons;
 			sourceTree = "<group>";
@@ -526,14 +543,6 @@
 				A5C01CD127690497005CBAA8 /* AnyDragComponent.swift */,
 			);
 			path = DragAndDropManager;
-			sourceTree = "<group>";
-		};
-		A5E1216F2642A95800612830 /* ComponentViews */ = {
-			isa = PBXGroup;
-			children = (
-				A5E121702642A96B00612830 /* TextComponentView.swift */,
-			);
-			path = ComponentViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -656,6 +665,7 @@
 				A523EE87263F47B2003977F1 /* content_view.json in Resources */,
 				A544358726395A0E007A9B31 /* Preview Assets.xcassets in Resources */,
 				A544358426395A0E007A9B31 /* Assets.xcassets in Resources */,
+				A5976DCA2769334300214A70 /* Button.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,7 +696,9 @@
 				A523EE85263F4526003977F1 /* JSONCell.swift in Sources */,
 				A523EE83263F440F003977F1 /* JSONTreeView.swift in Sources */,
 				A549567E2641CF41000DC4B9 /* ComponentViewModifierView.swift in Sources */,
+				A5976DC8276931CD00214A70 /* ModifierButton+Data.swift in Sources */,
 				A54956912641D4AC000DC4B9 /* PlaceholderViewModifier.swift in Sources */,
+				A5976DC62769317A00214A70 /* ModifierButtons.swift in Sources */,
 				A54956982641DC3C000DC4B9 /* FocusRingExtension.swift in Sources */,
 				A549567C2641CF00000DC4B9 /* ComponentDetailView.swift in Sources */,
 				A5DA1B4C26421A0300760C1E /* TextDragComponent.swift in Sources */,
@@ -700,7 +712,6 @@
 				A523EE7A263F3C24003977F1 /* UIState.swift in Sources */,
 				A54956802641CF66000DC4B9 /* NetworkConfigurationView.swift in Sources */,
 				A549568D2641D13C000DC4B9 /* ComponentSelectionAreaView.swift in Sources */,
-				A5E121712642A96B00612830 /* TextComponentView.swift in Sources */,
 				A5C01CD027690331005CBAA8 /* PickerDragComponent.swift in Sources */,
 				A5C01CD227690497005CBAA8 /* AnyDragComponent.swift in Sources */,
 				A523EE81263F4320003977F1 /* JSONViewer.swift in Sources */,
@@ -745,6 +756,7 @@
 				A54435C9263982DE007A9B31 /* TokenParser.swift in Sources */,
 				A54435D726398814007A9B31 /* CharacterMembership.swift in Sources */,
 				A54435D126398761007A9B31 /* UInt16.swift in Sources */,
+				A5976DCE2769542400214A70 /* Button+Style.swift in Sources */,
 				A54435BF2639809F007A9B31 /* RangeReplaceableCollectionInsertion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
