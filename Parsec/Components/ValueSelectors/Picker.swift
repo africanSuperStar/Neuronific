@@ -52,7 +52,7 @@ extension Picker
     {
         self.init("", selection: binding)
         {
-            Text("") as! Content
+            ParserView(parsers: []) as! Content
         }
         
         do { self = try parsePicker(parser, binding) } catch {  }

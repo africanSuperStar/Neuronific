@@ -19,9 +19,14 @@ final class PickerDragComponent : AnyDragComponent
     @ViewBuilder
     override var view: AnyView
     {
-        let data = content.data(using: .utf8) ?? "{}".data(using: .utf8)!
+        get
+        {
+            let data = content.data(using: .utf8) ?? "{}".data(using: .utf8)!
+            
+            AnyView(Picker<Text, String, ParserView>(data: data, binder))
+        }
         
-        AnyView(Picker<Text, String, ParserView>(data: data, binder))
+        set { }
     }
 }
 

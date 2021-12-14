@@ -14,6 +14,34 @@ import Parsec
 
 extension AnyDragComponent : Identifiable { }
 
+extension AnyDragComponent
+{
+    convenience init(content: String, binding: Binding <AnyHashable>)
+    {
+        self.init(content: content)
+        
+        guard let parser = try? JSONParser(data: content)
+        else
+        {
+            view = AnyView(EmptyView())
+            
+            return
+        }
+        
+        switch parser["view"].string
+        {
+        case "Text":
+            view = AnyView(Text(parser: parser))
+            
+        case "Picker":
+            view = AnyView(Picker<Text, AnyHashable, ParserView>(parser: parser, binding))
+    
+        default:
+            view = AnyView(EmptyView())
+        }
+    }
+}
+
 class AnyDragComponent : NSObject, NSItemProviderWriting, NSItemProviderReading
 {
     let id = UUID().uuidString
@@ -22,13 +50,18 @@ class AnyDragComponent : NSObject, NSItemProviderWriting, NSItemProviderReading
     
     required init(content: String)
     {
-       self.content = content
+        self.content = content
     }
     
     @ViewBuilder
     var view: AnyView
     {
-        AnyView(EmptyView())
+        get
+        {
+            AnyView(EmptyView())
+        }
+        
+        set { }
     }
        
     static var writableTypeIdentifiersForItemProvider: [String] { ["public.text"] }

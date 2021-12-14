@@ -110,26 +110,30 @@ class AnyDragModel : ObservableObject
     ]
     
     @Published var selectedComponents: [AnyDragComponent] = [
-        TextDragComponent(content: """
+        PickerDragComponent(content: """
         {
-            "view": "Text",
+            "view": "Picker",
             "init": {
-                "content": "Hello World"
-            },
-            "font": {
-                "isCustom": null,
-                "isBold": null,
-                "isItalic": null,
-                "isMonospacedDigit": null,
-                "isSmallCaps": null,
-                "isLowercaseSmallCaps": null,
-                "isUppercaseSmallCaps": null,
-                "leading": {
+                "title": "Neuronific Picker",
+                "content": [{
+                    "view": "Text",
+                    "tag": "1",
                     "init": {
-                        "leading": null
+                        "image": "test"
                     }
-                }
-        
+                }, {
+                    "view": "Text",
+                    "tag": "2",
+                    "init": {
+                        "content": "Cameron de Bruyn"
+                    }
+                }, {
+                    "view": "Text",
+                    "tag": "3",
+                    "init": {
+                        "content": "Chazni Katz"
+                    }
+                }]
             }
         }
         """)

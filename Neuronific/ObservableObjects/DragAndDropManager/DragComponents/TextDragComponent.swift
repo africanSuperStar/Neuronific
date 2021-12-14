@@ -17,9 +17,13 @@ final class TextDragComponent : AnyDragComponent
     @ViewBuilder
     override var view: AnyView
     {
-        let data = content.data(using: .utf8) ?? "{}".data(using: .utf8)!
+        get
+        {
+            let data = content.data(using: .utf8) ?? "{}".data(using: .utf8)!
+            
+            AnyView(Text(data: data))
+        }
         
-        AnyView(Text(data: data))
-
+        set { }
     }
 }
