@@ -57,6 +57,7 @@
 		A558261A263D031C00116DD2 /* Parsec.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A544359426395C96007A9B31 /* Parsec.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A558261F263D037600116DD2 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55DA94E263CF998005C3A5B /* JSON.swift */; };
 		A5582620263D037C00116DD2 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5759F50263AD28C003172C6 /* Text.swift */; };
+		A5976DC327691EF800214A70 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5976DC227691EF800214A70 /* Keyboard.swift */; };
 		A5ACE65926746ADF00FCC855 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ACE65826746ADF00FCC855 /* Button.swift */; };
 		A5C01CB82767C2DD005CBAA8 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C01CB72767C2DD005CBAA8 /* Font.swift */; };
 		A5C01CBB2767DC49005CBAA8 /* Accessibility+Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C01CBA2767DC49005CBAA8 /* Accessibility+Label.swift */; };
@@ -180,6 +181,7 @@
 		A54956972641DC3C000DC4B9 /* FocusRingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusRingExtension.swift; sourceTree = "<group>"; };
 		A55DA94E263CF998005C3A5B /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		A5759F50263AD28C003172C6 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		A5976DC227691EF800214A70 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		A5ACE65826746ADF00FCC855 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		A5C01CB72767C2DD005CBAA8 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		A5C01CBA2767DC49005CBAA8 /* Accessibility+Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Accessibility+Label.swift"; sourceTree = "<group>"; };
@@ -413,6 +415,7 @@
 			children = (
 				A54956952641D817000DC4B9 /* SearchTextField.swift */,
 				A54956972641DC3C000DC4B9 /* FocusRingExtension.swift */,
+				A5976DC227691EF800214A70 /* Keyboard.swift */,
 			);
 			path = UtilityViews;
 			sourceTree = "<group>";
@@ -438,9 +441,17 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		A5976DBF2769182300214A70 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
 		A5C01CB62767C2CE005CBAA8 /* ViewModifier */ = {
 			isa = PBXGroup;
 			children = (
+				A5976DBF2769182300214A70 /* Colors */,
 				A5C01CBE2767E438005CBAA8 /* ViewModifier+Error.swift */,
 				A5C01CB92767DB9F005CBAA8 /* Accessibility */,
 				A5C01CB72767C2DD005CBAA8 /* Font.swift */,
@@ -680,6 +691,7 @@
 				A549567C2641CF00000DC4B9 /* ComponentDetailView.swift in Sources */,
 				A5DA1B4C26421A0300760C1E /* TextDragComponent.swift in Sources */,
 				A549567A2641CED2000DC4B9 /* ComponentView.swift in Sources */,
+				A5976DC327691EF800214A70 /* Keyboard.swift in Sources */,
 				A54956842641CFB0000DC4B9 /* SimulatedDeviceView.swift in Sources */,
 				A5E121732642B36200612830 /* AnyDragModel.swift in Sources */,
 				A54956822641CF92000DC4B9 /* NetworkConfigurationDetailView.swift in Sources */,
@@ -908,7 +920,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.2;
 				PRODUCT_BUNDLE_IDENTIFIER = org.datbot.ios.Neuronific;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -930,7 +942,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.2;
 				PRODUCT_BUNDLE_IDENTIFIER = org.datbot.ios.Neuronific;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

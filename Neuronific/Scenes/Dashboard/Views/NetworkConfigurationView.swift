@@ -9,16 +9,34 @@ import SwiftUI
 
 struct NetworkConfigurationView : View
 {
+    let data = (1...100).map { "Item \($0)" }
+
+    let columns = [
+        GridItem(.adaptive(minimum: 80))
+    ]
+    
     var body: some View
     {
-        Color.white
+        ScrollView(.vertical, showsIndicators: false)
+        {
+            LazyVGrid(columns: columns, spacing: 30)
+            {
+                ForEach(data, id: \.self)
+                {
+                    item in
+                    
+                    Text(item)
+                }
+            }
+            .padding(.horizontal)
+            .background(Color.white)
             .opacity(0.1)
-            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity,  alignment: .center)
-            .cornerRadius(Theme.cornerRadius)
-            .padding(.horizontal, Theme.padding)
-            .padding(.bottom, Theme.padding)
-            .shadow(radius: 10)
-            .frame(maxHeight: 200)
+        }
+        .frame(maxHeight: 200)
+        .cornerRadius(Theme.cornerRadius)
+        .padding(.horizontal, Theme.padding)
+        .padding(.bottom, Theme.padding)
+        .shadow(radius: 10)
     }
 }
 

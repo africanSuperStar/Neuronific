@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Combine
+
 
 @main
 struct NeuronificApp: App
