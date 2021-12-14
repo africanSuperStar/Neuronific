@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import Parsec
 
 
 struct ComponentSelectionAreaView : View
@@ -37,10 +38,43 @@ struct ComponentSelectionAreaView : View
                     
                     SelectableComponentView(content: content, component: component)
                 }
+                
+                Picker<Text, String, ParserView>(data: pickerJSON.data(using: .utf8)!, $searchText)
             }
             .padding(.horizontal)
             .allowsTightening(false)
         }
+    }
+    
+    var pickerJSON: String
+    {
+        """
+        {
+            "view": "Picker",
+            "init": {
+                "title": "Astrocyte Logo",
+                "content": [{
+                    "view": "Text",
+                    "tag": "1",
+                    "init": {
+                        "image": "test"
+                    }
+                }, {
+                    "view": "Text",
+                    "tag": "2",
+                    "init": {
+                        "content": "Cameron de Bruyn"
+                    }
+                }, {
+                    "view": "Text",
+                    "tag": "3",
+                    "init": {
+                        "content": "Chazni Katz"
+                    }
+                }]
+            }
+        }
+        """
     }
 }
 
