@@ -1,5 +1,5 @@
 //
-//  TextDragModel.swift
+//  AnyDragModel.swift
 //  Neuronific
 //
 //  Created by Cameron de Bruyn on 2021/05/05.
@@ -8,13 +8,13 @@
 import SwiftUI
 import Combine
 
-class TextDragModel : ObservableObject
+class AnyDragModel : ObservableObject
 {
-    public static let shared = TextDragModel()
+    public static let shared = AnyDragModel()
  
     @Published var selectedTab = "tabs"
     
-    @Published var selectableComponents: [TextDragComponent] = [
+    @Published var selectableComponents: [AnyDragComponent] = [
         TextDragComponent(content: """
         {
             "view": "Text",
@@ -47,7 +47,7 @@ class TextDragModel : ObservableObject
         {
             "view": "Text",
             "init": {
-                "description": "Astrocyte Logo",
+                "description": "Neuronific Picker",
                 "content": "Hello World"
             },
             "font": {
@@ -67,16 +67,30 @@ class TextDragModel : ObservableObject
             }
         }
         """),
-        TextDragComponent(content: """
+        PickerDragComponent(content: """
         {
-            "view": "Button",
+            "view": "Picker",
             "init": {
-                "label": "Hello World 2",
-                "localizedStringKey": null,
-                "action": {},
-            },
-            "style": {
-                "bordered": true
+                "title": "Neuronific Picker",
+                "content": [{
+                    "view": "Text",
+                    "tag": "1",
+                    "init": {
+                        "image": "test"
+                    }
+                }, {
+                    "view": "Text",
+                    "tag": "2",
+                    "init": {
+                        "content": "Cameron de Bruyn"
+                    }
+                }, {
+                    "view": "Text",
+                    "tag": "3",
+                    "init": {
+                        "content": "Chazni Katz"
+                    }
+                }]
             }
         }
         """),
@@ -95,7 +109,7 @@ class TextDragModel : ObservableObject
         """)
     ]
     
-    @Published var selectedComponents: [TextDragComponent] = [
+    @Published var selectedComponents: [AnyDragComponent] = [
         TextDragComponent(content: """
         {
             "view": "Text",

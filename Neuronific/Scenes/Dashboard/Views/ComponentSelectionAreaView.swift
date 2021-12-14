@@ -12,8 +12,6 @@ import Parsec
 
 struct ComponentSelectionAreaView : View
 {
-    @StateObject var textDragModel = TextDragModel()
- 
     @State private var searchText  = ""
     
     @ObservedObject var content: ContentDetail
@@ -32,49 +30,16 @@ struct ComponentSelectionAreaView : View
 
             LazyVGrid(columns: columns, spacing: 20)
             {
-                ForEach(textDragModel.selectableComponents, id: \.self)
+                ForEach(AnyDragModel.shared.selectableComponents, id: \.self)
                 {
                     component in
                     
                     SelectableComponentView(content: content, component: component)
                 }
-                
-                Picker<Text, String, ParserView>(data: pickerJSON.data(using: .utf8)!, $searchText)
             }
             .padding(.horizontal)
             .allowsTightening(false)
         }
-    }
-    
-    var pickerJSON: String
-    {
-        """
-        {
-            "view": "Picker",
-            "init": {
-                "title": "Astrocyte Logo",
-                "content": [{
-                    "view": "Text",
-                    "tag": "1",
-                    "init": {
-                        "image": "test"
-                    }
-                }, {
-                    "view": "Text",
-                    "tag": "2",
-                    "init": {
-                        "content": "Cameron de Bruyn"
-                    }
-                }, {
-                    "view": "Text",
-                    "tag": "3",
-                    "init": {
-                        "content": "Chazni Katz"
-                    }
-                }]
-            }
-        }
-        """
     }
 }
 
@@ -83,7 +48,7 @@ struct SelectableComponentView : View
     @State private var isHovering: Bool = false
     @ObservedObject var content:   ContentDetail
     
-    let component: TextDragComponent
+    let component: AnyDragComponent
     
     var body: some View
     {
@@ -121,7 +86,7 @@ struct SelectableComponentView : View
                 })
                 .onDrag
                 {
-                    return NSItemProvider(object: TextDragComponent(content: component.content))
+                    return NSItemProvider(object: AnyDragComponent(content: component.content))
                 }
         }
         else
@@ -136,6 +101,6 @@ struct ComponentSelectionAreaView_Previews : PreviewProvider
     static var previews: some View
     {
         ComponentSelectionAreaView(content: ContentDetail())
-            .environmentObject(TextDragModel.shared)
+            .environmentObject(AnyDragModel.shared)
     }
 }

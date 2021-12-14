@@ -1,8 +1,8 @@
 //
-//  DragAndDropManager.swift
+//  AnyDragComponent.swift
 //  Neuronific
 //
-//  Created by Cameron de Bruyn on 2021/05/05.
+//  Created by Cameron de Bruyn on 2021/12/14.
 //
 
 import SwiftUI
@@ -12,46 +12,23 @@ import UniformTypeIdentifiers
 import Parsec
 
 
-extension TextDragComponent : Identifiable { }
+extension AnyDragComponent : Identifiable { }
 
-final class TextDragComponent : NSObject, NSItemProviderWriting, NSItemProviderReading
+class AnyDragComponent : NSObject, NSItemProviderWriting, NSItemProviderReading
 {
     let id = UUID().uuidString
     
     let content: String
     
-    init(content: String)
+    required init(content: String)
     {
        self.content = content
     }
     
     @ViewBuilder
-    var view: some View
+    var view: AnyView
     {
-        if let data = content.data(using: .utf8)
-        {
-            Text(data: data)
-                .accessibilityLabel("""
-                {
-                    "modifier": "AccessibilityLabel",
-                    "init": {
-                        "string": "Hello World"
-                    }
-                }
-                """.data(using: .utf8)!)
-                .accessibilityInputLabels("""
-                {
-                    "modifier": "AccessibilityInputLabels",
-                    "init": {
-                        "text": ["Hello World"]
-                    }
-                }
-                """.data(using: .utf8)!)
-        }
-        else
-        {
-            EmptyView()            
-        }
+        AnyView(EmptyView())
     }
        
     static var writableTypeIdentifiersForItemProvider: [String] { ["public.text"] }
@@ -78,7 +55,7 @@ final class TextDragComponent : NSObject, NSItemProviderWriting, NSItemProviderR
         
     static var readableTypeIdentifiersForItemProvider: [String] { ["public.text"] }
         
-    static func object(withItemProviderData data: Data, typeIdentifier: String) throws -> TextDragComponent
+    static func object(withItemProviderData data: Data, typeIdentifier: String) throws -> Self
     {
         guard let str = String(data: data, encoding: .utf8)
             else
@@ -86,6 +63,7 @@ final class TextDragComponent : NSObject, NSItemProviderWriting, NSItemProviderR
             throw CocoaError(CocoaError.Code.fileReadInapplicableStringEncoding)
         }
         
-        return TextDragComponent(content: str)
+        return Self(content: str)
     }
 }
+

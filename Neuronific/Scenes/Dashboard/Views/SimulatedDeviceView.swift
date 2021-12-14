@@ -11,7 +11,7 @@ import Combine
 
 struct SimulatedDeviceView : View
 {
-    @StateObject private var model = TextDragModel.shared
+    @StateObject private var model = AnyDragModel.shared
         
     let width:  CGFloat = 350
     let height: CGFloat = 350 / 9 * 19.5
@@ -44,7 +44,7 @@ struct SimulatedDeviceView : View
 
 struct SimulatedDeviceViewDelegate: DropDelegate
 {
-    @ObservedObject var model: TextDragModel
+    @ObservedObject var model: AnyDragModel
 
     func performDrop(info: DropInfo) -> Bool
     {
@@ -58,11 +58,11 @@ struct SimulatedDeviceViewDelegate: DropDelegate
         
         for item in items
         {
-            _ = item.loadObject(ofClass: TextDragComponent.self)
+            _ = item.loadObject(ofClass: AnyDragComponent.self)
             {
                 component, _ in
                 
-                if let component = component as? TextDragComponent
+                if let component = component as? AnyDragComponent
                 {
                     DispatchQueue.main.async
                     {
@@ -84,6 +84,6 @@ struct SimulatedDeviceView_Previews : PreviewProvider
     static var previews: some View
     {
         SimulatedDeviceView()
-            .environmentObject(TextDragModel.shared)
+            .environmentObject(AnyDragModel.shared)
     }
 }

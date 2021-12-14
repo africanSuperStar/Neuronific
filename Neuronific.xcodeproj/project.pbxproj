@@ -57,6 +57,7 @@
 		A558261A263D031C00116DD2 /* Parsec.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A544359426395C96007A9B31 /* Parsec.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A558261F263D037600116DD2 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55DA94E263CF998005C3A5B /* JSON.swift */; };
 		A5582620263D037C00116DD2 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5759F50263AD28C003172C6 /* Text.swift */; };
+		A5976DBE276908FF00214A70 /* ConditionalModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5976DBD276908FF00214A70 /* ConditionalModifier.swift */; };
 		A5ACE65926746ADF00FCC855 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ACE65826746ADF00FCC855 /* Button.swift */; };
 		A5C01CB82767C2DD005CBAA8 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C01CB72767C2DD005CBAA8 /* Font.swift */; };
 		A5C01CBB2767DC49005CBAA8 /* Accessibility+Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C01CBA2767DC49005CBAA8 /* Accessibility+Label.swift */; };
@@ -65,6 +66,8 @@
 		A5C01CC6276800CA005CBAA8 /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C01CC5276800CA005CBAA8 /* Picker.swift */; };
 		A5C01CC8276861A6005CBAA8 /* ParserViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C01CC7276861A6005CBAA8 /* ParserViewList.swift */; };
 		A5C01CCA2768DFD4005CBAA8 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C01CC92768DFD4005CBAA8 /* Label.swift */; };
+		A5C01CD027690331005CBAA8 /* PickerDragComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C01CCF27690331005CBAA8 /* PickerDragComponent.swift */; };
+		A5C01CD227690497005CBAA8 /* AnyDragComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C01CD127690497005CBAA8 /* AnyDragComponent.swift */; };
 		A5C7E5EB2639F65B00FCD9A2 /* CombinatorParsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C7E5EA2639F65B00FCD9A2 /* CombinatorParsers.swift */; };
 		A5C7E5FB2639F96C00FCD9A2 /* SampleJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = A5C7E5EC2639F96B00FCD9A2 /* SampleJSON.json */; };
 		A5C7E5FC2639F96C00FCD9A2 /* CharacterSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C7E5ED2639F96B00FCD9A2 /* CharacterSetTests.swift */; };
@@ -82,7 +85,7 @@
 		A5C7E6092639F96C00FCD9A2 /* TestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C7E5FA2639F96C00FCD9A2 /* TestUtilities.swift */; };
 		A5DA1B4C26421A0300760C1E /* TextDragComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DA1B4B26421A0300760C1E /* TextDragComponent.swift */; };
 		A5E121712642A96B00612830 /* TextComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E121702642A96B00612830 /* TextComponentView.swift */; };
-		A5E121732642B36200612830 /* TextDragModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E121722642B36200612830 /* TextDragModel.swift */; };
+		A5E121732642B36200612830 /* AnyDragModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E121722642B36200612830 /* AnyDragModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,6 +181,7 @@
 		A54956972641DC3C000DC4B9 /* FocusRingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusRingExtension.swift; sourceTree = "<group>"; };
 		A55DA94E263CF998005C3A5B /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		A5759F50263AD28C003172C6 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		A5976DBD276908FF00214A70 /* ConditionalModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalModifier.swift; sourceTree = "<group>"; };
 		A5ACE65826746ADF00FCC855 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		A5C01CB72767C2DD005CBAA8 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		A5C01CBA2767DC49005CBAA8 /* Accessibility+Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Accessibility+Label.swift"; sourceTree = "<group>"; };
@@ -186,6 +190,8 @@
 		A5C01CC5276800CA005CBAA8 /* Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picker.swift; sourceTree = "<group>"; };
 		A5C01CC7276861A6005CBAA8 /* ParserViewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserViewList.swift; sourceTree = "<group>"; };
 		A5C01CC92768DFD4005CBAA8 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		A5C01CCF27690331005CBAA8 /* PickerDragComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDragComponent.swift; sourceTree = "<group>"; };
+		A5C01CD127690497005CBAA8 /* AnyDragComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyDragComponent.swift; sourceTree = "<group>"; };
 		A5C7E5EA2639F65B00FCD9A2 /* CombinatorParsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinatorParsers.swift; sourceTree = "<group>"; };
 		A5C7E5EC2639F96B00FCD9A2 /* SampleJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SampleJSON.json; sourceTree = "<group>"; };
 		A5C7E5ED2639F96B00FCD9A2 /* CharacterSetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSetTests.swift; sourceTree = "<group>"; };
@@ -203,7 +209,7 @@
 		A5C7E5FA2639F96C00FCD9A2 /* TestUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtilities.swift; sourceTree = "<group>"; };
 		A5DA1B4B26421A0300760C1E /* TextDragComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDragComponent.swift; sourceTree = "<group>"; };
 		A5E121702642A96B00612830 /* TextComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextComponentView.swift; sourceTree = "<group>"; };
-		A5E121722642B36200612830 /* TextDragModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDragModel.swift; sourceTree = "<group>"; };
+		A5E121722642B36200612830 /* AnyDragModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyDragModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,6 +406,7 @@
 			isa = PBXGroup;
 			children = (
 				A54956902641D4AC000DC4B9 /* PlaceholderViewModifier.swift */,
+				A5976DBD276908FF00214A70 /* ConditionalModifier.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -485,6 +492,15 @@
 			name = Buttons;
 			sourceTree = "<group>";
 		};
+		A5C01CD3276904A9005CBAA8 /* DragComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A5DA1B4B26421A0300760C1E /* TextDragComponent.swift */,
+				A5C01CCF27690331005CBAA8 /* PickerDragComponent.swift */,
+			);
+			path = DragComponents;
+			sourceTree = "<group>";
+		};
 		A5DA1B49264219DE00760C1E /* ObservableObjects */ = {
 			isa = PBXGroup;
 			children = (
@@ -497,8 +513,9 @@
 		A5DA1B4A264219EC00760C1E /* DragAndDropManager */ = {
 			isa = PBXGroup;
 			children = (
-				A5DA1B4B26421A0300760C1E /* TextDragComponent.swift */,
-				A5E121722642B36200612830 /* TextDragModel.swift */,
+				A5C01CD3276904A9005CBAA8 /* DragComponents */,
+				A5E121722642B36200612830 /* AnyDragModel.swift */,
+				A5C01CD127690497005CBAA8 /* AnyDragComponent.swift */,
 			);
 			path = DragAndDropManager;
 			sourceTree = "<group>";
@@ -663,11 +680,12 @@
 				A549567E2641CF41000DC4B9 /* ComponentViewModifierView.swift in Sources */,
 				A54956912641D4AC000DC4B9 /* PlaceholderViewModifier.swift in Sources */,
 				A54956982641DC3C000DC4B9 /* FocusRingExtension.swift in Sources */,
+				A5976DBE276908FF00214A70 /* ConditionalModifier.swift in Sources */,
 				A549567C2641CF00000DC4B9 /* ComponentDetailView.swift in Sources */,
 				A5DA1B4C26421A0300760C1E /* TextDragComponent.swift in Sources */,
 				A549567A2641CED2000DC4B9 /* ComponentView.swift in Sources */,
 				A54956842641CFB0000DC4B9 /* SimulatedDeviceView.swift in Sources */,
-				A5E121732642B36200612830 /* TextDragModel.swift in Sources */,
+				A5E121732642B36200612830 /* AnyDragModel.swift in Sources */,
 				A54956822641CF92000DC4B9 /* NetworkConfigurationDetailView.swift in Sources */,
 				A549568B2641D047000DC4B9 /* FileModel.swift in Sources */,
 				A54956962641D817000DC4B9 /* SearchTextField.swift in Sources */,
@@ -675,6 +693,8 @@
 				A54956802641CF66000DC4B9 /* NetworkConfigurationView.swift in Sources */,
 				A549568D2641D13C000DC4B9 /* ComponentSelectionAreaView.swift in Sources */,
 				A5E121712642A96B00612830 /* TextComponentView.swift in Sources */,
+				A5C01CD027690331005CBAA8 /* PickerDragComponent.swift in Sources */,
+				A5C01CD227690497005CBAA8 /* AnyDragComponent.swift in Sources */,
 				A523EE81263F4320003977F1 /* JSONViewer.swift in Sources */,
 				A5338EF9264190AC00E28DAB /* Theme.swift in Sources */,
 			);
