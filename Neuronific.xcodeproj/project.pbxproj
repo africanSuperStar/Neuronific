@@ -62,6 +62,15 @@
 		A5976DC8276931CD00214A70 /* ModifierButton+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5976DC7276931CD00214A70 /* ModifierButton+Data.swift */; };
 		A5976DCA2769334300214A70 /* Button.json in Resources */ = {isa = PBXBuildFile; fileRef = A5976DC92769334300214A70 /* Button.json */; };
 		A5976DCE2769542400214A70 /* Button+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5976DCD2769542400214A70 /* Button+Style.swift */; };
+		A5976DD82769562300214A70 /* ColorPicker.json in Resources */ = {isa = PBXBuildFile; fileRef = A5976DCF2769562200214A70 /* ColorPicker.json */; };
+		A5976DD92769562300214A70 /* Label.json in Resources */ = {isa = PBXBuildFile; fileRef = A5976DD02769562300214A70 /* Label.json */; };
+		A5976DDA2769562300214A70 /* List.json in Resources */ = {isa = PBXBuildFile; fileRef = A5976DD12769562300214A70 /* List.json */; };
+		A5976DDB2769562300214A70 /* Form.json in Resources */ = {isa = PBXBuildFile; fileRef = A5976DD22769562300214A70 /* Form.json */; };
+		A5976DDC2769562300214A70 /* GroupBox.json in Resources */ = {isa = PBXBuildFile; fileRef = A5976DD32769562300214A70 /* GroupBox.json */; };
+		A5976DDD2769562300214A70 /* DisclosureGroup.json in Resources */ = {isa = PBXBuildFile; fileRef = A5976DD42769562300214A70 /* DisclosureGroup.json */; };
+		A5976DDE2769562300214A70 /* Link.json in Resources */ = {isa = PBXBuildFile; fileRef = A5976DD52769562300214A70 /* Link.json */; };
+		A5976DDF2769562300214A70 /* HorizontalSplitView.json in Resources */ = {isa = PBXBuildFile; fileRef = A5976DD62769562300214A70 /* HorizontalSplitView.json */; };
+		A5976DE02769562300214A70 /* DatePicker.json in Resources */ = {isa = PBXBuildFile; fileRef = A5976DD72769562300214A70 /* DatePicker.json */; };
 		A5ACE65926746ADF00FCC855 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ACE65826746ADF00FCC855 /* Button.swift */; };
 		A5C01CB82767C2DD005CBAA8 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C01CB72767C2DD005CBAA8 /* Font.swift */; };
 		A5C01CBB2767DC49005CBAA8 /* Accessibility+Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C01CBA2767DC49005CBAA8 /* Accessibility+Label.swift */; };
@@ -189,6 +198,15 @@
 		A5976DC7276931CD00214A70 /* ModifierButton+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModifierButton+Data.swift"; sourceTree = "<group>"; };
 		A5976DC92769334300214A70 /* Button.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Button.json; sourceTree = "<group>"; };
 		A5976DCD2769542400214A70 /* Button+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Style.swift"; sourceTree = "<group>"; };
+		A5976DCF2769562200214A70 /* ColorPicker.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ColorPicker.json; sourceTree = "<group>"; };
+		A5976DD02769562300214A70 /* Label.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Label.json; sourceTree = "<group>"; };
+		A5976DD12769562300214A70 /* List.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = List.json; sourceTree = "<group>"; };
+		A5976DD22769562300214A70 /* Form.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Form.json; sourceTree = "<group>"; };
+		A5976DD32769562300214A70 /* GroupBox.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GroupBox.json; sourceTree = "<group>"; };
+		A5976DD42769562300214A70 /* DisclosureGroup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DisclosureGroup.json; sourceTree = "<group>"; };
+		A5976DD52769562300214A70 /* Link.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Link.json; sourceTree = "<group>"; };
+		A5976DD62769562300214A70 /* HorizontalSplitView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HorizontalSplitView.json; sourceTree = "<group>"; };
+		A5976DD72769562300214A70 /* DatePicker.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DatePicker.json; sourceTree = "<group>"; };
 		A5ACE65826746ADF00FCC855 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		A5C01CB72767C2DD005CBAA8 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		A5C01CBA2767DC49005CBAA8 /* Accessibility+Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Accessibility+Label.swift"; sourceTree = "<group>"; };
@@ -460,6 +478,15 @@
 				A5976DC52769317A00214A70 /* ModifierButtons.swift */,
 				A5976DC7276931CD00214A70 /* ModifierButton+Data.swift */,
 				A5976DC92769334300214A70 /* Button.json */,
+				A5976DCF2769562200214A70 /* ColorPicker.json */,
+				A5976DD72769562300214A70 /* DatePicker.json */,
+				A5976DD42769562300214A70 /* DisclosureGroup.json */,
+				A5976DD22769562300214A70 /* Form.json */,
+				A5976DD32769562300214A70 /* GroupBox.json */,
+				A5976DD62769562300214A70 /* HorizontalSplitView.json */,
+				A5976DD02769562300214A70 /* Label.json */,
+				A5976DD52769562300214A70 /* Link.json */,
+				A5976DD12769562300214A70 /* List.json */,
 			);
 			path = ModifierButtons;
 			sourceTree = "<group>";
@@ -662,9 +689,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5976DE02769562300214A70 /* DatePicker.json in Resources */,
+				A5976DDD2769562300214A70 /* DisclosureGroup.json in Resources */,
+				A5976DD82769562300214A70 /* ColorPicker.json in Resources */,
+				A5976DDE2769562300214A70 /* Link.json in Resources */,
 				A523EE87263F47B2003977F1 /* content_view.json in Resources */,
+				A5976DD92769562300214A70 /* Label.json in Resources */,
+				A5976DDA2769562300214A70 /* List.json in Resources */,
 				A544358726395A0E007A9B31 /* Preview Assets.xcassets in Resources */,
+				A5976DDB2769562300214A70 /* Form.json in Resources */,
 				A544358426395A0E007A9B31 /* Assets.xcassets in Resources */,
+				A5976DDF2769562300214A70 /* HorizontalSplitView.json in Resources */,
+				A5976DDC2769562300214A70 /* GroupBox.json in Resources */,
 				A5976DCA2769334300214A70 /* Button.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

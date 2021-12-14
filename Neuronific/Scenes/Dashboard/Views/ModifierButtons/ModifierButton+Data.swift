@@ -72,12 +72,49 @@ struct Modifier
     @BundleFile(name: "Button", type: "json")
     static var buttonModifier: ModifiedButton
     
+    @BundleFile(name: "ColorPicker", type: "json")
+    static var colorPickerModifier: ModifiedButton
+    
+    @BundleFile(name: "DatePicker", type: "json")
+    static var datePickerModifier: ModifiedButton
+    
+    @BundleFile(name: "DisclosureGroup", type: "json")
+    static var disclosureModifier: ModifiedButton
+    
+    @BundleFile(name: "Form", type: "json")
+    static var formModifier: ModifiedButton
+    
+    @BundleFile(name: "GroupBox", type: "json")
+    static var groupBoxModifier: ModifiedButton
+    
+    @BundleFile(name: "HorizontalSplitView", type: "json")
+    static var horizontalSplitViewModifier: ModifiedButton
+    
+    @BundleFile(name: "Label", type: "json")
+    static var labelModifier: ModifiedButton
+    
+    @BundleFile(name: "Link", type: "json")
+    static var linkModifier: ModifiedButton
+    
+    @BundleFile(name: "List", type: "json")
+    static var listModifier: ModifiedButton
+    
+    
     static var modifiers: [(view: ModifiedButton, index: Int)]
     {
         get
         {
             return [
-                (Modifier.buttonModifier, 0)
+                (Modifier.buttonModifier,              0),
+                (Modifier.colorPickerModifier,         1),
+                (Modifier.datePickerModifier,          2),
+                (Modifier.disclosureModifier,          3),
+                (Modifier.formModifier,                4),
+                (Modifier.groupBoxModifier,            5),
+                (Modifier.horizontalSplitViewModifier, 6),
+                (Modifier.labelModifier,               7),
+                (Modifier.linkModifier,                8),
+                (Modifier.listModifier,                9)
             ]
         }
     }

@@ -1,0 +1,11 @@
+{
+    "view": "Button",
+    "init": {
+        "text": "Group Box",
+        "systemImage": "eyedropper.halffull",
+        "action": {  }
+    },
+    "style": {
+        "bordered": true
+    }
+}

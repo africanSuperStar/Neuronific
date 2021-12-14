@@ -1,0 +1,11 @@
+{
+    "view": "Button",
+    "init": {
+        "text": "Disclosure Group",
+        "systemImage": "eyedropper.halffull",
+        "action": {  }
+    },
+    "style": {
+        "bordered": true
+    }
+}

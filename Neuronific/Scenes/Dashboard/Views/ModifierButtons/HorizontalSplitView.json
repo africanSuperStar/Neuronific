@@ -1,0 +1,11 @@
+{
+    "view": "Button",
+    "init": {
+        "text": "Horizontal Split View",
+        "systemImage": "eyedropper.halffull",
+        "action": {  }
+    },
+    "style": {
+        "bordered": true
+    }
+}

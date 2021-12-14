@@ -1,0 +1,11 @@
+{
+    "view": "Button",
+    "init": {
+        "text": "List",
+        "systemImage": "eyedropper.halffull",
+        "action": {  }
+    },
+    "style": {
+        "bordered": true
+    }
+}

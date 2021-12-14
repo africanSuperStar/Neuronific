@@ -10,20 +10,33 @@ import SwiftUI
 struct ModifierButtons : View
 {
     let columns = [
-        GridItem(.adaptive(minimum: 80))
+        GridItem(.adaptive(minimum: 100, maximum: 150))
     ]
     
     var body: some View
     {
-        ScrollView(.vertical, showsIndicators: false)
+        ZStack
         {
-            LazyVGrid(columns: columns, spacing: 30)
+            Color.white
+                .opacity(0.1)
+
+            ScrollView(.vertical, showsIndicators: false)
             {
-                ForEach(Modifier.modifiers, id: \.index) { $0.view }
+                LazyVGrid(columns: columns, spacing: 5)
+                {
+                    ForEach(Modifier.modifiers, id: \.index)
+                    {
+                        $0.view
+                            .frame(width: 80, height: 10)
+                            .padding()
+                            .foregroundColor(Color.white)
+                            .background(Color.white.opacity(0.1))
+                            .cornerRadius(Theme.cornerRadius)
+                            .shadow(radius: 10)
+                    }
+                }
+                .padding()
             }
-            .padding()
-            .background(Color.white)
-            .opacity(0.1)
         }
         .frame(maxHeight: 200)
         .cornerRadius(Theme.cornerRadius)

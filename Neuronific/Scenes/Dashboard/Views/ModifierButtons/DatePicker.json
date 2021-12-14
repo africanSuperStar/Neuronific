@@ -1,0 +1,11 @@
+{
+    "view": "Button",
+    "init": {
+        "text": "Date Picker",
+        "systemImage": "eyedropper.halffull",
+        "action": {  }
+    },
+    "style": {
+        "bordered": true
+    }
+}

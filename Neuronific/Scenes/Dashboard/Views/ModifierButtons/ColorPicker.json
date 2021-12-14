@@ -1,0 +1,11 @@
+{
+    "view": "Button",
+    "init": {
+        "text": "Color Picker",
+        "systemImage": "eyedropper.halffull",
+        "action": {  }
+    },
+    "style": {
+        "bordered": true
+    }
+}
