@@ -1,8 +1,7 @@
 {
     "view": "Button",
     "init": {
-        "text": "Date Picker",
-        "systemImage": "eyedropper.halffull",
+        "systemImage": "bolt",
         "action": {  }
     },
     "style": {

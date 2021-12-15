@@ -1,8 +1,7 @@
 {
     "view": "Button",
     "init": {
-        "text": "Horizontal Split View",
-        "systemImage": "eyedropper.halffull",
+        "systemImage": "bolt",
         "action": {  }
     },
     "style": {

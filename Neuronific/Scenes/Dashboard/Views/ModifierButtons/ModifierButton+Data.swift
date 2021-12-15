@@ -9,7 +9,7 @@ import SwiftUI
 import Parsec
 
 
-typealias ModifiedButton = ModifiedContent <Button <Label <Text, Image>>, PrimitiveButtonModifier>
+typealias ModifiedButton = ModifiedContent <Button <Image>, PrimitiveButtonModifier>
 
 @propertyWrapper
 struct BundleFile
@@ -25,7 +25,7 @@ struct BundleFile
         else
         {
             debugPrint("RESOURCE ERROR: Resource Modifier not found: \(name).\(type)")
-            return Button(data: "{}").tag(0) as! ModifiedButton
+            return Button<SwiftUI.Image>(data: "{}").tag(0) as! ModifiedButton
         }
         
         let rejectButton = ModifiedButton(
@@ -57,7 +57,7 @@ struct BundleFile
             return rejectButton
         }
         
-        guard let button = try? Button(data: contents).modifyButton(JSONParser(data: contents))
+        guard let button = try? Button<SwiftUI.Image>(data: contents).modifyButton(JSONParser(data: contents))
         else
         {
             return rejectButton

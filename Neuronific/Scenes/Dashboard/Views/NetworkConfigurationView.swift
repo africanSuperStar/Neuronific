@@ -10,7 +10,7 @@ import SwiftUI
 struct NetworkConfigurationView : View
 {
     var body: some View
-    {
+    {        
         ModifierButtons()
     }
 }

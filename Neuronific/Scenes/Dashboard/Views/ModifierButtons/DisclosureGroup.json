@@ -1,8 +1,7 @@
 {
     "view": "Button",
     "init": {
-        "text": "Disclosure Group",
-        "systemImage": "eyedropper.halffull",
+        "systemImage": "bolt",
         "action": {  }
     },
     "style": {

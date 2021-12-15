@@ -37,8 +37,10 @@ struct ContentView : View
                         SimulatedDeviceView()
                         Spacer()
                     }
+                    
                     NetworkConfigurationDetailView()
                 }
+                
                 NetworkConfigurationView()
             }
         }

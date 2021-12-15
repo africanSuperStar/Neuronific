@@ -10,7 +10,12 @@ import SwiftUI
 struct ModifierButtons : View
 {
     let columns = [
-        GridItem(.adaptive(minimum: 100, maximum: 150))
+        GridItem(.fixed(45)),
+        GridItem(.fixed(45)),
+        GridItem(.fixed(45)),
+        GridItem(.fixed(45)),
+        GridItem(.fixed(45)),
+        GridItem(.fixed(45))
     ]
     
     var body: some View
@@ -20,22 +25,43 @@ struct ModifierButtons : View
             Color.white
                 .opacity(0.1)
 
-            ScrollView(.vertical, showsIndicators: false)
+            HStack
             {
-                LazyVGrid(columns: columns, spacing: 5)
+                ScrollView(.vertical, showsIndicators: false)
                 {
-                    ForEach(Modifier.modifiers, id: \.index)
+                    LazyVGrid(columns: columns, spacing: 5)
                     {
-                        $0.view
-                            .frame(width: 80, height: 10)
-                            .padding()
-                            .foregroundColor(Color.white)
-                            .background(Color.white.opacity(0.1))
-                            .cornerRadius(Theme.cornerRadius)
-                            .shadow(radius: 10)
+                        ForEach(Modifier.modifiers, id: \.index)
+                        {
+                            $0.view
+                                .frame(maxWidth: 15, maxHeight: .zero)
+                                .foregroundColor(Color.white)
+                                .padding()
+                                .background(
+                                    RoundedRectangle(
+                                        cornerRadius: Theme.cornerRadius
+                                    )
+                                    .fill(
+                                        Color.blue.opacity(0.6)
+                                    )
+                                )
+                                .overlay(
+                                    RoundedRectangle(
+                                        cornerRadius: Theme.cornerRadius
+                                    )
+                                    .stroke(
+                                        Color.blue,
+                                        lineWidth: 1
+                                    )
+                                )
+                        }
                     }
+                    .padding()
                 }
-                .padding()
+                .frame(maxWidth: 300)
+                .padding(.horizontal)
+
+                Spacer()
             }
         }
         .frame(maxHeight: 200)

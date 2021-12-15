@@ -8,6 +8,18 @@
 import SwiftUI
 
 
+extension Button
+{
+    public func modifyButton(_ json: JSONParser) -> some View
+    {
+        return ModifiedContent(
+            content:  self,
+            modifier: PrimitiveButtonModifier(parser: json)
+        )
+    }
+    
+}
+
 public struct PrimitiveButtonModifier : ViewModifier
 {
     public var parser: JSONParser

@@ -43,21 +43,13 @@ extension Button
         }
     }
     
-    public func modifyButton(_ json: JSONParser) -> some View
-    {
-        return ModifiedContent(
-            content:  self,
-            modifier: PrimitiveButtonModifier(parser: json)
-        )
-    }
-    
     public init(parser: JSONParser)
     where
     Label == SwiftUI.Label<Text, Image>
     {
         self.init(action: {})
         {
-            Label("", systemImage: "bolt")
+            SwiftUI.Label("", systemImage: "bolt")
         }
         
         self = parseButton(parser)
@@ -77,14 +69,15 @@ extension Button
             {
                 return Self(action: action, label:
                 {
-                    Label(_text, systemImage: _systemImage)
+                    SwiftUI.Label(_text, systemImage: _systemImage)
                 })
             }
         }
         
         return Self(action: {})
         {
-            Label("", systemImage: "bolt")
+            SwiftUI.Label("", systemImage: "bolt")
         }
     }
+    
 }

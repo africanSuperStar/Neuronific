@@ -1,8 +1,7 @@
 {
     "view": "Button",
     "init": {
-        "text": "Link",
-        "systemImage": "eyedropper.halffull",
+        "systemImage": "bolt",
         "action": {  }
     },
     "style": {
