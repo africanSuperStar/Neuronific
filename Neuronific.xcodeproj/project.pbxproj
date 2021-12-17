@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -72,6 +72,8 @@
 		A5976DDF2769562300214A70 /* HorizontalSplitView.json in Resources */ = {isa = PBXBuildFile; fileRef = A5976DD62769562300214A70 /* HorizontalSplitView.json */; };
 		A5976DE02769562300214A70 /* DatePicker.json in Resources */ = {isa = PBXBuildFile; fileRef = A5976DD72769562300214A70 /* DatePicker.json */; };
 		A5976DE2276A32C300214A70 /* Button+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5976DE1276A32C300214A70 /* Button+Image.swift */; };
+		A5976DE7276A4E0400214A70 /* TreeDragComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5976DE6276A4E0400214A70 /* TreeDragComponent.swift */; };
+		A5976DED276B86CD00214A70 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5976DEC276B86CD00214A70 /* AppKit.framework */; platformFilter = maccatalyst; };
 		A5ACE65926746ADF00FCC855 /* Button+Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ACE65826746ADF00FCC855 /* Button+Label.swift */; };
 		A5C01CB82767C2DD005CBAA8 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C01CB72767C2DD005CBAA8 /* Font.swift */; };
 		A5C01CBB2767DC49005CBAA8 /* Accessibility+Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C01CBA2767DC49005CBAA8 /* Accessibility+Label.swift */; };
@@ -209,6 +211,8 @@
 		A5976DD62769562300214A70 /* HorizontalSplitView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HorizontalSplitView.json; sourceTree = "<group>"; };
 		A5976DD72769562300214A70 /* DatePicker.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DatePicker.json; sourceTree = "<group>"; };
 		A5976DE1276A32C300214A70 /* Button+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Image.swift"; sourceTree = "<group>"; };
+		A5976DE6276A4E0400214A70 /* TreeDragComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeDragComponent.swift; sourceTree = "<group>"; };
+		A5976DEC276B86CD00214A70 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		A5ACE65826746ADF00FCC855 /* Button+Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Label.swift"; sourceTree = "<group>"; };
 		A5C01CB72767C2DD005CBAA8 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		A5C01CBA2767DC49005CBAA8 /* Accessibility+Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Accessibility+Label.swift"; sourceTree = "<group>"; };
@@ -259,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5582619263D031C00116DD2 /* Parsec.framework in Frameworks */,
+				A5976DED276B86CD00214A70 /* AppKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +454,7 @@
 		A5582606263CFD5400116DD2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A5976DEC276B86CD00214A70 /* AppKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -552,6 +558,7 @@
 			children = (
 				A5DA1B4B26421A0300760C1E /* TextDragComponent.swift */,
 				A5C01CCF27690331005CBAA8 /* PickerDragComponent.swift */,
+				A5976DE6276A4E0400214A70 /* TreeDragComponent.swift */,
 			);
 			path = DragComponents;
 			sourceTree = "<group>";
@@ -739,6 +746,7 @@
 				A54956912641D4AC000DC4B9 /* PlaceholderViewModifier.swift in Sources */,
 				A5976DC62769317A00214A70 /* ModifierButtons.swift in Sources */,
 				A54956982641DC3C000DC4B9 /* FocusRingExtension.swift in Sources */,
+				A5976DE7276A4E0400214A70 /* TreeDragComponent.swift in Sources */,
 				A549567C2641CF00000DC4B9 /* ComponentDetailView.swift in Sources */,
 				A5DA1B4C26421A0300760C1E /* TextDragComponent.swift in Sources */,
 				A549567A2641CED2000DC4B9 /* ComponentView.swift in Sources */,
@@ -893,7 +901,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.2;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -948,7 +956,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.2;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -972,7 +980,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.2;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.datbot.ios.Neuronific;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -994,7 +1002,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.2;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.datbot.ios.Neuronific;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1019,7 +1027,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = astrocyte.healthcare.ios.Parsec;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1048,7 +1056,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = astrocyte.healthcare.ios.Parsec;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

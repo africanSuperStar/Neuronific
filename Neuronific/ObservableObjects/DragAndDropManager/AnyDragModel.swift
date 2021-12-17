@@ -15,34 +15,44 @@ class AnyDragModel : ObservableObject
     @Published var selectedTab = "tabs"
     
     @Published var selectableComponents: [AnyDragComponent] = [
-        TextDragComponent(content: """
-        {
-            "view": "Text",
-            "init": {
-                "description": "Brendon",
-                "content": null,
-                "localizedStringKey": null,
-                "verbatim": null,
-                "image": "test",
-                "date": null
-            },
-            "font": {
-                "isCustom": null,
-                "isBold": true,
-                "isItalic": null,
-                "isMonospacedDigit": true,
-                "isSmallCaps": null,
-                "isLowercaseSmallCaps": null,
-                "isUppercaseSmallCaps": null,
-                "leading": {
+        TreeDragComponent(bindings: [
+            (component:
+                TextDragComponent(content: """
+                {
+                    "view": "Text",
                     "init": {
-                        "leading": null
+                        "description": "Component 1",
+                        "content": "Component 1"
                     }
                 }
-        
-            }
-        }
-        """),
+                """),
+             binding: .constant("")
+            ),
+            (component:
+                TextDragComponent(content: """
+                {
+                    "view": "Text",
+                    "init": {
+                        "description": "Component 2",
+                        "content": "Component 2"
+                    }
+                }
+                """),
+             binding: .constant("")
+            ),
+            (component:
+                TextDragComponent(content: """
+                {
+                    "view": "Text",
+                    "init": {
+                        "description": "Component 3",
+                        "content": "Component 3"
+                    }
+                }
+                """),
+             binding: .constant("")
+            )
+        ]),
         TextDragComponent(content: """
         {
             "view": "Text",

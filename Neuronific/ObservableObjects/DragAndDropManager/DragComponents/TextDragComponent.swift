@@ -7,21 +7,27 @@
 
 import SwiftUI
 import Combine
-import UniformTypeIdentifiers
 
 import Parsec
 
 
 final class TextDragComponent : AnyDragComponent
 {
+    var parser: JSONParser?
+    
+    override var description: String
+    {
+        return "Text"
+    }
+    
     @ViewBuilder
     override var view: AnyView
     {
         get
         {
-            let data = content.data(using: .utf8) ?? "{}".data(using: .utf8)!
-            
-            AnyView(Text(data: data))
+            AnyView(
+                Text(parser: parser ?? JSONParser.empty)
+            )
         }
         
         set { }

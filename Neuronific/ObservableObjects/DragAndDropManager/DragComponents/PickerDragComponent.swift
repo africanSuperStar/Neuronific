@@ -7,7 +7,6 @@
 
 import SwiftUI
 import Combine
-import UniformTypeIdentifiers
 
 import Parsec
 
@@ -15,6 +14,11 @@ import Parsec
 final class PickerDragComponent : AnyDragComponent
 {
     var binder: Binding <String> = .constant("")
+    
+    override var description: String
+    {
+        return "Picker"
+    }
     
     @ViewBuilder
     override var view: AnyView

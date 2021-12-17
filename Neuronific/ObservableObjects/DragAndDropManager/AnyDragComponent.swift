@@ -31,13 +31,23 @@ extension AnyDragComponent
         switch parser["view"].string
         {
         case "Text":
-            view = AnyView(Text(parser: parser))
+            view = TextDragComponent(
+                content: content,
+                binding: binding
+            )
+            .view
             
         case "Picker":
-            view = AnyView(Picker<Text, AnyHashable, ParserView>(parser: parser, binding))
+            view = PickerDragComponent(
+                content: content,
+                binding: binding
+            )
+            .view
     
         default:
-            view = AnyView(EmptyView())
+            view = AnyView(
+                EmptyView()
+            )
         }
     }
 }
@@ -91,7 +101,7 @@ class AnyDragComponent : NSObject, NSItemProviderWriting, NSItemProviderReading
     static func object(withItemProviderData data: Data, typeIdentifier: String) throws -> Self
     {
         guard let str = String(data: data, encoding: .utf8)
-            else
+        else
         {
             throw CocoaError(CocoaError.Code.fileReadInapplicableStringEncoding)
         }

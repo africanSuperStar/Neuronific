@@ -11,6 +11,8 @@ struct Theme
 {
     static let primary = Color(red: 0.3, green: 0.33, blue: 0.33)
     
+    static let transparentGray = Color(red: 0.85, green: 0.85, blue: 0.85, opacity: 0.35)
+    
     static let shadowRadius: CGFloat = 10.0
     static let cornerRadius: CGFloat = 10.0
     

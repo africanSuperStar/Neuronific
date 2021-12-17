@@ -20,55 +20,39 @@ struct ModifierButtons : View
     
     var body: some View
     {
-        ZStack
+        ScrollView(.vertical, showsIndicators: false)
         {
-            Color.white
-                .opacity(0.1)
-
-            HStack
+            LazyVGrid(columns: columns, spacing: 5)
             {
-                ScrollView(.vertical, showsIndicators: false)
+                ForEach(Modifier.modifiers, id: \.index)
                 {
-                    LazyVGrid(columns: columns, spacing: 5)
-                    {
-                        ForEach(Modifier.modifiers, id: \.index)
-                        {
-                            $0.view
-                                .frame(maxWidth: 15, maxHeight: .zero)
-                                .foregroundColor(Color.white)
-                                .padding()
-                                .background(
-                                    RoundedRectangle(
-                                        cornerRadius: Theme.cornerRadius
-                                    )
-                                    .fill(
-                                        Color.blue.opacity(0.6)
-                                    )
-                                )
-                                .overlay(
-                                    RoundedRectangle(
-                                        cornerRadius: Theme.cornerRadius
-                                    )
-                                    .stroke(
-                                        Color.blue,
-                                        lineWidth: 1
-                                    )
-                                )
-                        }
-                    }
-                    .padding()
+                    $0.view
+                        .frame(maxWidth: 15, maxHeight: .zero)
+                        .foregroundColor(Color.white)
+                        .padding()
+                        .background(
+                            RoundedRectangle(
+                                cornerRadius: Theme.cornerRadius
+                            )
+                            .fill(
+                                Color.blue.opacity(0.6)
+                            )
+                        )
+                        .overlay(
+                            RoundedRectangle(
+                                cornerRadius: Theme.cornerRadius
+                            )
+                            .stroke(
+                                Color.blue,
+                                lineWidth: 1
+                            )
+                        )
                 }
-                .frame(maxWidth: 300)
-                .padding(.horizontal)
-
-                Spacer()
             }
+            .padding()
         }
-        .frame(maxHeight: 200)
-        .cornerRadius(Theme.cornerRadius)
-        .padding(.horizontal, Theme.padding)
-        .padding(.bottom, Theme.padding)
-        .shadow(radius: 10)
+        .frame(maxWidth: 300)
+        .padding(.horizontal)
     }
 }
 

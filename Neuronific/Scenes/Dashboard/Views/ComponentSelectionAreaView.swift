@@ -52,14 +52,15 @@ struct SelectableComponentView : View
     
     var body: some View
     {
-        component.view
+        component
+            .view
             .padding(Theme.padding)
             .frame(minWidth: 130, alignment: .center)
             .foregroundColor(
                 isHovering ? .white : .black
             )
             .background(
-                isHovering ? Color.blue : Color.white
+                isHovering ? Color.blue : Theme.transparentGray
             )
             .overlay(
                 RoundedRectangle(cornerRadius: Theme.cornerRadius)
@@ -68,7 +69,7 @@ struct SelectableComponentView : View
                         lineWidth: 2
                     )
             )
-            .opacity(0.8)
+            .opacity(0.5)
             .cornerRadius(Theme.cornerRadius)
             .shadow(radius: Theme.shadowRadius)
             .onHover(perform:

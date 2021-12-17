@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-#if canImport(UIKit)
+#if canImport(NSKit)
 extension View
 {
     func hideKeyboard()
