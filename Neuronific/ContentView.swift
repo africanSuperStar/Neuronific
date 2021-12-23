@@ -38,10 +38,10 @@ struct ContentView : View
                         Spacer()
                     }
                     
-                    NetworkConfigurationDetailView()
+                    ContentConfigurationDetailView()
                 }
                 
-                NetworkConfigurationView()
+                ContentConfigurationView()
             }
         }
     }

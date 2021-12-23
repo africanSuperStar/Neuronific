@@ -19,7 +19,7 @@ extension AnyDragComponent
     convenience init(content: String, binding: Binding <AnyHashable>)
     {
         self.init(content: content)
-        
+
         guard let parser = try? JSONParser(data: content)
         else
         {
@@ -50,19 +50,31 @@ extension AnyDragComponent
             )
         }
     }
+    
+    convenience init(url: URL, binding: Binding <AnyHashable>)
+    {
+        if let _content = try? String(contentsOfFile: url.path, encoding: .utf8)
+        {
+            self.init(content: _content, binding: binding)
+            
+            return
+        }
+        
+        self.init(content: "{}")
+    }
 }
 
 class AnyDragComponent : NSObject, NSItemProviderWriting, NSItemProviderReading
 {
     let id = UUID().uuidString
     
-    let content: String
+    var content: String
     
     required init(content: String)
     {
         self.content = content
     }
-    
+
     @ViewBuilder
     var view: AnyView
     {
@@ -74,7 +86,7 @@ class AnyDragComponent : NSObject, NSItemProviderWriting, NSItemProviderReading
         set { }
     }
        
-    static var writableTypeIdentifiersForItemProvider: [String] { ["public.text"] }
+    static var writableTypeIdentifiersForItemProvider: [String] { ["public.json", "public.fileURL"] }
     
     func loadData(
         withTypeIdentifier typeIdentifier: String,
@@ -96,7 +108,7 @@ class AnyDragComponent : NSObject, NSItemProviderWriting, NSItemProviderReading
         return progress
     }
         
-    static var readableTypeIdentifiersForItemProvider: [String] { ["public.text"] }
+    static var readableTypeIdentifiersForItemProvider: [String] { ["public.json", "public.fileURL"] }
         
     static func object(withItemProviderData data: Data, typeIdentifier: String) throws -> Self
     {

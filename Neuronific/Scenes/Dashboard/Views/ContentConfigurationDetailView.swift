@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NetworkConfigurationDetailView : View
+struct ContentConfigurationDetailView : View
 {
     var body: some View
     {
@@ -22,10 +22,10 @@ struct NetworkConfigurationDetailView : View
     }
 }
 
-struct NetworkConfigurationDetailView_Previews : PreviewProvider
+struct ContentConfigurationDetailView_Previews : PreviewProvider
 {
     static var previews: some View
     {
-        NetworkConfigurationDetailView()
+        ContentConfigurationDetailView()
     }
 }

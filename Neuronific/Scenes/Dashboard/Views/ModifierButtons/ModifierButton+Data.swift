@@ -99,7 +99,6 @@ struct Modifier
     @BundleFile(name: "List", type: "json")
     static var listModifier: ModifiedButton
     
-    
     static var modifiers: [(view: ModifiedButton, index: Int)]
     {
         get

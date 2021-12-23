@@ -83,10 +83,6 @@ struct SelectableComponentView : View
                     content.text = component.content
                 }
             })
-            .onDrag
-            {
-                return NSItemProvider(object: AnyDragComponent(content: component.content))
-            }
     }
 }
 

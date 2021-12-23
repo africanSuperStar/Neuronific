@@ -26,7 +26,9 @@ struct ModifierButtons : View
             {
                 ForEach(Modifier.modifiers, id: \.index)
                 {
-                    $0.view
+                    modifier in
+                    
+                    modifier.view
                         .frame(maxWidth: 15, maxHeight: .zero)
                         .foregroundColor(Color.white)
                         .padding()

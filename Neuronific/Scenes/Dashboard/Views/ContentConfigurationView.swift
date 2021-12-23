@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import Parsec
 
-struct NetworkConfigurationView : View
+
+struct ContentConfigurationView : View
 {
-    @StateObject private var model = AnyDragModel.shared
+    @ObservedObject
+    private var model = AnyDragModel.shared
 
     let columns = [
         GridItem(.flexible(minimum: 130)),
@@ -32,10 +35,23 @@ struct NetworkConfigurationView : View
                         component in
                         
                         component.view
+                            .onDrag
+                            {
+                                model.currentDraggedComponent = component
+                            
+                                return NSItemProvider(object: component)
+                            }
+                            .onDrop(
+                                of:       [.json, .fileURL],
+                                delegate: AnyDropDelegate(
+                                    component:               component,
+                                    selectableComponents:    $model.selectableComponents,
+                                    currentDraggedComponent: $model.currentDraggedComponent
+                                )
+                            )
                     }
                 }
                 .padding(.horizontal)
-                .allowsTightening(false)
             }
         }
         .frame(maxHeight: 400)
@@ -46,10 +62,10 @@ struct NetworkConfigurationView : View
     }
 }
 
-struct NetworkConfigurationView_Previews : PreviewProvider
+struct ContentConfigurationView_Previews : PreviewProvider
 {
     static var previews : some View
     {
-        NetworkConfigurationView()
+        ContentConfigurationView()
     }
 }

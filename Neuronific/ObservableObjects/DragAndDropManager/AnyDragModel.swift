@@ -7,14 +7,18 @@
 
 import SwiftUI
 import Combine
+import Parsec
+
 
 class AnyDragModel : ObservableObject
 {
     public static let shared = AnyDragModel()
  
-    @Published var selectedTab = "tabs"
+    @Published
+    var currentDraggedComponent: AnyDragComponent? = nil
     
-    @Published var selectableComponents: [AnyDragComponent] = [
+    @Published
+    var selectableComponents: [AnyDragComponent] = [
         TreeDragComponent(bindings: [
             (component:
                 TextDragComponent(content: """
@@ -59,21 +63,6 @@ class AnyDragModel : ObservableObject
             "init": {
                 "description": "Neuronific Picker",
                 "content": "Hello World"
-            },
-            "font": {
-                "isCustom": null,
-                "isBold": true,
-                "isItalic": true,
-                "isMonospacedDigit": true,
-                "isSmallCaps": null,
-                "isLowercaseSmallCaps": null,
-                "isUppercaseSmallCaps": null,
-                "leading": {
-                    "init": {
-                        "leading": null
-                    }
-                }
-        
             }
         }
         """),
@@ -103,23 +92,11 @@ class AnyDragModel : ObservableObject
                 }]
             }
         }
-        """),
-        TextDragComponent(content: """
-        {
-            "view": "Button",
-            "init": {
-                "label": "Hello World",
-                "localizedStringKey": null,
-                "action": {},
-            },
-            "style": {
-                "default": true
-            }
-        }
         """)
     ]
     
-    @Published var selectedComponents: [AnyDragComponent] = [
+    @Published
+    var selectedComponents: [AnyDragComponent] = [
         PickerDragComponent(content: """
         {
             "view": "Picker",
