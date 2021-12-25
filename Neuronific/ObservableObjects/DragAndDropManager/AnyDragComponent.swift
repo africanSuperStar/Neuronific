@@ -14,79 +14,53 @@ import Parsec
 
 extension AnyDragComponent : Identifiable { }
 
-extension AnyDragComponent
+class AnyDragComponent : NSObject, NSItemProviderWriting, NSItemProviderReading
 {
-    convenience init(content: String, binding: Binding <AnyHashable>)
+    let id = UUID().uuidString
+    
+    var view: AnyView
     {
-        self.init(content: content)
-
         guard let parser = try? JSONParser(data: content)
         else
         {
-            view = AnyView(EmptyView())
-            
-            return
+            return AnyView(EmptyView())
         }
         
         switch parser["view"].string
         {
         case "Text":
-            view = TextDragComponent(
-                content: content,
-                binding: binding
+            return AnyView(
+                TextDragComponent(
+                    content: content,
+                    binding: binding
+                )?.body
             )
-            .view
             
         case "Picker":
-            view = PickerDragComponent(
-                content: content,
-                binding: binding
+            return AnyView(
+                PickerDragComponent(
+                    content: content,
+                    binding: binding
+                )?.body
             )
-            .view
     
         default:
-            view = AnyView(
+            return AnyView(
                 EmptyView()
             )
         }
-    }
-    
-    convenience init(url: URL, binding: Binding <AnyHashable>)
-    {
-        if let _content = try? String(contentsOfFile: url.path, encoding: .utf8)
-        {
-            self.init(content: _content, binding: binding)
-            
-            return
-        }
-        
-        self.init(content: "{}")
-    }
-}
 
-class AnyDragComponent : NSObject, NSItemProviderWriting, NSItemProviderReading
-{
-    let id = UUID().uuidString
+    }
     
     var content: String
+    var binding: Binding <AnyHashable> = .constant("")
     
     required init(content: String)
     {
         self.content = content
     }
 
-    @ViewBuilder
-    var view: AnyView
-    {
-        get
-        {
-            AnyView(EmptyView())
-        }
-        
-        set { }
-    }
-       
-    static var writableTypeIdentifiersForItemProvider: [String] { ["public.json", "public.fileURL"] }
+    static var writableTypeIdentifiersForItemProvider: [String] { ["network.thebonsai.neuronific.neuronificjson"] }
     
     func loadData(
         withTypeIdentifier typeIdentifier: String,
@@ -108,7 +82,7 @@ class AnyDragComponent : NSObject, NSItemProviderWriting, NSItemProviderReading
         return progress
     }
         
-    static var readableTypeIdentifiersForItemProvider: [String] { ["public.json", "public.fileURL"] }
+    static var readableTypeIdentifiersForItemProvider: [String] { ["network.thebonsai.neuronific.neuronificjson"] }
         
     static func object(withItemProviderData data: Data, typeIdentifier: String) throws -> Self
     {
@@ -122,3 +96,22 @@ class AnyDragComponent : NSObject, NSItemProviderWriting, NSItemProviderReading
     }
 }
 
+extension AnyDragComponent
+{
+    convenience init?(content: String, binding: Binding <AnyHashable>)
+    {
+        self.init(content: content)
+    }
+    
+    convenience init?(url: URL, binding: Binding <AnyHashable>)
+    {
+        if let _content = try? String(contentsOfFile: url.path, encoding: .utf8)
+        {
+            self.init(content: _content, binding: binding)
+            
+            return
+        }
+        
+        self.init(content: "{}")
+    }
+}

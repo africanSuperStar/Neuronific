@@ -11,13 +11,8 @@ import Parsec
 
 struct ContentConfigurationView : View
 {
-    @ObservedObject
-    private var model = AnyDragModel.shared
-
-    let columns = [
-        GridItem(.flexible(minimum: 130)),
-        GridItem(.flexible(minimum: 130))
-    ]
+    @EnvironmentObject
+    var model: AnyDragModel
     
     var body: some View
     {
@@ -26,33 +21,7 @@ struct ContentConfigurationView : View
             Color.white
                 .opacity(0.1)
 
-            ScrollView
-            {
-                LazyVGrid(columns: columns, spacing: 20)
-                {
-                    ForEach(model.selectableComponents, id: \.self)
-                    {
-                        component in
-                        
-                        component.view
-                            .onDrag
-                            {
-                                model.currentDraggedComponent = component
-                            
-                                return NSItemProvider(object: component)
-                            }
-                            .onDrop(
-                                of:       [.json, .fileURL],
-                                delegate: AnyDropDelegate(
-                                    component:               component,
-                                    selectableComponents:    $model.selectableComponents,
-                                    currentDraggedComponent: $model.currentDraggedComponent
-                                )
-                            )
-                    }
-                }
-                .padding(.horizontal)
-            }
+            FilePickerView()
         }
         .frame(maxHeight: 400)
         .cornerRadius(Theme.cornerRadius)

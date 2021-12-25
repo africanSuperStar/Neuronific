@@ -34,11 +34,14 @@ final class TreeDragComponent : AnyDragComponent
                     {
                         ForEach(bindings, id: \.component)
                         {
-                            Text($0.component.description)
+                            $0.component.view
                                 .foregroundColor(Color.white)
-                                .background(Theme.transparentGray)
                                 .padding(2)
                         }
+                        .padding(Theme.smallPadding)
+                        .background(Theme.transparentGray)
+                        .opacity(0.5)
+                        .cornerRadius(Theme.cornerRadius)
                     }
                 }
             )

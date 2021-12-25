@@ -6,40 +6,122 @@
 //
 
 import SwiftUI
+import UniformTypeIdentifiers
 import Parsec
 
+
+extension UTType
+{
+    public static var bonsai = UTType("network.thebonsai.neuronific.neuronificjson")!
+}
 
 struct AnyDropDelegate : DropDelegate
 {
     let component: AnyDragComponent
-    
-    @Binding
-    var selectableComponents: [AnyDragComponent]
 
-    @Binding
-    var currentDraggedComponent: AnyDragComponent?
+    let completionHandler: (AnyDragComponent) -> Void
+    
+    @EnvironmentObject
+    var model: AnyDragModel
     
     func validateDrop(info: DropInfo) -> Bool
     {
-        var handled = false
-
-        if info.hasItemsConforming(to: [.json, .fileURL])
+        if info.hasItemsConforming(to: [.bonsai, .fileURL])
         {
-            let itemProviders = info.itemProviders(for: [.json, .fileURL])
+            Swift.debugPrint("INFO: Item provider identifier for drop item: \(UTType.bonsai.identifier)")
+            
+            return true
+        }
+     
+        Swift.debugPrint("WARNING: No Item provider identifier for drop item: \(UTType.bonsai.identifier)")
+        
+        return false
+    }
+    
+    private func handleDropData(url: URL, handled: inout Bool) -> AnyDragComponent?
+    {
+        let bindingUUID = UUID().uuidString
+        
+        if let component = AnyDragComponent(url: url, binding: .constant(bindingUUID))
+        {
+            Swift.debugPrint("SUCCESS: Managed to validate drop of AnyDragComponent")
 
+            handled = true
+    
+            return component
+        }
+        else
+        {
+            Swift.debugPrint("ERROR: Failed to validate drop of AnyDragComponent")
+
+            handled = false
+            
+            return nil
+        }
+        
+    }
+    
+    func performDrop(info: DropInfo) -> Bool
+    {
+        var handled = false
+            
+        if info.hasItemsConforming(to: [.fileURL])
+        {
+            Swift.debugPrint("INFO: Item provider identifier for drop item \(info.itemProviders(for: [.fileURL]))")
+            
+            let itemProviders = info.itemProviders(for: [.fileURL])
+            
             for itemProvider in itemProviders
             {
-                if itemProvider.canLoadObject(ofClass: AnyDragComponent.self)
-                {
-                    Swift.debugPrint("SUCCESS: Managed to validate drop of AnyDragComponent")
-
-                    handled = true
+                itemProvider.loadItem(
+                    forTypeIdentifier: UTType.fileURL.identifier
+                ) {
+                    item, error in
+                    
+                    guard let data = item as? Data,
+                          let url  = URL(
+                        dataRepresentation: data,
+                        relativeTo: nil
+                    )
+                    else
+                    {
+                        return
+                    }
+                    
+                    if let component = handleDropData(url: url, handled: &handled)
+                    {
+                        completionHandler(component)
+                    }
                 }
-                else
-                {
-                    Swift.debugPrint("ERROR: Failed to validate drop of AnyDragComponent")
-
-                    handled = false
+            }
+        }
+        else if info.hasItemsConforming(to: [.bonsai])
+        {
+            Swift.debugPrint("INFO: Item provider identifier for drop item \(info.itemProviders(for: [.bonsai]))")
+            
+            let itemProviders = info.itemProviders(for: [.bonsai])
+            
+            for itemProvider in itemProviders
+            {
+                itemProvider.loadDataRepresentation(
+                    forTypeIdentifier: UTType.bonsai.identifier
+                ) {
+                    data, error in
+                    
+                    guard let data = data,
+                          let url  = URL(
+                        dataRepresentation: data,
+                        relativeTo: nil
+                    )
+                    else
+                    {
+                        return
+                    }
+                    
+                    if let component = handleDropData(url: url, handled: &handled)
+                    {
+                        completionHandler(component)
+                    }
                 }
             }
         }
@@ -47,33 +129,32 @@ struct AnyDropDelegate : DropDelegate
         return handled
     }
     
-    func performDrop(info: DropInfo) -> Bool
-    {
-        return true
-    }
-    
     func dropEntered(info: DropInfo)
     {
-        guard let draggedComponent = currentDraggedComponent
+        Swift.debugPrint("INFO: Drag component entered dropzone with info: \(info).")
+
+        guard let currentDraggedComponent = model.currentDraggedComponent
         else
         {
             return
         }
-
-        if draggedComponent != component
+        
+        if currentDraggedComponent != component
         {
-            guard let from = selectableComponents.firstIndex(of: draggedComponent),
-                  let to   = selectableComponents.firstIndex(of: component)
+            guard let from = model.modifiableComponents.firstIndex(of: currentDraggedComponent),
+                  let to   = model.modifiableComponents.firstIndex(of: component)
             else
             {
+                Swift.debugPrint("WARNING: Dragged Component not indexible.")
+                
                 return
             }
-        
+            
             withAnimation(.default)
             {
                 Swift.debugPrint("INFO: Moving component from: \(from), to: \(to).")
                 
-                self.selectableComponents.move(
+                model.modifiableComponents.move(
                     fromOffsets: IndexSet(integer: from),
                     toOffset:    to > from ? to + 1 : to
                 )

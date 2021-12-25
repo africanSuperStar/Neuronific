@@ -12,7 +12,11 @@ import Parsec
 
 struct ComponentSelectionAreaView : View
 {
-    @State private var searchText  = ""
+    @State
+    private var searchText  = ""
+    
+    @EnvironmentObject
+    private var model: AnyDragModel
     
     @ObservedObject var content: ContentDetail
 
@@ -27,18 +31,6 @@ struct ComponentSelectionAreaView : View
         {
             SearchTextField(searchText: $searchText)
                 .padding()
-
-            LazyVGrid(columns: columns, spacing: 20)
-            {
-                ForEach(AnyDragModel.shared.selectableComponents, id: \.self)
-                {
-                    component in
-                    
-                    SelectableComponentView(content: content, component: component)
-                }
-            }
-            .padding(.horizontal)
-            .allowsTightening(false)
         }
     }
 }
@@ -48,7 +40,8 @@ struct SelectableComponentView : View
     @State private var isHovering: Bool = false
     @ObservedObject var content:   ContentDetail
     
-    let component: AnyDragComponent
+    @Binding
+    var component: AnyDragComponent
     
     var body: some View
     {
@@ -91,6 +84,6 @@ struct ComponentSelectionAreaView_Previews : PreviewProvider
     static var previews: some View
     {
         ComponentSelectionAreaView(content: ContentDetail())
-            .environmentObject(AnyDragModel.shared)
+            .environmentObject(AnyDragModel())
     }
 }
