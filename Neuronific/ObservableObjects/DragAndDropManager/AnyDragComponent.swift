@@ -55,6 +55,16 @@ class AnyDragComponent : NSObject, NSItemProviderWriting, NSItemProviderReading
     var content: String
     var binding: Binding <AnyHashable> = .constant("")
     
+    var parser: JSONParser
+    {
+        if let _parser = try? JSONParser(data: content)
+        {
+            return _parser
+        }
+        
+        return try! JSONParser(data: "{}")
+    }
+    
     required init(content: String)
     {
         self.content = content

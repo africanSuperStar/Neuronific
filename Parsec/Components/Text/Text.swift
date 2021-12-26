@@ -32,10 +32,12 @@ extension Text
         self.init("")
         
         if  let string = String(data: data, encoding: .utf8),
-            let json   = try? JSONParser(data: string)
+            let parser = try? JSONParser(data: string)
         {
-            do { self = try parseText(json) } catch {  }
-            self = parseFont(json)
+            do {
+                self = try parseText(parser)
+            }
+            catch {  }
         }
     }
     
@@ -43,11 +45,13 @@ extension Text
     {
         self.init("")
         
-        do { self = try parseText(parser) } catch {  }
-        self = parseFont(parser)
+        do {
+            self = try parseText(parser)
+        }
+        catch {  }
     }
     
-    public func parseText(_ json: JSONParser) throws -> Self
+    public func parseText(_ json: JSONParser) throws -> Text
     {
         if let _view = json["view"].string,
         
@@ -97,12 +101,5 @@ extension Text
         }
         
         return Self("")
-    }
-
-    public func parseFont(_ json: JSONParser) -> Self
-    {
-        let _font = Font.parseJSON(json)
-        
-        return self.font(_font)
     }
 }

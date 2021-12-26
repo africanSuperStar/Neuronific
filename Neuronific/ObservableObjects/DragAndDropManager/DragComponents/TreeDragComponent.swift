@@ -37,6 +37,7 @@ final class TreeDragComponent : AnyDragComponent
                             $0.component.view
                                 .foregroundColor(Color.white)
                                 .padding(2)
+                                .parseModifiers($0.component.parser)
                         }
                         .padding(Theme.smallPadding)
                         .background(Theme.transparentGray)
