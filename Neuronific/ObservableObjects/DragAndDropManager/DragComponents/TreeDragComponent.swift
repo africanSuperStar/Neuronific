@@ -35,9 +35,7 @@ final class TreeDragComponent : AnyDragComponent
                         ForEach(bindings, id: \.component)
                         {
                             $0.component.view
-                                .foregroundColor(Color.white)
-                                .padding(2)
-                                .parseModifiers($0.component.parser)
+                                .modify($0.component.parser)
                         }
                         .padding(Theme.smallPadding)
                         .background(Theme.transparentGray)

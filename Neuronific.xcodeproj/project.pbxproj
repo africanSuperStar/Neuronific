@@ -75,6 +75,7 @@
 		A585EA9A2777A0D0006F5078 /* ParserViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EA992777A0D0006F5078 /* ParserViewList.swift */; };
 		A585EA9F2777A19E006F5078 /* ModifiedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EA9E2777A19E006F5078 /* ModifiedView.swift */; };
 		A585EAA12777AD1D006F5078 /* TypeErasedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EAA02777AD1D006F5078 /* TypeErasedView.swift */; };
+		A585EAA42778B762006F5078 /* Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EAA32778B762006F5078 /* Border.swift */; };
 		A5976DC327691EF800214A70 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5976DC227691EF800214A70 /* Keyboard.swift */; };
 		A5976DCE2769542400214A70 /* Button+Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5976DCD2769542400214A70 /* Button+Modifier.swift */; };
 		A5976DE2276A32C300214A70 /* Button+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5976DE1276A32C300214A70 /* Button+Image.swift */; };
@@ -219,6 +220,7 @@
 		A585EA992777A0D0006F5078 /* ParserViewList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserViewList.swift; sourceTree = "<group>"; };
 		A585EA9E2777A19E006F5078 /* ModifiedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiedView.swift; sourceTree = "<group>"; };
 		A585EAA02777AD1D006F5078 /* TypeErasedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeErasedView.swift; sourceTree = "<group>"; };
+		A585EAA32778B762006F5078 /* Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Border.swift; sourceTree = "<group>"; };
 		A5976DC227691EF800214A70 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		A5976DCD2769542400214A70 /* Button+Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Modifier.swift"; sourceTree = "<group>"; };
 		A5976DE1276A32C300214A70 /* Button+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Image.swift"; sourceTree = "<group>"; };
@@ -494,6 +496,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A585EAA22778B73D006F5078 /* Foreground+Elements */ = {
+			isa = PBXGroup;
+			children = (
+				A585EAA32778B762006F5078 /* Border.swift */,
+			);
+			path = "Foreground+Elements";
+			sourceTree = "<group>";
+		};
 		A5976DBF2769182300214A70 /* Colors+Patterns */ = {
 			isa = PBXGroup;
 			children = (
@@ -525,8 +535,9 @@
 			isa = PBXGroup;
 			children = (
 				A5C01CBE2767E438005CBAA8 /* ViewModifier+Error.swift */,
-				A5976DBF2769182300214A70 /* Colors+Patterns */,
 				A5C01CB92767DB9F005CBAA8 /* Accessibility */,
+				A5976DBF2769182300214A70 /* Colors+Patterns */,
+				A585EAA22778B73D006F5078 /* Foreground+Elements */,
 				A5C01CB72767C2DD005CBAA8 /* Font.swift */,
 			);
 			path = ViewModifier;
@@ -682,7 +693,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1310;
 				TargetAttributes = {
 					A544357B26395A0D007A9B31 = {
 						CreatedOnToolsVersion = 12.5;
@@ -816,6 +827,7 @@
 				A54435BD26397E7B007A9B31 /* Either.swift in Sources */,
 				A54435CF2639863D007A9B31 /* Permutation.swift in Sources */,
 				A54435C126398129007A9B31 /* SequenceAggregation.swift in Sources */,
+				A585EAA42778B762006F5078 /* Border.swift in Sources */,
 				A54435DB26398B7E007A9B31 /* CharacterSet.swift in Sources */,
 				A585EA9A2777A0D0006F5078 /* ParserViewList.swift in Sources */,
 				A5ACE65926746ADF00FCC855 /* Button+Label.swift in Sources */,
@@ -999,6 +1011,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Neuronific/Neuronific.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Neuronific/Preview Content\"";
@@ -1021,6 +1034,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Neuronific/Neuronific.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Neuronific/Preview Content\"";

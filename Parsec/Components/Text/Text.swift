@@ -10,7 +10,7 @@ import SwiftUI
 
 extension Text
 {
-    enum TextError: Error
+    public enum TextError: Error
     {
         case moreThanOneInitializer
     }

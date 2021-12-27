@@ -79,7 +79,7 @@ extension View
             
             if let _text = json["init"]["text"].array, !_text.isEmpty
             {
-                debugPrint("SWIFTUI: ViewModier -> AccessibilityInputLabels -> Text -> \(_text)")
+                debugPrint("SWIFTUI: ViewModifier -> AccessibilityInputLabels -> Text -> \(_text)")
                 
                 let _observed = _text.map({ Text($0.string ?? "") })
                 
@@ -88,7 +88,7 @@ extension View
             
             if let _key = json["init"]["localizedStringKey"].array, !_key.isEmpty
             {
-                debugPrint("SWIFTUI: ViewModier -> AccessibilityInputLabels -> LocalizedStringKey -> \(_key)")
+                debugPrint("SWIFTUI: ViewModifier -> AccessibilityInputLabels -> LocalizedStringKey -> \(_key)")
                 
                 let _observed = _key.map({ LocalizedString($0.string ?? "") })
                 
@@ -97,7 +97,7 @@ extension View
             
             if let _string = json["init"]["string"].array, !_string.isEmpty
             {
-                debugPrint("SWIFTUI: ViewModier -> AccessibilityLabel -> String -> \(_string)")
+                debugPrint("SWIFTUI: ViewModifier -> AccessibilityLabel -> String -> \(_string)")
                 
                 let _observed = _string.map({ $0.string ?? "" })
                 

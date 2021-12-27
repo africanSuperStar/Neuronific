@@ -57,30 +57,22 @@ extension View
     @discardableResult
     public func parseForegroundColor(_ json: JSONParser) -> some View
     {
-        if let _modifier = json["modifier"]["ForegroundColor"].array, _modifier.count == 1
+        debugPrint("SWIFTUI: ViewModifier -> ForegroundColor -> Color -> \(json)")
+            
+        if let _red   = json["red"].double,
+           let _green = json["green"].double,
+           let _blue  = json["blue"].double,
+           let _alpha = json["alpha"].double
         {
-            if let _color = _modifier.first
-            {
-                debugPrint("SWIFTUI: ViewModifier -> ForegroundColor -> Color -> \(_color)")
-                
-                if let _red   = _color["red"].double,
-                   let _green = _color["green"].double,
-                   let _blue  = _color["blue"].double,
-                   let _alpha = _color["alpha"].double
-                {
-                    debugPrint("SWIFTUI: ViewModier -> ForegroundColor -> Color -> RGBA -> red: \(_red), green: \(_green), blue: \(_blue), alpha: \(_alpha)")
-                    
-                    return self.foregroundColor(Color(red: _red, green: _green, blue: _blue, opacity: _alpha))
-                }
-
-                return self.foregroundColor(.clear)
-            }
+            debugPrint("SWIFTUI: ViewModifier -> ForegroundColor -> Color -> RGBA -> red: \(_red), green: \(_green), blue: \(_blue), alpha: \(_alpha)")
+            
+            return self.foregroundColor(Color(red: _red, green: _green, blue: _blue, opacity: _alpha))
         }
         else
         {
-            debugPrint("SWIFTUI: ForegroundColor -> init -> more than 1 initializer, \(ViewModifierError.moreThanOneInitializer)")
+            debugPrint("SWIFTUI: ForegroundColor -> init -> invalid file or more than 1 initializer, \(ViewModifierError.moreThanOneInitializer)")
+
+            return self.foregroundColor(.primary)
         }
-        
-        return self.foregroundColor(.clear)
     }
 }

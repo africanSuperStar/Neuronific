@@ -35,7 +35,7 @@ struct FilePickerView : View
                     .cornerRadius(Theme.cornerRadius)
                     .padding()
                     .onDrop(
-                        of:       [.bonsai, .fileURL], // MARK: Validated in the delegate
+                        of:       [.bonsai, .json, .fileURL], // MARK: Validated in the delegate
                         delegate: AnyDropDelegate(
                             component:         currentComponent,
                             completionHandler: appendModifiableContent,
@@ -63,7 +63,7 @@ struct FilePickerView : View
                                 return identifier
                             }
                             .onDrop(
-                                of:       [.bonsai, .fileURL], // MARK: Validated in the delegate
+                                of:       [.bonsai, .json, .fileURL], // MARK: Validated in the delegate
                                 delegate: AnyDropDelegate(
                                     component:         currentComponent,
                                     completionHandler: appendModifiableContent,
@@ -92,7 +92,7 @@ struct FilePickerView : View
                     dialog.showsHiddenFiles        = false;
                     dialog.allowsMultipleSelection = false;
                     dialog.canChooseDirectories    = false;
-                    dialog.allowedContentTypes     = [.bonsai];
+                    dialog.allowedContentTypes     = [.bonsai, .json];
                     
                     if (dialog.runModal() ==  NSApplication.ModalResponse.OK)
                     {
@@ -135,7 +135,10 @@ struct FilePickerView : View
     
     private func appendModifiableContent(component: AnyDragComponent)
     {
-        model.modifiableComponents.append(component)
+        DispatchQueue.main.async
+        {
+            model.modifiableComponents.append(component)                
+        }
         
         currentComponent = component
         

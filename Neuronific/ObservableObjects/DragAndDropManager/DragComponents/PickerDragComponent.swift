@@ -31,7 +31,7 @@ final class PickerDragComponent : AnyDragComponent
                 data: data,
                 binder
             )
-            .parseModifiers(parser)
+            .modify(parser)
         }
         
         set { }

@@ -8,7 +8,7 @@
 import Foundation
 
 
-enum ViewModifierError : Error
+public enum ViewModifierError : Error
 {
     case moreThanOneInitializer
     case failedToFindContentsOfURL

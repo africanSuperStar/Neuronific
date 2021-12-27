@@ -79,21 +79,21 @@ extension View
             
             if let _text = json["init"]["text"].string, !_text.isEmpty
             {
-                debugPrint("SWIFTUI: ViewModier -> AccessibilityLabel -> Text -> \(_text)")
+                debugPrint("SWIFTUI: ViewModifier -> AccessibilityLabel -> Text -> \(_text)")
                 
                 return self.accessibilityLabel(Text(_text))
             }
             
             if let _key = json["init"]["localizedStringKey"].string, !_key.isEmpty
             {
-                debugPrint("SWIFTUI: ViewModier -> AccessibilityLabel -> LocalizedStringKey -> \(_key)")
+                debugPrint("SWIFTUI: ViewModifier -> AccessibilityLabel -> LocalizedStringKey -> \(_key)")
                 
                 return self.accessibilityLabel(LocalizedString(_key))
             }
             
             if let _string = json["init"]["string"].string, !_string.isEmpty
             {
-                debugPrint("SWIFTUI: ViewModier -> AccessibilityLabel -> String -> \(_string)")
+                debugPrint("SWIFTUI: ViewModifier -> AccessibilityLabel -> String -> \(_string)")
                 
                 return self.accessibilityLabel(_string)
             }
