@@ -7,8 +7,16 @@
 
 import SwiftUI
 
-extension View
+
+public struct Border : JSONModifier, ViewModifier
 {
+    let json: JSONParser
+    
+    public func body(content: Content) -> some View
+    {
+        border(json, content: content)
+    }
+    
     /// Adds a border to this view with the specified style and width.
     ///
     /// Use `border(_:width:)` to draw a border of a specified width around the
@@ -39,42 +47,13 @@ extension View
     /// - Returns: A view that adds a border with the specified style and width
     ///   to this view.
     @ViewBuilder
-    public func border(_ json: JSONParser) -> some View
+    public func border(_ json: JSONParser, content: Content) -> some View
     {
-        self.parseBorder(json)
+        self.parse(json, content: content)
     }
     
     @discardableResult
-    public func border(_ url: URL) -> some View
-    {
-        guard let data = try? Data(contentsOf: url)
-        else
-        {
-            debugPrint("SWIFTUI: Failed to find Contents of URL, \(ViewModifierError.failedToFindContentsOfURL)")
-
-            return self.parseBorder("{}".data(using: .utf8)!)
-        }
-
-        return self.parseBorder(data)
-    }
-
-    @discardableResult
-    public func parseBorder(_ data: Data) -> some View
-    {
-        guard  let string = String(data: data, encoding: .utf8),
-               let json   = try? JSONParser(data: string)
-        else
-        {
-            debugPrint("SWIFTUI: Failed to parse Contents of Data, \(ViewModifierError.failedToParseContentOfData)")
-
-            return self.parseBorder(try! JSONParser(data: "{}"))
-        }
-
-        return self.parseBorder(json)
-    }
-
-    @discardableResult
-    public func parseBorder(_ json: JSONParser) -> some View
+    public func parse(_ json: JSONParser, content: Content) -> some View
     {
         debugPrint("SWIFTUI: ViewModifier -> Border -> \(json)")
         
@@ -93,12 +72,12 @@ extension View
                 opacity: _alpha
             )
             
-            return self.border(color, width: _width)
+            return content.border(color, width: _width)
         }
 
         debugPrint("SWIFTUI: Border -> init -> not valid or more than one initializer, \(ViewModifierError.moreThanOneInitializer)")
 
-        return self.border(.clear, width: 0.0)
+        return content.border(.clear, width: 0.0)
     }
     
 }

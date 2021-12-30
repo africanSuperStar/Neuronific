@@ -8,8 +8,15 @@
 import SwiftUI
 
 
-extension View
+public struct AccessibilityInputLabels : JSONModifier, ViewModifier
 {
+    let json: JSONParser
+    
+    public func body(content: Content) -> some View
+    {
+        accessibilityInputLabels(json, content: content)
+    }
+    
     /// Adds a label to the view that describes its contents.
     ///
     /// Use this method to provide an accessibility label for a view that doesn't display text, like an icon.
@@ -17,50 +24,13 @@ extension View
     /// Don't include text in the label that repeats information that users already have. For example,
     /// don't use the label "Play button" because a button already has a trait that identifies it as a button.
     @ViewBuilder
-    public func accessibilityInputLabels(_ json: JSONParser) -> some View
+    public func accessibilityInputLabels(_ json: JSONParser, content: Content) -> some View
     {
-        self.parseAccessibilityInputLabels(json)
+        self.parse(json, content: content)
     }
     
     @discardableResult
-    public func accessibilityInputLabels(_ url: URL) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
-    {
-        guard let data = try? Data(contentsOf: url)
-        else
-        {
-            debugPrint("SWIFTUI: Failed to find Contents of URL, \(ViewModifierError.failedToFindContentsOfURL)")
-            
-            return self.accessibilityInputLabels([""])
-        }
-    
-        return self.accessibilityInputLabels(data)
-    }
-    
-    @discardableResult
-    public func accessibilityInputLabels(_ data: Data) -> ModifiedContent<Self, AccessibilityAttachmentModifier>
-    {
-        guard  let string = String(data: data, encoding: .utf8),
-               let json   = try? JSONParser(data: string)
-        else
-        {
-            debugPrint("SWIFTUI: Failed to parse Contents of Data, \(ViewModifierError.failedToParseContentOfData)")
-            
-            return self.accessibilityInputLabels([""])
-        }
-
-        guard let accessibilityInputLabels = self.parseAccessibilityInputLabels(json) as? ModifiedContent<Self, AccessibilityAttachmentModifier>
-        else
-        {
-            debugPrint("SWIFTUI: Failed to cast Accessibility Input Labels, \(ViewModifierError.failedToCastModifiedContent)")
-            
-            return self.accessibilityInputLabels([""])
-        }
-        
-        return accessibilityInputLabels
-    }
-    
-    @discardableResult
-    public func parseAccessibilityInputLabels(_ json: JSONParser) -> some View
+    public func parse(_ json: JSONParser, content: Content) -> some View
     {
         if let _modifier = json["modifier"].string,
         
@@ -83,7 +53,7 @@ extension View
                 
                 let _observed = _text.map({ Text($0.string ?? "") })
                 
-                return self.accessibilityInputLabels(_observed)
+                return content.accessibilityInputLabels(_observed)
             }
             
             if let _key = json["init"]["localizedStringKey"].array, !_key.isEmpty
@@ -92,7 +62,7 @@ extension View
                 
                 let _observed = _key.map({ LocalizedString($0.string ?? "") })
                 
-                return self.accessibilityInputLabels(_observed)
+                return content.accessibilityInputLabels(_observed)
             }
             
             if let _string = json["init"]["string"].array, !_string.isEmpty
@@ -101,10 +71,10 @@ extension View
                 
                 let _observed = _string.map({ $0.string ?? "" })
                 
-                return self.accessibilityInputLabels(_observed)
+                return content.accessibilityInputLabels(_observed)
             }
         }
         
-        return self.accessibilityInputLabels([""])
+        return content.accessibilityInputLabels([""])
     }
 }

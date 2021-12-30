@@ -8,8 +8,15 @@
 import SwiftUI
 
 
-extension View
+public struct ForegroundColor : JSONModifier, ViewModifier
 {
+    let json: JSONParser
+    
+    public func body(content: Content) -> some View
+    {
+        foregroundColor(json, content: content)
+    }
+    
     /// Sets the color of the foreground elements displayed by this view.
     ///
     /// - Parameter color: The foreground color to use when displaying this
@@ -20,42 +27,13 @@ extension View
     ///
     /// - Returns: A view that uses the foreground color you supply.
     @ViewBuilder
-    public func foregroundColor(_ json: JSONParser) -> some View
+    public func foregroundColor(_ json: JSONParser, content: Content) -> some View
     {
-        self.parseForegroundColor(json)
+        self.parse(json, content: content)
     }
     
     @discardableResult
-    public func foregroundColor(_ url: URL) -> some View
-    {
-        guard let data = try? Data(contentsOf: url)
-        else
-        {
-            debugPrint("SWIFTUI: Failed to find Contents of URL, \(ViewModifierError.failedToFindContentsOfURL)")
-
-            return self.foregroundColor("{}".data(using: .utf8)!)
-        }
-
-        return self.foregroundColor(data)
-    }
-
-    @discardableResult
-    public func foregroundColor(_ data: Data) -> some View
-    {
-        guard  let string = String(data: data, encoding: .utf8),
-               let json   = try? JSONParser(data: string)
-        else
-        {
-            debugPrint("SWIFTUI: Failed to parse Contents of Data, \(ViewModifierError.failedToParseContentOfData)")
-
-            return self.parseForegroundColor(try! JSONParser(data: "{}"))
-        }
-
-        return self.parseForegroundColor(json)
-    }
-
-    @discardableResult
-    public func parseForegroundColor(_ json: JSONParser) -> some View
+    public func parse(_ json: JSONParser, content: Content) -> some View
     {
         debugPrint("SWIFTUI: ViewModifier -> ForegroundColor -> Color -> \(json)")
             
@@ -66,13 +44,13 @@ extension View
         {
             debugPrint("SWIFTUI: ViewModifier -> ForegroundColor -> Color -> RGBA -> red: \(_red), green: \(_green), blue: \(_blue), alpha: \(_alpha)")
             
-            return self.foregroundColor(Color(red: _red, green: _green, blue: _blue, opacity: _alpha))
+            return content.foregroundColor(Color(red: _red, green: _green, blue: _blue, opacity: _alpha))
         }
         else
         {
             debugPrint("SWIFTUI: ForegroundColor -> init -> invalid file or more than 1 initializer, \(ViewModifierError.moreThanOneInitializer)")
 
-            return self.foregroundColor(.primary)
+            return content.foregroundColor(.primary)
         }
     }
 }
