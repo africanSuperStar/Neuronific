@@ -25,8 +25,7 @@ final class TextDragComponent : AnyDragComponent
         {
             let data = content.data(using: .utf8) ?? "{}".data(using: .utf8)!
             
-            Text(data: data)
-                .modify(parser)
+            try? Text(data: data).modify(parser)
         }
         
         set { }

@@ -8,58 +8,16 @@
 import SwiftUI
 
 
+extension Picker : ParsedView { }
+
 extension Picker
 {
-    enum Error: Swift.Error
+    public static func parse(_ json: JSONParser) throws -> Picker <Label, SelectionValue, Content>
     {
-        case moreThanOneInitializer
-        case failedToInstantiatePicker
+        throw ViewError.failedToInitializeView
     }
     
-    public init?(url: URL, _ binding: Binding <SelectionValue>)
-    where
-    Label == Text
-    {
-        if let data = try? Data(contentsOf: url)
-        {
-            self.init(data: data, binding)
-        }
-        else
-        {
-            self.init(data: nil, binding)
-        }
-    }
-    
-    public init?(data: Data?, _ binding: Binding <SelectionValue>)
-    where
-    Label == Text
-    {
-        self.init("", selection: binding)
-        {
-            ParserView(parsers: []) as! Content
-        }
-        
-        if  let string = String(data: data ?? Data(), encoding: .utf8),
-            let json   = try? JSONParser(data: string)
-        {
-            do { self = try parsePicker(json, binding) } catch {  }
-        }
-    }
-    
-    public init?(parser: JSONParser, _ binding: Binding <SelectionValue>)
-    where
-    Label == Text
-    {
-        self.init("", selection: binding)
-        {
-            ParserView(parsers: []) as! Content
-        }
-        
-        do { self = try parsePicker(parser, binding) } catch {  }
-    }
-    
-    @discardableResult
-    public func parsePicker(_ json: JSONParser, _ binding: Binding <SelectionValue>) throws -> Self
+    public func parse(_ json: JSONParser, _ binding: Binding <SelectionValue>) throws -> Self
     where
     Label == Text
     {
@@ -75,11 +33,11 @@ extension Picker
                 
                 return Self(_title, selection: binding)
                 {
-                    ParserView(parsers: _content) as! Content
+                    ParserViewList(parsers: _content) as! Content
                 }
             }
         }
         
-        throw Error.failedToInstantiatePicker
+        throw ViewError.failedToInitializeView
     }
 }

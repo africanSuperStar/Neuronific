@@ -8,6 +8,12 @@
 import Foundation
 
 
+public enum ViewError: Error
+{
+    case moreThanOneInitializer
+    case failedToInitializeView
+}
+
 public enum ViewModifierError : Error
 {
     case moreThanOneInitializer

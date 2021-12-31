@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-public struct ParserView : View
+public struct ParserViewList : View
 {
     public var parsers: [JSONParser]
     
@@ -23,15 +23,8 @@ public struct ParserView : View
     }
     
     @ViewBuilder
-    func buildView(parser: JSONParser) -> some View
+    public func buildView(parser: JSONParser) -> some View
     {
-        switch parser["view"].string
-        {
-        case "Text":
-            Text(parser: parser)
-    
-        default:
-            EmptyView()
-        }
+        Label<Text, Image>(parser: parser)
     }
 }

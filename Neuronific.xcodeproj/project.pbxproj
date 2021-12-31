@@ -74,9 +74,11 @@
 		A585EA9827778E8A006F5078 /* ForegroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EA9727778E8A006F5078 /* ForegroundColor.swift */; };
 		A585EA9A2777A0D0006F5078 /* ParserViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EA992777A0D0006F5078 /* ParserViewList.swift */; };
 		A585EA9F2777A19E006F5078 /* ModifiedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EA9E2777A19E006F5078 /* ModifiedView.swift */; };
-		A585EAA12777AD1D006F5078 /* TypeErasedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EAA02777AD1D006F5078 /* TypeErasedView.swift */; };
 		A585EAA42778B762006F5078 /* Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EAA32778B762006F5078 /* Border.swift */; };
 		A585EAA7277A546B006F5078 /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EAA6277A546B006F5078 /* Padding.swift */; };
+		A585EAAA277E4D5F006F5078 /* HStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EAA9277E4D5F006F5078 /* HStack.swift */; };
+		A585EAAC277E4DBA006F5078 /* ParsedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EAAB277E4DBA006F5078 /* ParsedView.swift */; };
+		A585EAAE277E5477006F5078 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EAAD277E5477006F5078 /* Button.swift */; };
 		A5976DC327691EF800214A70 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5976DC227691EF800214A70 /* Keyboard.swift */; };
 		A5976DCE2769542400214A70 /* Button+Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5976DCD2769542400214A70 /* Button+Modifier.swift */; };
 		A5976DE2276A32C300214A70 /* Button+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5976DE1276A32C300214A70 /* Button+Image.swift */; };
@@ -220,9 +222,11 @@
 		A585EA9727778E8A006F5078 /* ForegroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForegroundColor.swift; sourceTree = "<group>"; };
 		A585EA992777A0D0006F5078 /* ParserViewList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserViewList.swift; sourceTree = "<group>"; };
 		A585EA9E2777A19E006F5078 /* ModifiedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiedView.swift; sourceTree = "<group>"; };
-		A585EAA02777AD1D006F5078 /* TypeErasedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeErasedView.swift; sourceTree = "<group>"; };
 		A585EAA32778B762006F5078 /* Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Border.swift; sourceTree = "<group>"; };
 		A585EAA6277A546B006F5078 /* Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Padding.swift; sourceTree = "<group>"; };
+		A585EAA9277E4D5F006F5078 /* HStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HStack.swift; sourceTree = "<group>"; };
+		A585EAAB277E4DBA006F5078 /* ParsedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsedView.swift; sourceTree = "<group>"; };
+		A585EAAD277E5477006F5078 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		A5976DC227691EF800214A70 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		A5976DCD2769542400214A70 /* Button+Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Modifier.swift"; sourceTree = "<group>"; };
 		A5976DE1276A32C300214A70 /* Button+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Image.swift"; sourceTree = "<group>"; };
@@ -477,6 +481,7 @@
 		A558260F263CFE5D00116DD2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A585EAA8277E4D4E006F5078 /* Layout */,
 				A585EA9D2777A18D006F5078 /* View */,
 				A5C01CCD2768E029005CBAA8 /* Text */,
 				A5C01CCE2768E033005CBAA8 /* Buttons */,
@@ -493,7 +498,7 @@
 			isa = PBXGroup;
 			children = (
 				A585EA9E2777A19E006F5078 /* ModifiedView.swift */,
-				A585EAA02777AD1D006F5078 /* TypeErasedView.swift */,
+				A585EAAB277E4DBA006F5078 /* ParsedView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -512,6 +517,14 @@
 				A585EAA6277A546B006F5078 /* Padding.swift */,
 			);
 			path = Padding;
+			sourceTree = "<group>";
+		};
+		A585EAA8277E4D4E006F5078 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				A585EAA9277E4D5F006F5078 /* HStack.swift */,
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 		A5976DBF2769182300214A70 /* Colors+Patterns */ = {
@@ -590,6 +603,7 @@
 		A5C01CCE2768E033005CBAA8 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				A585EAAD277E5477006F5078 /* Button.swift */,
 				A5ACE65826746ADF00FCC855 /* Button+Label.swift */,
 				A5976DE1276A32C300214A70 /* Button+Image.swift */,
 				A5976DCD2769542400214A70 /* Button+Modifier.swift */,
@@ -820,6 +834,7 @@
 				A54435C3263981B5007A9B31 /* SequenceConversion.swift in Sources */,
 				A585EA9F2777A19E006F5078 /* ModifiedView.swift in Sources */,
 				A54435CB26398394007A9B31 /* LanguageDefinition.swift in Sources */,
+				A585EAAA277E4D5F006F5078 /* HStack.swift in Sources */,
 				A54435C726398222007A9B31 /* String.swift in Sources */,
 				A54435B526395E97007A9B31 /* GenericParser.swift in Sources */,
 				A54435BB26396217007A9B31 /* Configuration.swift in Sources */,
@@ -851,13 +866,14 @@
 				A54435D92639891F007A9B31 /* CharacterParsers.swift in Sources */,
 				A54435B326395CE2007A9B31 /* Parsec.swift in Sources */,
 				A5C01CBF2767E438005CBAA8 /* ViewModifier+Error.swift in Sources */,
+				A585EAAE277E5477006F5078 /* Button.swift in Sources */,
 				A54435C9263982DE007A9B31 /* TokenParser.swift in Sources */,
 				A54435D726398814007A9B31 /* CharacterMembership.swift in Sources */,
 				A54435D126398761007A9B31 /* UInt16.swift in Sources */,
 				A5976DCE2769542400214A70 /* Button+Modifier.swift in Sources */,
 				A54435BF2639809F007A9B31 /* RangeReplaceableCollectionInsertion.swift in Sources */,
-				A585EAA12777AD1D006F5078 /* TypeErasedView.swift in Sources */,
 				A585EA9827778E8A006F5078 /* ForegroundColor.swift in Sources */,
+				A585EAAC277E4DBA006F5078 /* ParsedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

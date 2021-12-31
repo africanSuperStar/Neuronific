@@ -25,13 +25,13 @@ final class PickerDragComponent : AnyDragComponent
     {
         get
         {
-            let data = content.data(using: .utf8) ?? "{}".data(using: .utf8)!
+//            let data = content.data(using: .utf8) ?? "{}".data(using: .utf8)!
             
-            Picker<Text, String, ParserView>(
-                data: data,
-                binder
-            )
-            .modify(parser)
+            EmptyView()
+//            Picker<Text, String, ParserView>(
+//                parser
+//            )
+//            .modify(parser)
         }
         
         set { }

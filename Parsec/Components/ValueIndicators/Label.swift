@@ -8,53 +8,16 @@
 import SwiftUI
 
 
+extension Label : ParsedView { }
+
 extension Label
 {
-    enum LabelError: Error
+    public static func parse(_ json: JSONParser) throws -> Label<Title, Icon>
     {
-        case moreThanOneInitializer
+        throw ViewError.failedToInitializeView
     }
     
-    public init?(url: URL)
-    where
-    Title == Text,
-    Icon == Image
-    {
-        if let data = try? Data(contentsOf: url)
-        {
-            self.init(data: data)
-        }
-        else
-        {
-            self.init("", image: "")
-        }
-    }
-    
-    public init?(data: Data)
-    where
-    Title == Text,
-    Icon == Image
-    {
-        self.init("", image: "")
-
-        if  let string = String(data: data, encoding: .utf8),
-            let json   = try? JSONParser(data: string)
-        {
-            do { self = try parseLabel(json) } catch {  }
-        }
-    }
-    
-    public init?(parser: JSONParser)
-    where
-    Title == Text,
-    Icon == Image
-    {
-        self.init("", image: "")
-
-        do { self = try parseLabel(parser) } catch {  }
-    }
-    
-    public func parseLabel(_ json: JSONParser) throws -> Self
+    public func parse(_ json: JSONParser) throws -> Self
     where
     Title == Text,
     Icon == Image
@@ -73,6 +36,6 @@ extension Label
             }
         }
         
-        return Self("", image: "")
+        throw ViewError.failedToInitializeView
     }
 }

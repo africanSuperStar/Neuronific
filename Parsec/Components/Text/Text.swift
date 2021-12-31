@@ -8,50 +8,11 @@
 import SwiftUI
 
 
+extension Text : ParsedView { }
+
 extension Text
 {
-    public enum TextError: Error
-    {
-        case moreThanOneInitializer
-    }
-    
-    public init?(url: URL)
-    {
-        if let data = try? Data(contentsOf: url)
-        {
-            self.init(data: data)
-        }
-        else
-        {
-            self.init("")
-        }
-    }
-    
-    public init?(data: Data)
-    {
-        self.init("")
-        
-        if  let string = String(data: data, encoding: .utf8),
-            let parser = try? JSONParser(data: string)
-        {
-            do {
-                self = try parseText(parser)
-            }
-            catch {  }
-        }
-    }
-    
-    public init?(parser: JSONParser)
-    {
-        self.init("")
-        
-        do {
-            self = try parseText(parser)
-        }
-        catch {  }
-    }
-    
-    public func parseText(_ json: JSONParser) throws -> Text
+    public static func parse(_ json: JSONParser) throws -> Self
     {
         if let _view = json["view"].string,
         
@@ -68,7 +29,7 @@ extension Text
             {
                 print("SWIFTUI: Text -> init -> more than 1 initializer")
                 
-                throw Text.TextError.moreThanOneInitializer
+                throw ViewError.moreThanOneInitializer
             }
             
             if let _content = json["init"]["content"].string, !_content.isEmpty
@@ -100,6 +61,6 @@ extension Text
             }
         }
         
-        return Self("")
+        throw ViewError.failedToInitializeView
     }
 }
