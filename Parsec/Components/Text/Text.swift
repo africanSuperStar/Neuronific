@@ -8,11 +8,14 @@
 import SwiftUI
 
 
-extension Text : ParsedView { }
+extension Text : ParsedView
+{
+    public typealias Content = Self
+}
 
 extension Text
 {
-    public static func parse(_ json: JSONParser) throws -> Self
+    public static func parse(_ json: JSONParser) throws -> Content
     {
         if let _view = json["view"].string,
         

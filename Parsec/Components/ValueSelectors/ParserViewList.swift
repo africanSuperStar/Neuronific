@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-public struct ParserViewList : View
+public struct PickerViewList : View
 {
     public var parsers: [JSONParser]
     
@@ -25,6 +25,6 @@ public struct ParserViewList : View
     @ViewBuilder
     public func buildView(parser: JSONParser) -> some View
     {
-        Label<Text, Image>(parser: parser)
+        Label <Text, Image> (parser: parser)
     }
 }

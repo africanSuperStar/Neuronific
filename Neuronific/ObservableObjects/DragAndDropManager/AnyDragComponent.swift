@@ -14,62 +14,20 @@ import Parsec
 
 extension AnyDragComponent : Identifiable { }
 
-class AnyDragComponent : NSObject, NSItemProviderWriting, NSItemProviderReading
+class AnyDragComponent : NSObject, AnyDragProtocol, NSItemProviderWriting, NSItemProviderReading
 {
-    let id = UUID().uuidString
+    var content: String = "{}"
+    var binding: Binding<AnyHashable> = .constant("{}")
     
     var view: AnyView
     {
-        guard let parser = try? JSONParser(data: content)
-        else
-        {
-            return AnyView(EmptyView())
-        }
-        
-        switch parser["view"].string
-        {
-        case "Text":
-            return AnyView(
-                TextDragComponent(
-                    content: content,
-                    binding: binding
-                )?.body
-            )
-            
-        case "Picker":
-            return AnyView(
-                PickerDragComponent(
-                    content: content,
-                    binding: binding
-                )?.body
-            )
-    
-        default:
-            return AnyView(
-                EmptyView()
-            )
-        }
-
+        return Self(
+            content: content,
+            binding: binding
+        )
+        .body()
     }
     
-    var content: String
-    var binding: Binding <AnyHashable> = .constant("")
-    
-    var parser: JSONParser
-    {
-        if let _parser = try? JSONParser(data: content)
-        {
-            return _parser
-        }
-        
-        return try! JSONParser(data: "{}")
-    }
-    
-    required init(content: String)
-    {
-        self.content = content
-    }
-
     static var writableTypeIdentifiersForItemProvider: [String] { ["network.thebonsai.neuronific.neuronificjson"] }
     
     func loadData(
@@ -82,9 +40,11 @@ class AnyDragComponent : NSObject, NSItemProviderWriting, NSItemProviderReading
         
         DispatchQueue.global(qos: .userInitiated).async
         {
+            [weak self] in guard let this = self else { return }
+            
             progress.completedUnitCount = 1
         
-            let data = self.content.data(using: .utf8)
+            let data = this.content.data(using: .utf8)
             
             completionHandler(data, nil)
         }
@@ -103,25 +63,5 @@ class AnyDragComponent : NSObject, NSItemProviderWriting, NSItemProviderReading
         }
         
         return Self(content: str)
-    }
-}
-
-extension AnyDragComponent
-{
-    convenience init?(content: String, binding: Binding <AnyHashable>)
-    {
-        self.init(content: content)
-    }
-    
-    convenience init?(url: URL, binding: Binding <AnyHashable>)
-    {
-        if let _content = try? String(contentsOfFile: url.path, encoding: .utf8)
-        {
-            self.init(content: _content, binding: binding)
-            
-            return
-        }
-        
-        self.init(content: "{}")
     }
 }

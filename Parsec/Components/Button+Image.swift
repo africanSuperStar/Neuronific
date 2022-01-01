@@ -10,7 +10,7 @@ import SwiftUI
 
 extension Button
 {
-    public func parse(_ json: JSONParser) throws -> Self
+    public static func parse(_ json: JSONParser) throws -> Self
     where
     Label == SwiftUI.Image
     {

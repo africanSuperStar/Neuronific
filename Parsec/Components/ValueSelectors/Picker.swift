@@ -8,11 +8,14 @@
 import SwiftUI
 
 
-extension Picker : ParsedView { }
+extension Picker : ParsedView
+{
+    public typealias Content = Self
+}
 
 extension Picker
 {
-    public static func parse(_ json: JSONParser) throws -> Picker <Label, SelectionValue, Content>
+    public static func parse <Content> (_ json: JSONParser) throws -> Content
     {
         throw ViewError.failedToInitializeView
     }
@@ -33,7 +36,7 @@ extension Picker
                 
                 return Self(_title, selection: binding)
                 {
-                    ParserViewList(parsers: _content) as! Content
+                    PickerViewList(parsers: _content) as! Content
                 }
             }
         }

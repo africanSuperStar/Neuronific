@@ -8,11 +8,13 @@
 import SwiftUI
 
 
-public protocol ParsedView : View
+public protocol ParsedView
 {
     init?(url: URL) throws
     init?(data: Data) throws
     init?(parser: JSONParser)
+    
+    associatedtype Content: View
     
     static func parse(_ json: JSONParser) throws -> Self
 }
