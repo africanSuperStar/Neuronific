@@ -12,6 +12,8 @@ struct FilePickerView : View
     @State private var filename        = ""
     @State private var showFileChooser = false
     
+    @State private var hovered = false
+    
     @EnvironmentObject
     var model: AnyDragModel
     
@@ -19,8 +21,7 @@ struct FilePickerView : View
     private var currentComponent = AnyDragComponent(content: "{}")
     
     let columns = [
-        GridItem(.flexible(minimum: 130)),
-        GridItem(.flexible(minimum: 130))
+        GridItem(.adaptive(minimum: 150), alignment: .top)
     ]
     
     var body: some View
@@ -31,7 +32,7 @@ struct FilePickerView : View
             {
                 Text("Drop Bonsai files here...")
                     .frame(maxWidth: .infinity, minHeight: 200)
-                    .background(Theme.transparentGray)
+                    .background(Theme.darkGray)
                     .cornerRadius(Theme.cornerRadius)
                     .padding()
                     .onDrop(
@@ -51,34 +52,58 @@ struct FilePickerView : View
                     {
                         component in
                         
-                        component.view
-                            .onDrag
-                            {
-                                model.currentDraggedComponent = component
-                                
-                                let identifier = NSItemProvider(object: component)
-                                
-                                Swift.debugPrint("INFO: UTType Identifier for component \(identifier.registeredTypeIdentifiers)")
-                                
-                                return identifier
-                            }
-                            .onDrop(
-                                of:       [.bonsai, .json, .fileURL], // MARK: Validated in the delegate
-                                delegate: AnyDropDelegate(
-                                    component:         currentComponent,
-                                    completionHandler: appendModifiableContent,
-                                    model:             _model
+                        VStack(spacing: .zero)
+                        {
+                            Text(component.title)
+                                .frame(maxWidth: .infinity)
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .background(Theme.primary)
+                        
+                            component.view
+                                .padding(Theme.smallPadding)
+                        }
+                        .cornerRadius(Theme.cornerRadius)
+                        .background(
+                            RoundedRectangle(cornerRadius: Theme.cornerRadius)
+                                .fill(
+                                    currentComponent == component && hovered
+                                    ? Theme.transparentWhite
+                                    : Theme.darkGray
                                 )
-                            )
+                        )
+                        .onDrag
+                        {
+                            model.currentDraggedComponent = component
+                            
+                            let identifier = NSItemProvider(object: component)
+                            
+                            Swift.debugPrint("INFO: UTType Identifier for component \(identifier.registeredTypeIdentifiers)")
+                            
+                            return identifier
+                        }
+                        .onHover
+                        {
+                            hovered in
+                            
+                            self.hovered     = hovered
+                            currentComponent = component
+                        }
                     }
-                    .padding(Theme.smallPadding)
-                    .background(Theme.transparentGray)
-                    .cornerRadius(Theme.cornerRadius)
                 }
                 .padding()
-                .frame(maxWidth: .infinity, minHeight: 200)
+                .background(Theme.darkGray)
+                .frame(maxWidth: .infinity, minHeight: .zero)
+                .onDrop(
+                    of:       [.bonsai, .json, .fileURL], // MARK: Validated in the delegate
+                    delegate: AnyDropDelegate(
+                        component:         currentComponent,
+                        completionHandler: appendModifiableContent,
+                        model:             _model
+                    )
+                )
             }
-        
+
             HStack
             {
                 Spacer()

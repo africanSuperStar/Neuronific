@@ -9,7 +9,14 @@ import SwiftUI
 
 struct Theme
 {
-    static let primary = Color(red: 0.3, green: 0.33, blue: 0.33)
+    static let primary   = Color(red: 0.07, green: 0.45, blue: 0.87)
+    static let secondary = Color(red: 50 / 255, green: 168 / 255, blue: 82 / 255)
+    
+    static let transparentWhite = Color(red: 1.0, green: 1.0, blue: 1.0, opacity: 0.3)
+    
+    static let lightGray = Color(red: 0.55, green: 0.55, blue: 0.55)
+    static let gray      = Color(red: 0.45, green: 0.45, blue: 0.45)
+    static let darkGray  = Color(red: 0.35, green: 0.35, blue: 0.35)
     
     static let transparentGray = Color(red: 0.85, green: 0.85, blue: 0.85, opacity: 0.35)
     

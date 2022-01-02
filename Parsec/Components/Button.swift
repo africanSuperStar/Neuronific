@@ -12,7 +12,7 @@ extension Button : ParsedView
 {
     public typealias Content = Self
     
-    public static func parse <Content> (_ json: JSONParser) throws -> Content
+    public static func parse(_ json: JSONParser) throws -> Self
     {
         throw ViewError.failedToInitializeView
     }

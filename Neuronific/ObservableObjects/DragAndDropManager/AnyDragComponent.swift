@@ -16,7 +16,10 @@ extension AnyDragComponent : Identifiable { }
 
 class AnyDragComponent : NSObject, AnyDragProtocol, NSItemProviderWriting, NSItemProviderReading
 {
-    var content: String = "{}"
+    @Published
+    var hovered: Bool = false
+
+    var content: String               = "{}"    
     var binding: Binding<AnyHashable> = .constant("{}")
     
     var view: AnyView
@@ -26,6 +29,11 @@ class AnyDragComponent : NSObject, AnyDragProtocol, NSItemProviderWriting, NSIte
             binding: binding
         )
         .body()
+    }
+    
+    var title: String
+    {
+        return parser["view"].string ?? ""
     }
     
     static var writableTypeIdentifiersForItemProvider: [String] { ["network.thebonsai.neuronific.neuronificjson"] }

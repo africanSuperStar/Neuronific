@@ -128,37 +128,4 @@ struct AnyDropDelegate : DropDelegate
 
         return handled
     }
-    
-    func dropEntered(info: DropInfo)
-    {
-        Swift.debugPrint("INFO: Drag component entered dropzone with info: \(info).")
-
-        guard let currentDraggedComponent = model.currentDraggedComponent
-        else
-        {
-            return
-        }
-        
-        if currentDraggedComponent != component
-        {
-            guard let from = model.modifiableComponents.firstIndex(of: currentDraggedComponent),
-                  let to   = model.modifiableComponents.firstIndex(of: component)
-            else
-            {
-                Swift.debugPrint("WARNING: Dragged Component not indexible.")
-                
-                return
-            }
-            
-            withAnimation(.default)
-            {
-                Swift.debugPrint("INFO: Moving component from: \(from), to: \(to).")
-                
-                model.modifiableComponents.move(
-                    fromOffsets: IndexSet(integer: from),
-                    toOffset:    to > from ? to + 1 : to
-                )
-            }
-        }
-    }
 }
