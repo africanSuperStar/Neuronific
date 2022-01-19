@@ -22,13 +22,19 @@ class AnyDragComponent : NSObject, AnyDragProtocol, NSItemProviderWriting, NSIte
     var content: String               = "{}"    
     var binding: Binding<AnyHashable> = .constant("{}")
     
+    let id: String = UUID().uuidString
+    
     var view: AnyView
     {
-        return Self(
-            content: content,
-            binding: binding
-        )
-        .body()
+        get {
+            return Self(
+                content: content,
+                binding: binding
+            )
+                .body()
+        }
+        
+        set { }
     }
     
     var title: String

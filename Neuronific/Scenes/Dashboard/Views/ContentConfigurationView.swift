@@ -23,7 +23,7 @@ struct ContentConfigurationView : View
 
             FilePickerView()
         }
-        .frame(maxHeight: 400)
+        .frame(maxHeight: 280)
         .cornerRadius(Theme.cornerRadius)
         .padding(.horizontal, Theme.padding)
         .padding(.bottom, Theme.padding)

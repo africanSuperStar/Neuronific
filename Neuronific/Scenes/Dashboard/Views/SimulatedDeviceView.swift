@@ -14,22 +14,26 @@ struct SimulatedDeviceView : View
     @EnvironmentObject
     private var model: AnyDragModel
     
-    let width:  CGFloat = 350
-    let height: CGFloat = 350 / 9 * 19.5
+    let width:  CGFloat = 390
+    let height: CGFloat = 844
     
     var body: some View
     {
-        VStack(alignment: .center)
+        ScrollView
         {
-            ForEach(model.modifiableComponents, id: \.self)
+            LazyVStack(alignment: .center)
             {
-                component in
-                
-                component.view
+                ForEach(model.modifiableComponents, id: \.self)
+                {
+                    component in
+                    
+                    component.view
+                }
             }
         }
         .padding()
-        .frame(maxWidth: width, maxHeight: height, alignment: .center)
+        .aspectRatio(width / height, contentMode: .fit)
+        .scaledToFit()
         .overlay(
             RoundedRectangle(cornerRadius: Theme.cornerRadius)
                 .stroke(Color.white, lineWidth: 2)

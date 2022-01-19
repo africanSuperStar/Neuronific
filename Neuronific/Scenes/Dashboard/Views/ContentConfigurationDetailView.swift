@@ -11,14 +11,55 @@ struct ContentConfigurationDetailView : View
 {
     var body: some View
     {
-        Color.white
-            .opacity(0.1)
-            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity,  alignment: .center)
-            .cornerRadius(Theme.cornerRadius)
-            .padding(.vertical, Theme.padding)
-            .padding(.trailing, Theme.padding)
-            .shadow(radius: 10)
-            .frame(maxWidth: 300)
+        ZStack
+        {
+            Color.white
+                .opacity(0.1)
+            
+            VSplitView
+            {
+                Group
+                {
+                    Text("Rounded Rectangle")
+                        .font(.headline)
+                    
+                    HStack
+                    {
+                        Text("Corner Radius")
+                    }
+                    .frame(minHeight: 50.0)
+                }
+                    
+                Group
+                {
+                    Text("Rounded Rectangle")
+                        .font(.headline)
+                    
+                    HStack
+                    {
+                        Text("Corner Radius")
+                    }
+                    .frame(minHeight: 50.0)
+                }
+                    
+                Group
+                {
+                    Text("Rounded Rectangle")
+                        .font(.headline)
+                    
+                    HStack
+                    {
+                        Text("Corner Radius")
+                    }
+                    .frame(minHeight: 50.0)
+                }
+            }
+        }
+        .frame(minWidth: 0, maxWidth: 300, minHeight: 0, maxHeight: .infinity,  alignment: .center)
+        .cornerRadius(Theme.cornerRadius)
+        .padding(.vertical, Theme.padding)
+        .padding(.trailing, Theme.padding)
+        .shadow(radius: 10)
     }
 }
 

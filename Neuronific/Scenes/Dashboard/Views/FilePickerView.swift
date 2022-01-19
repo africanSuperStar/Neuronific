@@ -69,7 +69,7 @@ struct FilePickerView : View
                                 .fill(
                                     currentComponent == component && hovered
                                     ? Theme.transparentWhite
-                                    : Theme.darkGray
+                                    : Theme.gray
                                 )
                         )
                         .onDrag
@@ -93,7 +93,7 @@ struct FilePickerView : View
                 }
                 .padding()
                 .background(Theme.darkGray)
-                .frame(maxWidth: .infinity, minHeight: .zero)
+                .frame(maxWidth: .infinity, minHeight: .zero, maxHeight: 250)
                 .onDrop(
                     of:       [.bonsai, .json, .fileURL], // MARK: Validated in the delegate
                     delegate: AnyDropDelegate(

@@ -11,11 +11,11 @@ import Parsec
  
 public protocol AnyDragProtocol : NSObject, Identifiable
 {
-    var id:          String                { get }
-    var title:       String                { get }
-    var parser:      JSONParser            { get set }
-    var binding:     Binding <AnyHashable> { get set }
-    var content:     String                { get set }
+    var id:      String                { get }
+    var title:   String                { get }
+    var parser:  JSONParser            { get set }
+    var binding: Binding <AnyHashable> { get set }
+    var content: String                { get set }
     
     init(content: String)
     init?(content: String, binding: Binding <AnyHashable>)
@@ -24,11 +24,6 @@ public protocol AnyDragProtocol : NSObject, Identifiable
 
 extension AnyDragProtocol
 {
-    var id: String
-    {
-        UUID().uuidString
-    }
-    
     var parser: JSONParser
     {
         get {
