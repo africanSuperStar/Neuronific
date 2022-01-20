@@ -1,6 +1,6 @@
 # Neuronific
 
-[issues](https://img.shields.io/github/issues/africanSuperStar/Neuronific)
+![issues]({https://img.shields.io/github/issues/africanSuperStar/Neuronific})
 
 Neuronific spawned from the notion that composable mobile applications are possible through the use of Mondaic Parser Combinators.
 
