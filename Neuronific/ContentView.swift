@@ -37,9 +37,11 @@ struct ContentView : View
                         SimulatedDeviceView()
                         Spacer()
                     }
-                    NetworkConfigurationDetailView()
+                    
+                    ContentConfigurationDetailView()
                 }
-                NetworkConfigurationView()
+                
+                ContentConfigurationView()
             }
         }
     }
@@ -53,6 +55,6 @@ struct ContentView_Previews: PreviewProvider
     {
         ContentView()
             .environmentObject(FileModel.shared)
-            .environmentObject(TextDragModel.shared)
+            .environmentObject(AnyDragModel.shared)
     }
 }

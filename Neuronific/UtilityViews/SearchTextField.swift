@@ -29,20 +29,21 @@ public struct SearchTextField : View
                     currentlyEditing in
                 
                     hasFocus = currentlyEditing
-                })
-                .border(Color.clear, width: 0)
-                .placeHolder(
-                    Text(searchText.isEmpty ? "Search..." : ""), show: true
-                )
-                .textFieldStyle(PlainTextFieldStyle())
-                .foregroundColor(.white)
-                .padding(Theme.padding)
+                }
+            )
+            .border(Color.clear, width: 0)
+            .placeHolder(
+                Text(searchText.isEmpty ? "Search..." : ""), show: true
+            )
+            .textFieldStyle(PlainTextFieldStyle())
+            .foregroundColor(.white)
+            .padding(Theme.padding)
 
             Spacer()
         }
         .foregroundColor(.white)
         .background(
-            Color(red: 0.85, green: 0.85, blue: 0.85, opacity: 0.35)
+            Theme.transparentGray
         )
         .overlay(
             RoundedRectangle(cornerRadius: Theme.cornerRadius)

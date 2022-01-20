@@ -11,28 +11,29 @@ import Combine
 
 struct SimulatedDeviceView : View
 {
-    @StateObject private var model = TextDragModel.shared
-        
-    let width:  CGFloat = 350
-    let height: CGFloat = 350 / 9 * 19.5
+    @EnvironmentObject
+    private var model: AnyDragModel
+    
+    let width:  CGFloat = 390
+    let height: CGFloat = 844
     
     var body: some View
     {
-        VStack(alignment: .center)
+        ScrollView
         {
-            ForEach(model.selectedComponents, id: \.self)
+            LazyVStack(alignment: .center)
             {
-                component in
-                
-                component.view
+                ForEach(model.modifiableComponents, id: \.self)
+                {
+                    component in
+                    
+                    component.view
+                }
             }
-            .onDrop(
-                of: ["public.text"],
-                delegate: SimulatedDeviceViewDelegate(model: model)
-            )
         }
         .padding()
-        .frame(maxWidth: width, maxHeight: height, alignment: .center)
+        .aspectRatio(width / height, contentMode: .fit)
+        .scaledToFit()
         .overlay(
             RoundedRectangle(cornerRadius: Theme.cornerRadius)
                 .stroke(Color.white, lineWidth: 2)
@@ -42,48 +43,11 @@ struct SimulatedDeviceView : View
     
 }
 
-struct SimulatedDeviceViewDelegate: DropDelegate
-{
-    @ObservedObject var model: TextDragModel
-
-    func performDrop(info: DropInfo) -> Bool
-    {
-        guard info.hasItemsConforming(to: ["public.text"])
-            else
-        {
-            return false
-        }
-
-        let items = info.itemProviders(for: ["public.text"])
-        
-        for item in items
-        {
-            _ = item.loadObject(ofClass: TextDragComponent.self)
-            {
-                component, _ in
-                
-                if let component = component as? TextDragComponent
-                {
-                    DispatchQueue.main.async
-                    {
-                        print("Inserting Component as 0")
-                        print(String(describing: component.content))
-                        
-                        model.selectedComponents.insert(component, at: 0)
-                    }
-                }
-            }
-        }
-
-        return true
-    }
-}
- 
 struct SimulatedDeviceView_Previews : PreviewProvider
 {
     static var previews: some View
     {
         SimulatedDeviceView()
-            .environmentObject(TextDragModel.shared)
+            .environmentObject(AnyDragModel.shared)
     }
 }

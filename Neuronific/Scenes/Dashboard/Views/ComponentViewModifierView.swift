@@ -17,7 +17,7 @@ struct ComponentViewModifierView : View
             .cornerRadius(Theme.cornerRadius)
             .padding(.top, Theme.padding)
             .shadow(radius: 10)
-            .frame(maxHeight: 80, alignment: .top)
+            .frame(maxHeight: 50, alignment: .top)
     }
 }
 

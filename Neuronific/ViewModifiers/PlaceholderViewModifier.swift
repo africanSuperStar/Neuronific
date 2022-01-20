@@ -25,7 +25,7 @@ struct PlaceHolder <T: View> : ViewModifier
 
 extension View
 {
-    func placeHolder <T:View> (_ holder: T, show: Bool) -> some View
+    func placeHolder <T: View> (_ holder: T, show: Bool) -> some View
     {
         self.modifier(PlaceHolder(placeHolder:holder, show: show))
     }

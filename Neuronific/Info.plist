@@ -4,6 +4,29 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeIconFile</key>
+			<string>bonsai</string>
+			<key>CFBundleTypeIconFiles</key>
+			<array>
+				<string>bonsai.png</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>Neuronific File</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>network.thebonsai.neuronific.neuronificjson</string>
+			</array>
+			<key>NSDocumentClass</key>
+			<string>NSDocument</string>
+		</dict>
+	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -18,7 +41,79 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.developer-tools</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
+	<key>UISupportsDocumentBrowser</key>
+	<false/>
+	<key>UTExportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.json</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Neuronific File</string>
+			<key>UTTypeIconFile</key>
+			<string>bonsai</string>
+			<key>UTTypeIconFiles</key>
+			<array>
+				<string>bonsai.png</string>
+			</array>
+			<key>UTTypeIcons</key>
+			<dict>
+				<key>UTTypeIconBackgroundName</key>
+				<string>bonsai</string>
+				<key>UTTypeIconBadgeName</key>
+				<string>bonsai</string>
+			</dict>
+			<key>UTTypeIdentifier</key>
+			<string>network.thebonsai.neuronific.neuronificjson</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>bnsi</string>
+					<string>bonsai</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
+	<key>UTImportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.json</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Neuronific File</string>
+			<key>UTTypeIconFile</key>
+			<string>bonsai</string>
+			<key>UTTypeIconFiles</key>
+			<array>
+				<string>bonsai.png</string>
+			</array>
+			<key>UTTypeIcons</key>
+			<dict>
+				<key>UTTypeIconBackgroundName</key>
+				<string>bonsai</string>
+				<key>UTTypeIconBadgeName</key>
+				<string>bonsai</string>
+			</dict>
+			<key>UTTypeIdentifier</key>
+			<string>network.thebonsai.neuronific.neuronificjson</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>bnsi</string>
+					<string>bonsai</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>

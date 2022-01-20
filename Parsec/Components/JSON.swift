@@ -138,6 +138,18 @@ public enum JSONParser
         try self = JSONParser.parser.run(sourceName: "", input: data)
     }
     
+    public static var empty: JSONParser
+    {
+        return try! JSONParser(data: "{}")
+    }
+    
+    public var array: [JSONParser]?
+    {
+        guard case ._Array(let parsers) = self else { return nil }
+        
+        return parsers
+    }
+    
     public var string: String?
     {
         guard case ._String(let str) = self else { return nil }

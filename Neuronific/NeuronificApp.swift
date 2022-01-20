@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Combine
+
 
 @main
 struct NeuronificApp: App
@@ -17,7 +19,7 @@ struct NeuronificApp: App
         {
             ContentView()
                 .environmentObject(FileModel.shared)
-                .environmentObject(TextDragModel.shared)
+                .environmentObject(AnyDragModel.shared)
         }
     }
 }
