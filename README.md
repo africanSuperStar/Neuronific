@@ -1,5 +1,7 @@
 # Neuronific
 
+https://img.shields.io/github/issues/africanSuperStar/Neuronific
+
 Neuronific spawned from the notion that composable mobile applications are possible through the use of Mondaic Parser Combinators.
 
 `Neuronific` is a spin off of the word `Neuron` which in it's own right is a simpler composite of a larger ecosystem of biological constructs, making up the brain.
