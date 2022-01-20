@@ -59,8 +59,6 @@
 		A55C30102772587E00648EA8 /* AnyDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C300F2772587E00648EA8 /* AnyDropDelegate.swift */; };
 		A55C301A2774FF0D00648EA8 /* bonsai.png in Resources */ = {isa = PBXBuildFile; fileRef = A55C30192774FF0D00648EA8 /* bonsai.png */; };
 		A55C3027277502D300648EA8 /* List.bnsi in Resources */ = {isa = PBXBuildFile; fileRef = A55C301B277502D300648EA8 /* List.bnsi */; };
-		A55C3028277502D300648EA8 /* ModifierButton+Data.swift in Resources */ = {isa = PBXBuildFile; fileRef = A55C301C277502D300648EA8 /* ModifierButton+Data.swift */; };
-		A55C3029277502D300648EA8 /* ModifierButtons.swift in Resources */ = {isa = PBXBuildFile; fileRef = A55C301D277502D300648EA8 /* ModifierButtons.swift */; };
 		A55C302A277502D300648EA8 /* Label.bnsi in Resources */ = {isa = PBXBuildFile; fileRef = A55C301E277502D300648EA8 /* Label.bnsi */; };
 		A55C302B277502D300648EA8 /* DatePicker.bnsi in Resources */ = {isa = PBXBuildFile; fileRef = A55C301F277502D300648EA8 /* DatePicker.bnsi */; };
 		A55C302C277502D300648EA8 /* DisclosureGroup.bnsi in Resources */ = {isa = PBXBuildFile; fileRef = A55C3020277502D300648EA8 /* DisclosureGroup.bnsi */; };
@@ -71,6 +69,8 @@
 		A55C3031277502D300648EA8 /* ColorPicker.bnsi in Resources */ = {isa = PBXBuildFile; fileRef = A55C3025277502D300648EA8 /* ColorPicker.bnsi */; };
 		A55C3032277502D300648EA8 /* Form.bnsi in Resources */ = {isa = PBXBuildFile; fileRef = A55C3026277502D300648EA8 /* Form.bnsi */; };
 		A55C303427765B6200648EA8 /* FilePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C303327765B6200648EA8 /* FilePickerView.swift */; };
+		A55E59BF27988EC100130859 /* ColorCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55E59BE27988EC100130859 /* ColorCardView.swift */; };
+		A55E59C2279891EF00130859 /* MultiColorCardViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55E59C1279891EF00130859 /* MultiColorCardViews.swift */; };
 		A585EA9827778E8A006F5078 /* ForegroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EA9727778E8A006F5078 /* ForegroundColor.swift */; };
 		A585EA9A2777A0D0006F5078 /* ParserViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EA992777A0D0006F5078 /* ParserViewList.swift */; };
 		A585EA9F2777A19E006F5078 /* ModifiedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EA9E2777A19E006F5078 /* ModifiedView.swift */; };
@@ -205,8 +205,6 @@
 		A55C300F2772587E00648EA8 /* AnyDropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyDropDelegate.swift; sourceTree = "<group>"; };
 		A55C30192774FF0D00648EA8 /* bonsai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bonsai.png; sourceTree = "<group>"; };
 		A55C301B277502D300648EA8 /* List.bnsi */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = List.bnsi; sourceTree = "<group>"; };
-		A55C301C277502D300648EA8 /* ModifierButton+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ModifierButton+Data.swift"; sourceTree = "<group>"; };
-		A55C301D277502D300648EA8 /* ModifierButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifierButtons.swift; sourceTree = "<group>"; };
 		A55C301E277502D300648EA8 /* Label.bnsi */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Label.bnsi; sourceTree = "<group>"; };
 		A55C301F277502D300648EA8 /* DatePicker.bnsi */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DatePicker.bnsi; sourceTree = "<group>"; };
 		A55C3020277502D300648EA8 /* DisclosureGroup.bnsi */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DisclosureGroup.bnsi; sourceTree = "<group>"; };
@@ -218,6 +216,10 @@
 		A55C3026277502D300648EA8 /* Form.bnsi */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Form.bnsi; sourceTree = "<group>"; };
 		A55C303327765B6200648EA8 /* FilePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilePickerView.swift; sourceTree = "<group>"; };
 		A55DA94E263CF998005C3A5B /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		A55E59BE27988EC100130859 /* ColorCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCardView.swift; sourceTree = "<group>"; };
+		A55E59C1279891EF00130859 /* MultiColorCardViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiColorCardViews.swift; sourceTree = "<group>"; };
+		A55E59C327989AA400130859 /* ModifierButton+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ModifierButton+Data.swift"; sourceTree = "<group>"; };
+		A55E59C427989AA400130859 /* ModifierButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifierButtons.swift; sourceTree = "<group>"; };
 		A5759F50263AD28C003172C6 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		A585EA9727778E8A006F5078 /* ForegroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForegroundColor.swift; sourceTree = "<group>"; };
 		A585EA992777A0D0006F5078 /* ParserViewList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserViewList.swift; sourceTree = "<group>"; };
@@ -431,11 +433,11 @@
 		A54956872641D015000DC4B9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A55E59C0279891C100130859 /* ComponentSelectionArea */,
 				A5976DC42769315100214A70 /* ModifierButtons */,
 				A54956792641CED2000DC4B9 /* ComponentView.swift */,
 				A549567B2641CF00000DC4B9 /* ComponentDetailView.swift */,
 				A549567D2641CF41000DC4B9 /* ComponentViewModifierView.swift */,
-				A549568C2641D13C000DC4B9 /* ComponentSelectionAreaView.swift */,
 				A549567F2641CF66000DC4B9 /* ContentConfigurationView.swift */,
 				A54956812641CF92000DC4B9 /* ContentConfigurationDetailView.swift */,
 				A54956832641CFB0000DC4B9 /* SimulatedDeviceView.swift */,
@@ -463,6 +465,7 @@
 		A54956942641D7B3000DC4B9 /* UtilityViews */ = {
 			isa = PBXGroup;
 			children = (
+				A55E59BD27988EA200130859 /* Cards */,
 				A54956952641D817000DC4B9 /* SearchTextField.swift */,
 				A54956972641DC3C000DC4B9 /* FocusRingExtension.swift */,
 				A5976DC227691EF800214A70 /* Keyboard.swift */,
@@ -491,6 +494,23 @@
 				A55DA94E263CF998005C3A5B /* JSON.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		A55E59BD27988EA200130859 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				A55E59BE27988EC100130859 /* ColorCardView.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		A55E59C0279891C100130859 /* ComponentSelectionArea */ = {
+			isa = PBXGroup;
+			children = (
+				A549568C2641D13C000DC4B9 /* ComponentSelectionAreaView.swift */,
+				A55E59C1279891EF00130859 /* MultiColorCardViews.swift */,
+			);
+			path = ComponentSelectionArea;
 			sourceTree = "<group>";
 		};
 		A585EA9D2777A18D006F5078 /* View */ = {
@@ -538,6 +558,8 @@
 		A5976DC42769315100214A70 /* ModifierButtons */ = {
 			isa = PBXGroup;
 			children = (
+				A55E59C327989AA400130859 /* ModifierButton+Data.swift */,
+				A55E59C427989AA400130859 /* ModifierButtons.swift */,
 				A55C3023277502D300648EA8 /* Button.bnsi */,
 				A55C3025277502D300648EA8 /* ColorPicker.bnsi */,
 				A55C301F277502D300648EA8 /* DatePicker.bnsi */,
@@ -548,8 +570,6 @@
 				A55C301E277502D300648EA8 /* Label.bnsi */,
 				A55C3021277502D300648EA8 /* Link.bnsi */,
 				A55C301B277502D300648EA8 /* List.bnsi */,
-				A55C301C277502D300648EA8 /* ModifierButton+Data.swift */,
-				A55C301D277502D300648EA8 /* ModifierButtons.swift */,
 			);
 			path = ModifierButtons;
 			sourceTree = "<group>";
@@ -758,9 +778,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A55C3029277502D300648EA8 /* ModifierButtons.swift in Resources */,
 				A55C302E277502D300648EA8 /* GroupBox.bnsi in Resources */,
-				A55C3028277502D300648EA8 /* ModifierButton+Data.swift in Resources */,
 				A55C3031277502D300648EA8 /* ColorPicker.bnsi in Resources */,
 				A55C302F277502D300648EA8 /* Button.bnsi in Resources */,
 				A544358726395A0E007A9B31 /* Preview Assets.xcassets in Resources */,
@@ -808,9 +826,11 @@
 				A54956912641D4AC000DC4B9 /* PlaceholderViewModifier.swift in Sources */,
 				A54956982641DC3C000DC4B9 /* FocusRingExtension.swift in Sources */,
 				A5976DE7276A4E0400214A70 /* TreeDragComponent.swift in Sources */,
+				A55E59C2279891EF00130859 /* MultiColorCardViews.swift in Sources */,
 				A549567C2641CF00000DC4B9 /* ComponentDetailView.swift in Sources */,
 				A585EAB4278074BE006F5078 /* AnyDragProtocol.swift in Sources */,
 				A585EAB827807E70006F5078 /* AnyDragComponent+View.swift in Sources */,
+				A55E59BF27988EC100130859 /* ColorCardView.swift in Sources */,
 				A549567A2641CED2000DC4B9 /* ComponentView.swift in Sources */,
 				A5976DC327691EF800214A70 /* Keyboard.swift in Sources */,
 				A54956842641CFB0000DC4B9 /* SimulatedDeviceView.swift in Sources */,

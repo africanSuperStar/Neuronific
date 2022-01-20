@@ -24,6 +24,12 @@ class AnyDragComponent : NSObject, AnyDragProtocol, NSItemProviderWriting, NSIte
     
     let id: String = UUID().uuidString
     
+    required convenience init(native: AnyView)
+    {
+        self.init()
+        self.native = native
+    }
+    
     var view: AnyView
     {
         get {
@@ -31,11 +37,13 @@ class AnyDragComponent : NSObject, AnyDragProtocol, NSItemProviderWriting, NSIte
                 content: content,
                 binding: binding
             )
-                .body()
+            .body()
         }
         
         set { }
     }
+    
+    lazy var native = AnyView(EmptyView())
     
     var title: String
     {
