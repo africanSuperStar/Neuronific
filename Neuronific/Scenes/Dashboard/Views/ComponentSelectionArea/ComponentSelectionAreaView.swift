@@ -55,13 +55,7 @@ struct SelectableComponentView : View
                 
                 return identifier
                 
-            } preview: {
-                
-                component.native
-                    .frame(width: 50, height: 50)
-                    .cornerRadius(25)
             }
-
     }
 }
 
