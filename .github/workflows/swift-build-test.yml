@@ -32,5 +32,5 @@ jobs:
         env:
           scheme: ${{ 'ParsecTests' }}
         run: |
-          xcodebuild test-without-building -scheme "$scheme" -destination platform=macOS, name=Any\ Mac | xcpretty
+          xcodebuild test-without-building -scheme "$scheme" | xcpretty
  
