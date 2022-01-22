@@ -22,29 +22,11 @@ struct ColorCardView : View
                 cornerRadius: Theme.cornerRadius,
                 style: .continuous
             )
-            .fill(.white)
-
-            VStack
-            {
-                RoundedRectangle(
-                    cornerRadius: Theme.cornerRadius,
-                    style: .continuous
-                )
-                .fill(color)
-                
-                Text(title)
-                    .font(.body)
-                    .foregroundColor(.black)
-
-                Text(headline)
-                    .font(.callout)
-                    .foregroundColor(.gray)
-            }
-            .padding(Theme.smallPadding)
-            .multilineTextAlignment(.leading)
+            .fill(color)
         }
         .shadow(radius: Theme.cornerRadius)
-        .frame(minWidth: 120, minHeight: 100)
+        .frame(height: 35)
+        .help("\(title) - \(headline)")
     }
 }
 

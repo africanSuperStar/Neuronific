@@ -24,11 +24,59 @@ struct ComponentSelectionAreaView : View
     {
         ScrollView
         {
-            SearchTextField(searchText: $searchText)
-                .padding()
-       
-            MultiColorCardViews()
-                .padding(.horizontal)
+            VStack(alignment: .leading)
+            {
+                SearchTextField(searchText: $searchText)
+                    .padding(.vertical)
+           
+                Group
+                {
+                    Text("System Default Colors")
+                    
+                    MultiColorCardViews()
+                        .padding(.bottom)
+    
+                    Divider()
+                        .background(Theme.lightGray)
+                        .frame(maxWidth: .infinity, minHeight: 1.0)
+                }
+                
+                Group
+                {
+                    Text("Search Fields")
+                    
+                    SearchFieldViews()
+                        .padding(.bottom)
+    
+                    Divider()
+                        .background(Theme.lightGray)
+                        .frame(maxWidth: .infinity, minHeight: 1.0)
+                }
+                
+                Group
+                {
+                    Text("Table Row Components")
+                    
+                    TableRowViews()
+                    
+                    Divider()
+                        .background(Theme.lightGray)
+                        .frame(maxWidth: .infinity, minHeight: 1.0)
+                }
+                
+                Group
+                {
+                    Text("Color Pickers")
+                    
+                    ColorPickerViews()
+                    
+                    Divider()
+                        .background(Theme.lightGray)
+                        .frame(maxWidth: .infinity, minHeight: 1.0)
+                }
+            }
+            .padding(.horizontal)
+            .frame(maxWidth: .infinity)
         }
     }
 }

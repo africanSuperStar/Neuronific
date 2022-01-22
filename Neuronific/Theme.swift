@@ -18,6 +18,9 @@ struct Theme
     static let gray      = Color(red: 0.45, green: 0.45, blue: 0.45)
     static let darkGray  = Color(red: 0.35, green: 0.35, blue: 0.35)
     
+    static let primaryLight = Color(red: 1.0, green: 1.0, blue: 1.0)
+    static let primaryDark  = Color(red: 0.0, green: 0.0, blue: 0.0)
+    
     static let transparentGray = Color(red: 0.85, green: 0.85, blue: 0.85, opacity: 0.35)
     
     static let shadowRadius: CGFloat = 10.0
@@ -27,4 +30,6 @@ struct Theme
     static let smallPadding: CGFloat = 4
     static let padding:      CGFloat = 7.5
     static let largePadding: CGFloat = 20
+    
+    static let tableRowHeight: CGFloat = 30.0
 }

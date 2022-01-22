@@ -71,6 +71,11 @@
 		A55C303427765B6200648EA8 /* FilePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C303327765B6200648EA8 /* FilePickerView.swift */; };
 		A55E59BF27988EC100130859 /* ColorCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55E59BE27988EC100130859 /* ColorCardView.swift */; };
 		A55E59C2279891EF00130859 /* MultiColorCardViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55E59C1279891EF00130859 /* MultiColorCardViews.swift */; };
+		A56C89D4279C8790005DEAC9 /* SearchFieldViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56C89D3279C8790005DEAC9 /* SearchFieldViews.swift */; };
+		A56C89D7279C8AC9005DEAC9 /* SearchFieldCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56C89D6279C8AC9005DEAC9 /* SearchFieldCardView.swift */; };
+		A56C89D9279C8C8C005DEAC9 /* TableRowViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56C89D8279C8C8C005DEAC9 /* TableRowViews.swift */; };
+		A56C89DB279C8D8A005DEAC9 /* TableRowCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56C89DA279C8D8A005DEAC9 /* TableRowCardView.swift */; };
+		A56C89DD279C93E8005DEAC9 /* ColorPickerViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56C89DC279C93E8005DEAC9 /* ColorPickerViews.swift */; };
 		A585EA9827778E8A006F5078 /* ForegroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EA9727778E8A006F5078 /* ForegroundColor.swift */; };
 		A585EA9A2777A0D0006F5078 /* ParserViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EA992777A0D0006F5078 /* ParserViewList.swift */; };
 		A585EA9F2777A19E006F5078 /* ModifiedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EA9E2777A19E006F5078 /* ModifiedView.swift */; };
@@ -220,6 +225,11 @@
 		A55E59C1279891EF00130859 /* MultiColorCardViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiColorCardViews.swift; sourceTree = "<group>"; };
 		A55E59C327989AA400130859 /* ModifierButton+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ModifierButton+Data.swift"; sourceTree = "<group>"; };
 		A55E59C427989AA400130859 /* ModifierButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifierButtons.swift; sourceTree = "<group>"; };
+		A56C89D3279C8790005DEAC9 /* SearchFieldViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldViews.swift; sourceTree = "<group>"; };
+		A56C89D6279C8AC9005DEAC9 /* SearchFieldCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldCardView.swift; sourceTree = "<group>"; };
+		A56C89D8279C8C8C005DEAC9 /* TableRowViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRowViews.swift; sourceTree = "<group>"; };
+		A56C89DA279C8D8A005DEAC9 /* TableRowCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRowCardView.swift; sourceTree = "<group>"; };
+		A56C89DC279C93E8005DEAC9 /* ColorPickerViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViews.swift; sourceTree = "<group>"; };
 		A5759F50263AD28C003172C6 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		A585EA9727778E8A006F5078 /* ForegroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForegroundColor.swift; sourceTree = "<group>"; };
 		A585EA992777A0D0006F5078 /* ParserViewList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserViewList.swift; sourceTree = "<group>"; };
@@ -500,6 +510,8 @@
 			isa = PBXGroup;
 			children = (
 				A55E59BE27988EC100130859 /* ColorCardView.swift */,
+				A56C89D6279C8AC9005DEAC9 /* SearchFieldCardView.swift */,
+				A56C89DA279C8D8A005DEAC9 /* TableRowCardView.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -508,9 +520,20 @@
 			isa = PBXGroup;
 			children = (
 				A549568C2641D13C000DC4B9 /* ComponentSelectionAreaView.swift */,
-				A55E59C1279891EF00130859 /* MultiColorCardViews.swift */,
+				A56C89D5279C8795005DEAC9 /* Sections */,
 			);
 			path = ComponentSelectionArea;
+			sourceTree = "<group>";
+		};
+		A56C89D5279C8795005DEAC9 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				A55E59C1279891EF00130859 /* MultiColorCardViews.swift */,
+				A56C89D3279C8790005DEAC9 /* SearchFieldViews.swift */,
+				A56C89D8279C8C8C005DEAC9 /* TableRowViews.swift */,
+				A56C89DC279C93E8005DEAC9 /* ColorPickerViews.swift */,
+			);
+			path = Sections;
 			sourceTree = "<group>";
 		};
 		A585EA9D2777A18D006F5078 /* View */ = {
@@ -817,10 +840,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A544358226395A0D007A9B31 /* ContentView.swift in Sources */,
+				A56C89DD279C93E8005DEAC9 /* ColorPickerViews.swift in Sources */,
 				A544358026395A0D007A9B31 /* NeuronificApp.swift in Sources */,
 				A55C303427765B6200648EA8 /* FilePickerView.swift in Sources */,
+				A56C89D4279C8790005DEAC9 /* SearchFieldViews.swift in Sources */,
 				A523EE85263F4526003977F1 /* JSONCell.swift in Sources */,
 				A523EE83263F440F003977F1 /* JSONTreeView.swift in Sources */,
+				A56C89DB279C8D8A005DEAC9 /* TableRowCardView.swift in Sources */,
 				A55C30102772587E00648EA8 /* AnyDropDelegate.swift in Sources */,
 				A549567E2641CF41000DC4B9 /* ComponentViewModifierView.swift in Sources */,
 				A54956912641D4AC000DC4B9 /* PlaceholderViewModifier.swift in Sources */,
@@ -844,6 +870,8 @@
 				A5C01CD227690497005CBAA8 /* AnyDragComponent.swift in Sources */,
 				A523EE81263F4320003977F1 /* JSONViewer.swift in Sources */,
 				A5338EF9264190AC00E28DAB /* Theme.swift in Sources */,
+				A56C89D7279C8AC9005DEAC9 /* SearchFieldCardView.swift in Sources */,
+				A56C89D9279C8C8C005DEAC9 /* TableRowViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -989,7 +1017,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1044,7 +1072,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -1070,7 +1098,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = network.thebonsai.Neuronific;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1095,7 +1123,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = network.thebonsai.Neuronific;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1123,7 +1151,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = network.thebonsai.Neuronific;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1154,7 +1182,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = network.thebonsai.Neuronific;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
