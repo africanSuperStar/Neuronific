@@ -1,6 +1,7 @@
 # Neuronific
 
 ![image](https://img.shields.io/github/issues/africanSuperStar/Neuronific)
+![image](https://img.shields.io/github/downloads/africanSuperStar/Neuronific)
 
 Neuronific spawned from the notion that composable mobile applications are possible through the use of Mondaic Parser Combinators.
 
@@ -13,4 +14,6 @@ Neuronific is an attempt create a `Drag n Drop` cross-platform app builder using
 We've mapped out a plan which encompasses getting version 1.0.0 stable enough to publish an iOS application with full use of the _Human Interface Guidelines_. Of course an application is not interesting without its data. Access to a multitude of API's as well Persistent Storage are a high priority for us.
 
 Linking data to the many possible interactions of UI Components and at different States is also a task this project hopes to solve.
+
+![video](https://user-images.githubusercontent.com/36889192/150547623-68aebdc2-03ca-49df-b46b-5cfc8b21d236.mov)
 
