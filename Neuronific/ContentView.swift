@@ -15,8 +15,12 @@ struct ContentView : View
 {
     @EnvironmentObject private var state:     UIState
     @EnvironmentObject private var fileModel: FileModel
-    
+
     @StateObject var content = ContentDetail()
+    
+    @State private var scale:      CGFloat = 0.5
+    @State private var translateX: CGFloat = 0.0
+    @State private var translateY: CGFloat = 0.0
     
     var body: some View
     {
@@ -33,9 +37,18 @@ struct ContentView : View
                     VStack(alignment: .center)
                     {
                         ComponentViewModifierView()
+                        
                         Spacer()
-                        SimulatedDeviceView()
-                        Spacer()
+                           
+                        SimulatedDeviceTimelineView(
+                            scale:      $scale,
+                            translateX: $translateX,
+                            translateY: $translateY
+                        )
+                        
+                        Slider(value: $scale)
+                        Slider(value: $translateX)
+                        Slider(value: $translateY)
                     }
                     
                     ContentConfigurationDetailView()

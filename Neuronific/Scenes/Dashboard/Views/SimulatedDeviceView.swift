@@ -31,12 +31,10 @@ struct SimulatedDeviceView : View
                 }
             }
         }
-        .padding()
         .aspectRatio(width / height, contentMode: .fit)
-        .scaledToFit()
         .overlay(
             RoundedRectangle(cornerRadius: Theme.cornerRadius)
-                .stroke(Color.white, lineWidth: 2)
+                .stroke(Color.white, lineWidth: 4)
         )
         .cornerRadius(Theme.cornerRadius)
     }
