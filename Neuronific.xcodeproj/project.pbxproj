@@ -46,7 +46,6 @@
 		A549567E2641CF41000DC4B9 /* ComponentViewModifierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A549567D2641CF41000DC4B9 /* ComponentViewModifierView.swift */; };
 		A54956802641CF66000DC4B9 /* ContentConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A549567F2641CF66000DC4B9 /* ContentConfigurationView.swift */; };
 		A54956822641CF92000DC4B9 /* ContentConfigurationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54956812641CF92000DC4B9 /* ContentConfigurationDetailView.swift */; };
-		A54956842641CFB0000DC4B9 /* SimulatedDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54956832641CFB0000DC4B9 /* SimulatedDeviceView.swift */; };
 		A549568B2641D047000DC4B9 /* FileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A549568A2641D047000DC4B9 /* FileModel.swift */; };
 		A549568D2641D13C000DC4B9 /* ComponentSelectionAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A549568C2641D13C000DC4B9 /* ComponentSelectionAreaView.swift */; };
 		A54956912641D4AC000DC4B9 /* PlaceholderViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54956902641D4AC000DC4B9 /* PlaceholderViewModifier.swift */; };
@@ -204,7 +203,6 @@
 		A549567D2641CF41000DC4B9 /* ComponentViewModifierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentViewModifierView.swift; sourceTree = "<group>"; };
 		A549567F2641CF66000DC4B9 /* ContentConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentConfigurationView.swift; sourceTree = "<group>"; };
 		A54956812641CF92000DC4B9 /* ContentConfigurationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentConfigurationDetailView.swift; sourceTree = "<group>"; };
-		A54956832641CFB0000DC4B9 /* SimulatedDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedDeviceView.swift; sourceTree = "<group>"; };
 		A549568A2641D047000DC4B9 /* FileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileModel.swift; sourceTree = "<group>"; };
 		A549568C2641D13C000DC4B9 /* ComponentSelectionAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentSelectionAreaView.swift; sourceTree = "<group>"; };
 		A54956902641D4AC000DC4B9 /* PlaceholderViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderViewModifier.swift; sourceTree = "<group>"; };
@@ -456,7 +454,6 @@
 				A549567D2641CF41000DC4B9 /* ComponentViewModifierView.swift */,
 				A549567F2641CF66000DC4B9 /* ContentConfigurationView.swift */,
 				A54956812641CF92000DC4B9 /* ContentConfigurationDetailView.swift */,
-				A54956832641CFB0000DC4B9 /* SimulatedDeviceView.swift */,
 				A59E251D27A05AED00616ACB /* SimulatedDeviceCanvasView.swift */,
 				A55C303327765B6200648EA8 /* FilePickerView.swift */,
 			);
@@ -877,7 +874,6 @@
 				A55E59BF27988EC100130859 /* ColorCardView.swift in Sources */,
 				A549567A2641CED2000DC4B9 /* ComponentView.swift in Sources */,
 				A5976DC327691EF800214A70 /* Keyboard.swift in Sources */,
-				A54956842641CFB0000DC4B9 /* SimulatedDeviceView.swift in Sources */,
 				A56C89DF279C9782005DEAC9 /* SegmentedPickerViews.swift in Sources */,
 				A5E121732642B36200612830 /* AnyDragModel.swift in Sources */,
 				A54956822641CF92000DC4B9 /* ContentConfigurationDetailView.swift in Sources */,

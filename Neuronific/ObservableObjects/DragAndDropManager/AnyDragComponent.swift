@@ -17,8 +17,8 @@ extension AnyDragComponent : Identifiable { }
 class AnyDragComponent : NSObject, AnyDragProtocol, NSItemProviderWriting, NSItemProviderReading
 {
     @Published
-    var hovered: Bool = false
-
+    var location = CGPoint(x: 75.0, y: 100.0)
+    
     var content: String               = "{}"    
     var binding: Binding<AnyHashable> = .constant("{}")
     

@@ -7,35 +7,14 @@
 
 import SwiftUI
 
-struct SimulatedDeviceTimelineView : View
-{
-    @Binding var scale:      CGFloat
-    @Binding var translateX: CGFloat
-    @Binding var translateY: CGFloat
-    
-    var body: some View
-    {
-        TimelineView(.periodic(from: .now, by: 0.1))
-        {
-            timeline in
-            
-            SimulatedDeviceCanvasView(
-                scale:      $scale,
-                translateX: $translateX,
-                translateY: $translateY
-            )
-        }
-    }
-}
 
 struct SimulatedDeviceCanvasView : View
 {
     @EnvironmentObject
     private var model: AnyDragModel
     
-    @Binding var scale:      CGFloat
-    @Binding var translateX: CGFloat
-    @Binding var translateY: CGFloat
+    @State
+    private var location: CGPoint = .zero
     
     var body: some View
     {
@@ -47,14 +26,35 @@ struct SimulatedDeviceCanvasView : View
                 
                 component.view
                     .tag(component.id)
-                    .scaleEffect(scale * 2)
-                    .position(x: translateX * 200, y: translateY * 400)
             }
         }
+        .gesture(
+            DragGesture(minimumDistance: .zero, coordinateSpace: .local)
+                .onChanged
+                {
+                    gesture in
+                    
+                    location = CGPoint(
+                        x: gesture.location.x,
+                        y: gesture.location.y
+                    )
+                }
+                .onEnded
+                {
+                    gesture in
+                    
+                    model.currentDraggedComponent?.location = CGPoint(
+                        x: gesture.translation.width,
+                        y: gesture.translation.height
+                    )
+                }
+        )
     }
     
     func renderer(context: inout GraphicsContext, size: CGSize)
     {
+        var unfocused = true
+        
         for component in model.modifiableComponents
         {
             context.drawLayer
@@ -63,15 +63,22 @@ struct SimulatedDeviceCanvasView : View
                 
                 if let resolved = context.resolveSymbol(id: component.id)
                 {
-                    let pt = CGPoint(
-                        x: 0,
-                        y: 0
-                    )
+                    if inRange(from: component.location, to: location) && unfocused
+                    {
+                        component.location = location
+                        
+                        unfocused = false
+                    }
                     
-                    context.draw(resolved, at: pt, anchor: .top)
+                    context.draw(resolved, at: component.location, anchor: .center)
                 }
             }
         }
+    }
+    
+    func inRange(from: CGPoint, to: CGPoint) -> Bool
+    {
+        return abs((from.x - to.x)) <= 30.0 && abs((from.y - to.y)) <= 45.0
     }
 }
 

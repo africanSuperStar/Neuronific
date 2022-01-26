@@ -40,15 +40,7 @@ struct ContentView : View
                         
                         Spacer()
                            
-                        SimulatedDeviceTimelineView(
-                            scale:      $scale,
-                            translateX: $translateX,
-                            translateY: $translateY
-                        )
-                        
-                        Slider(value: $scale)
-                        Slider(value: $translateX)
-                        Slider(value: $translateY)
+                        SimulatedDeviceCanvasView()
                     }
                     
                     ContentConfigurationDetailView()

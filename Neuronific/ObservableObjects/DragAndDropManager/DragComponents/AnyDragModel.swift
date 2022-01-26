@@ -15,6 +15,9 @@ class AnyDragModel : ObservableObject
     public static let shared = AnyDragModel()
 
     @Published
+    var focused: Bool = false
+    
+    @Published
     var currentDraggedComponent: AnyDragComponent? = nil
     
     @Published
