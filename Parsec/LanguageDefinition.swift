@@ -1,4 +1,7 @@
 //
+//  This file is distributed under the same license as the NEURONIFIC (PTY) LTD package.
+//  Copyright (c) 2022 and Confidential to NEURONIFIC (PTY) LTD. All rights reserved.
+//
 //  LanguageDefinition.swift
 //  Parsec
 //
@@ -396,4 +399,5 @@ private let swiftOperatorLetterSet = CharacterSet(charactersIn: swiftOperatorLet
 private let swiftEscapeMap: [(esc: Character, code: Character)] = [
     ("n", "\n"), ("r", "\r"), ("t", "\t"), ("\\", "\\"), ("\"", "\""),
     ("'", "'"), ("0", "\0")
+// swiftlint:disable file_length
 ]

@@ -1,10 +1,12 @@
-// ==============================================================================
-// TestUtilities.swift
-// SwiftParsec
 //
-// Created by David Dufresne on 2015-09-21.
-// Copyright © 2015 David Dufresne. All rights reserved.
-// ==============================================================================
+//  This file is distributed under the same license as the NEURONIFIC (PTY) LTD package.
+//  Copyright (c) 2022 and Confidential to NEURONIFIC (PTY) LTD. All rights reserved.
+//
+//  TestUtilities.swift
+//  SwiftParsec
+//
+//  Created by David Dufresne on 2015-09-21.
+//
 
 import XCTest
 @testable import Parsec
