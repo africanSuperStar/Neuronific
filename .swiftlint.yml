@@ -19,3 +19,14 @@ included:
   - ParsecTests
 
 excluded:
+
+opt_in_rules:
+  - file_header
+
+file_header:
+  severity: error
+  required_pattern: |
+                    \/\/
+                    \/\/ This file is distributed under the same license as the NEURONIFIC \(PTY\) LTD package\.
+                    \/\/ Copyright \(c\) \d{4} and Confidential to NEURONIFIC \(PTY\) LTD\. All rights reserved\.
+                    \/\/

@@ -800,6 +800,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1320;
+				ORGANIZATIONNAME = "NEURONIFIC (PTY) LTD";
 				TargetAttributes = {
 					A544357B26395A0D007A9B31 = {
 						CreatedOnToolsVersion = 12.5;
