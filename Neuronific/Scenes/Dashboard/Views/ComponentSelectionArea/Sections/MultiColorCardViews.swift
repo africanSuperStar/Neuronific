@@ -41,7 +41,7 @@ struct MultiColorCardViews : View
                     title: "SystemRed/Light",
                     headline: "#FF3B30 • RGB: 255,59,48",
                     color: Color(
-                        red:     255/255,
+                        red:     1.0,
                         green:   59/255,
                         blue:    48/255
                     )
@@ -52,7 +52,7 @@ struct MultiColorCardViews : View
                     title: "SystemOrange/Light",
                     headline: "#FF9500 • RGB: 255,149,0",
                     color: Color(
-                        red:     255/255,
+                        red:     1.0,
                         green:   149/255,
                         blue:    0/255
                     )
@@ -63,7 +63,7 @@ struct MultiColorCardViews : View
                     title: "SystemYellow/Light",
                     headline: "#FFCC00 • RGB: 255,204,0",
                     color: Color(
-                        red:     255/255,
+                        red:     1.0,
                         green:   204/255,
                         blue:    0/255
                     )
@@ -97,7 +97,7 @@ struct MultiColorCardViews : View
                     color: Color(
                         red:     0/255,
                         green:   122/255,
-                        blue:    255/255
+                        blue:    1.0
                     )
                 )
                 
@@ -128,7 +128,7 @@ struct MultiColorCardViews : View
                     title: "SystemPink/Light",
                     headline: "#FF2D55 • RGB: 255,45,85",
                     color: Color(
-                        red:     255/255,
+                        red:     1.0,
                         green:   45/255,
                         blue:    85/255
                     )
