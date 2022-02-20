@@ -47,7 +47,7 @@ public struct SearchTextField : View
         )
         .overlay(
             RoundedRectangle(cornerRadius: Theme.cornerRadius)
-                .stroke(hasFocus ? Color.white : Color.white, lineWidth: hasFocus ? 4 : 0)
+                .stroke(hasFocus ? Color.blue : Color.white, lineWidth: hasFocus ? 4 : 0)
         )
         .cornerRadius(Theme.cornerRadius)
         .shadow(

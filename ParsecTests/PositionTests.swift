@@ -19,7 +19,6 @@ class PositionTests : XCTestCase
         
         XCTAssert(pos1 < pos2, "pos1 should be smaller than pos2.")
         XCTAssertFalse(pos2 < pos1, "pos2 should be greater than pos1.")
-        XCTAssert(pos1 == pos1, "pos1 should be equal to itself.")
         XCTAssert(pos1 > pos3, "pos1 should be greater than pos3.")
         XCTAssertFalse(pos3 > pos1, "pos3 should be smaller than pos1.")
     }
