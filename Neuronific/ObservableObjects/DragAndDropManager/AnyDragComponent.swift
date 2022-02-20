@@ -14,20 +14,23 @@ import Parsec
 
 extension AnyDragComponent : Identifiable { }
 
-class AnyDragComponent : NSObject, AnyDragProtocol, NSItemProviderWriting, NSItemProviderReading
+class AnyDragComponent : NSObject, AnyDragProtocol, ObservableObject, NSItemProviderWriting, NSItemProviderReading
 {
-    @Published
-    var location = CGPoint(x: 75.0, y: 100.0)
+    @GestureState
+    var dragAmount: CGSize = .zero
     
-    var content: String               = "{}"    
+    var content: String               = "{}"
     var binding: Binding<AnyHashable> = .constant("{}")
-    
-    let id: String = UUID().uuidString
     
     required convenience init(native: AnyView)
     {
         self.init()
         self.native = native
+    }
+    
+    var uuid: String
+    {
+        return parser["uuid"].string ?? ""
     }
     
     var view: AnyView

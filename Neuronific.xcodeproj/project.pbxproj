@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A508DA8927C2450D00D55E31 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A508DA8827C2450D00D55E31 /* AppViewModel.swift */; };
+		A508DA8B27C2478600D55E31 /* ConditionalViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A508DA8A27C2478600D55E31 /* ConditionalViewModifier.swift */; };
 		A523EE7A263F3C24003977F1 /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A523EE79263F3C24003977F1 /* UIState.swift */; };
 		A523EE81263F4320003977F1 /* JSONViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A523EE80263F4320003977F1 /* JSONViewer.swift */; };
 		A523EE83263F440F003977F1 /* JSONTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A523EE82263F440F003977F1 /* JSONTreeView.swift */; };
@@ -158,6 +160,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A508DA8827C2450D00D55E31 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		A508DA8A27C2478600D55E31 /* ConditionalViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalViewModifier.swift; sourceTree = "<group>"; };
 		A523EE79263F3C24003977F1 /* UIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
 		A523EE80263F4320003977F1 /* JSONViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONViewer.swift; sourceTree = "<group>"; };
 		A523EE82263F440F003977F1 /* JSONTreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONTreeView.swift; sourceTree = "<group>"; };
@@ -308,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				A523EE79263F3C24003977F1 /* UIState.swift */,
+				A508DA8827C2450D00D55E31 /* AppViewModel.swift */,
 			);
 			path = Environment;
 			sourceTree = "<group>";
@@ -472,6 +477,7 @@
 			isa = PBXGroup;
 			children = (
 				A54956902641D4AC000DC4B9 /* PlaceholderViewModifier.swift */,
+				A508DA8A27C2478600D55E31 /* ConditionalViewModifier.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -875,6 +881,7 @@
 				A549567A2641CED2000DC4B9 /* ComponentView.swift in Sources */,
 				A5976DC327691EF800214A70 /* Keyboard.swift in Sources */,
 				A56C89DF279C9782005DEAC9 /* SegmentedPickerViews.swift in Sources */,
+				A508DA8B27C2478600D55E31 /* ConditionalViewModifier.swift in Sources */,
 				A5E121732642B36200612830 /* AnyDragModel.swift in Sources */,
 				A54956822641CF92000DC4B9 /* ContentConfigurationDetailView.swift in Sources */,
 				A549568B2641D047000DC4B9 /* FileModel.swift in Sources */,
@@ -883,6 +890,7 @@
 				A54956802641CF66000DC4B9 /* ContentConfigurationView.swift in Sources */,
 				A549568D2641D13C000DC4B9 /* ComponentSelectionAreaView.swift in Sources */,
 				A5C01CD227690497005CBAA8 /* AnyDragComponent.swift in Sources */,
+				A508DA8927C2450D00D55E31 /* AppViewModel.swift in Sources */,
 				A523EE81263F4320003977F1 /* JSONViewer.swift in Sources */,
 				A5338EF9264190AC00E28DAB /* Theme.swift in Sources */,
 				A56C89D7279C8AC9005DEAC9 /* SearchFieldCardView.swift in Sources */,

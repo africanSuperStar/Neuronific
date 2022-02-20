@@ -10,75 +10,63 @@ import SwiftUI
 
 struct SimulatedDeviceCanvasView : View
 {
-    @EnvironmentObject
-    private var model: AnyDragModel
+    @ObservedObject
+    private var appModel = AppViewModel.shared
     
-    @State
-    private var location: CGPoint = .zero
+    @ObservedObject
+    private var model = AnyDragModel.shared
     
     var body: some View
     {
-        Canvas(renderer: renderer)
+        ZStack
         {
-            ForEach(model.modifiableComponents)
-            {
-                component in
-                
-                component.view
-                    .tag(component.id)
-            }
-        }
-        .gesture(
-            DragGesture(minimumDistance: .zero, coordinateSpace: .local)
-                .onChanged
-                {
-                    gesture in
-                    
-                    location = CGPoint(
-                        x: gesture.location.x,
-                        y: gesture.location.y
+            ForEach(
+                Array(
+                    zip(
+                        model.modifiableComponents.indices,
+                        model.modifiableComponents
                     )
-                }
-                .onEnded
-                {
-                    gesture in
-                    
-                    model.currentDraggedComponent?.location = CGPoint(
-                        x: gesture.translation.width,
-                        y: gesture.translation.height
-                    )
-                }
-        )
-    }
-    
-    func renderer(context: inout GraphicsContext, size: CGSize)
-    {
-        var unfocused = true
-        
-        for component in model.modifiableComponents
-        {
-            context.drawLayer
-            {
-                context in
-                
-                if let resolved = context.resolveSymbol(id: component.id)
-                {
-                    if inRange(from: component.location, to: location) && unfocused
-                    {
-                        component.location = location
+                ),
+                id: \.1
+            ) {
+                index, component in
                         
-                        unfocused = false
-                    }
-                    
-                    context.draw(resolved, at: component.location, anchor: .center)
-                }
+                component.view
+                    .tag(component.uuid)
+                    .offset(
+                        x: model.componentTranslations[index].x,
+                        y: model.componentTranslations[index].y
+                    )
+                    .gesture(
+                        DragGesture(
+                            minimumDistance: .zero,
+                            coordinateSpace: .local
+                        )
+                        .onChanged
+                        {
+                            gesture in
+                            
+                            model.componentTranslations[index] = gesture.location
+                        }
+                        .onEnded
+                        {
+                            gesture in
+                            
+                            model.componentTranslations[index] = gesture.location
+                        }
+                    )
             }
         }
-    }
-    
-    func inRange(from: CGPoint, to: CGPoint) -> Bool
-    {
-        return abs((from.x - to.x)) <= 30.0 && abs((from.y - to.y)) <= 45.0
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .if(appModel.debugWindow)
+        {
+            view in
+            
+            view.rotation3DEffect(
+                .degrees(60),
+                axis: (x: .zero, y: 1.0, z: .zero)
+            )
+        }
     }
 }
 

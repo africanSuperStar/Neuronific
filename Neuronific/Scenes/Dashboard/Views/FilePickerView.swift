@@ -150,6 +150,7 @@ struct FilePickerView : View
             let component = AnyDragComponent(url: url, binding: .constant(bindingUUID))
         {
             model.modifiableComponents.append(component)
+            model.componentTranslations.append(.zero)
             
             currentComponent = component
             
@@ -162,7 +163,8 @@ struct FilePickerView : View
     {
         DispatchQueue.main.async
         {
-            model.modifiableComponents.append(component)                
+            model.modifiableComponents.append(component)
+            model.componentTranslations.append(.zero)
         }
         
         currentComponent = component

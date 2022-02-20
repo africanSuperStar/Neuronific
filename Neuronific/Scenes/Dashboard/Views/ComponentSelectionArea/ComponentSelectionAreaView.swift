@@ -102,7 +102,6 @@ struct SelectableComponentView : View
                 Swift.debugPrint("INFO: UTType Identifier for component \(identifier.registeredTypeIdentifiers)")
                 
                 return identifier
-                
             }
     }
 }

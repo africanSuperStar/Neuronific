@@ -11,7 +11,7 @@ import Parsec
  
 public protocol AnyDragProtocol : NSObject, Identifiable
 {
-    var id:      String                { get }
+    var uuid:    String                { get }
     var title:   String                { get }
     var parser:  JSONParser            { get set }
     var binding: Binding <AnyHashable> { get set }

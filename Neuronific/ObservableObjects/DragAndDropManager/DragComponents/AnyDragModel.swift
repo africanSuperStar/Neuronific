@@ -23,5 +23,8 @@ class AnyDragModel : ObservableObject
     @Published
     var modifiableComponents: [AnyDragComponent] = []
     
+    @Published
+    var componentTranslations: [CGPoint] = []
+    
     init() { }
 }
