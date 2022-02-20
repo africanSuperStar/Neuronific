@@ -95,6 +95,9 @@
 		A5976DED276B86CD00214A70 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5976DEC276B86CD00214A70 /* AppKit.framework */; platformFilter = maccatalyst; };
 		A59E251C27A030A000616ACB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E251B27A030A000616ACB /* Color.swift */; };
 		A59E251E27A05AED00616ACB /* SimulatedDeviceCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E251D27A05AED00616ACB /* SimulatedDeviceCanvasView.swift */; };
+		A5A7554A27C2C20C00B4EA0D /* GenericParser+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7554927C2C20C00B4EA0D /* GenericParser+Operators.swift */; };
+		A5A7554D27C2C25200B4EA0D /* GenericParser+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7554C27C2C25200B4EA0D /* GenericParser+Equatable.swift */; };
+		A5A7554F27C2C2B400B4EA0D /* GenericParser+TokenPrimitive.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7554E27C2C2B400B4EA0D /* GenericParser+TokenPrimitive.swift */; };
 		A5ACE65926746ADF00FCC855 /* Button+Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ACE65826746ADF00FCC855 /* Button+Label.swift */; };
 		A5C01CB82767C2DD005CBAA8 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C01CB72767C2DD005CBAA8 /* Font.swift */; };
 		A5C01CBB2767DC49005CBAA8 /* Accessibility+Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C01CBA2767DC49005CBAA8 /* Accessibility+Label.swift */; };
@@ -254,6 +257,9 @@
 		A5976DEC276B86CD00214A70 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		A59E251B27A030A000616ACB /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		A59E251D27A05AED00616ACB /* SimulatedDeviceCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedDeviceCanvasView.swift; sourceTree = "<group>"; };
+		A5A7554927C2C20C00B4EA0D /* GenericParser+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GenericParser+Operators.swift"; sourceTree = "<group>"; };
+		A5A7554C27C2C25200B4EA0D /* GenericParser+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GenericParser+Equatable.swift"; sourceTree = "<group>"; };
+		A5A7554E27C2C2B400B4EA0D /* GenericParser+TokenPrimitive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GenericParser+TokenPrimitive.swift"; sourceTree = "<group>"; };
 		A5ACE65826746ADF00FCC855 /* Button+Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Label.swift"; sourceTree = "<group>"; };
 		A5C01CB72767C2DD005CBAA8 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		A5C01CBA2767DC49005CBAA8 /* Accessibility+Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Accessibility+Label.swift"; sourceTree = "<group>"; };
@@ -395,6 +401,7 @@
 				A54435BC26397E7B007A9B31 /* Either.swift */,
 				A54435DE26398C2B007A9B31 /* ExpressionParser.swift */,
 				A54435B426395E97007A9B31 /* GenericParser.swift */,
+				A5A7554B27C2C23C00B4EA0D /* GenericParser+Ext */,
 				A54435CC263985CA007A9B31 /* GenericTokenParser.swift */,
 				A54435CA26398394007A9B31 /* LanguageDefinition.swift */,
 				A54435CE2639863D007A9B31 /* Permutation.swift */,
@@ -617,6 +624,16 @@
 			path = Color;
 			sourceTree = "<group>";
 		};
+		A5A7554B27C2C23C00B4EA0D /* GenericParser+Ext */ = {
+			isa = PBXGroup;
+			children = (
+				A5A7554927C2C20C00B4EA0D /* GenericParser+Operators.swift */,
+				A5A7554C27C2C25200B4EA0D /* GenericParser+Equatable.swift */,
+				A5A7554E27C2C2B400B4EA0D /* GenericParser+TokenPrimitive.swift */,
+			);
+			path = "GenericParser+Ext";
+			sourceTree = "<group>";
+		};
 		A5C01CB62767C2CE005CBAA8 /* ViewModifier */ = {
 			isa = PBXGroup;
 			children = (
@@ -722,6 +739,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A544358C26395A0E007A9B31 /* Build configuration list for PBXNativeTarget "Neuronific" */;
 			buildPhases = (
+				A5A7554827C2B7D800B4EA0D /* Swift Lint */,
 				A544357826395A0D007A9B31 /* Sources */,
 				A544357A26395A0D007A9B31 /* Resources */,
 				A558261D263D031C00116DD2 /* Frameworks */,
@@ -781,7 +799,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1310;
+				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					A544357B26395A0D007A9B31 = {
 						CreatedOnToolsVersion = 12.5;
@@ -853,6 +871,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A5A7554827C2B7D800B4EA0D /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint --config .swiftlint.yml\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A544357826395A0D007A9B31 /* Sources */ = {
@@ -927,7 +966,9 @@
 				A54435BD26397E7B007A9B31 /* Either.swift in Sources */,
 				A54435CF2639863D007A9B31 /* Permutation.swift in Sources */,
 				A54435C126398129007A9B31 /* SequenceAggregation.swift in Sources */,
+				A5A7554F27C2C2B400B4EA0D /* GenericParser+TokenPrimitive.swift in Sources */,
 				A585EAA42778B762006F5078 /* Border.swift in Sources */,
+				A5A7554A27C2C20C00B4EA0D /* GenericParser+Operators.swift in Sources */,
 				A54435DB26398B7E007A9B31 /* CharacterSet.swift in Sources */,
 				A585EA9A2777A0D0006F5078 /* ParserViewList.swift in Sources */,
 				A5ACE65926746ADF00FCC855 /* Button+Label.swift in Sources */,
@@ -940,6 +981,7 @@
 				A54435B326395CE2007A9B31 /* Parsec.swift in Sources */,
 				A5C01CBF2767E438005CBAA8 /* ViewModifier+Error.swift in Sources */,
 				A585EAAE277E5477006F5078 /* Button.swift in Sources */,
+				A5A7554D27C2C25200B4EA0D /* GenericParser+Equatable.swift in Sources */,
 				A54435C9263982DE007A9B31 /* TokenParser.swift in Sources */,
 				A54435D726398814007A9B31 /* CharacterMembership.swift in Sources */,
 				A54435D126398761007A9B31 /* UInt16.swift in Sources */,
@@ -1159,7 +1201,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1190,7 +1232,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;

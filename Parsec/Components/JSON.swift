@@ -34,7 +34,7 @@ extension JSONParserCollection : Stream, Collection
 
     subscript(index: Index) -> Iterator.Element
     {
-        get { return jsonParsers[index] }
+        return jsonParsers[index]
     }
 
     func index(after i: Index) -> Index
@@ -76,7 +76,7 @@ public enum JSONParser
         var jobject: GenericParser <String, (), JSONParser>!
         var jvoid:   GenericParser <String, (), JSONParser>!
         
-        let _ = GenericParser.recursive
+        _ = GenericParser.recursive
         {
             (jvalue: GenericParser <String, (), JSONParser>) in
             
@@ -140,6 +140,7 @@ public enum JSONParser
     
     public static var empty: JSONParser
     {
+        // swiftlint:disable force_try
         return try! JSONParser(data: "{}")
     }
     

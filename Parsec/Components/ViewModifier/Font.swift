@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 extension Font
 {
     public static func parseJSON(_ json: JSONParser) -> Self
@@ -31,4 +30,3 @@ extension Font
         return _font
     }
 }
-

@@ -7,16 +7,16 @@
 
 import SwiftUI
 
-//enum TableRows : CaseIterable
-//{
-//    case label
-//    case none
-//    case chevron
-//    case chevronLabel
-//    case icon
-//    case `switch`
-//    case chevronIcon
-//}
+// enum TableRows : CaseIterable
+// {
+//     case label
+//     case none
+//     case chevron
+//     case chevronLabel
+//     case icon
+//     case `switch`
+//     case chevronIcon
+// }
 
 struct TableRowNoneCardView : View
 {

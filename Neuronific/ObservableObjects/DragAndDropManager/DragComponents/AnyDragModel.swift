@@ -9,7 +9,6 @@ import SwiftUI
 import Combine
 import Parsec
 
-
 class AnyDragModel : ObservableObject
 {
     public static let shared = AnyDragModel()
@@ -18,7 +17,7 @@ class AnyDragModel : ObservableObject
     var focused: Bool = false
     
     @Published
-    var currentDraggedComponent: AnyDragComponent? = nil
+    var currentDraggedComponent: AnyDragComponent?
     
     @Published
     var modifiableComponents: [AnyDragComponent] = []

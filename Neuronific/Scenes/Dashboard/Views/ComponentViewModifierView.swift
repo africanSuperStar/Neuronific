@@ -19,7 +19,7 @@ struct ComponentViewModifierView : View
             Color.white
                 .opacity(0.1)
             
-            HStack()
+            HStack
             {
                 Button
                 {

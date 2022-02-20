@@ -78,7 +78,11 @@ struct FilePickerView : View
                             
                             let identifier = NSItemProvider(object: component)
                             
-                            Swift.debugPrint("INFO: UTType Identifier for component \(identifier.registeredTypeIdentifiers)")
+                            Swift.debugPrint(
+                                """
+                                    INFO: UTType Identifier for component \(identifier.registeredTypeIdentifiers)
+                                """
+                            )
                             
                             return identifier
                         }
@@ -110,26 +114,24 @@ struct FilePickerView : View
                 
                 Button("Select File")
                 {
-                    let dialog = NSOpenPanel();
+                    let dialog = NSOpenPanel()
                     
-                    dialog.title                   = "Choose a bonsai file | The Bonsai Network";
-                    dialog.showsResizeIndicator    = true;
-                    dialog.showsHiddenFiles        = false;
-                    dialog.allowsMultipleSelection = false;
-                    dialog.canChooseDirectories    = false;
-                    dialog.allowedContentTypes     = [.bonsai, .json];
+                    dialog.title                   = "Choose a bonsai file | The Bonsai Network"
+                    dialog.showsResizeIndicator    = true
+                    dialog.showsHiddenFiles        = false
+                    dialog.allowsMultipleSelection = false
+                    dialog.canChooseDirectories    = false
+                    dialog.allowedContentTypes     = [.bonsai, .json]
                     
-                    if (dialog.runModal() ==  NSApplication.ModalResponse.OK)
+                    if dialog.runModal() ==  NSApplication.ModalResponse.OK
                     {
-                        let result = dialog.url
-                        
-                        if (result != nil)
+                        if let result = dialog.url
                         {
-                            let path: String = result?.path ?? ""
+                            let path: String = result.path 
                             
                             Swift.debugPrint("INFO: Selected a bonsai file with path: \(path)")
                             
-                            appendModifiableContent(url: result?.absoluteURL)
+                            appendModifiableContent(url: result.absoluteURL)
                         }
                     }
                     else

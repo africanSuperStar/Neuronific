@@ -1,0 +1,21 @@
+disabled_rules:
+  - colon
+  - comma
+  - opening_brace
+  - trailing_whitespace
+  - no_space_in_method_call
+  - closure_parameter_position
+  - operator_whitespace
+  - identifier_name
+  - statement_position
+  - unused_setter_value
+
+opt_in_rules:
+
+included:
+  - Coordinator
+  - Parsec
+  - Neuronific
+  - ParsecTests
+
+excluded:

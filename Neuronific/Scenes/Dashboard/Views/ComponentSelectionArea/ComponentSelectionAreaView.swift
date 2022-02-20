@@ -9,7 +9,6 @@ import SwiftUI
 import Combine
 import Parsec
 
-
 struct ComponentSelectionAreaView : View
 {
     @State

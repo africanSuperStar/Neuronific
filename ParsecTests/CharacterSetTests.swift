@@ -1,7 +1,7 @@
-//==============================================================================
+// ==============================================================================
 // CharacterSetTests.swift
 // SwiftParsec
-//==============================================================================
+// ==============================================================================
 
 import XCTest
 @testable import Parsec
@@ -33,7 +33,7 @@ class CharacterSetTests : XCTestCase
             return strands.reduce(into: "") { $0 += $1 }
         }()
      
-        let _ = CharacterSet(charactersIn: unicode)
+        _ = CharacterSet(charactersIn: unicode)
     }
 }
 

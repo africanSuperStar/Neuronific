@@ -1,14 +1,15 @@
-//==============================================================================
+// ==============================================================================
 // PermutationTests.swift
 // SwiftParsec
 //
 // Created by David Dufresne on 2015-11-05.
 // Copyright © 2015 David Dufresne. All rights reserved.
-//==============================================================================
+// ==============================================================================
 
 import XCTest
 @testable import Parsec
 
+// swiftlint:disable type_body_length
 class PermutationTests : XCTestCase
 {
     func testCollectionMethods()
@@ -95,8 +96,7 @@ class PermutationTests : XCTestCase
             
             (StringParser.character("a"), nil),
             (StringParser.character("b"), nil),
-            (StringParser.character("c"), nil),
-            
+            (StringParser.character("c"), nil)
         ]
         
         let comma  = StringParser.character(",")
@@ -210,8 +210,7 @@ class PermutationTests : XCTestCase
             (StringParser.character("a"), nil),
             (StringParser.character("b"), Character("_")),
             (StringParser.character("c"), nil),
-            (StringParser.character("d"), nil),
-            
+            (StringParser.character("d"), nil)
         ]
         
         let comma  = StringParser.character(",")
@@ -268,6 +267,7 @@ class PermutationTests : XCTestCase
         }
     }
     
+    // swiftlint:disable function_body_length
     func testPermutationWithNil()
     {
         let lexer = GenericTokenParser<()>(
@@ -322,7 +322,7 @@ class PermutationTests : XCTestCase
             ["test.jpg", "A test image", nil, nil, "12"],
             ["test.jpg", "A test image", nil, "120", nil],
             ["test.jpg", "A test image", nil, "120", "12"],
-            ["test.jpg", "A test image", "A long description", "120", "12"],
+            ["test.jpg", "A test image", "A long description", "120", "12"]
         ]
         
         let errorMessage = "Permutation.parser should succeed."
@@ -367,7 +367,7 @@ class PermutationTests : XCTestCase
     
 }
 
-//==============================================================================
+// ==============================================================================
 private func ==(lhs: [String?], rhs: [String?]) -> Bool
 {
     return lhs.count == rhs.count && !zip(lhs, rhs).contains { $0 != $1 }

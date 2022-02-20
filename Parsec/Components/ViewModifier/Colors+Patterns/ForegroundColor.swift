@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 public struct ForegroundColor : JSONModifier, ViewModifier
 {
     let json: JSONParser
@@ -42,13 +41,33 @@ public struct ForegroundColor : JSONModifier, ViewModifier
            let _blue  = json["blue"].double,
            let _alpha = json["alpha"].double
         {
-            debugPrint("SWIFTUI: ViewModifier -> ForegroundColor -> Color -> RGBA -> red: \(_red), green: \(_green), blue: \(_blue), alpha: \(_alpha)")
+            debugPrint(
+                """
+                    SWIFTUI: ViewModifier -> ForegroundColor -> Color -> RGBA
+                    -> red:   \(_red),
+                    -> green: \(_green),
+                    -> blue:  \(_blue),
+                    -> alpha: \(_alpha)
+                """
+            )
             
-            return content.foregroundColor(Color(red: _red, green: _green, blue: _blue, opacity: _alpha))
+            return content.foregroundColor(
+                Color(
+                    red:     _red,
+                    green:   _green,
+                    blue:    _blue,
+                    opacity: _alpha
+                )
+            )
         }
         else
         {
-            debugPrint("SWIFTUI: ForegroundColor -> init -> invalid file or more than 1 initializer, \(ViewModifierError.moreThanOneInitializer)")
+            debugPrint(
+                """
+                    SWIFTUI: ForegroundColor -> init -> invalid file or more than 1 initializer,
+                    \(ViewModifierError.moreThanOneInitializer)
+                """
+            )
 
             return content.foregroundColor(.primary)
         }

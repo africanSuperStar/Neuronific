@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct SimulatedDeviceCanvasView : View
 {
     @ObservedObject
@@ -69,4 +68,3 @@ struct SimulatedDeviceCanvasView : View
         }
     }
 }
-

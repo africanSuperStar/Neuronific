@@ -8,7 +8,6 @@
 import SwiftUI
 import Parsec
 
- 
 public protocol AnyDragProtocol : NSObject, Identifiable
 {
     var uuid:    String                { get }
@@ -32,7 +31,7 @@ extension AnyDragProtocol
                 return _parser
             }
             
-            return try! JSONParser(data: "{}")
+            return JSONParser.empty
         }
         
         set { }

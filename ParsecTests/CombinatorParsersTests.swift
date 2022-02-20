@@ -1,16 +1,17 @@
-//==============================================================================
+// ==============================================================================
 // CombinatorParsersTests.swift
 // SwiftParsec
 //
 // Created by David Dufresne on 2015-09-26.
 // Copyright © 2015 David Dufresne. All rights reserved.
-//==============================================================================
+// ==============================================================================
 
 import XCTest
 import func Foundation.pow
 
 @testable import Parsec
 
+// swiftlint:disable type_body_length
 class CombinatorParsersTests : XCTestCase
 {
     func testChoice()
@@ -221,6 +222,7 @@ class CombinatorParsersTests : XCTestCase
         }
     }
     
+    // swiftlint:disable function_body_length
     func testBetween()
     {
         let digitOpening = StringParser.character("(")
@@ -1234,4 +1236,5 @@ extension CombinatorParsersTests
             ("testEof", testEof)
         ]
     }
+// swiftlint:disable file_length
 }

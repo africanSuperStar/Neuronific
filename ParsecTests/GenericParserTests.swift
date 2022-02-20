@@ -1,14 +1,15 @@
-//==============================================================================
+// ==============================================================================
 // GenericParserTests.swift
 // SwiftParsecTests
 //
 // Created by David Dufresne on 2015-09-04.
 // Copyright © 2015 David Dufresne. All rights reserved.
-//==============================================================================
+// ==============================================================================
 
 import XCTest
 @testable import Parsec
 
+// swiftlint:disable type_body_length
 class GenericParserTests : XCTestCase
 {
     func testMap()
@@ -660,4 +661,5 @@ extension GenericParserTests
             ("testParseArray", testParseArray)
         ]
     }
+// swiftlint:disable file_length
 }

@@ -8,7 +8,6 @@
 import SwiftUI
 import Parsec
 
-
 typealias ModifiedButton = ModifiedContent <Button <Image>, PrimitiveButtonModifier>
 
 @propertyWrapper
@@ -25,6 +24,7 @@ struct BundleFile
         else
         {
             debugPrint("RESOURCE ERROR: Resource Modifier not found: \(name).\(type)")
+            // swiftlint:disable force_cast
             return Button<SwiftUI.Image>(data: "{}").tag(0) as! ModifiedButton
         }
         
@@ -63,6 +63,7 @@ struct BundleFile
             return rejectButton
         }
         
+        // swiftlint:disable force_cast
         return button as! ModifiedButton
     }
 }
@@ -101,20 +102,17 @@ struct Modifier
     
     static var modifiers: [(view: ModifiedButton, index: Int)]
     {
-        get
-        {
-            return [
-                (Modifier.buttonModifier,              0),
-                (Modifier.colorPickerModifier,         1),
-                (Modifier.datePickerModifier,          2),
-                (Modifier.disclosureModifier,          3),
-                (Modifier.formModifier,                4),
-                (Modifier.groupBoxModifier,            5),
-                (Modifier.horizontalSplitViewModifier, 6),
-                (Modifier.labelModifier,               7),
-                (Modifier.linkModifier,                8),
-                (Modifier.listModifier,                9)
-            ]
-        }
+        return [
+            (Modifier.buttonModifier,              0),
+            (Modifier.colorPickerModifier,         1),
+            (Modifier.datePickerModifier,          2),
+            (Modifier.disclosureModifier,          3),
+            (Modifier.formModifier,                4),
+            (Modifier.groupBoxModifier,            5),
+            (Modifier.horizontalSplitViewModifier, 6),
+            (Modifier.labelModifier,               7),
+            (Modifier.linkModifier,                8),
+            (Modifier.listModifier,                9)
+        ]
     }
 }

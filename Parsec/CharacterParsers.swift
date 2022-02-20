@@ -6,12 +6,12 @@
 //
 
 // Commonly used character parsers.
-//==============================================================================
+// ==============================================================================
 
 /// String parser with an empty `UserState`.
 public typealias StringParser = GenericParser <String, (), Character>
 
-//==============================================================================
+// ==============================================================================
 // Extension containing methods related to character parsing.
 public extension Parsec
     where
@@ -268,7 +268,7 @@ public extension Parsec
     
 }
 
-//==============================================================================
+// ==============================================================================
 // Extension containing methods related to result conversion.
 public extension Parsec
     where
@@ -283,7 +283,7 @@ public extension Parsec
     
 }
 
-//==============================================================================
+// ==============================================================================
 // Extension containing methods related to string parsing.
 public extension Parsec
     where StreamType.Iterator.Element == Character

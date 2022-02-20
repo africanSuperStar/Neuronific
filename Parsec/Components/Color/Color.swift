@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 extension Color : ParsedView
 {
     public typealias Content = Self
@@ -34,7 +33,12 @@ extension Color
                 }
             }
             
-            print("SWIFTUI: Color -> init -> invalid file or more than 1 initializer, \(ViewModifierError.moreThanOneInitializer)")
+            print(
+                """
+                    SWIFTUI: Color -> init -> invalid file or more than 1 initializer,
+                    \(ViewModifierError.moreThanOneInitializer)
+                """
+            )
             
             return Self.primary
         }

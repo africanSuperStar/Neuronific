@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 extension Button
 {
     public static func parse(_ json: JSONParser) throws -> Self

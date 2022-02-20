@@ -11,7 +11,6 @@ import UniformTypeIdentifiers
 
 import Parsec
 
-
 extension AnyDragComponent : Identifiable { }
 
 class AnyDragComponent : NSObject, AnyDragProtocol, ObservableObject, NSItemProviderWriting, NSItemProviderReading

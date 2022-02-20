@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 #if canImport(NSKit)
 extension View
 {

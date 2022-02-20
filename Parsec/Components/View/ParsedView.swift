@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 public protocol ParsedView
 {
     init?(url: URL) throws

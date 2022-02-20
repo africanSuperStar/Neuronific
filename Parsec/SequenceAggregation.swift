@@ -6,9 +6,9 @@
 //
 
 // Sequence extension
-//==============================================================================
+// ==============================================================================
 
-//==============================================================================
+// ==============================================================================
 // Extension containing aggregation methods.
 extension Sequence
 {
@@ -31,7 +31,7 @@ extension Sequence
         
         for elem in self
         {
-            if (try includeElement(elem))
+            if try includeElement(elem)
             {
                 included.append(elem)
                 
@@ -47,7 +47,7 @@ extension Sequence
     
 }
 
-//==============================================================================
+// ==============================================================================
 // Extension containing aggregation methods when the `Sequence` contains
 // elements that are `Equatable`.
 extension Sequence where Iterator.Element: Equatable

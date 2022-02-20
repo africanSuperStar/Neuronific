@@ -8,7 +8,6 @@
 import SwiftUI
 import Combine
 
-
 class AppViewModel : ObservableObject
 {
     public static let shared = AppViewModel()

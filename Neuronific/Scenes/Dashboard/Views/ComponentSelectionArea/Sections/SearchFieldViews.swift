@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 enum SearchFields : CaseIterable
 {
     case `default`

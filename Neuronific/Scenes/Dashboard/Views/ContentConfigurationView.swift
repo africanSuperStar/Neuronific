@@ -8,7 +8,6 @@
 import SwiftUI
 import Parsec
 
-
 struct ContentConfigurationView : View
 {
     @EnvironmentObject

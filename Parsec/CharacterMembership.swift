@@ -6,7 +6,7 @@
 //
 
 // Character extension
-//==============================================================================
+// ==============================================================================
 
 private let uppercaseSet    = CharacterSet.uppercaseLetters
 private let lowercaseSet    = CharacterSet.lowercaseLetters
@@ -15,7 +15,7 @@ private let alphaNumericSet = CharacterSet.alphanumerics
 private let symbolSet       = CharacterSet.symbols
 private let digitSet        = CharacterSet.decimalDigits
 
-//==============================================================================
+// ==============================================================================
 // Extension containing methods to test if a character is a member of a
 // character set.
 extension Character

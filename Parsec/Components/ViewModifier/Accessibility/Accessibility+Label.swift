@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 public struct AccessibilityLabel : JSONModifier, ViewModifier
 {
     let json: JSONParser
@@ -32,15 +31,20 @@ public struct AccessibilityLabel : JSONModifier, ViewModifier
     @discardableResult
     public func parse(_ json: JSONParser, content: Content) -> some View
     {
-        let initializerCount = Array(arrayLiteral:
+        let initializerCount = [
             json["init"]["text"].string != nil,
             json["init"]["localizedStringKey"].string != nil,
             json["init"]["string"].string != nil
-        )
+        ]
         
         if initializerCount.filter({ $0 == true }).count != 1
         {
-            debugPrint("SWIFTUI: AccessibilityLabel -> init -> more than 1 initializer, \(ViewModifierError.moreThanOneInitializer)")
+            debugPrint(
+                """
+                    SWIFTUI: AccessibilityLabel -> init -> more than 1 initializer,
+                    \(ViewModifierError.moreThanOneInitializer)
+                """
+            )
         }
         
         if let _text = json["init"]["text"].string, !_text.isEmpty

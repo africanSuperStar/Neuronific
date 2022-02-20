@@ -7,9 +7,9 @@
 
 // A helper module that defines some language definitions that can be used to
 // instantiate a token parser (see "Token").
-//==============================================================================
+// ==============================================================================
 
-//==============================================================================
+// ==============================================================================
 /// The `LanguageDefinition` structure contains all parameterizable features of
 /// the token parser. There is some default definitions provided by SwiftParsec.
 public struct LanguageDefinition <UserState>
@@ -68,7 +68,7 @@ public struct LanguageDefinition <UserState>
     
 }
 
-//==============================================================================
+// ==============================================================================
 // LanguageDefinition extension containing factory methods to create language
 // definitions for different languages.
 public extension LanguageDefinition
@@ -270,7 +270,7 @@ public extension LanguageDefinition
     
 }
 
-//==============================================================================
+// ==============================================================================
 // Private variables related to different language definitions.
 
 //
@@ -380,8 +380,7 @@ private let swiftOperatorStartCharacters =
     (0x3001...0x3003).stringValue +
     (0x3008...0x3030).stringValue
 
-private let swiftOperatorStartSet =
-    CharacterSet(charactersIn: swiftOperatorStartCharacters)
+private let swiftOperatorStartSet = CharacterSet(charactersIn: swiftOperatorStartCharacters)
 
 private let swiftOperatorLetterCharacters =
     swiftOperatorStartCharacters +
@@ -392,8 +391,7 @@ private let swiftOperatorLetterCharacters =
     (0xFE20...0xFE2F).stringValue +
     (0xE0100...0xE01EF).stringValue
 
-private let swiftOperatorLetterSet =
-    CharacterSet(charactersIn: swiftOperatorLetterCharacters)
+private let swiftOperatorLetterSet = CharacterSet(charactersIn: swiftOperatorLetterCharacters)
 
 private let swiftEscapeMap: [(esc: Character, code: Character)] = [
     ("n", "\n"), ("r", "\r"), ("t", "\t"), ("\\", "\\"), ("\"", "\""),

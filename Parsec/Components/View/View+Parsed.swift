@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 public enum ViewTags : String, CaseIterable
 {
     case text   = "Text"

@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 public struct AccessibilityInputLabels : JSONModifier, ViewModifier
 {
     let json: JSONParser
@@ -36,15 +35,20 @@ public struct AccessibilityInputLabels : JSONModifier, ViewModifier
         
         _modifier == "AccessibilityInputLabels"
         {
-            let initializerCount = Array(arrayLiteral:
+            let initializerCount = [
                 json["init"]["text"].array != nil,
                 json["init"]["localizedStringKey"].array != nil,
                 json["init"]["string"].array != nil
-            )
+            ]
             
             if initializerCount.filter({ $0 == true }).count != 1
             {
-                debugPrint("SWIFTUI: AccessibilityInputLabels -> init -> more than 1 initializer, \(ViewModifierError.moreThanOneInitializer)")
+                debugPrint(
+                    """
+                        SWIFTUI: AccessibilityInputLabels -> init -> more than 1 initializer,
+                        \(ViewModifierError.moreThanOneInitializer)
+                    """
+                )
             }
             
             if let _text = json["init"]["text"].array, !_text.isEmpty

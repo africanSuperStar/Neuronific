@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 public struct Border : JSONModifier, ViewModifier
 {
     let json: JSONParser
@@ -63,7 +62,15 @@ public struct Border : JSONModifier, ViewModifier
            let _alpha = json["color"]["alpha"].double,
            let _width = json["width"].double
         {
-            debugPrint("SWIFTUI: ViewModifier -> Border -> Color -> RGBA -> red: \(_red), green: \(_green), blue: \(_blue), alpha: \(_alpha)")
+            debugPrint(
+                """
+                    SWIFTUI: ViewModifier -> Border -> Color -> RGBA
+                        -> red: \(_red),
+                        -> green: \(_green),
+                        -> blue: \(_blue),
+                        -> alpha: \(_alpha)"
+                """
+            )
             
             let color = Color(
                 red:     _red,
@@ -75,7 +82,12 @@ public struct Border : JSONModifier, ViewModifier
             return content.border(color, width: _width)
         }
 
-        debugPrint("SWIFTUI: Border -> init -> not valid or more than one initializer, \(ViewModifierError.moreThanOneInitializer)")
+        debugPrint(
+            """
+                "SWIFTUI: Border -> init -> not valid or more than one initializer,
+                \(ViewModifierError.moreThanOneInitializer)
+            """
+        )
 
         return content.border(.clear, width: 0.0)
     }

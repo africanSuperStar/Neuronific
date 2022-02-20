@@ -9,7 +9,6 @@ import SwiftUI
 import UniformTypeIdentifiers
 import Parsec
 
-
 extension UTType
 {
     public static var bonsai = UTType("network.thebonsai.neuronific.neuronificjson")!
@@ -76,7 +75,7 @@ struct AnyDropDelegate : DropDelegate
                 itemProvider.loadItem(
                     forTypeIdentifier: UTType.fileURL.identifier
                 ) {
-                    item, error in
+                    item, _ in
                     
                     guard let data = item as? Data,
                           let url  = URL(
@@ -106,7 +105,7 @@ struct AnyDropDelegate : DropDelegate
                 itemProvider.loadDataRepresentation(
                     forTypeIdentifier: UTType.bonsai.identifier
                 ) {
-                    data, error in
+                    data, _ in
                     
                     guard let data = data,
                           let url  = URL(

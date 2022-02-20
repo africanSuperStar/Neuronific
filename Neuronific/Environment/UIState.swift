@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-
 class UIState : ObservableObject
 {
     public static let shared = UIState()
