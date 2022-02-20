@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct ColorCardView : View
 {
     let title:    String

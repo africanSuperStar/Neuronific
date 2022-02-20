@@ -1,14 +1,15 @@
-//==============================================================================
+// ==============================================================================
 // ErrorMessageTest.swift
 // SwiftParsec
 //
 // Created by David Dufresne on 2015-10-28.
 // Copyright © 2015 David Dufresne. All rights reserved.
-//==============================================================================
+// ==============================================================================
 
 import XCTest
 @testable import Parsec
 
+// swiftlint:disable type_body_length
 class ErrorMessageTests : XCTestCase
 {
     func testCharacterError()
@@ -422,4 +423,5 @@ extension ErrorMessageTests
             ("testUnknownError", testUnknownError)
         ]
     }
+// swiftlint:disable file_length
 }

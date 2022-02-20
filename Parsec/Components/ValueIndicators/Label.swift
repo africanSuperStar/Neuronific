@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 extension Label : ParsedView
 {
     public typealias Content = Self
@@ -35,6 +34,7 @@ extension Label
                 print("SWIFTUI: Label -> init -> title -> \(_title)")
                 print("SWIFTUI: Label -> init -> image -> \(_image)")
                 
+                // swiftlint:disable force_cast
                 return Self(_title, image: _image) as! Content
             }
         }

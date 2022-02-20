@@ -7,9 +7,9 @@
 
 // A helper module to parse "expressions". Builds a parser given a table of
 // operators and associativities.
-//==============================================================================
+// ==============================================================================
 
-//==============================================================================
+// ==============================================================================
 /// This enumeration specifies the associativity of operators: right, left or
 /// none.
 public enum Associativity
@@ -24,7 +24,7 @@ public enum Associativity
     case none
 }
 
-//==============================================================================
+// ==============================================================================
 /// This data type specifies operators that work on values of type `Result`. An
 /// operator is either binary infix or unary prefix or postfix. A binary
 /// operator has also an associated associativity.
@@ -44,7 +44,7 @@ public enum Operator <StreamType: Stream, UserState, Result>
     
 }
 
-//==============================================================================
+// ==============================================================================
 /// Represents a table of  operators. The `makeExpressionParser()` method is
 /// used to create parsers based on the table.
 public struct OperatorTable <StreamType: Stream, UserState, Result>:
@@ -210,6 +210,7 @@ public struct OperatorTable <StreamType: Stream, UserState, Result>:
         postfix: [PostfixOperatorParser]
     )
     
+    // swiftlint:disable function_body_length
     private func buildParser(
         _ term: GenericParser <StreamType, UserState, Result>,
         operators: [Operator <StreamType, UserState, Result>]
@@ -432,5 +433,6 @@ public struct OperatorTable <StreamType: Stream, UserState, Result>:
     }
     
     public subscript(position: Index) -> Element { return table[position] }
-    
+
+// swiftlint:disable file_length
 }

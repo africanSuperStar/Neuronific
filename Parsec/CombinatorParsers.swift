@@ -6,9 +6,9 @@
 //
 
 // Commonly used generic combinators
-//==============================================================================
+// ==============================================================================
 
-//==============================================================================
+// ==============================================================================
 // Extension containing methods related to parser combinators.
 public extension GenericParser
 {
@@ -168,7 +168,10 @@ public extension GenericParser
             return (self <* separator).many
         }
         
-        return dividedBy1(separator, endSeparatorRequired: false) <|> GenericParser <StreamType, UserState, [Result]> (result: [])
+        return dividedBy1(
+            separator,
+            endSeparatorRequired: false
+        ) <|> GenericParser <StreamType, UserState, [Result]> (result: [])
     }
     
     /// Return a parser that parses _one_ or more occurrences of `self`,
@@ -215,24 +218,24 @@ public extension GenericParser
         }
     }
     
-    /// Return a parser that parses `n` occurrences of `self`. If `n` is
+    /// Return a parser that parses `number` occurrences of `self`. If `number` is
     /// smaller or equal to zero, the parser returns `[]`. It returns an array
-    /// of `n` values returned by `self`.
+    /// of `number` values returned by `self`.
     ///
-    /// - parameter n: The number of occurences of `self` to parse.
-    /// - returns: A parser that parses `n` occurrences of `self`.
+    /// - parameter number: The number of occurences of `self` to parse.
+    /// - returns: A parser that parses `number` occurrences of `self`.
     func count(
-        _ n: Int
+        _ number: Int
     )
     -> GenericParser <StreamType, UserState, [Result]>
     {
         func count(
-            _ n: Int,
+            _ number: Int,
             results: [Result]
         )
         -> GenericParser <StreamType, UserState, [Result]>
         {
-            guard n > 0
+            guard number > 0
             else
             {
                 return GenericParser <StreamType, UserState, [Result]> (
@@ -242,15 +245,15 @@ public extension GenericParser
             
             return self >>- { result in
                 
-                let rs = results.appending(result)
+                let _results = results.appending(result)
                 
-                return count(n - 1, results: rs)
+                return count(number - 1, results: _results)
             }
         }
         
-        return GenericParser<StreamType, UserState, [Result]> { state in
+        return GenericParser <StreamType, UserState, [Result]> { state in
             
-            return count(n, results: []).parse(state)
+            return count(number, results: []).parse(state)
             
         }
     }
@@ -461,7 +464,7 @@ public extension GenericParser
     }
 }
 
-//==============================================================================
+// ==============================================================================
 // Extension containing methods related to special parsers.
 public extension Parsec where StreamType.Iterator.Element == Result
 {
@@ -486,5 +489,5 @@ public extension Parsec where StreamType.Iterator.Element == Result
             <?>
             LocalizedString("end of input")
     }
-    
+// swiftlint:disable file_length
 }

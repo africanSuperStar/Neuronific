@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct SearchFieldCardView : View
 {
     var body: some View

@@ -1,10 +1,10 @@
-//==============================================================================
+// ==============================================================================
 // BenchmarkTests.swift
 // SwiftParsec
 //
 // Created by David Dufresne on 2016-07-16.
 // Copyright © 2016 David Dufresne. All rights reserved.
-//==============================================================================
+// ==============================================================================
 
 import XCTest
 import Parsec
@@ -27,6 +27,7 @@ class JSONBenchmarkTests : XCTestCase
     // Test the performance of a parser gathering basic statistics on a JSON
     // file. The goal is to keep the building part as light as possible to
     // test the parsing speed without too much influence from the building part.
+    // swiftlint:disable function_body_length
     func testJSONStatisticsParserPerformance()
     {
         let json   = LanguageDefinition<JSONStatistics>.json
@@ -81,7 +82,7 @@ class JSONBenchmarkTests : XCTestCase
         var jarray:  GenericParser <String, JSONStatistics, ()>!
         var jobject: GenericParser <String, JSONStatistics, ()>!
         
-        let _ = GenericParser.recursive
+        _ = GenericParser.recursive
         {
             (jvalue: GenericParser <String, JSONStatistics, ()>) in
             
@@ -102,21 +103,21 @@ class JSONBenchmarkTests : XCTestCase
             
             let nameValue = stringLiteral >>- { name in
                     
-                symbol(":") *> jvalue.map { value in (name, ()) }
+                symbol(":") *> jvalue.map { _ in (name, ()) }
                     
             }
             
             let dictionary: GenericParser <String, JSONStatistics, [String: ()]> =
             (symbol(",") *> nameValue).manyAccumulator
                 {
-                    assoc, dict in
+                    _, dict in
                         
                     return dict
                 }
             
-            let jobjectDict = nameValue >>- { assoc in
+            let jobjectDict = nameValue >>- { _ in
                     
-                dictionary >>- { dict in
+                dictionary >>- { _ in
                         
                     return GenericParser(result: ())
                         
@@ -166,10 +167,18 @@ class JSONBenchmarkTests : XCTestCase
         
         let path = bundle.path(forResource: "SampleJSON", ofType: "json")!
         
-        let jsonData = try! String(
+        let jsonData = try? String(
             contentsOfFile: path,
             encoding: String.Encoding.utf8
-        );
+        )
+        
+        guard let jsonData = jsonData
+        else
+        {
+            XCTFail("Failed to decode content of file with JSON data")
+            
+            return
+        }
         
         var statistics: JSONStatistics?
         

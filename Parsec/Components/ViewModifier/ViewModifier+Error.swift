@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 public enum ViewError: Error
 {
     case moreThanOneInitializer

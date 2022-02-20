@@ -1,16 +1,18 @@
-//==============================================================================
+// ==============================================================================
 // DefaultTokenParserTests.swift
 // SwiftParsec
 //
 // Created by David Dufresne on 2015-10-14.
 // Copyright © 2015 David Dufresne. All rights reserved.
-//==============================================================================
+// ==============================================================================
 
 import XCTest
 @testable import Parsec
 
+// swiftlint:disable type_body_length
 class GenericTokenParserTests : XCTestCase
 {
+    // swiftlint:disable function_body_length
     func testIdentifier()
     {
         //
@@ -1377,7 +1379,7 @@ class GenericTokenParserTests : XCTestCase
         {
             input, result in
             
-            let isMatch = result.reduce(true) { $0 ? $1 == expected : false }
+            let isMatch = result.allSatisfy({ $0 == expected })
             
             XCTAssert(
                 isMatch,
@@ -1446,4 +1448,5 @@ extension GenericTokenParserTests
             ("testCommaSeparated1", testCommaSeparated1)
         ]
     }
+// swiftlint:disable file_length
 }

@@ -19,6 +19,7 @@ struct JSONCell : View
 
     @State private var editableRawValue: String = ""
     
+    // swiftlint:disable line_length
     /// * note: According to [JSONSerialization](https://developer.apple.com/documentation/foundation/jsonserialization),
     /// acceptable values may be NSArray, NSDictionary, NSNumber, NSString or NSNull...
     private let rawValue: AnyHashable
@@ -118,7 +119,7 @@ struct JSONCell : View
                 .foregroundColor(Color.gray)
                 .onChange(of: editableRawValue, perform:
                 {
-                    value in
+                    _ in
                 })
         }
         .padding(.vertical, 5)
@@ -162,4 +163,3 @@ struct JSONCell : View
         }
     }
 }
-

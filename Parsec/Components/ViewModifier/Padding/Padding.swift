@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 public struct Padding : JSONModifier, ViewModifier
 {
     let json: JSONParser
@@ -35,7 +34,12 @@ public struct Padding : JSONModifier, ViewModifier
             return content.padding(_value)
         }
 
-        debugPrint("SWIFTUI: Padding -> init -> not valid or more than one initializer, \(ViewModifierError.moreThanOneInitializer)")
+        debugPrint(
+            """
+                SWIFTUI: Padding -> init -> not valid or more than one initializer,
+                \(ViewModifierError.moreThanOneInitializer)
+            """
+        )
 
         return content.padding(.zero)
     }

@@ -6,7 +6,7 @@
 //
 
 // CharacterSet compatibility wrapper
-//==============================================================================
+// ==============================================================================
 
 import struct Foundation.CharacterSet
 
@@ -18,7 +18,7 @@ public typealias CharacterSet = Foundation.CharacterSet
 
 #else
 
-//==============================================================================
+// ==============================================================================
 /// The `CharacterSet` is a thin wrapper around `Foundation.CharacterSet`. It
 /// helps us avoid bugs in open-source version.
 public struct CharacterSet

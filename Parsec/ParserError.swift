@@ -6,9 +6,9 @@
 //
 
 // Parse errors.
-//==============================================================================
+// ==============================================================================
 
-//==============================================================================
+// ==============================================================================
 /// Message represents parse error messages. The fine distinction between
 /// different kinds of parse errors allows the system to generate quite good
 /// error messages for the user. It also allows error messages that are
@@ -70,12 +70,11 @@ public enum Message : Comparable
     
 }
 
-
-//==============================================================================
+// ==============================================================================
 // Operator implementations for the `Message` type.
 
 /// Equality based on the index.
-public func ==(leftMsg: Message, rightMsg: Message) -> Bool
+public func == (leftMsg: Message, rightMsg: Message) -> Bool
 {
     return leftMsg.index == rightMsg.index
 }
@@ -86,8 +85,7 @@ public func <(leftMsg: Message, rightMsg: Message) -> Bool
     return leftMsg.index < rightMsg.index
 }
 
-
-//==============================================================================
+// ==============================================================================
 /// `ParseError` represents parse errors. It provides the source position
 /// (`SourcePosition`) of the error and an array of error messages (`Message`).
 /// A `ParseError` can be returned by the function `parse`.
@@ -302,7 +300,7 @@ public struct ParseError : Error, CustomStringConvertible
 
 }
 
-//==============================================================================
+// ==============================================================================
 // Extension to add ad-hoc methods on the `Sequence` type.
 extension Sequence where Iterator.Element == String {
     
@@ -314,4 +312,3 @@ extension Sequence where Iterator.Element == String {
     }
     
 }
-

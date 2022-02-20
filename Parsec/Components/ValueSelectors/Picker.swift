@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 extension Picker : ParsedView
 {
     public typealias Content = Self
@@ -36,6 +35,7 @@ extension Picker
                 
                 return Self(_title, selection: binding)
                 {
+                    // swiftlint:disable force_cast
                     PickerViewList(parsers: _content) as! Content
                 }
             }

@@ -21,7 +21,21 @@ struct ComponentView : View
             {
                 Rectangle()
                     .fill(
-                        RadialGradient(gradient: Gradient(colors: [.red, .blue, .purple, .red, .blue, .purple]), center: .top, startRadius: 50, endRadius: reader.size.height)
+                        RadialGradient(
+                            gradient: Gradient(
+                                colors: [
+                                    .red,
+                                    .blue,
+                                    .purple,
+                                    .red,
+                                    .blue,
+                                    .purple
+                                ]
+                            ),
+                            center: .top,
+                            startRadius: 50,
+                            endRadius: reader.size.height
+                        )
                     )
                     .opacity(0.2)
                 
@@ -31,7 +45,13 @@ struct ComponentView : View
                 
                 ComponentSelectionAreaView(content: content)
             }
-            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity,  alignment: .center)
+            .frame(
+                minWidth: 0,
+                maxWidth: .infinity,
+                minHeight: 0,
+                maxHeight: .infinity,
+                alignment: .center
+            )
             .cornerRadius(Theme.cornerRadius)
             .padding(.vertical, Theme.largePadding)
             .shadow(radius: 10)

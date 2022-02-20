@@ -6,12 +6,13 @@
 //
 
 // The primitive parser combinators.
-//==============================================================================
+// ==============================================================================
 
-//==============================================================================
+// ==============================================================================
 /// `GenericParser` is a generic implementation of the `Parsec`.
 ///
 /// - requires: StreamType.Iterator has to be a value type.
+// swiftlint:disable type_body_length
 public final class GenericParser <StreamType: Stream, UserState, Result> : Parsec
 {
     /// Create a parser containing the injected result.
@@ -391,7 +392,10 @@ public final class GenericParser <StreamType: Stream, UserState, Result> : Parse
                     {
                     case .ok:
             
-                        let failureMsg = LocalizedString("Combinator 'many' is applied to a parser that accepts an empty string.")
+                        let failureMsg = LocalizedString(
+                            "Combinator 'many' is applied to a parser that accepts an empty string."
+                        )
+                        
                         assertionFailure(failureMsg)
                         
                     case .error(let error):
@@ -674,6 +678,7 @@ public final class GenericParser <StreamType: Stream, UserState, Result> : Parse
     ///     lifted function.
     /// - returns: A parser that applies the result of the supplied parsers to
     ///   the lifted function.
+    // swiftlint:disable function_parameter_count
     public static func lift5 <Param1, Param2, Param3, Param4, Param5> (
         _ function: @escaping (Param1, Param2, Param3, Param4, Param5) -> Result,
         parser1: GenericParser <StreamType, UserState, Param1>,
@@ -797,204 +802,7 @@ public final class GenericParser <StreamType: Stream, UserState, Result> : Parse
     }
 }
 
-//==============================================================================
-// Parsec extension
-public extension Parsec
-{
-    // TODO: Move this function into the `Parsec` protocol extension when Swift
-    // will allow to add requirements to `associatedtype` type constraint
-    // (Ex.: `associatedtype StreamType: CollectionType
-    // where StreamType.SubSequence == Stream`)
-    
-    /// Return a parser that accepts a token `Element` with `Result` when the
-    /// function `match(Element) -> Result` returns
-    /// `Optional.SomeWrapped(Result)`. The token can be shown using
-    /// `tokenDescription(Element) -> String`. The position of the _next_ token
-    /// should be returned when
-    /// `nextPosition(SourcePosition, Element, StreamType) -> SourcePosition`
-    /// is called with the current source position, the current token and the
-    /// rest of the tokens.
-    ///
-    /// This is the most primitive combinator for accepting tokens. For example,
-    /// the `GenericParser.character()` parser could be implemented as:
-    ///
-    ///     public static func character(
-    ///         char: Character
-    ///     ) -> GenericParser<StreamType, UserState, Result> {
-    ///
-    ///         return tokenPrimitive(
-    ///             tokenDescription: { "\"" + $0 + "\"" },
-    ///             nextPosition: { (var position, elem, _) in
-    ///
-    ///                 position.updatePosition(elem)
-    ///                 return position
-    ///
-    ///             },
-    ///             match: { elem in
-    ///
-    ///                 char == elem ? elem : nil
-    ///
-    ///             })
-    ///
-    ///     }
-    ///
-    /// - parameters:
-    ///   - tokenDescription: A function to describe the token.
-    ///   - nextPosition: A function returning the position of the next token.
-    ///   - match: A function returning an optional result when the token match
-    ///     a predicate.
-    /// - returns: Return a parser that accepts a token `Element` with result
-    ///   `Result` when the token matches.
-    static func tokenPrimitive(
-        tokenDescription: @escaping (StreamType.Iterator.Element) -> String,
-        nextPosition: @escaping (
-            SourcePosition, StreamType.Iterator.Element
-        ) -> SourcePosition,
-        match: @escaping (StreamType.Iterator.Element) -> Result?
-    )
-    -> GenericParser <StreamType, UserState, Result>
-    {
-        return GenericParser(parse: { state in
-            
-            var input = state.input
-     
-            let position = state.position
-            
-            guard let tok = input.next()
-            else
-            {
-                let error = ParseError.unexpectedParseError(position, message: "")
-                
-                return .none(.error(error))
-            }
-            
-            guard let result = match(tok)
-            else
-            {
-                let error = ParseError.unexpectedParseError(
-                    position,
-                    message: tokenDescription(tok)
-                )
-             
-                return .none(.error(error))
-            }
-            
-            let newPosition = nextPosition(position, tok)
-            
-            let newState = ParserState(
-                input: input,
-                position: newPosition,
-                userState: state.userState
-            )
-            
-            let unknownError = ParseError.unknownParseError(newPosition)
-            
-            return .some(.ok(result, newState, unknownError))
-        })
-    }
-}
-
-//==============================================================================
-// Parsec extension where the elements are `Equatable`
-public extension Parsec
-    where
-    StreamType.Iterator.Element: Equatable
-{
-    // TODO: Move this function into the `Parsec` protocol extension when Swift
-    // will allow to add requirements to `associatedtype` type constraint
-    // (Ex.: `associatedtype StreamType: CollectionType where
-    // StreamType.SubSequence == Stream`)
-    
-    /// Return a parser that parses a collection of tokens.
-    ///
-    /// - parameters:
-    ///   - tokensDescription: A function to describe the tokens.
-    ///   - nextPosition: A function returning the position after the tokens.
-    ///   - tokens: The collection of tokens to parse.
-    /// - returns: A parser that parses a collection of tokens.
-    static func tokens(
-        tokensDescription: @escaping (StreamType) -> String,
-        nextPosition: @escaping (
-            SourcePosition, StreamType
-        ) -> SourcePosition,
-        tokens: StreamType
-    )
-    -> GenericParser<StreamType, UserState, StreamType>
-    {
-        return GenericParser(parse: { state in
-            
-            let position = state.position
-            
-            var tokensIterator = tokens.makeIterator()
-            var token = tokensIterator.next()
-            
-            guard token != nil
-            else
-            {
-                let error = ParseError.unknownParseError(position)
-                return .none(.ok([], state, error))
-            }
-            
-            var input = state.input
-            
-            var hasConsumed = false
-            var consumedConstructor = Consumed <StreamType, UserState, StreamType>.none
-            
-            repeat {
-                
-                guard let inputToken = input.next()
-                else
-                {
-                    var eofError = ParseError.unexpectedParseError(position, message: "")
-                    
-                    eofError.insertMessage(.expected(tokensDescription(tokens)))
-                    
-                    return consumedConstructor(.error(eofError))
-                }
-                
-                if token! != inputToken
-                {
-                    let tokDesc = tokensDescription([inputToken])
-                    
-                    var expectedError = ParseError.unexpectedParseError(
-                        position,
-                        message: tokDesc
-                    )
-                    
-                    let expected = Message.expected(tokensDescription(tokens))
-                 
-                    expectedError.insertMessage(expected)
-                    
-                    return consumedConstructor(.error(expectedError))
-                }
-                
-                if !hasConsumed
-                {
-                    hasConsumed         = true
-                    consumedConstructor = Consumed.some
-                }
-                
-                token = tokensIterator.next()
-                
-            } while token != nil
-            
-            let newPosition = nextPosition(position, tokens)
-            
-            let newState = ParserState(
-                input:     input,
-                position:  newPosition,
-                userState: state.userState
-            )
-          
-            let error = ParseError.unknownParseError(newPosition)
-            
-            return .some(.ok(tokens, newState, error))
-        })
-    }
-}
-
-
-//==============================================================================
+// ==============================================================================
 /// The `Consumed` enumeration indicates if a parser consumed some or none from
 /// an input.
 enum Consumed <StreamType: Stream, UserState, Result>
@@ -1043,7 +851,7 @@ enum Consumed <StreamType: Stream, UserState, Result>
     }
 }
 
-//==============================================================================
+// ==============================================================================
 /// The `ParserReply` enumeration indicates the result of a parse.
 enum ParserReply <StreamType: Stream, UserState, Result>
 {
@@ -1104,7 +912,7 @@ enum ParserReply <StreamType: Stream, UserState, Result>
     
 }
 
-//==============================================================================
+// ==============================================================================
 /// ParserState contains the state of the parser and the user state.
 struct ParserState <StreamTypeIterator, UserState>
 {
@@ -1117,94 +925,5 @@ struct ParserState <StreamTypeIterator, UserState>
     /// The supplied user state.
     var userState: UserState
     
-}
-
-//==============================================================================
-// Implementation of different parser operators.
-
-/// Infix operator for `map`. It has the same precedence as the equality
-/// operator (`==`).
-///
-/// - parameters:
-///   - transform: A mapping function.
-///   - parser: The parser whose result is mapped.
-public func <^> <StreamType, UserState, Result, T> (
-    transform: @escaping (Result) -> T,
-    parser: GenericParser <StreamType, UserState, Result>
-)
--> GenericParser <StreamType, UserState, T>
-{
-    return parser.map(transform)
-}
-
-/// Infix operator for `apply`. It has the same precedence as the equality
-/// operator (`==`).
-///
-/// - parameters:
-///   - leftParser: The parser containing the function to apply to the parser on
-///     the right.
-///   - rightParser: The parser on which the function is applied.
-/// - returns: A parser with the applied function.
-public func<*><StreamType, UserState, Result, T>(
-    leftParser: GenericParser<StreamType, UserState, (Result) -> T>,
-    rightParser: GenericParser<StreamType, UserState, Result>
-) -> GenericParser<StreamType, UserState, T> {
-    
-    return rightParser.apply(leftParser)
-    
-}
-
-/// Sequence parsing, discarding the value of the first parser. It has the same
-/// precedence as the equality operator (`==`).
-///
-/// - parameters:
-///   - leftParser: The first parser executed.
-///   - rightParser: The second parser executed.
-/// - returns: A parser returning the result of the second parser.
-public func *><StreamType, UserState, Param1, Param2>(
-    leftParser: GenericParser<StreamType, UserState, Param1>,
-    rightParser: GenericParser<StreamType, UserState, Param2>
-) -> GenericParser<StreamType, UserState, Param2> {
-    
-    return GenericParser.lift2(
-        { $1 },
-        parser1: leftParser,
-        parser2: rightParser
-    )
-    
-}
-
-/// Sequence parsing, discarding the value of the second parser. It has the same
-/// precedence as the equality operator (`==`).
-///
-/// - parameters:
-///   - leftParser: The first parser executed.
-///   - rightParser: The second parser executed.
-/// - returns: A parser returning the result of the first parser.
-public func <*<StreamType, UserState, Param1, Param2>(
-    leftParser: GenericParser<StreamType, UserState, Param1>,
-    rightParser: GenericParser<StreamType, UserState, Param2>
-) -> GenericParser<StreamType, UserState, Param1> {
-    
-    return GenericParser.lift2(
-        { p0, _ in p0 },
-        parser1: leftParser,
-        parser2: rightParser
-    )
-    
-}
-
-/// Infix operator for `flatMap` named _bind_. It has the same precedence as the
-/// `nil` coalescing operator (`??`).
-///
-/// - parameters:
-///   - parser: The parser whose result is passed to the `transform` function.
-///   - transform: The function receiving the result of `parser`.
-public func >>-<StreamType, UserState, Result, T>(
-    parser: GenericParser<StreamType, UserState, Result>,
-    transform: @escaping (Result) -> GenericParser<StreamType, UserState, T>
-) -> GenericParser<StreamType, UserState, T> {
-    
-    return parser.flatMap(transform)
-    
+// swiftlint:disable file_length
 }

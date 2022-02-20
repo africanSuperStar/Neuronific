@@ -9,7 +9,6 @@ import SwiftUI
 import Combine
 import Parsec
 
-
 struct ComponentSelectionAreaView : View
 {
     @State
@@ -102,7 +101,6 @@ struct SelectableComponentView : View
                 Swift.debugPrint("INFO: UTType Identifier for component \(identifier.registeredTypeIdentifiers)")
                 
                 return identifier
-                
             }
     }
 }

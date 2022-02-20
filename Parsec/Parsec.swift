@@ -6,7 +6,7 @@
 //
 //  Parsec protocol and related operator definitions.
 
-//==============================================================================
+// ==============================================================================
 /// `Parsec` is a parser with stream type `Stream`, user state type `UserState`
 /// and return type `Result`.
 public protocol Parsec
@@ -209,7 +209,7 @@ public protocol Parsec
 
 }
 
-//==============================================================================
+// ==============================================================================
 // Operator definitions.
 
 /// Precedence of infix operator for `Parsec.labels()`. It has a higher
@@ -300,7 +300,7 @@ extension Parsec
     
 }
 
-//==============================================================================
+// ==============================================================================
 // Extension containing useful methods to run a parser.
 public extension Parsec
 {
@@ -339,7 +339,7 @@ public extension Parsec
     
 }
 
-//==============================================================================
+// ==============================================================================
 // Extension containing useful methods to run a parser with an empty user state.
 public extension Parsec where UserState == ()
 {
@@ -385,8 +385,7 @@ public extension Parsec where UserState == ()
     
 }
 
-
-//==============================================================================
+// ==============================================================================
 // Extension containing useful methods to run a parser.
 /// A `Stream` instance is responsible for maintaining the position of the
 /// parser's stream.
@@ -404,7 +403,7 @@ extension String: Stream
     
 }
 
-//==============================================================================
+// ==============================================================================
 /// Types conforming to the `EmptyInitializable` protocol provide an empty
 /// intializer.
 public protocol EmptyInitializable
@@ -412,9 +411,10 @@ public protocol EmptyInitializable
     init()
 }
 
-//==============================================================================
+// ==============================================================================
 // Extensions implementing the `Stream` protocol for various collections.
 
+// swiftlint:disable file_length
 extension Array :           Stream, EmptyInitializable { }
 extension ContiguousArray : Stream, EmptyInitializable { }
 extension ArraySlice :      Stream, EmptyInitializable { }

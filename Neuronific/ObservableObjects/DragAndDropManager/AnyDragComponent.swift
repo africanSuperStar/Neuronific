@@ -11,23 +11,25 @@ import UniformTypeIdentifiers
 
 import Parsec
 
-
 extension AnyDragComponent : Identifiable { }
 
-class AnyDragComponent : NSObject, AnyDragProtocol, NSItemProviderWriting, NSItemProviderReading
+class AnyDragComponent : NSObject, AnyDragProtocol, ObservableObject, NSItemProviderWriting, NSItemProviderReading
 {
-    @Published
-    var hovered: Bool = false
-
-    var content: String               = "{}"    
-    var binding: Binding<AnyHashable> = .constant("{}")
+    @GestureState
+    var dragAmount: CGSize = .zero
     
-    let id: String = UUID().uuidString
+    var content: String               = "{}"
+    var binding: Binding<AnyHashable> = .constant("{}")
     
     required convenience init(native: AnyView)
     {
         self.init()
         self.native = native
+    }
+    
+    var uuid: String
+    {
+        return parser["uuid"].string ?? ""
     }
     
     var view: AnyView

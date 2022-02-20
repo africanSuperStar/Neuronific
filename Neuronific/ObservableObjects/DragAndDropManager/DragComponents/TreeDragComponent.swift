@@ -10,9 +10,8 @@ import Combine
 
 import Parsec
 
-
-//final class TreeDragComponent : AnyDragComponent
-//{
+// final class TreeDragComponent : AnyDragComponent
+// {
 //    var bindings: [(component: AnyDragComponent, binding: Binding <String>)] = []
 //    
 //    convenience init(bindings: [(component: AnyDragComponent, binding: Binding <String>)])
@@ -48,4 +47,4 @@ import Parsec
 //        
 //        set { }
 //    }
-//}
+// }

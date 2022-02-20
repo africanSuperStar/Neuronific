@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 protocol JSONModifier
 {
     associatedtype ModifiedView: View
@@ -41,7 +40,7 @@ extension JSONModifier
         {
             debugPrint("SWIFTUI: Failed to parse Contents of Data, \(ViewModifierError.failedToParseContentOfData)")
 
-            return self.parse(try! JSONParser(data: "{}"), content: content)
+            return self.parse(JSONParser.empty, content: content)
         }
 
         return self.parse(json, content: content)

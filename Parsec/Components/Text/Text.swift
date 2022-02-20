@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 extension Text : ParsedView
 {
     public typealias Content = Self
@@ -21,12 +20,12 @@ extension Text
         
         _view == "Text"
         {
-            let initializerCount = Array(arrayLiteral:
+            let initializerCount = [
                 json["init"]["content"].string != nil,
                 json["init"]["localizedStringKey"].string != nil,
                 json["init"]["verbatim"].string != nil,
                 json["init"]["image"].string != nil
-            )
+            ]
             
             if initializerCount.filter({ $0 == true }).count != 1
             {

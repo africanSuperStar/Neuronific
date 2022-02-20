@@ -9,7 +9,6 @@ import Foundation
 import Combine
 import Parsec
 
-
 class FileModel : ObservableObject
 {
     public static let shared = FileModel()

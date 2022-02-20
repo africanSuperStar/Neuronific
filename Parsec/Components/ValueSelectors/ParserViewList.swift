@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 public struct PickerViewList : View
 {
     public var parsers: [JSONParser]

@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 extension Button : ParsedView
 {
     public typealias Content = Self

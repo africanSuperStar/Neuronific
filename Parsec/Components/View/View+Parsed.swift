@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-
 public enum ViewTags : String, CaseIterable
 {
     case text   = "Text"
     case button = "Button"
+    case color  = "Color"
     
     init?(_ view: String)
     {
@@ -40,6 +40,11 @@ extension AnyView
         case .button:
             return Self(
                 try Button.parseLabel(json).modify(json)
+            )
+            
+        case .color:
+            return Self(
+                try Color.parse(json).modify(json)
             )
             
         default:
