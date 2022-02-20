@@ -1,10 +1,10 @@
+// ==============================================================================
+// CharacterMembership.swift
+// SwiftParsec
 //
-//  CharacterMembership.swift
-//  Parsec
+// Created by David Dufresne on 2015-09-19.
+// Copyright © 2015 David Dufresne. All rights reserved.
 //
-//  Created by Cameron de Bruyn on 2021/04/28.
-//
-
 // Character extension
 // ==============================================================================
 

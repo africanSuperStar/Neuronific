@@ -1,10 +1,10 @@
+// ==============================================================================
+// Expression.swift
+// SwiftParsec
 //
-//  ExpressionParser.swift
-//  Parsec
+// Created by David Dufresne on 2015-10-23.
+// Copyright © 2015 David Dufresne. All rights reserved.
 //
-//  Created by Cameron de Bruyn on 2021/04/28.
-//
-
 // A helper module to parse "expressions". Builds a parser given a table of
 // operators and associativities.
 // ==============================================================================

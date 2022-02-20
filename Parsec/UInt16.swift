@@ -1,10 +1,10 @@
+// ==============================================================================
+// UInt16.swift
+// SwiftParsec
 //
-//  UInt16.swift
-//  Parsec
+// Created by David Dufresne on 2015-11-22.
+// Copyright © 2015 David Dufresne. All rights reserved.
 //
-//  Created by Cameron de Bruyn on 2021/04/28.
-//
-
 // UInt16 extension
 // ==============================================================================
 

@@ -1,10 +1,12 @@
+// ==============================================================================
+// Parsec.swift
+// SwiftParsec
 //
-//  Parsec.swift
-//  Parsec
+// Created by David Dufresne on 2016-05-02.
+// Copyright © 2016 David Dufresne. All rights reserved.
 //
-//  Created by Cameron de Bruyn on 2021/04/28.
-//
-//  Parsec protocol and related operator definitions.
+// Parsec protocol and related operator definitions.
+// ==============================================================================
 
 // ==============================================================================
 /// `Parsec` is a parser with stream type `Stream`, user state type `UserState`

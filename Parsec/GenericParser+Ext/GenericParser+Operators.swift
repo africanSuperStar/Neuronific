@@ -1,9 +1,12 @@
+// ==============================================================================
+// Primitive.swift
+// SwiftParsec
 //
-//  GenericParser+Operators.swift
-//  Parsec
+// Created by David Dufresne on 2015-09-04.
+// Copyright © 2015 David Dufresne. All rights reserved.
 //
-//  Created by Cameron de Bruyn on 2022/02/20.
-//
+// The primitive parser combinators.
+// ==============================================================================
 
 import Foundation
 

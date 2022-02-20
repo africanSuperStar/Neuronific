@@ -1,10 +1,10 @@
+// ==============================================================================
+// LanguageDefinition.swift
+// SwiftParsec
 //
-//  LanguageDefinition.swift
-//  Parsec
+// Created by David Dufresne on 2015-10-14.
+// Copyright © 2015 David Dufresne. All rights reserved.
 //
-//  Created by Cameron de Bruyn on 2021/04/28.
-//
-
 // A helper module that defines some language definitions that can be used to
 // instantiate a token parser (see "Token").
 // ==============================================================================

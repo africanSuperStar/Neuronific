@@ -1,9 +1,12 @@
+// ==============================================================================
+// Permutation.swift
+// SwiftParsec
 //
-//  Permutation.swift
-//  Parsec
+// Created by David Dufresne on 2015-11-01.
+// Copyright © 2015 David Dufresne. All rights reserved.
 //
-//  Created by Cameron de Bruyn on 2021/04/28.
-//
+// This module implements permutation parsers.
+// ==============================================================================
 
 // ==============================================================================
 /// The type `Permutation` denotes a permutation that can be converted to a

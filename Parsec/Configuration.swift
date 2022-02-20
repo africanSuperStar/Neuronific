@@ -1,10 +1,10 @@
+// ==============================================================================
+// Configuration.swift
+// SwiftParsec
 //
-//  Configuration.swift
-//  Parsec
+// Created by David Dufresne on 2016-05-27.
+// Copyright © 2016 David Dufresne. All rights reserved.
 //
-//  Created by Cameron de Bruyn on 2021/04/28.
-//
-
 // Configuration of the parsers framework
 // ==============================================================================
 

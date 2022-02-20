@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+<key>FILEHEADER</key>
+<string>
+//  This file is distributed under the same license as the ___ORGANIZATIONNAME___ package.
+//  Copyright (c) ___YEAR___ and Confidential to ___ORGANIZATIONNAME___. All rights reserved.
+//
+//  ___FILEBASENAME___.swift
+//  ___PROJECTNAME___
+//
+//  Created by ___FULLUSERNAME___ on ___DATE___.
+//</string>
+</dict>
+</plist>

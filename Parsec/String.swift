@@ -1,10 +1,10 @@
+// ==============================================================================
+// String.swift
+// SwiftParsec
 //
-//  String.swift
-//  Parsec
+// Created by David Dufresne on 2015-10-10.
+// Copyright © 2015 David Dufresne. All rights reserved.
 //
-//  Created by Cameron de Bruyn on 2021/04/28.
-//
-
 // String extension
 // ==============================================================================
 

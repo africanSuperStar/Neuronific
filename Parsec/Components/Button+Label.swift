@@ -1,5 +1,8 @@
 //
-//  Button.swift
+//  This file is distributed under the same license as the NEURONIFIC (PTY) LTD package.
+//  Copyright (c) 2022 and Confidential to NEURONIFIC (PTY) LTD. All rights reserved.
+//
+//  Button+Label.swift
 //  Parsec
 //
 //  Created by Cameron de Bruyn on 2021/06/12.
