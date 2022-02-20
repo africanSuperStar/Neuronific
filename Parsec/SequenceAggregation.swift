@@ -1,10 +1,10 @@
+// ==============================================================================
+// SequenceAggregation.swift
+// SwiftParsec
 //
-//  SequenceAggregation.swift
-//  Parsec
+// Created by David Dufresne on 2015-09-14.
+// Copyright © 2015 David Dufresne. All rights reserved.
 //
-//  Created by Cameron de Bruyn on 2021/04/28.
-//
-
 // Sequence extension
 // ==============================================================================
 

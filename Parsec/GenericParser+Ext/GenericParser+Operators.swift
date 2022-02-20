@@ -1,12 +1,12 @@
+// ==============================================================================
+// Primitive.swift
+// SwiftParsec
 //
-//  This file is distributed under the same license as the NEURONIFIC (PTY) LTD package.
-//  Copyright (c) 2022 and Confidential to NEURONIFIC (PTY) LTD. All rights reserved.
+// Created by David Dufresne on 2015-09-04.
+// Copyright © 2015 David Dufresne. All rights reserved.
 //
-//  GenericParser+Operators.swift
-//  Parsec
-//
-//  Created by Cameron de Bruyn on 2022/02/20.
-//
+// The primitive parser combinators.
+// ==============================================================================
 
 import Foundation
 

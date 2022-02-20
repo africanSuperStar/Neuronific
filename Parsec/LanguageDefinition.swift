@@ -1,13 +1,10 @@
+// ==============================================================================
+// LanguageDefinition.swift
+// SwiftParsec
 //
-//  This file is distributed under the same license as the NEURONIFIC (PTY) LTD package.
-//  Copyright (c) 2022 and Confidential to NEURONIFIC (PTY) LTD. All rights reserved.
+// Created by David Dufresne on 2015-10-14.
+// Copyright © 2015 David Dufresne. All rights reserved.
 //
-//  LanguageDefinition.swift
-//  Parsec
-//
-//  Created by Cameron de Bruyn on 2021/04/28.
-//
-
 // A helper module that defines some language definitions that can be used to
 // instantiate a token parser (see "Token").
 // ==============================================================================
@@ -399,5 +396,4 @@ private let swiftOperatorLetterSet = CharacterSet(charactersIn: swiftOperatorLet
 private let swiftEscapeMap: [(esc: Character, code: Character)] = [
     ("n", "\n"), ("r", "\r"), ("t", "\t"), ("\\", "\\"), ("\"", "\""),
     ("'", "'"), ("0", "\0")
-// swiftlint:disable file_length
 ]

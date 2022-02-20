@@ -1,12 +1,10 @@
+// ==============================================================================
+// GenericTokenParser.swift
+// SwiftParsec
 //
-//  This file is distributed under the same license as the NEURONIFIC (PTY) LTD package.
-//  Copyright (c) 2022 and Confidential to NEURONIFIC (PTY) LTD. All rights reserved.
-//
-//  GenericTokenParser.swift
-//  Parsec
-//
-//  Created by Cameron de Bruyn on 2021/04/28.
-//
+// Created by David Dufresne on 2016-10-08.
+// Copyright © 2016 David Dufresne. All rights reserved.
+// ==============================================================================
 
 // ==============================================================================
 /// Generic implementation of the `TokenParser`.

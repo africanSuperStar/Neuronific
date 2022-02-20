@@ -1,13 +1,10 @@
+// ==============================================================================
+// UInt16.swift
+// SwiftParsec
 //
-//  This file is distributed under the same license as the NEURONIFIC (PTY) LTD package.
-//  Copyright (c) 2022 and Confidential to NEURONIFIC (PTY) LTD. All rights reserved.
+// Created by David Dufresne on 2015-11-22.
+// Copyright © 2015 David Dufresne. All rights reserved.
 //
-//  UInt16.swift
-//  Parsec
-//
-//  Created by Cameron de Bruyn on 2021/04/28.
-//
-
 // UInt16 extension
 // ==============================================================================
 

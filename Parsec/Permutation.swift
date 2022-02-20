@@ -1,12 +1,12 @@
+// ==============================================================================
+// Permutation.swift
+// SwiftParsec
 //
-//  This file is distributed under the same license as the NEURONIFIC (PTY) LTD package.
-//  Copyright (c) 2022 and Confidential to NEURONIFIC (PTY) LTD. All rights reserved.
+// Created by David Dufresne on 2015-11-01.
+// Copyright © 2015 David Dufresne. All rights reserved.
 //
-//  Permutation.swift
-//  Parsec
-//
-//  Created by Cameron de Bruyn on 2021/04/28.
-//
+// This module implements permutation parsers.
+// ==============================================================================
 
 // ==============================================================================
 /// The type `Permutation` denotes a permutation that can be converted to a

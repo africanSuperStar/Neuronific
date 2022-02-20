@@ -1,13 +1,10 @@
+// ==============================================================================
+// TokenParser.swift
+// SwiftParsec
 //
-//  This file is distributed under the same license as the NEURONIFIC (PTY) LTD package.
-//  Copyright (c) 2022 and Confidential to NEURONIFIC (PTY) LTD. All rights reserved.
+// Created by David Dufresne on 2015-10-05.
+// Copyright © 2015 David Dufresne. All rights reserved.
 //
-//  TokenParser.swift
-//  Parsec
-//
-//  Created by Cameron de Bruyn on 2021/04/28.
-//
-
 // A helper module to parse lexical elements (tokens). See the initializer for
 // the `TokenParser` structure for a description of how to use it.
 // Operator implementations for the `Message` type.

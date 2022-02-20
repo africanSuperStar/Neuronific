@@ -1,13 +1,10 @@
+// ==============================================================================
+// CombinatorParsers.swift
+// SwiftParsec
 //
-//  This file is distributed under the same license as the NEURONIFIC (PTY) LTD package.
-//  Copyright (c) 2022 and Confidential to NEURONIFIC (PTY) LTD. All rights reserved.
+// Created by David Dufresne on 2015-09-26.
+// Copyright © 2015 David Dufresne. All rights reserved.
 //
-//  CombinatorParsers.swift
-//  Parsec
-//
-//  Created by Cameron de Bruyn on 2021/04/28.
-//
-
 // Commonly used generic combinators
 // ==============================================================================
 
