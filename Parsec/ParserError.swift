@@ -130,7 +130,7 @@ public struct ParseError : Error, CustomStringConvertible
         
     }
     
-    // Backing store for `messages`.
+    /// Backing store for `messages`.
     private var _messages = [Message]()
     
     /// A textual representation of `self`.
@@ -180,15 +180,15 @@ public struct ParseError : Error, CustomStringConvertible
             
         }
         
-        // Unexpected messages.
+        /// Unexpected messages.
         let unexpectedDesc =
             formatMessages(unexpected, havingType: unexpectedMsg)
         
-        // Expected messages.
+        /// Expected messages.
         let expectingMsg = LocalizedString("expecting")
         let expectedDesc = formatMessages(expected, havingType: expectingMsg)
         
-        // Generic messages.
+        /// Generic messages.
         let genericDesc = formatMessages(generic, havingType: "")
         
         let descriptions = [
