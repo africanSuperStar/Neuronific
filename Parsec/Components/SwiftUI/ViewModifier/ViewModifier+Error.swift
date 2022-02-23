@@ -14,6 +14,7 @@ public enum ViewError: Error
 {
     case moreThanOneInitializer
     case failedToInitializeView
+    case failedToInitializeLayer
 }
 
 public enum ViewModifierError : Error
