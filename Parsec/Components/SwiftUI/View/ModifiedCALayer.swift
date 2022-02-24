@@ -13,6 +13,7 @@ import SwiftUI
 public enum CALayerModifierTags : String, CaseIterable
 {
     case anchorPoint = "AnchorPoint"
+    case borderWidth = "BorderWidth"
     
     init?(_ tag: String)
     {
@@ -43,20 +44,18 @@ public struct AnyViewCALayer : ViewModifier
     {
         guard let layers = json["layers"].array else { return AnyView(content) }
      
-        let subLayer = CALayerView()
-        
-        var view = AnyView(content)
+        var view = CALayerView()
         
         for layer in layers
         {
-            view = parseCALayer(layer, content: view, layer: subLayer)
+            view.layer = parseCALayer(layer, view: view)
         }
         
         return AnyView(
-            ZStack(alignment: .top)
+            ZStack
             {
+                content
                 view
-                subLayer
             }
         )
     }
@@ -67,24 +66,22 @@ extension AnyViewCALayer
     @discardableResult
     public func parseCALayer(
         _ modifier: JSONParser,
-        content:    AnyView,
-        layer:      CALayerView
+        view:       CALayerView
     )
-    -> AnyView
+    -> CALayer
     {
-        guard let tag = modifier["tag"].string else { return content }
+        guard let tag = modifier["tag"].string else { return view.layer }
         
         switch CALayerModifierTags(tag)
         {
         case .anchorPoint:
-            return AnyView(
-                content.modifier(
-                    AnchorPoint(json: modifier, layerView: layer)
-                )
-            )
+            return AnchorPoint(json: modifier, view: view).parse()
+            
+        case .borderWidth:
+            return BorderWidth(json: modifier, view: view).parse()
             
         default:
-            return content
+            return view.layer
         }
     }
 }

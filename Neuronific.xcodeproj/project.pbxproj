@@ -78,6 +78,7 @@
 		A56C89DB279C8D8A005DEAC9 /* TableRowCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56C89DA279C8D8A005DEAC9 /* TableRowCardView.swift */; };
 		A56C89DD279C93E8005DEAC9 /* ColorPickerViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56C89DC279C93E8005DEAC9 /* ColorPickerViews.swift */; };
 		A56C89DF279C9782005DEAC9 /* SegmentedPickerViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56C89DE279C9782005DEAC9 /* SegmentedPickerViews.swift */; };
+		A57698B627C7E7B900077566 /* CALayer+BorderWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57698B527C7E7B900077566 /* CALayer+BorderWidth.swift */; };
 		A585EA9827778E8A006F5078 /* ForegroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EA9727778E8A006F5078 /* ForegroundColor.swift */; };
 		A585EA9A2777A0D0006F5078 /* ParserViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EA992777A0D0006F5078 /* ParserViewList.swift */; };
 		A585EA9F2777A19E006F5078 /* ModifiedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EA9E2777A19E006F5078 /* ModifiedView.swift */; };
@@ -243,6 +244,7 @@
 		A56C89DC279C93E8005DEAC9 /* ColorPickerViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViews.swift; sourceTree = "<group>"; };
 		A56C89DE279C9782005DEAC9 /* SegmentedPickerViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedPickerViews.swift; sourceTree = "<group>"; };
 		A5759F50263AD28C003172C6 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		A57698B527C7E7B900077566 /* CALayer+BorderWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+BorderWidth.swift"; sourceTree = "<group>"; };
 		A585EA9727778E8A006F5078 /* ForegroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForegroundColor.swift; sourceTree = "<group>"; };
 		A585EA992777A0D0006F5078 /* ParserViewList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserViewList.swift; sourceTree = "<group>"; };
 		A585EA9E2777A19E006F5078 /* ModifiedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiedView.swift; sourceTree = "<group>"; };
@@ -671,6 +673,7 @@
 			children = (
 				A5A756EC27C6F10F00B4EA0D /* CALayerView.swift */,
 				A5A756E627C67CD600B4EA0D /* CALayer+AnchorPoint.swift */,
+				A57698B527C7E7B900077566 /* CALayer+BorderWidth.swift */,
 			);
 			path = CALayer;
 			sourceTree = "<group>";
@@ -1032,6 +1035,7 @@
 				A5C01CBF2767E438005CBAA8 /* ViewModifier+Error.swift in Sources */,
 				A585EAAE277E5477006F5078 /* Button.swift in Sources */,
 				A5A7554D27C2C25200B4EA0D /* GenericParser+Equatable.swift in Sources */,
+				A57698B627C7E7B900077566 /* CALayer+BorderWidth.swift in Sources */,
 				A54435C9263982DE007A9B31 /* TokenParser.swift in Sources */,
 				A54435D726398814007A9B31 /* CharacterMembership.swift in Sources */,
 				A54435D126398761007A9B31 /* UInt16.swift in Sources */,

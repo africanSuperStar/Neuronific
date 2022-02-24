@@ -13,19 +13,27 @@ import SwiftUI
 
 public struct CALayerView : NSViewRepresentable
 {
-    public var layer = CALayer()
+    public var layer: CALayer
+    {
+        get
+        {
+            return view.layer ?? CALayer()
+        }
+        
+        set { }
+    }
 
     private let view = NSView()
 
     init()
     {
         view.wantsLayer = true
-        view.layer?.addSublayer(layer)
         
         view.layer?.bounds = view.bounds
         
         // TODO: Remove, just for testing
-        layer.backgroundColor = NSColor.red.cgColor
+        view.layer?.backgroundColor = NSColor.red.cgColor
+        view.layer?.borderColor     = NSColor.yellow.cgColor
     }
     
     public func makeNSView(context: Context) -> NSView
