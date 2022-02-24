@@ -49,13 +49,6 @@ public struct AnchorPoint : ViewModifier
             
             layer.anchorPoint = anchorPoint
             
-            layer.bounds = CGRect(
-                origin: anchorPoint,
-                size:   CGSize(width: 50, height: 50)
-            )
-            
-            layer.backgroundColor = NSColor.red.cgColor
-            
             return layer
         }
         

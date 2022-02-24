@@ -52,7 +52,13 @@ public struct AnyViewCALayer : ViewModifier
             view = parseCALayer(layer, content: view, layer: subLayer)
         }
         
-        return AnyView(view)
+        return AnyView(
+            ZStack(alignment: .top)
+            {
+                view
+                subLayer
+            }
+        )
     }
 }
 
@@ -72,13 +78,9 @@ extension AnyViewCALayer
         {
         case .anchorPoint:
             return AnyView(
-                ZStack
-                {
-                    content.modifier(
-                        AnchorPoint(json: modifier, layerView: layer)
-                    )
-                    layer
-                }
+                content.modifier(
+                    AnchorPoint(json: modifier, layerView: layer)
+                )
             )
             
         default:
