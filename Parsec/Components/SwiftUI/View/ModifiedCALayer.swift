@@ -14,6 +14,7 @@ public enum CALayerModifierTags : String, CaseIterable
 {
     case anchorPoint = "AnchorPoint"
     case borderWidth = "BorderWidth"
+    case borderColor = "BorderColor"
     
     init?(_ tag: String)
     {
@@ -79,6 +80,9 @@ extension AnyViewCALayer
             
         case .borderWidth:
             return BorderWidth(json: modifier, view: view).parse()
+            
+        case .borderColor:
+            return BorderColor(json: modifier, view: view).parse()
             
         default:
             return view.layer

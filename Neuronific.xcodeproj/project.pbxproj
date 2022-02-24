@@ -79,6 +79,7 @@
 		A56C89DD279C93E8005DEAC9 /* ColorPickerViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56C89DC279C93E8005DEAC9 /* ColorPickerViews.swift */; };
 		A56C89DF279C9782005DEAC9 /* SegmentedPickerViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56C89DE279C9782005DEAC9 /* SegmentedPickerViews.swift */; };
 		A57698B627C7E7B900077566 /* CALayer+BorderWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57698B527C7E7B900077566 /* CALayer+BorderWidth.swift */; };
+		A57698B827C8056F00077566 /* CALayer+BorderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57698B727C8056F00077566 /* CALayer+BorderColor.swift */; };
 		A585EA9827778E8A006F5078 /* ForegroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EA9727778E8A006F5078 /* ForegroundColor.swift */; };
 		A585EA9A2777A0D0006F5078 /* ParserViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EA992777A0D0006F5078 /* ParserViewList.swift */; };
 		A585EA9F2777A19E006F5078 /* ModifiedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EA9E2777A19E006F5078 /* ModifiedView.swift */; };
@@ -245,6 +246,7 @@
 		A56C89DE279C9782005DEAC9 /* SegmentedPickerViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedPickerViews.swift; sourceTree = "<group>"; };
 		A5759F50263AD28C003172C6 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		A57698B527C7E7B900077566 /* CALayer+BorderWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+BorderWidth.swift"; sourceTree = "<group>"; };
+		A57698B727C8056F00077566 /* CALayer+BorderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+BorderColor.swift"; sourceTree = "<group>"; };
 		A585EA9727778E8A006F5078 /* ForegroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForegroundColor.swift; sourceTree = "<group>"; };
 		A585EA992777A0D0006F5078 /* ParserViewList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserViewList.swift; sourceTree = "<group>"; };
 		A585EA9E2777A19E006F5078 /* ModifiedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiedView.swift; sourceTree = "<group>"; };
@@ -674,6 +676,7 @@
 				A5A756EC27C6F10F00B4EA0D /* CALayerView.swift */,
 				A5A756E627C67CD600B4EA0D /* CALayer+AnchorPoint.swift */,
 				A57698B527C7E7B900077566 /* CALayer+BorderWidth.swift */,
+				A57698B727C8056F00077566 /* CALayer+BorderColor.swift */,
 			);
 			path = CALayer;
 			sourceTree = "<group>";
@@ -1008,6 +1011,7 @@
 				A5C01CB82767C2DD005CBAA8 /* Font.swift in Sources */,
 				A54435B726395FDD007A9B31 /* ParserError.swift in Sources */,
 				A5582620263D037C00116DD2 /* Text.swift in Sources */,
+				A57698B827C8056F00077566 /* CALayer+BorderColor.swift in Sources */,
 				A54435B926396111007A9B31 /* Position.swift in Sources */,
 				A5C7E5EB2639F65B00FCD9A2 /* CombinatorParsers.swift in Sources */,
 				A5C01CCA2768DFD4005CBAA8 /* Label.swift in Sources */,

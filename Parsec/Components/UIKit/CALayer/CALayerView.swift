@@ -33,7 +33,6 @@ public struct CALayerView : NSViewRepresentable
         
         // TODO: Remove, just for testing
         view.layer?.backgroundColor = NSColor.red.cgColor
-        view.layer?.borderColor     = NSColor.yellow.cgColor
     }
     
     public func makeNSView(context: Context) -> NSView
