@@ -19,6 +19,7 @@ public enum ViewError: Error
 
 public enum ViewModifierError : Error
 {
+    case wrongInitializer
     case moreThanOneInitializer
     case failedToFindContentsOfURL
     case failedToParseContentOfData

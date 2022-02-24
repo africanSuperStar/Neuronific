@@ -2,7 +2,7 @@
 //  This file is distributed under the same license as the NEURONIFIC (PTY) LTD package.
 //  Copyright (c) 2022 and Confidential to NEURONIFIC (PTY) LTD. All rights reserved.
 //
-//  CALayer+BorderColor.swift
+//  CGColor+RGBA.swift
 //  Neuronific
 //
 //  Created by Cameron de Bruyn on 2022/02/24.
@@ -10,16 +10,33 @@
 
 import SwiftUI
 
-public struct BorderColor
+extension CGColor
+{
+    static let RGBA = "RGBA"
+}
+
+public struct CGColor_RGBA
 {
     let json: JSONParser
-    var view: CALayerView
     
-    public func parse() -> CALayer
+    public func parse() -> CGColor
     {
-        debugPrint("UIKit: CALayer -> BorderColor -> \(json)")
+        debugPrint("UIKit: CGColor -> \(CGColor.RGBA) -> \(json)")
      
         // MARK: Create a color in the "Generic" RGB color space.
+        
+        guard let colorSpace = json["colorSpace"].string, colorSpace == CGColor.RGBA
+        else
+        {
+            debugPrint(
+                """
+                    UIKit: CGColor -> \(CGColor.RGBA) -> not valid,
+                    \(ViewModifierError.wrongInitializer)
+                """
+            )
+            
+            return CGColor.clear
+        }
         
         if let _red   = json["red"].double,
            let _green = json["green"].double,
@@ -28,7 +45,7 @@ public struct BorderColor
         {
             debugPrint(
                 """
-                    UIKit: CALayer -> BorderColor -> CGColor -> RGBA
+                    UIKit: CGColor -> \(CGColor.RGBA)
                     -> red:   \(_red),
                     -> green: \(_green),
                     -> blue:  \(_blue),
@@ -36,44 +53,21 @@ public struct BorderColor
                 """
             )
             
-            view.layer.borderColor = CGColor(
+            return CGColor(
                 red:   _red,
                 green: _green,
                 blue:  _blue,
                 alpha: _alpha
             )
-            
-            return view.layer
-        }
-        
-        // MARK: Create a color in the "Generic" gray color space.
-        
-        if let _gray  = json["gray"].double,
-           let _alpha = json["alpha"].double
-        {
-            debugPrint(
-                """
-                    UIKit: CALayer -> BorderColor -> CGColor -> GRAY ALPHA
-                    -> gray:  \(_gray),
-                    -> alpha: \(_alpha)
-                """
-            )
-            
-            view.layer.borderColor = CGColor(
-                gray:  _gray,
-                alpha: _alpha
-            )
-            
-            return view.layer
         }
         
         debugPrint(
             """
-                UIKit: CALayer -> BorderColor -> not valid or more than one initializer,
+                UIKit: CGColor -> \(CGColor.RGBA) -> not valid or more than one initializer,
                 \(ViewModifierError.moreThanOneInitializer)
             """
         )
         
-        return view.layer
+        return CGColor.clear
     }
 }
