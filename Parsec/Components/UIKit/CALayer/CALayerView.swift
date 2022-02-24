@@ -30,9 +30,6 @@ public struct CALayerView : NSViewRepresentable
         view.wantsLayer = true
         
         view.layer?.bounds = view.bounds
-        
-        // TODO: Remove, just for testing
-        view.layer?.backgroundColor = NSColor.red.cgColor
     }
     
     public func makeNSView(context: Context) -> NSView

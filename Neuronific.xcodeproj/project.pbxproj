@@ -86,6 +86,7 @@
 		A57698C127C8241B00077566 /* CGColor+sRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57698C027C8241B00077566 /* CGColor+sRGB.swift */; };
 		A57698C327C8259000077566 /* CGColor+GrayGamma.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57698C227C8259000077566 /* CGColor+GrayGamma.swift */; };
 		A57698C527C8281B00077566 /* ModifiedCGColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57698C427C8281B00077566 /* ModifiedCGColor.swift */; };
+		A57698C727C82CBF00077566 /* CALayer+BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57698C627C82CBF00077566 /* CALayer+BackgroundColor.swift */; };
 		A585EA9827778E8A006F5078 /* ForegroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EA9727778E8A006F5078 /* ForegroundColor.swift */; };
 		A585EA9A2777A0D0006F5078 /* ParserViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EA992777A0D0006F5078 /* ParserViewList.swift */; };
 		A585EA9F2777A19E006F5078 /* ModifiedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EA9E2777A19E006F5078 /* ModifiedView.swift */; };
@@ -259,6 +260,7 @@
 		A57698C027C8241B00077566 /* CGColor+sRGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGColor+sRGB.swift"; sourceTree = "<group>"; };
 		A57698C227C8259000077566 /* CGColor+GrayGamma.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGColor+GrayGamma.swift"; sourceTree = "<group>"; };
 		A57698C427C8281B00077566 /* ModifiedCGColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiedCGColor.swift; sourceTree = "<group>"; };
+		A57698C627C82CBF00077566 /* CALayer+BackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+BackgroundColor.swift"; sourceTree = "<group>"; };
 		A585EA9727778E8A006F5078 /* ForegroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForegroundColor.swift; sourceTree = "<group>"; };
 		A585EA992777A0D0006F5078 /* ParserViewList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserViewList.swift; sourceTree = "<group>"; };
 		A585EA9E2777A19E006F5078 /* ModifiedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiedView.swift; sourceTree = "<group>"; };
@@ -703,6 +705,7 @@
 				A5A756E627C67CD600B4EA0D /* CALayer+AnchorPoint.swift */,
 				A57698B527C7E7B900077566 /* CALayer+BorderWidth.swift */,
 				A57698B727C8056F00077566 /* CALayer+BorderColor.swift */,
+				A57698C627C82CBF00077566 /* CALayer+BackgroundColor.swift */,
 			);
 			path = CALayer;
 			sourceTree = "<group>";
@@ -1063,6 +1066,7 @@
 				A54435C5263981E1007A9B31 /* SetAggregation.swift in Sources */,
 				A5A756ED27C6F10F00B4EA0D /* CALayerView.swift in Sources */,
 				A54435CD263985CA007A9B31 /* GenericTokenParser.swift in Sources */,
+				A57698C727C82CBF00077566 /* CALayer+BackgroundColor.swift in Sources */,
 				A54435D92639891F007A9B31 /* CharacterParsers.swift in Sources */,
 				A5A756E727C67CD600B4EA0D /* CALayer+AnchorPoint.swift in Sources */,
 				A54435B326395CE2007A9B31 /* Parsec.swift in Sources */,

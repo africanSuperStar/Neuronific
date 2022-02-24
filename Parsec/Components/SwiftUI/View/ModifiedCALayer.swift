@@ -12,9 +12,10 @@ import SwiftUI
 
 public enum CALayerModifierTags : String, CaseIterable
 {
-    case anchorPoint = "AnchorPoint"
-    case borderWidth = "BorderWidth"
-    case borderColor = "BorderColor"
+    case anchorPoint     = "AnchorPoint"
+    case borderWidth     = "BorderWidth"
+    case borderColor     = "BorderColor"
+    case backgroundColor = "BackgroundColor"
     
     init?(_ tag: String)
     {
@@ -83,6 +84,9 @@ extension AnyViewCALayer
             
         case .borderColor:
             return BorderColor(json: modifier, view: view).parse()
+            
+        case .backgroundColor:
+            return BackgroundColor(json: modifier, view: view).parse()
             
         default:
             return view.layer
