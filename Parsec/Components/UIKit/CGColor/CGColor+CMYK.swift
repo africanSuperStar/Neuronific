@@ -15,6 +15,7 @@ extension CGColor
     static let CYMK = "CYMK"
 }
 
+// swiftlint:disable type_name
 public struct CGColor_CMYK
 {
     let json: JSONParser

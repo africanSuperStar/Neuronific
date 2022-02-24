@@ -15,6 +15,7 @@ extension CGColor
     static let GRAYSCALE = "Grayscale"
 }
 
+// swiftlint:disable type_name
 public struct CGColor_Grayscale
 {
     let json: JSONParser

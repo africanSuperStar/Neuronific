@@ -15,6 +15,7 @@ extension CGColor
     static let GRAY_GAMMA_2_2 = "Gray Gamma 2.2"
 }
 
+// swiftlint:disable type_name
 public struct CGColor_GrayGamma
 {
     let json: JSONParser

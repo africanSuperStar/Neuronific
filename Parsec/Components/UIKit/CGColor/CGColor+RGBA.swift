@@ -15,6 +15,7 @@ extension CGColor
     static let RGBA = "RGBA"
 }
 
+// swiftlint:disable type_name
 public struct CGColor_RGBA
 {
     let json: JSONParser

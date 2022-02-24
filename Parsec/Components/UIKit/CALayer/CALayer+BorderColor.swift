@@ -19,50 +19,16 @@ public struct BorderColor
     {
         debugPrint("UIKit: CALayer -> BorderColor -> \(json)")
      
-        // MARK: Create a color in the "Generic" RGB color space.
-        
-        if let _red   = json["red"].double,
-           let _green = json["green"].double,
-           let _blue  = json["blue"].double,
-           let _alpha = json["alpha"].double
+        if let _color = AnyCGColor().parseCGColor(json)
         {
             debugPrint(
                 """
-                    UIKit: CALayer -> BorderColor -> CGColor -> RGBA
-                    -> red:   \(_red),
-                    -> green: \(_green),
-                    -> blue:  \(_blue),
-                    -> alpha: \(_alpha)
+                    UIKit: CALayer -> BorderColor -> CGColor
+                    -> colorSpace: \(_color.colorSpace.debugDescription)
                 """
             )
             
-            view.layer.borderColor = CGColor(
-                red:   _red,
-                green: _green,
-                blue:  _blue,
-                alpha: _alpha
-            )
-            
-            return view.layer
-        }
-        
-        // MARK: Create a color in the "Generic" gray color space.
-        
-        if let _gray  = json["gray"].double,
-           let _alpha = json["alpha"].double
-        {
-            debugPrint(
-                """
-                    UIKit: CALayer -> BorderColor -> CGColor -> GRAY ALPHA
-                    -> gray:  \(_gray),
-                    -> alpha: \(_alpha)
-                """
-            )
-            
-            view.layer.borderColor = CGColor(
-                gray:  _gray,
-                alpha: _alpha
-            )
+            view.layer.borderColor = _color
             
             return view.layer
         }

@@ -15,6 +15,7 @@ extension CGColor
     static let S_RGB = "sRGB"
 }
 
+// swiftlint:disable type_name
 public struct CGColor_sRGB
 {
     let json: JSONParser

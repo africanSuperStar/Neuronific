@@ -85,6 +85,7 @@
 		A57698BF27C80C4600077566 /* CGColor+CMYK.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57698BE27C80C4600077566 /* CGColor+CMYK.swift */; };
 		A57698C127C8241B00077566 /* CGColor+sRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57698C027C8241B00077566 /* CGColor+sRGB.swift */; };
 		A57698C327C8259000077566 /* CGColor+GrayGamma.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57698C227C8259000077566 /* CGColor+GrayGamma.swift */; };
+		A57698C527C8281B00077566 /* ModifiedCGColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57698C427C8281B00077566 /* ModifiedCGColor.swift */; };
 		A585EA9827778E8A006F5078 /* ForegroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EA9727778E8A006F5078 /* ForegroundColor.swift */; };
 		A585EA9A2777A0D0006F5078 /* ParserViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EA992777A0D0006F5078 /* ParserViewList.swift */; };
 		A585EA9F2777A19E006F5078 /* ModifiedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585EA9E2777A19E006F5078 /* ModifiedView.swift */; };
@@ -257,6 +258,7 @@
 		A57698BE27C80C4600077566 /* CGColor+CMYK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGColor+CMYK.swift"; sourceTree = "<group>"; };
 		A57698C027C8241B00077566 /* CGColor+sRGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGColor+sRGB.swift"; sourceTree = "<group>"; };
 		A57698C227C8259000077566 /* CGColor+GrayGamma.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGColor+GrayGamma.swift"; sourceTree = "<group>"; };
+		A57698C427C8281B00077566 /* ModifiedCGColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiedCGColor.swift; sourceTree = "<group>"; };
 		A585EA9727778E8A006F5078 /* ForegroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForegroundColor.swift; sourceTree = "<group>"; };
 		A585EA992777A0D0006F5078 /* ParserViewList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserViewList.swift; sourceTree = "<group>"; };
 		A585EA9E2777A19E006F5078 /* ModifiedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiedView.swift; sourceTree = "<group>"; };
@@ -588,6 +590,7 @@
 				A585EAAB277E4DBA006F5078 /* ParsedView.swift */,
 				A585EA9E2777A19E006F5078 /* ModifiedView.swift */,
 				A5A756E427C67BDC00B4EA0D /* ModifiedCALayer.swift */,
+				A57698C427C8281B00077566 /* ModifiedCGColor.swift */,
 				A585EAB92780868B006F5078 /* View+Parsed.swift */,
 			);
 			path = View;
@@ -1041,6 +1044,7 @@
 				A5C01CCA2768DFD4005CBAA8 /* Label.swift in Sources */,
 				A5C01CBB2767DC49005CBAA8 /* Accessibility+Label.swift in Sources */,
 				A57698C127C8241B00077566 /* CGColor+sRGB.swift in Sources */,
+				A57698C527C8281B00077566 /* ModifiedCGColor.swift in Sources */,
 				A54435DF26398C2B007A9B31 /* ExpressionParser.swift in Sources */,
 				A54435BD26397E7B007A9B31 /* Either.swift in Sources */,
 				A54435CF2639863D007A9B31 /* Permutation.swift in Sources */,
