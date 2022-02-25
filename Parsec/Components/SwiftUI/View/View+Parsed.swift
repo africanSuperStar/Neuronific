@@ -37,19 +37,25 @@ extension AnyView
         {
         case .text:
             return Self(
-                try Text.parse(json).modify(json)
+                try Text.parse(json)
+                    .modify(json)
+                    .layer(json)
             )
             
         case .button:
             return Self(
-                try Button.parseLabel(json).modify(json)
+                try Button.parseLabel(json)
+                    .modify(json)
+                    .layer(json)
             )
             
         case .color:
             return Self(
-                try Color.parse(json).modify(json)
+                try Color.parse(json)
+                    .modify(json)
+                    .layer(json)
             )
-            
+        
         default:
             return Self(
                 EmptyView()

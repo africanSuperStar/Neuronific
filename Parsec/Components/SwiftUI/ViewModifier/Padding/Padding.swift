@@ -1,6 +1,6 @@
 //
 //  This file is distributed under the same license as the NEURONIFIC (PTY) LTD package.
-//  Copyright (c) 2022 and Confidential to NEURONIFIC (PTY) LTD. All rights reserved.
+//  Copyright © 2022 and Confidential to NEURONIFIC (PTY) LTD. All rights reserved.
 //
 //  Padding.swift
 //  Parsec

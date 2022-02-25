@@ -14,10 +14,12 @@ public enum ViewError: Error
 {
     case moreThanOneInitializer
     case failedToInitializeView
+    case failedToInitializeLayer
 }
 
 public enum ViewModifierError : Error
 {
+    case wrongInitializer
     case moreThanOneInitializer
     case failedToFindContentsOfURL
     case failedToParseContentOfData
