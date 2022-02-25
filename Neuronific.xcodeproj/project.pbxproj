@@ -14,6 +14,13 @@
 		A523EE83263F440F003977F1 /* JSONTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A523EE82263F440F003977F1 /* JSONTreeView.swift */; };
 		A523EE85263F4526003977F1 /* JSONCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A523EE84263F4526003977F1 /* JSONCell.swift */; };
 		A5338EF9264190AC00E28DAB /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5338EF8264190AC00E28DAB /* Theme.swift */; };
+		A53BEC9827C91D9F00B933AD /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BEC9727C91D9F00B933AD /* CGSize.swift */; };
+		A53BEC9A27C91E4A00B933AD /* ParsedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BEC9927C91E4A00B933AD /* ParsedObject.swift */; };
+		A53BEC9C27C9216D00B933AD /* ParsedObject+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BEC9B27C9216D00B933AD /* ParsedObject+Error.swift */; };
+		A53BEC9E27C9272D00B933AD /* CALayer+ShadowOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BEC9D27C9272D00B933AD /* CALayer+ShadowOffset.swift */; };
+		A53BECA027C927F900B933AD /* CALayer+ShadowColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BEC9F27C927F900B933AD /* CALayer+ShadowColor.swift */; };
+		A53BECA227C9285200B933AD /* CALayer+ShadowRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BECA127C9285200B933AD /* CALayer+ShadowRadius.swift */; };
+		A53BECA427C92B7F00B933AD /* CALayer+ShadowOpacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BECA327C92B7F00B933AD /* CALayer+ShadowOpacity.swift */; };
 		A544358026395A0D007A9B31 /* NeuronificApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544357F26395A0D007A9B31 /* NeuronificApp.swift */; };
 		A544358226395A0D007A9B31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544358126395A0D007A9B31 /* ContentView.swift */; };
 		A544358426395A0E007A9B31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A544358326395A0E007A9B31 /* Assets.xcassets */; };
@@ -186,6 +193,13 @@
 		A523EE82263F440F003977F1 /* JSONTreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONTreeView.swift; sourceTree = "<group>"; };
 		A523EE84263F4526003977F1 /* JSONCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONCell.swift; sourceTree = "<group>"; };
 		A5338EF8264190AC00E28DAB /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		A53BEC9727C91D9F00B933AD /* CGSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
+		A53BEC9927C91E4A00B933AD /* ParsedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsedObject.swift; sourceTree = "<group>"; };
+		A53BEC9B27C9216D00B933AD /* ParsedObject+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParsedObject+Error.swift"; sourceTree = "<group>"; };
+		A53BEC9D27C9272D00B933AD /* CALayer+ShadowOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+ShadowOffset.swift"; sourceTree = "<group>"; };
+		A53BEC9F27C927F900B933AD /* CALayer+ShadowColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+ShadowColor.swift"; sourceTree = "<group>"; };
+		A53BECA127C9285200B933AD /* CALayer+ShadowRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+ShadowRadius.swift"; sourceTree = "<group>"; };
+		A53BECA327C92B7F00B933AD /* CALayer+ShadowOpacity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+ShadowOpacity.swift"; sourceTree = "<group>"; };
 		A544357C26395A0D007A9B31 /* Neuronific.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neuronific.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A544357F26395A0D007A9B31 /* NeuronificApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuronificApp.swift; sourceTree = "<group>"; };
 		A544358126395A0D007A9B31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -363,6 +377,14 @@
 				A523EE84263F4526003977F1 /* JSONCell.swift */,
 			);
 			path = JSONViewer;
+			sourceTree = "<group>";
+		};
+		A53BEC9627C91D8900B933AD /* CGSize */ = {
+			isa = PBXGroup;
+			children = (
+				A53BEC9727C91D9F00B933AD /* CGSize.swift */,
+			);
+			path = CGSize;
 			sourceTree = "<group>";
 		};
 		A544357326395A0D007A9B31 = {
@@ -547,6 +569,8 @@
 				A5A756D727C6722A00B4EA0D /* SwiftUI */,
 				A5A756D627C6721E00B4EA0D /* UIKit */,
 				A55DA94E263CF998005C3A5B /* JSON.swift */,
+				A53BEC9927C91E4A00B933AD /* ParsedObject.swift */,
+				A53BEC9B27C9216D00B933AD /* ParsedObject+Error.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -603,6 +627,10 @@
 				A57698C827C8EEE900077566 /* CALayer+CornerRadius.swift */,
 				A57698CB27C8F1EC00077566 /* CALayer+MaskToBounds.swift */,
 				A57698CD27C8F2C200077566 /* CALayer+MaskedCorners.swift */,
+				A53BEC9D27C9272D00B933AD /* CALayer+ShadowOffset.swift */,
+				A53BEC9F27C927F900B933AD /* CALayer+ShadowColor.swift */,
+				A53BECA127C9285200B933AD /* CALayer+ShadowRadius.swift */,
+				A53BECA327C92B7F00B933AD /* CALayer+ShadowOpacity.swift */,
 			);
 			path = Appearance;
 			sourceTree = "<group>";
@@ -699,6 +727,7 @@
 		A5A756D627C6721E00B4EA0D /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				A53BEC9627C91D8900B933AD /* CGSize */,
 				A57698B927C80ABD00077566 /* CGColor */,
 				A5A756DE27C6752F00B4EA0D /* CALayer */,
 			);
@@ -1047,17 +1076,21 @@
 				A585EABA2780868B006F5078 /* View+Parsed.swift in Sources */,
 				A585EA9F2777A19E006F5078 /* ModifiedView.swift in Sources */,
 				A54435CB26398394007A9B31 /* LanguageDefinition.swift in Sources */,
+				A53BECA227C9285200B933AD /* CALayer+ShadowRadius.swift in Sources */,
 				A585EAAA277E4D5F006F5078 /* HStack.swift in Sources */,
 				A54435C726398222007A9B31 /* String.swift in Sources */,
 				A54435B526395E97007A9B31 /* GenericParser.swift in Sources */,
 				A54435BB26396217007A9B31 /* Configuration.swift in Sources */,
 				A5C01CC6276800CA005CBAA8 /* Picker.swift in Sources */,
 				A5976DE2276A32C300214A70 /* Button+Image.swift in Sources */,
+				A53BECA427C92B7F00B933AD /* CALayer+ShadowOpacity.swift in Sources */,
 				A54435D5263987D3007A9B31 /* CharacterConversion.swift in Sources */,
 				A57698CE27C8F2C200077566 /* CALayer+MaskedCorners.swift in Sources */,
+				A53BEC9827C91D9F00B933AD /* CGSize.swift in Sources */,
 				A585EAA7277A546B006F5078 /* Padding.swift in Sources */,
 				A558261F263D037600116DD2 /* JSON.swift in Sources */,
 				A57698D327C8F57C00077566 /* ModifiedCAMaskedCorners.swift in Sources */,
+				A53BEC9C27C9216D00B933AD /* ParsedObject+Error.swift in Sources */,
 				A59E251C27A030A000616ACB /* Color.swift in Sources */,
 				A57698BF27C80C4600077566 /* CGColor+CMYK.swift in Sources */,
 				A5C01CB82767C2DD005CBAA8 /* Font.swift in Sources */,
@@ -1069,6 +1102,7 @@
 				A5C01CCA2768DFD4005CBAA8 /* Label.swift in Sources */,
 				A5C01CBB2767DC49005CBAA8 /* Accessibility+Label.swift in Sources */,
 				A57698C127C8241B00077566 /* CGColor+sRGB.swift in Sources */,
+				A53BEC9A27C91E4A00B933AD /* ParsedObject.swift in Sources */,
 				A57698C527C8281B00077566 /* ModifiedCGColor.swift in Sources */,
 				A54435DF26398C2B007A9B31 /* ExpressionParser.swift in Sources */,
 				A54435BD26397E7B007A9B31 /* Either.swift in Sources */,
@@ -1093,6 +1127,7 @@
 				A57698C727C82CBF00077566 /* CALayer+BackgroundColor.swift in Sources */,
 				A54435D92639891F007A9B31 /* CharacterParsers.swift in Sources */,
 				A5A756E727C67CD600B4EA0D /* CALayer+AnchorPoint.swift in Sources */,
+				A53BEC9E27C9272D00B933AD /* CALayer+ShadowOffset.swift in Sources */,
 				A54435B326395CE2007A9B31 /* Parsec.swift in Sources */,
 				A5C01CBF2767E438005CBAA8 /* ViewModifier+Error.swift in Sources */,
 				A585EAAE277E5477006F5078 /* Button.swift in Sources */,
@@ -1104,6 +1139,7 @@
 				A57698BB27C80AD400077566 /* CGColor+RGBA.swift in Sources */,
 				A54435D126398761007A9B31 /* UInt16.swift in Sources */,
 				A54435BF2639809F007A9B31 /* RangeReplaceableCollectionInsertion.swift in Sources */,
+				A53BECA027C927F900B933AD /* CALayer+ShadowColor.swift in Sources */,
 				A585EA9827778E8A006F5078 /* ForegroundColor.swift in Sources */,
 				A585EAAC277E4DBA006F5078 /* ParsedView.swift in Sources */,
 			);

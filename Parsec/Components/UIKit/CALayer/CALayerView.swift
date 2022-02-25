@@ -28,6 +28,7 @@ public struct CALayerView : NSViewRepresentable
     init()
     {
         view.wantsLayer = true
+        view.shadow     = NSShadow()
         
         view.layer?.bounds = view.bounds
     }

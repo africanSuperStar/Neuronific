@@ -19,6 +19,10 @@ public enum CALayerModifierTags : String, CaseIterable
     case cornerRadius    = "CACornerRadius"
     case maskToBounds    = "CAMaskToBounds"
     case maskedCorners   = "CAMaskedCorners"
+    case shadowOffset    = "CAShadowOffset"
+    case shadowColor     = "CAShadowColor"
+    case shadowRadius    = "CAShadowRadius"
+    case shadowOpacity   = "CAShadowOpacity"
     
     init?(_ tag: String)
     {
@@ -99,6 +103,18 @@ extension AnyViewCALayer
             
         case .maskedCorners:
             return CAMaskedCorners(json: modifier, view: view).parse()
+            
+        case .shadowOffset:
+            return CAShadowOffset(json: modifier, view: view).parse()
+            
+        case .shadowColor:
+            return CAShadowColor(json: modifier, view: view).parse()
+            
+        case .shadowRadius:
+            return CAShadowRadius(json: modifier, view: view).parse()
+        
+        case .shadowOpacity:
+            return CAShadowOpacity(json: modifier, view: view).parse()
             
         default:
             return view.layer
