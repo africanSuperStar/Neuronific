@@ -2,40 +2,35 @@
 //  This file is distributed under the same license as the NEURONIFIC (PTY) LTD package.
 //  Copyright (c) 2022 and Confidential to NEURONIFIC (PTY) LTD. All rights reserved.
 //
-//  CALayer+BorderColor.swift
+//  CALayer+MaskToBounds.swift
 //  Neuronific
 //
-//  Created by Cameron de Bruyn on 2022/02/24.
+//  Created by Cameron de Bruyn on 2022/02/25.
 //
 
 import SwiftUI
 
-public struct BorderColor
+public struct CAMaskToBounds
 {
     let json: JSONParser
     var view: CALayerView
     
     public func parse() -> CALayer
     {
-        debugPrint("UIKit: CALayer -> BorderColor -> \(json)")
+        debugPrint("UIKit: CALayer -> MaskToBounds -> \(json)")
      
-        if let _color = AnyCGColor().parseCGColor(json)
+        if let maskToBounds = json["value"].bool
         {
-            debugPrint(
-                """
-                    UIKit: CALayer -> BorderColor -> CGColor
-                    -> colorSpace: \(_color.colorSpace.debugDescription)
-                """
-            )
+            debugPrint("UIKit: CALayer -> MaskToBounds -> value: \(maskToBounds)")
             
-            view.layer.borderColor = _color
+            view.layer.masksToBounds = maskToBounds
             
             return view.layer
         }
         
         debugPrint(
             """
-                UIKit: CALayer -> BorderColor -> not valid or more than one initializer,
+                UIKit: CALayer -> MaskToBounds -> not valid or more than one initializer,
                 \(ViewModifierError.moreThanOneInitializer)
             """
         )

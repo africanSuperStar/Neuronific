@@ -2,35 +2,35 @@
 //  This file is distributed under the same license as the NEURONIFIC (PTY) LTD package.
 //  Copyright (c) 2022 and Confidential to NEURONIFIC (PTY) LTD. All rights reserved.
 //
-//  CALayer+BorderWidth.swift
+//  CALayer+MaskedCorners.swift
 //  Neuronific
 //
-//  Created by Cameron de Bruyn on 2022/02/24.
+//  Created by Cameron de Bruyn on 2022/02/25.
 //
 
 import SwiftUI
 
-public struct BorderWidth
+public struct CAMaskedCorners
 {
     let json: JSONParser
     var view: CALayerView
     
     public func parse() -> CALayer
     {
-        debugPrint("UIKit: CALayer -> BorderWidth -> \(json)")
+        debugPrint("UIKit: CALayer -> MaskedCorners -> \(json)")
      
-        if let borderWidth = json["value"].double
+        if let maskedCorners = AnyCACornerMask().parseCACornerMask(json)
         {
-            debugPrint("UIKit: CALayer -> BorderWidth -> value: \(borderWidth)")
+            debugPrint("UIKit: CALayer -> MaskedCorners -> cornerMask: \(maskedCorners)")
             
-            view.layer.borderWidth = borderWidth
+            view.layer.maskedCorners = maskedCorners
             
             return view.layer
         }
         
         debugPrint(
             """
-                UIKit: CALayer -> BorderWidth -> not valid or more than one initializer,
+                UIKit: CALayer -> MaskCorners -> not valid or more than one initializer,
                 \(ViewModifierError.moreThanOneInitializer)
             """
         )

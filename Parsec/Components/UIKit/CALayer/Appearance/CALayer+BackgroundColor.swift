@@ -10,7 +10,7 @@
 
 import SwiftUI
 
-public struct BackgroundColor
+public struct CABackgroundColor
 {
     let json: JSONParser
     var view: CALayerView

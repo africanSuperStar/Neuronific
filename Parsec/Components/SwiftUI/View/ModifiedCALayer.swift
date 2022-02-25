@@ -12,10 +12,13 @@ import SwiftUI
 
 public enum CALayerModifierTags : String, CaseIterable
 {
-    case anchorPoint     = "AnchorPoint"
-    case borderWidth     = "BorderWidth"
-    case borderColor     = "BorderColor"
-    case backgroundColor = "BackgroundColor"
+    case anchorPoint     = "CAAnchorPoint"
+    case borderWidth     = "CABorderWidth"
+    case borderColor     = "CABorderColor"
+    case backgroundColor = "CABackgroundColor"
+    case cornerRadius    = "CACornerRadius"
+    case maskToBounds    = "CAMaskToBounds"
+    case maskedCorners   = "CAMaskedCorners"
     
     init?(_ tag: String)
     {
@@ -77,16 +80,25 @@ extension AnyViewCALayer
         switch CALayerModifierTags(tag)
         {
         case .anchorPoint:
-            return AnchorPoint(json: modifier, view: view).parse()
+            return CAAnchorPoint(json: modifier, view: view).parse()
             
         case .borderWidth:
-            return BorderWidth(json: modifier, view: view).parse()
+            return CABorderWidth(json: modifier, view: view).parse()
             
         case .borderColor:
-            return BorderColor(json: modifier, view: view).parse()
+            return CABorderColor(json: modifier, view: view).parse()
             
         case .backgroundColor:
-            return BackgroundColor(json: modifier, view: view).parse()
+            return CABackgroundColor(json: modifier, view: view).parse()
+        
+        case .cornerRadius:
+            return CACornerRadius(json: modifier, view: view).parse()
+            
+        case .maskToBounds:
+            return CAMaskToBounds(json: modifier, view: view).parse()
+            
+        case .maskedCorners:
+            return CAMaskedCorners(json: modifier, view: view).parse()
             
         default:
             return view.layer
