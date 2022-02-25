@@ -25,6 +25,7 @@
 		A53BECAB27C9302800B933AD /* CGPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BECAA27C9302800B933AD /* CGPath.swift */; };
 		A53BECAD27C933A200B933AD /* CALayer+Opaque.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BECAC27C933A200B933AD /* CALayer+Opaque.swift */; };
 		A53BECAF27C9356A00B933AD /* CALayer+Opacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BECAE27C9356A00B933AD /* CALayer+Opacity.swift */; };
+		A53BECB127C9571D00B933AD /* CALayer+ShouldRasterize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BECB027C9571D00B933AD /* CALayer+ShouldRasterize.swift */; };
 		A544358026395A0D007A9B31 /* NeuronificApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544357F26395A0D007A9B31 /* NeuronificApp.swift */; };
 		A544358226395A0D007A9B31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544358126395A0D007A9B31 /* ContentView.swift */; };
 		A544358426395A0E007A9B31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A544358326395A0E007A9B31 /* Assets.xcassets */; };
@@ -208,6 +209,7 @@
 		A53BECAA27C9302800B933AD /* CGPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPath.swift; sourceTree = "<group>"; };
 		A53BECAC27C933A200B933AD /* CALayer+Opaque.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Opaque.swift"; sourceTree = "<group>"; };
 		A53BECAE27C9356A00B933AD /* CALayer+Opacity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Opacity.swift"; sourceTree = "<group>"; };
+		A53BECB027C9571D00B933AD /* CALayer+ShouldRasterize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+ShouldRasterize.swift"; sourceTree = "<group>"; };
 		A544357C26395A0D007A9B31 /* Neuronific.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neuronific.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A544357F26395A0D007A9B31 /* NeuronificApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuronificApp.swift; sourceTree = "<group>"; };
 		A544358126395A0D007A9B31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -655,6 +657,7 @@
 				A53BEC9F27C927F900B933AD /* CALayer+ShadowColor.swift */,
 				A5A756E627C67CD600B4EA0D /* CALayer+AnchorPoint.swift */,
 				A53BECAC27C933A200B933AD /* CALayer+Opaque.swift */,
+				A53BECB027C9571D00B933AD /* CALayer+ShouldRasterize.swift */,
 				A53BECAE27C9356A00B933AD /* CALayer+Opacity.swift */,
 				A53BECA127C9285200B933AD /* CALayer+ShadowRadius.swift */,
 				A53BECA327C92B7F00B933AD /* CALayer+ShadowOpacity.swift */,
@@ -1147,6 +1150,7 @@
 				A57698C927C8EEE900077566 /* CALayer+CornerRadius.swift in Sources */,
 				A54435DB26398B7E007A9B31 /* CharacterSet.swift in Sources */,
 				A585EA9A2777A0D0006F5078 /* ParserViewList.swift in Sources */,
+				A53BECB127C9571D00B933AD /* CALayer+ShouldRasterize.swift in Sources */,
 				A5ACE65926746ADF00FCC855 /* Button+Label.swift in Sources */,
 				A57698CC27C8F1EC00077566 /* CALayer+MaskToBounds.swift in Sources */,
 				A5C01CC12767F449005CBAA8 /* Accessibility+InputLabels.swift in Sources */,

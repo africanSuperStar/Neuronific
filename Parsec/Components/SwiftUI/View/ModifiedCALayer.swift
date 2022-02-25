@@ -25,6 +25,7 @@ public enum CALayerModifierTags : String, CaseIterable
     case shadowOpacity   = "CAShadowOpacity"
     case isOpaque        = "CAOpaque"
     case opacity         = "CAOpacity"
+    case shouldRasterize = "CAShouldRasterize"
     
     init?(_ tag: String)
     {
@@ -124,6 +125,9 @@ extension AnyViewCALayer
             
         case .opacity:
             return CAOpacity(json: modifier, view: view).parse()
+            
+        case .shouldRasterize:
+            return CAShouldRasterize(json: modifier, view: view).parse()
             
         default:
             return view.layer
