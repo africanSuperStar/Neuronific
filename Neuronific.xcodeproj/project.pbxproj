@@ -27,6 +27,10 @@
 		A53BECAF27C9356A00B933AD /* CALayer+Opacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BECAE27C9356A00B933AD /* CALayer+Opacity.swift */; };
 		A53BECB127C9571D00B933AD /* CALayer+ShouldRasterize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BECB027C9571D00B933AD /* CALayer+ShouldRasterize.swift */; };
 		A53BECB327C957EC00B933AD /* CALayer+RasterizationScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BECB227C957EC00B933AD /* CALayer+RasterizationScale.swift */; };
+		A53BECBC27C966C200B933AD /* NSAttributedStringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BECBB27C966C200B933AD /* NSAttributedStringView.swift */; };
+		A53BECBE27C968B600B933AD /* NSAttrString+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BECBD27C968B600B933AD /* NSAttrString+Font.swift */; };
+		A53BECC327C96A3C00B933AD /* AnyFontTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BECC227C96A3C00B933AD /* AnyFontTextStyle.swift */; };
+		A53BECC527C96D2100B933AD /* AttributedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BECC427C96D2100B933AD /* AttributedText.swift */; };
 		A544358026395A0D007A9B31 /* NeuronificApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544357F26395A0D007A9B31 /* NeuronificApp.swift */; };
 		A544358226395A0D007A9B31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544358126395A0D007A9B31 /* ContentView.swift */; };
 		A544358426395A0E007A9B31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A544358326395A0E007A9B31 /* Assets.xcassets */; };
@@ -212,6 +216,11 @@
 		A53BECAE27C9356A00B933AD /* CALayer+Opacity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Opacity.swift"; sourceTree = "<group>"; };
 		A53BECB027C9571D00B933AD /* CALayer+ShouldRasterize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+ShouldRasterize.swift"; sourceTree = "<group>"; };
 		A53BECB227C957EC00B933AD /* CALayer+RasterizationScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+RasterizationScale.swift"; sourceTree = "<group>"; };
+		A53BECB827C9662000B933AD /* Samples */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Samples; sourceTree = "<group>"; };
+		A53BECBB27C966C200B933AD /* NSAttributedStringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringView.swift; sourceTree = "<group>"; };
+		A53BECBD27C968B600B933AD /* NSAttrString+Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttrString+Font.swift"; sourceTree = "<group>"; };
+		A53BECC227C96A3C00B933AD /* AnyFontTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyFontTextStyle.swift; sourceTree = "<group>"; };
+		A53BECC427C96D2100B933AD /* AttributedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedText.swift; sourceTree = "<group>"; };
 		A544357C26395A0D007A9B31 /* Neuronific.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neuronific.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A544357F26395A0D007A9B31 /* NeuronificApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuronificApp.swift; sourceTree = "<group>"; };
 		A544358126395A0D007A9B31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -415,9 +424,43 @@
 			path = CGPath;
 			sourceTree = "<group>";
 		};
+		A53BECBA27C966AA00B933AD /* NSAttributedString */ = {
+			isa = PBXGroup;
+			children = (
+				A53BECBF27C968C000B933AD /* Attributes */,
+				A53BECBB27C966C200B933AD /* NSAttributedStringView.swift */,
+			);
+			path = NSAttributedString;
+			sourceTree = "<group>";
+		};
+		A53BECBF27C968C000B933AD /* Attributes */ = {
+			isa = PBXGroup;
+			children = (
+				A53BECBD27C968B600B933AD /* NSAttrString+Font.swift */,
+			);
+			path = Attributes;
+			sourceTree = "<group>";
+		};
+		A53BECC027C9696D00B933AD /* UIFont */ = {
+			isa = PBXGroup;
+			children = (
+				A53BECC127C96A1D00B933AD /* TextStyle */,
+			);
+			path = UIFont;
+			sourceTree = "<group>";
+		};
+		A53BECC127C96A1D00B933AD /* TextStyle */ = {
+			isa = PBXGroup;
+			children = (
+				A53BECC227C96A3C00B933AD /* AnyFontTextStyle.swift */,
+			);
+			path = TextStyle;
+			sourceTree = "<group>";
+		};
 		A544357326395A0D007A9B31 = {
 			isa = PBXGroup;
 			children = (
+				A53BECB827C9662000B933AD /* Samples */,
 				A544357E26395A0D007A9B31 /* Neuronific */,
 				A544359526395C96007A9B31 /* Parsec */,
 				A54435A226395C96007A9B31 /* ParsecTests */,
@@ -760,6 +803,8 @@
 		A5A756D627C6721E00B4EA0D /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				A53BECC027C9696D00B933AD /* UIFont */,
+				A53BECBA27C966AA00B933AD /* NSAttributedString */,
 				A53BECA927C9300F00B933AD /* CGPath */,
 				A53BECA827C92FDE00B933AD /* CGSize */,
 				A53BECA727C92FD700B933AD /* CGPoint */,
@@ -836,6 +881,7 @@
 			isa = PBXGroup;
 			children = (
 				A5759F50263AD28C003172C6 /* Text.swift */,
+				A53BECC427C96D2100B933AD /* AttributedText.swift */,
 			);
 			path = Text;
 			sourceTree = "<group>";
@@ -1114,6 +1160,7 @@
 				A53BECA227C9285200B933AD /* CALayer+ShadowRadius.swift in Sources */,
 				A585EAAA277E4D5F006F5078 /* HStack.swift in Sources */,
 				A54435C726398222007A9B31 /* String.swift in Sources */,
+				A53BECC527C96D2100B933AD /* AttributedText.swift in Sources */,
 				A54435B526395E97007A9B31 /* GenericParser.swift in Sources */,
 				A54435BB26396217007A9B31 /* Configuration.swift in Sources */,
 				A5C01CC6276800CA005CBAA8 /* Picker.swift in Sources */,
@@ -1121,6 +1168,7 @@
 				A53BECA427C92B7F00B933AD /* CALayer+ShadowOpacity.swift in Sources */,
 				A54435D5263987D3007A9B31 /* CharacterConversion.swift in Sources */,
 				A57698CE27C8F2C200077566 /* CALayer+MaskedCorners.swift in Sources */,
+				A53BECBE27C968B600B933AD /* NSAttrString+Font.swift in Sources */,
 				A53BEC9827C91D9F00B933AD /* CGSize.swift in Sources */,
 				A585EAA7277A546B006F5078 /* Padding.swift in Sources */,
 				A558261F263D037600116DD2 /* JSON.swift in Sources */,
@@ -1142,6 +1190,7 @@
 				A57698C527C8281B00077566 /* ModifiedCGColor.swift in Sources */,
 				A54435DF26398C2B007A9B31 /* ExpressionParser.swift in Sources */,
 				A54435BD26397E7B007A9B31 /* Either.swift in Sources */,
+				A53BECC327C96A3C00B933AD /* AnyFontTextStyle.swift in Sources */,
 				A54435CF2639863D007A9B31 /* Permutation.swift in Sources */,
 				A57698C327C8259000077566 /* CGColor+GrayGamma.swift in Sources */,
 				A54435C126398129007A9B31 /* SequenceAggregation.swift in Sources */,
@@ -1179,6 +1228,7 @@
 				A57698BB27C80AD400077566 /* CGColor+RGBA.swift in Sources */,
 				A54435D126398761007A9B31 /* UInt16.swift in Sources */,
 				A54435BF2639809F007A9B31 /* RangeReplaceableCollectionInsertion.swift in Sources */,
+				A53BECBC27C966C200B933AD /* NSAttributedStringView.swift in Sources */,
 				A53BECA027C927F900B933AD /* CALayer+ShadowColor.swift in Sources */,
 				A585EA9827778E8A006F5078 /* ForegroundColor.swift in Sources */,
 				A585EAAC277E4DBA006F5078 /* ParsedView.swift in Sources */,

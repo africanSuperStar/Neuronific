@@ -1,0 +1,11 @@
+{
+    "uuid": "3965a8c2-5b1c-4d02-95f5-562690b7a332",
+    "view": "AttributedText",
+    "init": {
+        "content": "NSAttributedString Example"
+    },
+    "stringAttributes": [{
+        "tag": "NSAttributedFont",
+        "font": "largeTitle"
+    }]
+}

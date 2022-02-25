@@ -12,7 +12,11 @@ import SwiftUI
 
 public enum ViewTags : String, CaseIterable
 {
-    case text   = "Text"
+    // MARK: Text
+    case text           = "Text"
+    case attributedText = "AttributedText"
+    
+    // MARK: Buttons
     case button = "Button"
     case color  = "Color"
     
@@ -39,6 +43,12 @@ extension AnyView
             return Self(
                 try Text.parse(json)
                     .modify(json)
+                    .layer(json)
+            )
+            
+        case .attributedText:
+            return Self(
+                Text.attributedString(json)
                     .layer(json)
             )
             
