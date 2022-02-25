@@ -23,6 +23,8 @@ public enum CALayerModifierTags : String, CaseIterable
     case shadowColor     = "CAShadowColor"
     case shadowRadius    = "CAShadowRadius"
     case shadowOpacity   = "CAShadowOpacity"
+    case isOpaque        = "CAOpaque"
+    case opacity         = "CAOpacity"
     
     init?(_ tag: String)
     {
@@ -73,6 +75,7 @@ public struct AnyViewCALayer : ViewModifier
 extension AnyViewCALayer
 {
     @discardableResult
+    // swiftlint:disable cyclomatic_complexity
     public func parseCALayer(
         _ modifier: JSONParser,
         view:       CALayerView
@@ -115,6 +118,12 @@ extension AnyViewCALayer
         
         case .shadowOpacity:
             return CAShadowOpacity(json: modifier, view: view).parse()
+            
+        case .isOpaque:
+            return CAOpaque(json: modifier, view: view).parse()
+            
+        case .opacity:
+            return CAOpacity(json: modifier, view: view).parse()
             
         default:
             return view.layer
