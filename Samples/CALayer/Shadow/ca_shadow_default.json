@@ -1,0 +1,51 @@
+{
+    "uuid": "3965a8c2-5b1c-4d02-95f5-562690b7a332",
+    "view": "Text",
+    "init": {
+        "content": "CA Border Color Gray Alpha"
+    },
+    "layers": [{
+        "tag": "CABorderWidth",
+        "value": 5.0
+    }, {
+        "tag": "CABorderColor",
+        "colorSpace": "RGBA",
+        "red": 0.1,
+        "green": 0.2,
+        "blue": 0.35,
+        "alpha": 1.0
+    }, {
+        "tag": "CABackgroundColor",
+        "colorSpace": "RGBA",
+        "red": 0.5,
+        "green": 0.1,
+        "blue": 0.67,
+        "alpha": 1.0
+    }, {
+        "tag": "CACornerRadius",
+        "value": 40.0
+    }, {
+        "tag": "CAMaskedCorners",
+        "corners": [
+            "layerMinXMaxYCorner",
+            "layerMaxXMaxYCorner"
+        ]
+    }, {
+        "tag": "CAShadowColor",
+        "colorSpace": "RGBA",
+        "red": 1.0,
+        "green": 0.1,
+        "blue": 0.1,
+        "alpha": 1.0
+    }, {
+        "tag": "CAShadowRadius",
+        "value": 10
+    }, {
+        "tag": "CAShadowOffset",
+        "width": 10,
+        "height": -5
+    }, {
+        "tag": "CAShadowOpacity",
+        "value": 1.0
+    }]
+}
