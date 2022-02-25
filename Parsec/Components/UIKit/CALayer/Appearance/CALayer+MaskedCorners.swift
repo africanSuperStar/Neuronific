@@ -19,11 +19,18 @@ public struct CAMaskedCorners
     {
         debugPrint("UIKit: CALayer -> MaskedCorners -> \(json)")
      
-        if let maskedCorners = AnyCACornerMask().parseCACornerMask(json)
+        if let corners = json["corners"].array
         {
-            debugPrint("UIKit: CALayer -> MaskedCorners -> cornerMask: \(maskedCorners)")
+            debugPrint("UIKit: CALayer -> MaskedCorners -> corners: \(corners)")
             
-            view.layer.maskedCorners = maskedCorners
+            let maskedCorners = corners.compactMap
+            {
+                parser in
+            
+                AnyCACornerMask().parseCACornerMask(parser)
+            }
+            
+            view.layer.maskedCorners = CACornerMask(maskedCorners)
             
             return view.layer
         }

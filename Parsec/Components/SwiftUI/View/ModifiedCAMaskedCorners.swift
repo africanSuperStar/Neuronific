@@ -31,7 +31,7 @@ public struct AnyCACornerMask
     )
     -> CACornerMask?
     {
-        guard let tag = modifier["cornerMask"].string else { return nil }
+        guard let tag = modifier.string else { return nil }
         
         switch CACornerMaskModifierTags(tag)
         {
