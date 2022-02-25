@@ -12,20 +12,21 @@ import SwiftUI
 
 public enum CALayerModifierTags : String, CaseIterable
 {
-    case anchorPoint     = "CAAnchorPoint"
-    case borderWidth     = "CABorderWidth"
-    case borderColor     = "CABorderColor"
-    case backgroundColor = "CABackgroundColor"
-    case cornerRadius    = "CACornerRadius"
-    case maskToBounds    = "CAMaskToBounds"
-    case maskedCorners   = "CAMaskedCorners"
-    case shadowOffset    = "CAShadowOffset"
-    case shadowColor     = "CAShadowColor"
-    case shadowRadius    = "CAShadowRadius"
-    case shadowOpacity   = "CAShadowOpacity"
-    case isOpaque        = "CAOpaque"
-    case opacity         = "CAOpacity"
-    case shouldRasterize = "CAShouldRasterize"
+    case anchorPoint        = "CAAnchorPoint"
+    case borderWidth        = "CABorderWidth"
+    case borderColor        = "CABorderColor"
+    case backgroundColor    = "CABackgroundColor"
+    case cornerRadius       = "CACornerRadius"
+    case maskToBounds       = "CAMaskToBounds"
+    case maskedCorners      = "CAMaskedCorners"
+    case shadowOffset       = "CAShadowOffset"
+    case shadowColor        = "CAShadowColor"
+    case shadowRadius       = "CAShadowRadius"
+    case shadowOpacity      = "CAShadowOpacity"
+    case isOpaque           = "CAOpaque"
+    case opacity            = "CAOpacity"
+    case shouldRasterize    = "CAShouldRasterize"
+    case rasterizationScale = "CARasterizationScale"
     
     init?(_ tag: String)
     {
@@ -128,6 +129,9 @@ extension AnyViewCALayer
             
         case .shouldRasterize:
             return CAShouldRasterize(json: modifier, view: view).parse()
+            
+        case .rasterizationScale:
+            return CARasterizationScale(json: modifier, view: view).parse()
             
         default:
             return view.layer

@@ -26,6 +26,7 @@
 		A53BECAD27C933A200B933AD /* CALayer+Opaque.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BECAC27C933A200B933AD /* CALayer+Opaque.swift */; };
 		A53BECAF27C9356A00B933AD /* CALayer+Opacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BECAE27C9356A00B933AD /* CALayer+Opacity.swift */; };
 		A53BECB127C9571D00B933AD /* CALayer+ShouldRasterize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BECB027C9571D00B933AD /* CALayer+ShouldRasterize.swift */; };
+		A53BECB327C957EC00B933AD /* CALayer+RasterizationScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BECB227C957EC00B933AD /* CALayer+RasterizationScale.swift */; };
 		A544358026395A0D007A9B31 /* NeuronificApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544357F26395A0D007A9B31 /* NeuronificApp.swift */; };
 		A544358226395A0D007A9B31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544358126395A0D007A9B31 /* ContentView.swift */; };
 		A544358426395A0E007A9B31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A544358326395A0E007A9B31 /* Assets.xcassets */; };
@@ -210,6 +211,7 @@
 		A53BECAC27C933A200B933AD /* CALayer+Opaque.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Opaque.swift"; sourceTree = "<group>"; };
 		A53BECAE27C9356A00B933AD /* CALayer+Opacity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Opacity.swift"; sourceTree = "<group>"; };
 		A53BECB027C9571D00B933AD /* CALayer+ShouldRasterize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+ShouldRasterize.swift"; sourceTree = "<group>"; };
+		A53BECB227C957EC00B933AD /* CALayer+RasterizationScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+RasterizationScale.swift"; sourceTree = "<group>"; };
 		A544357C26395A0D007A9B31 /* Neuronific.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neuronific.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A544357F26395A0D007A9B31 /* NeuronificApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuronificApp.swift; sourceTree = "<group>"; };
 		A544358126395A0D007A9B31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -658,6 +660,7 @@
 				A5A756E627C67CD600B4EA0D /* CALayer+AnchorPoint.swift */,
 				A53BECAC27C933A200B933AD /* CALayer+Opaque.swift */,
 				A53BECB027C9571D00B933AD /* CALayer+ShouldRasterize.swift */,
+				A53BECB227C957EC00B933AD /* CALayer+RasterizationScale.swift */,
 				A53BECAE27C9356A00B933AD /* CALayer+Opacity.swift */,
 				A53BECA127C9285200B933AD /* CALayer+ShadowRadius.swift */,
 				A53BECA327C92B7F00B933AD /* CALayer+ShadowOpacity.swift */,
@@ -1127,6 +1130,7 @@
 				A57698BF27C80C4600077566 /* CGColor+CMYK.swift in Sources */,
 				A5C01CB82767C2DD005CBAA8 /* Font.swift in Sources */,
 				A54435B726395FDD007A9B31 /* ParserError.swift in Sources */,
+				A53BECB327C957EC00B933AD /* CALayer+RasterizationScale.swift in Sources */,
 				A5582620263D037C00116DD2 /* Text.swift in Sources */,
 				A57698B827C8056F00077566 /* CALayer+BorderColor.swift in Sources */,
 				A54435B926396111007A9B31 /* Position.swift in Sources */,
