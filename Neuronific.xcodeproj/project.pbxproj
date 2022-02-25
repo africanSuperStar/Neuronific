@@ -21,6 +21,8 @@
 		A53BECA027C927F900B933AD /* CALayer+ShadowColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BEC9F27C927F900B933AD /* CALayer+ShadowColor.swift */; };
 		A53BECA227C9285200B933AD /* CALayer+ShadowRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BECA127C9285200B933AD /* CALayer+ShadowRadius.swift */; };
 		A53BECA427C92B7F00B933AD /* CALayer+ShadowOpacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BECA327C92B7F00B933AD /* CALayer+ShadowOpacity.swift */; };
+		A53BECA627C92F8C00B933AD /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BECA527C92F8C00B933AD /* CGPoint.swift */; };
+		A53BECAB27C9302800B933AD /* CGPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BECAA27C9302800B933AD /* CGPath.swift */; };
 		A544358026395A0D007A9B31 /* NeuronificApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544357F26395A0D007A9B31 /* NeuronificApp.swift */; };
 		A544358226395A0D007A9B31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544358126395A0D007A9B31 /* ContentView.swift */; };
 		A544358426395A0E007A9B31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A544358326395A0E007A9B31 /* Assets.xcassets */; };
@@ -200,6 +202,8 @@
 		A53BEC9F27C927F900B933AD /* CALayer+ShadowColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+ShadowColor.swift"; sourceTree = "<group>"; };
 		A53BECA127C9285200B933AD /* CALayer+ShadowRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+ShadowRadius.swift"; sourceTree = "<group>"; };
 		A53BECA327C92B7F00B933AD /* CALayer+ShadowOpacity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+ShadowOpacity.swift"; sourceTree = "<group>"; };
+		A53BECA527C92F8C00B933AD /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		A53BECAA27C9302800B933AD /* CGPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPath.swift; sourceTree = "<group>"; };
 		A544357C26395A0D007A9B31 /* Neuronific.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neuronific.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A544357F26395A0D007A9B31 /* NeuronificApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuronificApp.swift; sourceTree = "<group>"; };
 		A544358126395A0D007A9B31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -379,12 +383,28 @@
 			path = JSONViewer;
 			sourceTree = "<group>";
 		};
-		A53BEC9627C91D8900B933AD /* CGSize */ = {
+		A53BECA727C92FD700B933AD /* CGPoint */ = {
+			isa = PBXGroup;
+			children = (
+				A53BECA527C92F8C00B933AD /* CGPoint.swift */,
+			);
+			path = CGPoint;
+			sourceTree = "<group>";
+		};
+		A53BECA827C92FDE00B933AD /* CGSize */ = {
 			isa = PBXGroup;
 			children = (
 				A53BEC9727C91D9F00B933AD /* CGSize.swift */,
 			);
 			path = CGSize;
+			sourceTree = "<group>";
+		};
+		A53BECA927C9300F00B933AD /* CGPath */ = {
+			isa = PBXGroup;
+			children = (
+				A53BECAA27C9302800B933AD /* CGPath.swift */,
+			);
+			path = CGPath;
 			sourceTree = "<group>";
 		};
 		A544357326395A0D007A9B31 = {
@@ -727,7 +747,9 @@
 		A5A756D627C6721E00B4EA0D /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				A53BEC9627C91D8900B933AD /* CGSize */,
+				A53BECA927C9300F00B933AD /* CGPath */,
+				A53BECA827C92FDE00B933AD /* CGSize */,
+				A53BECA727C92FD700B933AD /* CGPoint */,
 				A57698B927C80ABD00077566 /* CGColor */,
 				A5A756DE27C6752F00B4EA0D /* CALayer */,
 			);
@@ -1110,8 +1132,10 @@
 				A57698C327C8259000077566 /* CGColor+GrayGamma.swift in Sources */,
 				A54435C126398129007A9B31 /* SequenceAggregation.swift in Sources */,
 				A5A7554F27C2C2B400B4EA0D /* GenericParser+TokenPrimitive.swift in Sources */,
+				A53BECAB27C9302800B933AD /* CGPath.swift in Sources */,
 				A5A756E527C67BDC00B4EA0D /* ModifiedCALayer.swift in Sources */,
 				A585EAA42778B762006F5078 /* Border.swift in Sources */,
+				A53BECA627C92F8C00B933AD /* CGPoint.swift in Sources */,
 				A5A7554A27C2C20C00B4EA0D /* GenericParser+Operators.swift in Sources */,
 				A57698C927C8EEE900077566 /* CALayer+CornerRadius.swift in Sources */,
 				A54435DB26398B7E007A9B31 /* CharacterSet.swift in Sources */,
