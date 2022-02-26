@@ -12,7 +12,8 @@ import SwiftUI
 
 public enum NSAttributedStringModifierTags : String, CaseIterable
 {
-    case font = "NSAttributedFont"
+    case dynamicFont = "NSDynamicAttributedFont"
+    case font        = "NSCustomAttributedFont"
     
     init?(_ tag: String)
     {
@@ -41,7 +42,7 @@ public struct AnyViewNSAttributedString : View
     @discardableResult
     public func anyStringAttributes(_ json: JSONParser) -> AnyView
     {
-        var view = NSAttributedStringView()
+        var attributedString = NSMutableAttributedString()
         
         if let _view = json["view"].string,
         
@@ -61,14 +62,14 @@ public struct AnyViewNSAttributedString : View
             {
                 print("SWIFTUI: Text -> init -> content -> \(_content)")
                 
-                view.attributedText = NSMutableAttributedString(string: _content)
+                attributedString = NSMutableAttributedString(string: _content)
             }
             
             if let _key = json["init"]["localizedStringKey"].string, !_key.isEmpty
             {
                 print("SWIFTUI: Text -> init -> localizedStringKey -> \(_key)")
     
-                view.attributedText = NSMutableAttributedString(string: LocalizedString(_key))
+                attributedString = NSMutableAttributedString(string: LocalizedString(_key))
             }
         }
         
@@ -80,8 +81,10 @@ public struct AnyViewNSAttributedString : View
         
         for attribute in attributes
         {
-            parse(attribute, view: view)
+            parse(attribute, attributedString: attributedString)
         }
+        
+        let view = NSAttributedStringView(attributedString)
         
         return AnyView(
             view
@@ -92,15 +95,18 @@ public struct AnyViewNSAttributedString : View
 extension AnyViewNSAttributedString
 {
     public func parse(
-        _ modifier: JSONParser,
-        view:       NSAttributedStringView
+        _ modifier:       JSONParser,
+        attributedString: NSMutableAttributedString
     ) {
         guard let tag = modifier["tag"].string else { return }
         
         switch NSAttributedStringModifierTags(tag)
         {
+        case .dynamicFont:
+            NSDynamicAttibutedFont(json: modifier, attributedString: attributedString).parse()
+    
         case .font:
-            NSAttibutedFont(json: modifier, view: view).parse()
+            NSCustomAttibutedFont(json: modifier, attributedString: attributedString).parse()
     
         default:
             return

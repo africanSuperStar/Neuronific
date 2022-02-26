@@ -12,5 +12,6 @@ import Foundation
 
 public enum ParsedObjectError: Error
 {
+    case invalidRange
     case failedToInitializeObject
 }

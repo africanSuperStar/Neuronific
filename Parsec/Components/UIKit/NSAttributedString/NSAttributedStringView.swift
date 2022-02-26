@@ -13,18 +13,23 @@ import SwiftUI
 
 public struct NSAttributedStringView : NSViewRepresentable
 {
-    public var attributedText = NSMutableAttributedString()
+    public var attributedString: NSMutableAttributedString
 
-    private let view = NSTextView()
+    private let label: NSTextField
 
-    init()
+    init(_ attributedString: NSMutableAttributedString)
     {
-        view.textStorage?.append(attributedText)
+        self.attributedString = attributedString
+        
+        label = NSTextField(labelWithAttributedString: attributedString)
+        
+        label.isEditable         = false
+        label.isSelectable       = false
     }
     
     public func makeNSView(context: Context) -> NSView
     {
-        view
+        label
     }
 
     public func updateNSView(_ nsView: NSView, context: Context) { }
