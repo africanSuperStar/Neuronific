@@ -95,6 +95,7 @@
 		A562992927CABF8E008C484A /* Shizuru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A57F253F27CA5A5B00A85EEF /* Shizuru-Regular.ttf */; };
 		A562992A27CABF91008C484A /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = A57F254027CA5A5B00A85EEF /* OFL.txt */; };
 		A562992F27CACDC0008C484A /* NSParagraphAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562992E27CACDC0008C484A /* NSParagraphAttributes.swift */; };
+		A562993227CAD3A5008C484A /* NSTextContainer+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562993127CAD3A5008C484A /* NSTextContainer+Init.swift */; };
 		A56C89D4279C8790005DEAC9 /* SearchFieldViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56C89D3279C8790005DEAC9 /* SearchFieldViews.swift */; };
 		A56C89D7279C8AC9005DEAC9 /* SearchFieldCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56C89D6279C8AC9005DEAC9 /* SearchFieldCardView.swift */; };
 		A56C89D9279C8C8C005DEAC9 /* TableRowViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56C89D8279C8C8C005DEAC9 /* TableRowViews.swift */; };
@@ -293,6 +294,7 @@
 		A55E59C327989AA400130859 /* ModifierButton+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ModifierButton+Data.swift"; sourceTree = "<group>"; };
 		A55E59C427989AA400130859 /* ModifierButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifierButtons.swift; sourceTree = "<group>"; };
 		A562992E27CACDC0008C484A /* NSParagraphAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSParagraphAttributes.swift; sourceTree = "<group>"; };
+		A562993127CAD3A5008C484A /* NSTextContainer+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextContainer+Init.swift"; sourceTree = "<group>"; };
 		A56C89D3279C8790005DEAC9 /* SearchFieldViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldViews.swift; sourceTree = "<group>"; };
 		A56C89D6279C8AC9005DEAC9 /* SearchFieldCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldCardView.swift; sourceTree = "<group>"; };
 		A56C89D8279C8C8C005DEAC9 /* TableRowViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRowViews.swift; sourceTree = "<group>"; };
@@ -439,6 +441,7 @@
 		A53BECBA27C966AA00B933AD /* TextKit */ = {
 			isa = PBXGroup;
 			children = (
+				A562993027CAD37D008C484A /* Layout */,
 				A562992D27CACADD008C484A /* FormattedContent */,
 				A53BECBF27C968C000B933AD /* Attributes */,
 				A53BECBB27C966C200B933AD /* NSAttributedStringView.swift */,
@@ -687,6 +690,22 @@
 				A562992E27CACDC0008C484A /* NSParagraphAttributes.swift */,
 			);
 			path = FormattedContent;
+			sourceTree = "<group>";
+		};
+		A562993027CAD37D008C484A /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				A562993327CAD87A008C484A /* NSTextContainer */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		A562993327CAD87A008C484A /* NSTextContainer */ = {
+			isa = PBXGroup;
+			children = (
+				A562993127CAD3A5008C484A /* NSTextContainer+Init.swift */,
+			);
+			path = NSTextContainer;
 			sourceTree = "<group>";
 		};
 		A56C89D5279C8795005DEAC9 /* Sections */ = {
@@ -1226,6 +1245,7 @@
 				A53BECB327C957EC00B933AD /* CALayer+RasterizationScale.swift in Sources */,
 				A5582620263D037C00116DD2 /* Text.swift in Sources */,
 				A57698B827C8056F00077566 /* CALayer+BorderColor.swift in Sources */,
+				A562993227CAD3A5008C484A /* NSTextContainer+Init.swift in Sources */,
 				A54435B926396111007A9B31 /* Position.swift in Sources */,
 				A5C7E5EB2639F65B00FCD9A2 /* CombinatorParsers.swift in Sources */,
 				A5C01CCA2768DFD4005CBAA8 /* Label.swift in Sources */,
