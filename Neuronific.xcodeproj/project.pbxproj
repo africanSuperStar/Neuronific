@@ -90,10 +90,11 @@
 		A55C303427765B6200648EA8 /* FilePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C303327765B6200648EA8 /* FilePickerView.swift */; };
 		A55E59BF27988EC100130859 /* ColorCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55E59BE27988EC100130859 /* ColorCardView.swift */; };
 		A55E59C2279891EF00130859 /* MultiColorCardViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55E59C1279891EF00130859 /* MultiColorCardViews.swift */; };
-		A562992427CAAD6B008C484A /* FontStyleDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BECC827CA388200B933AD /* FontStyleDictionary.swift */; };
+		A562992427CAAD6B008C484A /* NSDynamicFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BECC827CA388200B933AD /* NSDynamicFont.swift */; };
 		A562992827CABF8B008C484A /* Shizuru.plist in Resources */ = {isa = PBXBuildFile; fileRef = A57F252927CA5A3700A85EEF /* Shizuru.plist */; };
 		A562992927CABF8E008C484A /* Shizuru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A57F253F27CA5A5B00A85EEF /* Shizuru-Regular.ttf */; };
 		A562992A27CABF91008C484A /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = A57F254027CA5A5B00A85EEF /* OFL.txt */; };
+		A562992F27CACDC0008C484A /* NSParagraphAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562992E27CACDC0008C484A /* NSParagraphAttributes.swift */; };
 		A56C89D4279C8790005DEAC9 /* SearchFieldViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56C89D3279C8790005DEAC9 /* SearchFieldViews.swift */; };
 		A56C89D7279C8AC9005DEAC9 /* SearchFieldCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56C89D6279C8AC9005DEAC9 /* SearchFieldCardView.swift */; };
 		A56C89D9279C8C8C005DEAC9 /* TableRowViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56C89D8279C8C8C005DEAC9 /* TableRowViews.swift */; };
@@ -227,7 +228,7 @@
 		A53BECC227C96A3C00B933AD /* AnyFontTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyFontTextStyle.swift; sourceTree = "<group>"; };
 		A53BECC427C96D2100B933AD /* AttributedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedText.swift; sourceTree = "<group>"; };
 		A53BECC627CA37E200B933AD /* NSCustomAttributedFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCustomAttributedFont.swift; sourceTree = "<group>"; };
-		A53BECC827CA388200B933AD /* FontStyleDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyleDictionary.swift; sourceTree = "<group>"; };
+		A53BECC827CA388200B933AD /* NSDynamicFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDynamicFont.swift; sourceTree = "<group>"; };
 		A544357C26395A0D007A9B31 /* Neuronific.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neuronific.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A544357F26395A0D007A9B31 /* NeuronificApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuronificApp.swift; sourceTree = "<group>"; };
 		A544358126395A0D007A9B31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -291,6 +292,7 @@
 		A55E59C1279891EF00130859 /* MultiColorCardViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiColorCardViews.swift; sourceTree = "<group>"; };
 		A55E59C327989AA400130859 /* ModifierButton+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ModifierButton+Data.swift"; sourceTree = "<group>"; };
 		A55E59C427989AA400130859 /* ModifierButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifierButtons.swift; sourceTree = "<group>"; };
+		A562992E27CACDC0008C484A /* NSParagraphAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSParagraphAttributes.swift; sourceTree = "<group>"; };
 		A56C89D3279C8790005DEAC9 /* SearchFieldViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldViews.swift; sourceTree = "<group>"; };
 		A56C89D6279C8AC9005DEAC9 /* SearchFieldCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldCardView.swift; sourceTree = "<group>"; };
 		A56C89D8279C8C8C005DEAC9 /* TableRowViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRowViews.swift; sourceTree = "<group>"; };
@@ -434,14 +436,14 @@
 			path = CGPath;
 			sourceTree = "<group>";
 		};
-		A53BECBA27C966AA00B933AD /* NSAttributedString */ = {
+		A53BECBA27C966AA00B933AD /* TextKit */ = {
 			isa = PBXGroup;
 			children = (
+				A562992D27CACADD008C484A /* FormattedContent */,
 				A53BECBF27C968C000B933AD /* Attributes */,
 				A53BECBB27C966C200B933AD /* NSAttributedStringView.swift */,
-				A53BECC827CA388200B933AD /* FontStyleDictionary.swift */,
 			);
-			path = NSAttributedString;
+			path = TextKit;
 			sourceTree = "<group>";
 		};
 		A53BECBF27C968C000B933AD /* Attributes */ = {
@@ -678,6 +680,15 @@
 			path = ComponentSelectionArea;
 			sourceTree = "<group>";
 		};
+		A562992D27CACADD008C484A /* FormattedContent */ = {
+			isa = PBXGroup;
+			children = (
+				A53BECC827CA388200B933AD /* NSDynamicFont.swift */,
+				A562992E27CACDC0008C484A /* NSParagraphAttributes.swift */,
+			);
+			path = FormattedContent;
+			sourceTree = "<group>";
+		};
 		A56C89D5279C8795005DEAC9 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
@@ -835,7 +846,7 @@
 			isa = PBXGroup;
 			children = (
 				A53BECC027C9696D00B933AD /* UIFont */,
-				A53BECBA27C966AA00B933AD /* NSAttributedString */,
+				A53BECBA27C966AA00B933AD /* TextKit */,
 				A53BECA927C9300F00B933AD /* CGPath */,
 				A53BECA827C92FDE00B933AD /* CGSize */,
 				A53BECA727C92FD700B933AD /* CGPoint */,
@@ -1236,7 +1247,7 @@
 				A5A7554A27C2C20C00B4EA0D /* GenericParser+Operators.swift in Sources */,
 				A57698C927C8EEE900077566 /* CALayer+CornerRadius.swift in Sources */,
 				A54435DB26398B7E007A9B31 /* CharacterSet.swift in Sources */,
-				A562992427CAAD6B008C484A /* FontStyleDictionary.swift in Sources */,
+				A562992427CAAD6B008C484A /* NSDynamicFont.swift in Sources */,
 				A585EA9A2777A0D0006F5078 /* ParserViewList.swift in Sources */,
 				A53BECB127C9571D00B933AD /* CALayer+ShouldRasterize.swift in Sources */,
 				A5ACE65926746ADF00FCC855 /* Button+Label.swift in Sources */,
@@ -1260,6 +1271,7 @@
 				A57698B627C7E7B900077566 /* CALayer+BorderWidth.swift in Sources */,
 				A54435C9263982DE007A9B31 /* TokenParser.swift in Sources */,
 				A57698BD27C80BC700077566 /* CGColor+Grayscale.swift in Sources */,
+				A562992F27CACDC0008C484A /* NSParagraphAttributes.swift in Sources */,
 				A54435D726398814007A9B31 /* CharacterMembership.swift in Sources */,
 				A57698BB27C80AD400077566 /* CGColor+RGBA.swift in Sources */,
 				A54435D126398761007A9B31 /* UInt16.swift in Sources */,

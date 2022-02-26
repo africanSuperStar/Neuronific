@@ -2,7 +2,7 @@
 //  This file is distributed under the same license as the NEURONIFIC (PTY) LTD package.
 //  Copyright (c) 2022 and Confidential to NEURONIFIC (PTY) LTD. All rights reserved.
 //
-//  StyleDictionary.swift
+//  NSDynamicFont.swift
 //  Neuronific
 //
 //  Created by Cameron de Bruyn on 2022/02/26.
@@ -10,7 +10,7 @@
 
 import AppKit
 
-public struct NSScaledFont
+public struct NSDynamicFont
 {
     typealias FontStyleDictionary = [FontStyleKey.RawValue: FontDescription]
 
@@ -77,7 +77,7 @@ public struct NSScaledFont
     }
 }
 
-extension NSScaledFont.FontStyleKey
+extension NSDynamicFont.FontStyleKey
 {
     // swiftlint:disable cyclomatic_complexity
     init?(_ textStyle: NSFont.TextStyle)

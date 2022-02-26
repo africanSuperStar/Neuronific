@@ -42,7 +42,7 @@ public struct NSCustomAttibutedFont
             
             attributedString.addAttribute(
                 .font,
-                value: NSScaledFont(fontName: fontName).font(forTextStyle: font),
+                value: NSDynamicFont(fontName: fontName).font(forTextStyle: font),
                 range: NSRange(location: location, length: length)
             )
             
