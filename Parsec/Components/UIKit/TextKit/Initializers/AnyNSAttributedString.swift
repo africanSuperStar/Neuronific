@@ -16,7 +16,7 @@ public enum AnyNSAttributedStringTags : String, CaseIterable
     case stringWithAttributes
     case attributedString
     case data
-    case microsoftWord
+    case microsoftWord        = "MS_Word"
     case html
     case htmlBaseURL
     case htmlOptions
@@ -57,8 +57,8 @@ public struct AnyNSAttributedString
 //        case .data:
 //
 //
-//        case .microsoftWord:
-//
+        case .microsoftWord:
+            return NSMSWordAttibutedString(json: modifier).parse()
 //
 //        case .html:
 //

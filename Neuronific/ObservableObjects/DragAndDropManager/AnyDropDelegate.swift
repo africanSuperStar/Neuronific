@@ -14,7 +14,7 @@ import Parsec
 
 extension UTType
 {
-    public static var bonsai = UTType("network.thebonsai.neuronific.neuronificjson")!
+    public static var docx = UTType("network.thebonsai.neuronific.neuronificdocx")!
 }
 
 struct AnyDropDelegate : DropDelegate
@@ -28,14 +28,14 @@ struct AnyDropDelegate : DropDelegate
     
     func validateDrop(info: DropInfo) -> Bool
     {
-        if info.hasItemsConforming(to: [.bonsai, .fileURL])
+        if info.hasItemsConforming(to: [.docx, .fileURL])
         {
-            Swift.debugPrint("INFO: Item provider identifier for drop item: \(UTType.bonsai.identifier)")
+            Swift.debugPrint("INFO: Item provider identifier for drop item: \(UTType.docx.identifier)")
             
             return true
         }
      
-        Swift.debugPrint("WARNING: No Item provider identifier for drop item: \(UTType.bonsai.identifier)")
+        Swift.debugPrint("WARNING: No Item provider identifier for drop item: \(UTType.docx.identifier)")
         
         return false
     }
@@ -97,16 +97,16 @@ struct AnyDropDelegate : DropDelegate
                 }
             }
         }
-        else if info.hasItemsConforming(to: [.bonsai])
+        else if info.hasItemsConforming(to: [.docx])
         {
-            Swift.debugPrint("INFO: Item provider identifier for drop item \(info.itemProviders(for: [.bonsai]))")
+            Swift.debugPrint("INFO: Item provider identifier for drop item \(info.itemProviders(for: [.docx]))")
             
-            let itemProviders = info.itemProviders(for: [.bonsai])
+            let itemProviders = info.itemProviders(for: [.docx])
             
             for itemProvider in itemProviders
             {
                 itemProvider.loadDataRepresentation(
-                    forTypeIdentifier: UTType.bonsai.identifier
+                    forTypeIdentifier: UTType.docx.identifier
                 ) {
                     data, _ in
                     

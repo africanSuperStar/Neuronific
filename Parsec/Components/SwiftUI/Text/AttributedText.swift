@@ -42,23 +42,28 @@ public struct AnyViewNSAttributedString : View
     @discardableResult
     public func anyStringAttributes(_ json: JSONParser) -> AnyView
     {
-        if let view = json["view"].string,
+        if let tag = json["view"].string,
         
-        view == "AttributedText"
+        tag == "AttributedText"
         {
-            guard let attributes       = json["stringAttributes"].array,
-                  let attributedString = AnyNSAttributedString().parse(json)
+            guard let attributedString = AnyNSAttributedString().parse(json)
             else
             {
                 return AnyView(EmptyView())
+            }
+
+            let view = NSAttributedStringView(attributedString)
+            
+            guard let attributes = json["stringAttributes"].array
+            else
+            {
+                return AnyView(view)
             }
             
             for attribute in attributes
             {
                 parse(attribute, attributedString: attributedString)
             }
-            
-            let view = NSAttributedStringView(attributedString)
             
             return AnyView(
                 view

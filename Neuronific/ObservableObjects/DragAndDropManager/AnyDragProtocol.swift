@@ -18,9 +18,14 @@ public protocol AnyDragProtocol : NSObject, Identifiable
     var parser:  JSONParser            { get set }
     var binding: Binding <AnyHashable> { get set }
     var content: String                { get set }
+    var data:    Data                  { get set }
     
     init(content: String)
     init?(content: String, binding: Binding <AnyHashable>)
+    
+    init(data: Data)
+    init?(data: Data, binding: Binding <AnyHashable>)
+    
     init?(url: URL, binding: Binding <AnyHashable>)
 }
 
@@ -55,15 +60,51 @@ extension AnyDragProtocol
         self.binding = binding
     }
     
+    init(data: Data)
+    {
+        self.init()
+
+        self.data = data
+    }
+
+    init(data: Data, binding: Binding <AnyHashable>)
+    {
+        self.init()
+        
+        self.data    = data
+        self.binding = binding
+    }
+
     init?(url: URL, binding: Binding <AnyHashable>)
     {
-        if let _content = try? String(contentsOfFile: url.path, encoding: .utf8)
+        let pathExtension = url.pathExtension
+
+        // MARK: Parse JSON Text File
+        
+        if let content = try? String(contentsOfFile: url.path, encoding: .utf8),
+           pathExtension == "json"
         {
-            self.init(content: _content, binding: binding)
+            self.init(content: content, binding: binding)
             
             return
         }
         
+        // MARK: Parse JSON Text File
+        
+        if let data = try? Data(contentsOf: url, options: .mappedIfSafe),
+           pathExtension == "docx"
+        {
+            self.init(content: "{}")
+            
+            let tmpDirectoryURL = URL(fileURLWithPath: NSHomeDirectory())
+            
+            let fileURL = tmpDirectoryURL.appendingPathComponent("tmp.docx")
+            
+            try? data.write(to: fileURL)
+            
+            return
+        }
+     
         self.init(content: "{}")
     }
 }

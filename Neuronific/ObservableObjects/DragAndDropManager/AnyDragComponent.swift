@@ -21,6 +21,7 @@ class AnyDragComponent : NSObject, AnyDragProtocol, ObservableObject, NSItemProv
     @GestureState
     var dragAmount: CGSize = .zero
     
+    var data: Data                    = Data()
     var content: String               = "{}"
     var binding: Binding<AnyHashable> = .constant("{}")
     

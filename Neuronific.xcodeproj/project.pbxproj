@@ -167,6 +167,7 @@
 		A5D1C7D827CBEE2D003C83F0 /* NSTextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1C7D727CBEE2D003C83F0 /* NSTextStorage.swift */; };
 		A5D1C7DB27CBF505003C83F0 /* AnyNSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1C7DA27CBF505003C83F0 /* AnyNSAttributedString.swift */; };
 		A5D1C7DD27CC0B97003C83F0 /* NSAttributedString+Raw.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1C7DC27CC0B97003C83F0 /* NSAttributedString+Raw.swift */; };
+		A5D1C7DF27CC10FA003C83F0 /* NSAttributedString+MicrosoftWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1C7DE27CC10FA003C83F0 /* NSAttributedString+MicrosoftWord.swift */; };
 		A5E121732642B36200612830 /* AnyDragModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E121722642B36200612830 /* AnyDragModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -376,6 +377,7 @@
 		A5D1C7D727CBEE2D003C83F0 /* NSTextStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextStorage.swift; sourceTree = "<group>"; };
 		A5D1C7DA27CBF505003C83F0 /* AnyNSAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyNSAttributedString.swift; sourceTree = "<group>"; };
 		A5D1C7DC27CC0B97003C83F0 /* NSAttributedString+Raw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Raw.swift"; sourceTree = "<group>"; };
+		A5D1C7DE27CC10FA003C83F0 /* NSAttributedString+MicrosoftWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+MicrosoftWord.swift"; sourceTree = "<group>"; };
 		A5E121722642B36200612830 /* AnyDragModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyDragModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1005,6 +1007,7 @@
 			children = (
 				A5D1C7DA27CBF505003C83F0 /* AnyNSAttributedString.swift */,
 				A5D1C7DC27CC0B97003C83F0 /* NSAttributedString+Raw.swift */,
+				A5D1C7DE27CC10FA003C83F0 /* NSAttributedString+MicrosoftWord.swift */,
 			);
 			path = Initializers;
 			sourceTree = "<group>";
@@ -1307,6 +1310,7 @@
 				A5D1C7DD27CC0B97003C83F0 /* NSAttributedString+Raw.swift in Sources */,
 				A54435C126398129007A9B31 /* SequenceAggregation.swift in Sources */,
 				A5A7554F27C2C2B400B4EA0D /* GenericParser+TokenPrimitive.swift in Sources */,
+				A5D1C7DF27CC10FA003C83F0 /* NSAttributedString+MicrosoftWord.swift in Sources */,
 				A53BECAB27C9302800B933AD /* CGPath.swift in Sources */,
 				A5A756E527C67BDC00B4EA0D /* ModifiedCALayer.swift in Sources */,
 				A585EAA42778B762006F5078 /* Border.swift in Sources */,
