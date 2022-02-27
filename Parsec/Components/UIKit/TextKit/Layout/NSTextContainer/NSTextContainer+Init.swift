@@ -19,9 +19,9 @@ extension NSTextContainer
 {
     public static func parse(_ json: JSONParser) throws -> Self
     {
-        if let _view = json["object"].string,
+        if let _view = json["TextKit"].string,
         
-        _view == "TextKit"
+        _view == "NSTextContainer"
         {
             let initParser = json["init"]["size"].self
             

@@ -42,53 +42,30 @@ public struct AnyViewNSAttributedString : View
     @discardableResult
     public func anyStringAttributes(_ json: JSONParser) -> AnyView
     {
-        var attributedString = NSMutableAttributedString()
+        if let view = json["view"].string,
         
-        if let _view = json["view"].string,
-        
-        _view == "AttributedText"
+        view == "AttributedText"
         {
-            let initializerCount = [
-                json["init"]["content"].string != nil,
-                json["init"]["localizedStringKey"].string != nil
-            ]
-            
-            if initializerCount.filter({ $0 == true }).count != 1
+            guard let attributes       = json["stringAttributes"].array,
+                  let attributedString = AnyNSAttributedString().parse(json)
+            else
             {
-                print("SWIFTUI: Text -> init -> more than 1 initializer")
+                return AnyView(EmptyView())
             }
             
-            if let _content = json["init"]["content"].string, !_content.isEmpty
+            for attribute in attributes
             {
-                print("SWIFTUI: Text -> init -> content -> \(_content)")
-                
-                attributedString = NSMutableAttributedString(string: _content)
+                parse(attribute, attributedString: attributedString)
             }
             
-            if let _key = json["init"]["localizedStringKey"].string, !_key.isEmpty
-            {
-                print("SWIFTUI: Text -> init -> localizedStringKey -> \(_key)")
-    
-                attributedString = NSMutableAttributedString(string: LocalizedString(_key))
-            }
+            let view = NSAttributedStringView(attributedString)
+            
+            return AnyView(
+                view
+            )
         }
         
-        guard let attributes = json["stringAttributes"].array
-        else
-        {
-            return AnyView(EmptyView())
-        }
-        
-        for attribute in attributes
-        {
-            parse(attribute, attributedString: attributedString)
-        }
-        
-        let view = NSAttributedStringView(attributedString)
-        
-        return AnyView(
-            view
-        )
+        return AnyView(EmptyView())
     }
 }
 

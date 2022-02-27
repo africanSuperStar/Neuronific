@@ -96,6 +96,7 @@
 		A562992A27CABF91008C484A /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = A57F254027CA5A5B00A85EEF /* OFL.txt */; };
 		A562992F27CACDC0008C484A /* NSParagraphAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562992E27CACDC0008C484A /* NSParagraphAttributes.swift */; };
 		A562993227CAD3A5008C484A /* NSTextContainer+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562993127CAD3A5008C484A /* NSTextContainer+Init.swift */; };
+		A562993527CADBCC008C484A /* AnyNSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562993427CADBCC008C484A /* AnyNSTextView.swift */; };
 		A56C89D4279C8790005DEAC9 /* SearchFieldViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56C89D3279C8790005DEAC9 /* SearchFieldViews.swift */; };
 		A56C89D7279C8AC9005DEAC9 /* SearchFieldCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56C89D6279C8AC9005DEAC9 /* SearchFieldCardView.swift */; };
 		A56C89D9279C8C8C005DEAC9 /* TableRowViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56C89D8279C8C8C005DEAC9 /* TableRowViews.swift */; };
@@ -161,6 +162,11 @@
 		A5C7E6072639F96C00FCD9A2 /* PositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C7E5F82639F96C00FCD9A2 /* PositionTests.swift */; };
 		A5C7E6082639F96C00FCD9A2 /* GenericParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C7E5F92639F96C00FCD9A2 /* GenericParserTests.swift */; };
 		A5C7E6092639F96C00FCD9A2 /* TestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C7E5FA2639F96C00FCD9A2 /* TestUtilities.swift */; };
+		A5D1C7D127CBDECF003C83F0 /* NSLayoutManager+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1C7D027CBDECF003C83F0 /* NSLayoutManager+Init.swift */; };
+		A5D1C7D327CBDF97003C83F0 /* AnyNSLayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1C7D227CBDF97003C83F0 /* AnyNSLayoutManager.swift */; };
+		A5D1C7D827CBEE2D003C83F0 /* NSTextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1C7D727CBEE2D003C83F0 /* NSTextStorage.swift */; };
+		A5D1C7DB27CBF505003C83F0 /* AnyNSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1C7DA27CBF505003C83F0 /* AnyNSAttributedString.swift */; };
+		A5D1C7DD27CC0B97003C83F0 /* NSAttributedString+Raw.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1C7DC27CC0B97003C83F0 /* NSAttributedString+Raw.swift */; };
 		A5E121732642B36200612830 /* AnyDragModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E121722642B36200612830 /* AnyDragModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -295,6 +301,7 @@
 		A55E59C427989AA400130859 /* ModifierButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifierButtons.swift; sourceTree = "<group>"; };
 		A562992E27CACDC0008C484A /* NSParagraphAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSParagraphAttributes.swift; sourceTree = "<group>"; };
 		A562993127CAD3A5008C484A /* NSTextContainer+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextContainer+Init.swift"; sourceTree = "<group>"; };
+		A562993427CADBCC008C484A /* AnyNSTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyNSTextView.swift; sourceTree = "<group>"; };
 		A56C89D3279C8790005DEAC9 /* SearchFieldViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldViews.swift; sourceTree = "<group>"; };
 		A56C89D6279C8AC9005DEAC9 /* SearchFieldCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldCardView.swift; sourceTree = "<group>"; };
 		A56C89D8279C8C8C005DEAC9 /* TableRowViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRowViews.swift; sourceTree = "<group>"; };
@@ -364,6 +371,11 @@
 		A5C7E5F82639F96C00FCD9A2 /* PositionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionTests.swift; sourceTree = "<group>"; };
 		A5C7E5F92639F96C00FCD9A2 /* GenericParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericParserTests.swift; sourceTree = "<group>"; };
 		A5C7E5FA2639F96C00FCD9A2 /* TestUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtilities.swift; sourceTree = "<group>"; };
+		A5D1C7D027CBDECF003C83F0 /* NSLayoutManager+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutManager+Init.swift"; sourceTree = "<group>"; };
+		A5D1C7D227CBDF97003C83F0 /* AnyNSLayoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyNSLayoutManager.swift; sourceTree = "<group>"; };
+		A5D1C7D727CBEE2D003C83F0 /* NSTextStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextStorage.swift; sourceTree = "<group>"; };
+		A5D1C7DA27CBF505003C83F0 /* AnyNSAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyNSAttributedString.swift; sourceTree = "<group>"; };
+		A5D1C7DC27CC0B97003C83F0 /* NSAttributedString+Raw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Raw.swift"; sourceTree = "<group>"; };
 		A5E121722642B36200612830 /* AnyDragModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyDragModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -441,6 +453,7 @@
 		A53BECBA27C966AA00B933AD /* TextKit */ = {
 			isa = PBXGroup;
 			children = (
+				A5D1C7D927CBF4E9003C83F0 /* Initializers */,
 				A562993027CAD37D008C484A /* Layout */,
 				A562992D27CACADD008C484A /* FormattedContent */,
 				A53BECBF27C968C000B933AD /* Attributes */,
@@ -695,6 +708,9 @@
 		A562993027CAD37D008C484A /* Layout */ = {
 			isa = PBXGroup;
 			children = (
+				A562993427CADBCC008C484A /* AnyNSTextView.swift */,
+				A5D1C7D427CBEBB5003C83F0 /* NSTextStorage */,
+				A5D1C7CF27CBDEAF003C83F0 /* NSLayoutManager */,
 				A562993327CAD87A008C484A /* NSTextContainer */,
 			);
 			path = Layout;
@@ -967,6 +983,32 @@
 			path = DragComponents;
 			sourceTree = "<group>";
 		};
+		A5D1C7CF27CBDEAF003C83F0 /* NSLayoutManager */ = {
+			isa = PBXGroup;
+			children = (
+				A5D1C7D027CBDECF003C83F0 /* NSLayoutManager+Init.swift */,
+				A5D1C7D227CBDF97003C83F0 /* AnyNSLayoutManager.swift */,
+			);
+			path = NSLayoutManager;
+			sourceTree = "<group>";
+		};
+		A5D1C7D427CBEBB5003C83F0 /* NSTextStorage */ = {
+			isa = PBXGroup;
+			children = (
+				A5D1C7D727CBEE2D003C83F0 /* NSTextStorage.swift */,
+			);
+			path = NSTextStorage;
+			sourceTree = "<group>";
+		};
+		A5D1C7D927CBF4E9003C83F0 /* Initializers */ = {
+			isa = PBXGroup;
+			children = (
+				A5D1C7DA27CBF505003C83F0 /* AnyNSAttributedString.swift */,
+				A5D1C7DC27CC0B97003C83F0 /* NSAttributedString+Raw.swift */,
+			);
+			path = Initializers;
+			sourceTree = "<group>";
+		};
 		A5DA1B49264219DE00760C1E /* ObservableObjects */ = {
 			isa = PBXGroup;
 			children = (
@@ -1227,12 +1269,15 @@
 				A53BECC527C96D2100B933AD /* AttributedText.swift in Sources */,
 				A54435B526395E97007A9B31 /* GenericParser.swift in Sources */,
 				A54435BB26396217007A9B31 /* Configuration.swift in Sources */,
+				A5D1C7D327CBDF97003C83F0 /* AnyNSLayoutManager.swift in Sources */,
 				A5C01CC6276800CA005CBAA8 /* Picker.swift in Sources */,
 				A5976DE2276A32C300214A70 /* Button+Image.swift in Sources */,
 				A53BECA427C92B7F00B933AD /* CALayer+ShadowOpacity.swift in Sources */,
 				A54435D5263987D3007A9B31 /* CharacterConversion.swift in Sources */,
 				A57698CE27C8F2C200077566 /* CALayer+MaskedCorners.swift in Sources */,
+				A5D1C7D827CBEE2D003C83F0 /* NSTextStorage.swift in Sources */,
 				A53BECBE27C968B600B933AD /* NSDynamicAttributedFont.swift in Sources */,
+				A5D1C7DB27CBF505003C83F0 /* AnyNSAttributedString.swift in Sources */,
 				A53BEC9827C91D9F00B933AD /* CGSize.swift in Sources */,
 				A585EAA7277A546B006F5078 /* Padding.swift in Sources */,
 				A558261F263D037600116DD2 /* JSON.swift in Sources */,
@@ -1245,6 +1290,7 @@
 				A53BECB327C957EC00B933AD /* CALayer+RasterizationScale.swift in Sources */,
 				A5582620263D037C00116DD2 /* Text.swift in Sources */,
 				A57698B827C8056F00077566 /* CALayer+BorderColor.swift in Sources */,
+				A562993527CADBCC008C484A /* AnyNSTextView.swift in Sources */,
 				A562993227CAD3A5008C484A /* NSTextContainer+Init.swift in Sources */,
 				A54435B926396111007A9B31 /* Position.swift in Sources */,
 				A5C7E5EB2639F65B00FCD9A2 /* CombinatorParsers.swift in Sources */,
@@ -1258,6 +1304,7 @@
 				A53BECC327C96A3C00B933AD /* AnyFontTextStyle.swift in Sources */,
 				A54435CF2639863D007A9B31 /* Permutation.swift in Sources */,
 				A57698C327C8259000077566 /* CGColor+GrayGamma.swift in Sources */,
+				A5D1C7DD27CC0B97003C83F0 /* NSAttributedString+Raw.swift in Sources */,
 				A54435C126398129007A9B31 /* SequenceAggregation.swift in Sources */,
 				A5A7554F27C2C2B400B4EA0D /* GenericParser+TokenPrimitive.swift in Sources */,
 				A53BECAB27C9302800B933AD /* CGPath.swift in Sources */,
@@ -1277,6 +1324,7 @@
 				A54435D326398790007A9B31 /* UnicodeScalar.swift in Sources */,
 				A54435C5263981E1007A9B31 /* SetAggregation.swift in Sources */,
 				A5A756ED27C6F10F00B4EA0D /* CALayerView.swift in Sources */,
+				A5D1C7D127CBDECF003C83F0 /* NSLayoutManager+Init.swift in Sources */,
 				A54435CD263985CA007A9B31 /* GenericTokenParser.swift in Sources */,
 				A57698C727C82CBF00077566 /* CALayer+BackgroundColor.swift in Sources */,
 				A54435D92639891F007A9B31 /* CharacterParsers.swift in Sources */,
