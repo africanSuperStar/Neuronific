@@ -1,0 +1,20 @@
+{
+    "uuid": "3965a8c2-5b1c-4d02-95f5-562690b7a332",
+    "view": "AttributedText",
+    "init": {
+        "type": "RawString",
+        "content": "NSAttributedString Custom Font Example"
+    },
+    "stringAttributes": [{
+        "tag": "NSCustomAttributedFont",
+        "font": "largeTitle",
+        "fontName": "Shizuru",
+        "location": 0,
+        "length": 10
+    }, {
+        "tag": "NSDynamicAttributedFont",
+        "font": "title2",
+        "location": 15,
+        "length": 7
+    }]
+}

@@ -33,6 +33,7 @@ struct TableRowViews : View
             {
             case .none:
                 return AnyDragComponent(
+                    content: "",
                     native: AnyView(
                         TableRowNoneCardView()
                     )
@@ -40,6 +41,7 @@ struct TableRowViews : View
             
             case .label:
                 return AnyDragComponent(
+                    content: "",
                     native: AnyView(
                         TableRowLabelCardView()
                     )
@@ -47,6 +49,7 @@ struct TableRowViews : View
             
             case .chevron:
                 return AnyDragComponent(
+                    content: "",
                     native: AnyView(
                         TableRowChevronCardView()
                     )
@@ -54,6 +57,7 @@ struct TableRowViews : View
             
             case .chevronLabel:
                 return AnyDragComponent(
+                    content: "",
                     native: AnyView(
                         TableRowLabelCardView()
                     )
@@ -61,6 +65,7 @@ struct TableRowViews : View
             
             case .icon:
                 return AnyDragComponent(
+                    content: "",
                     native: AnyView(
                         TableRowLabelCardView()
                     )
@@ -68,6 +73,7 @@ struct TableRowViews : View
             
             case .switch:
                 return AnyDragComponent(
+                    content: "",
                     native: AnyView(
                         TableRowLabelCardView()
                     )
@@ -75,6 +81,7 @@ struct TableRowViews : View
             
             case .chevronIcon:
                 return AnyDragComponent(
+                    content: "",
                     native: AnyView(
                         TableRowLabelCardView()
                     )

@@ -25,10 +25,11 @@ class AnyDragComponent : NSObject, AnyDragProtocol, ObservableObject, NSItemProv
     var content: String               = "{}"
     var binding: Binding<AnyHashable> = .constant("{}")
     
-    required convenience init(native: AnyView)
+    required convenience init(content: String, native: AnyView)
     {
         self.init()
-        self.native = native
+        self.content = content
+        self.native  = native
     }
     
     var uuid: String

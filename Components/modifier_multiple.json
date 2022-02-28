@@ -1,0 +1,41 @@
+{
+    "uuid": "3965a8c2-5b1c-4d02-95f5-562690b7a332",
+    "view": "Text",
+    "init": {
+        "description": "Component 1",
+        "content": "Hello Border"
+    },
+    "modifiers": [{
+        "tag": "Padding",
+        "value": 25.0
+    }, {
+        "tag": "Border",
+        "color": {
+            "red": 0.7,
+            "green": 0.2,
+            "blue": 1.0,
+            "alpha": 1.0
+        },
+        "width": 2.0
+    }, {
+        "tag":   "ForegroundColor",
+        "red":   0.0,
+        "green": 1.0,
+        "blue":  0.0,
+        "alpha": 1.0
+    }],
+    "layers": [{
+        "tag": "AnchorPoint",
+        "x": 0.5,
+        "y": -0.3
+    }, {
+        "tag": "BorderWidth",
+        "value": 5.0
+    }, {
+        "tag": "BorderColor",
+        "red": 0.1,
+        "green": 0.2,
+        "blue": 0.35,
+        "alpha": 1.0
+    }]
+}

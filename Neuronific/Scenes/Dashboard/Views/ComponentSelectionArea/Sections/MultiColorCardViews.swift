@@ -213,6 +213,7 @@ struct MultiColorCardViews : View
             card in
             
             AnyDragComponent(
+                content: "",
                 native: AnyView(card)
             )
         }

@@ -32,7 +32,7 @@ struct ComponentSelectionAreaView : View
             SearchTextField(searchText: $searchText)
                 .padding(.vertical)
        
-            ComponentViewSections(selectedUIFramework: $selectedUIFramework)
+            ComponentViewSections(framework: $selectedUIFramework)
         }
         .padding(.horizontal)
         .frame(maxWidth: .infinity)

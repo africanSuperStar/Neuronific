@@ -14,7 +14,7 @@ import Parsec
 
 extension UTType
 {
-    public static var docx = UTType("network.thebonsai.neuronific.neuronificdocx")!
+    public static var neuronific = UTType("network.thebonsai.neuronific.neuronificjson")!
 }
 
 struct AnyDropDelegate : DropDelegate
@@ -28,14 +28,14 @@ struct AnyDropDelegate : DropDelegate
     
     func validateDrop(info: DropInfo) -> Bool
     {
-        if info.hasItemsConforming(to: [.docx, .fileURL])
+        if info.hasItemsConforming(to: [.neuronific, .json, .fileURL])
         {
-            Swift.debugPrint("INFO: Item provider identifier for drop item: \(UTType.docx.identifier)")
+            Swift.debugPrint("INFO: Item provider identifier for drop item: \(UTType.neuronific.identifier)")
             
             return true
         }
      
-        Swift.debugPrint("WARNING: No Item provider identifier for drop item: \(UTType.docx.identifier)")
+        Swift.debugPrint("WARNING: No Item provider identifier for drop item: \(UTType.neuronific.identifier)")
         
         return false
     }
@@ -43,6 +43,8 @@ struct AnyDropDelegate : DropDelegate
     private func handleDropData(url: URL, handled: inout Bool) -> AnyDragComponent?
     {
         let bindingUUID = UUID().uuidString
+        
+        Swift.debugPrint("URL for Drop Data: \(url.absoluteString)")
         
         if let component = AnyDragComponent(url: url, binding: .constant(bindingUUID))
         {
@@ -63,6 +65,21 @@ struct AnyDropDelegate : DropDelegate
         
     }
     
+    private func handleDropData(content: String, handled: inout Bool) -> AnyDragComponent?
+    {
+        let bindingUUID = UUID().uuidString
+        
+        Swift.debugPrint("Content Bytes for Drop Data: \(content.lengthOfBytes(using: .utf8))")
+        
+        let component = AnyDragComponent(content: content, binding: .constant(bindingUUID))
+        
+        Swift.debugPrint("SUCCESS: Managed to validate drop of AnyDragComponent")
+
+        handled = true
+
+        return component
+    }
+    
     func performDrop(info: DropInfo) -> Bool
     {
         var handled = false
@@ -78,7 +95,15 @@ struct AnyDropDelegate : DropDelegate
                 itemProvider.loadItem(
                     forTypeIdentifier: UTType.fileURL.identifier
                 ) {
-                    item, _ in
+                    item, error in
+                    
+                    if let error = error
+                    {
+                        // swiftlint:disable line_length
+                        Swift.debugPrint("ERROR: Failed to form URL for Item Provider Identifier, \(error.localizedDescription)")
+                        
+                        return
+                    }
                     
                     guard let data = item as? Data,
                           let url  = URL(
@@ -87,6 +112,8 @@ struct AnyDropDelegate : DropDelegate
                     )
                     else
                     {
+                        Swift.debugPrint("ERROR: Failed to form URL for Item Provider Identifier)")
+                        
                         return
                     }
                     
@@ -97,33 +124,50 @@ struct AnyDropDelegate : DropDelegate
                 }
             }
         }
-        else if info.hasItemsConforming(to: [.docx])
+        else if info.hasItemsConforming(to: [.neuronific])
         {
-            Swift.debugPrint("INFO: Item provider identifier for drop item \(info.itemProviders(for: [.docx]))")
+            Swift.debugPrint("INFO: Item provider identifier for drop item \(info.itemProviders(for: [.neuronific]))")
             
-            let itemProviders = info.itemProviders(for: [.docx])
+            let itemProviders = info.itemProviders(for: [.neuronific])
             
             for itemProvider in itemProviders
             {
                 itemProvider.loadDataRepresentation(
-                    forTypeIdentifier: UTType.docx.identifier
+                    forTypeIdentifier: UTType.neuronific.identifier
                 ) {
-                    data, _ in
+                    data, error in
                     
-                    guard let data = data,
-                          let url  = URL(
-                        dataRepresentation: data,
-                        relativeTo: nil
-                    )
-                    else
+                    if let error = error
                     {
+                        // swiftlint:disable line_length
+                        Swift.debugPrint("ERROR: Failed to form URL for Item Provider Identifier, \(error.localizedDescription)")
+                        
                         return
                     }
-                    
-                    if let component = handleDropData(url: url, handled: &handled)
+
+                    if let data    = data,
+                       let content = String(data: data, encoding: .utf8)
                     {
-                        completionHandler(component)
+                        if content.isValidURL
+                        {
+                            if let url       = URL(dataRepresentation: data, relativeTo: nil),
+                               let component = handleDropData(url: url, handled: &handled)
+                            {
+                                completionHandler(component)
+                            }
+                        }
+                        else
+                        {
+                            if let component = handleDropData(content: content, handled: &handled)
+                            {
+                                completionHandler(component)
+                            }
+                        }
                     }
+                    
+                    Swift.debugPrint("ERROR: Failed to form Component for Item Provider Identifier)")
+                    
+                    return
                 }
             }
         }

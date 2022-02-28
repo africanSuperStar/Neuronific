@@ -16,14 +16,14 @@
 				<string>bonsai.png</string>
 			</array>
 			<key>CFBundleTypeName</key>
-			<string>Neuronific Word File</string>
+			<string>Draggable Component JSON</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>LSHandlerRank</key>
 			<string>Owner</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>network.thebonsai.neuronific.neuronificdocx</string>
+				<string>network.thebonsai.neuronific.neuronificjson</string>
 			</array>
 			<key>NSDocumentClass</key>
 			<string>NSDocument</string>
@@ -54,10 +54,10 @@
 		<dict>
 			<key>UTTypeConformsTo</key>
 			<array>
-				<string>public.docx</string>
+				<string>public.json</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Neuronific Word File</string>
+			<string>Draggable Component JSON</string>
 			<key>UTTypeIconFile</key>
 			<string>bonsai</string>
 			<key>UTTypeIconFiles</key>
@@ -72,7 +72,7 @@
 				<string>bonsai</string>
 			</dict>
 			<key>UTTypeIdentifier</key>
-			<string>network.thebonsai.neuronific.neuronificdocx</string>
+			<string>network.thebonsai.neuronific.neuronificjson</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
@@ -90,7 +90,7 @@
 				<string>public.json</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Neuronific Word File</string>
+			<string>Draggable Component JSON</string>
 			<key>UTTypeIconFile</key>
 			<string>bonsai</string>
 			<key>UTTypeIconFiles</key>
@@ -105,7 +105,7 @@
 				<string>bonsai</string>
 			</dict>
 			<key>UTTypeIdentifier</key>
-			<string>network.thebonsai.neuronific.neuronificdocx</string>
+			<string>network.thebonsai.neuronific.neuronificjson</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>

@@ -39,7 +39,7 @@ struct FilePickerView : View
                     .cornerRadius(Theme.cornerRadius)
                     .padding()
                     .onDrop(
-                        of:       [.docx, .json, .fileURL], // MARK: Validated in the delegate
+                        of:       [.neuronific, .json, .fileURL], // MARK: Validated in the delegate
                         delegate: AnyDropDelegate(
                             component:         currentComponent,
                             completionHandler: appendModifiableContent,
@@ -102,7 +102,7 @@ struct FilePickerView : View
                 .background(Theme.darkGray)
                 .frame(maxWidth: .infinity, minHeight: .zero, maxHeight: 250)
                 .onDrop(
-                    of:       [.docx, .json, .fileURL], // MARK: Validated in the delegate
+                    of:       [.neuronific, .json, .fileURL], // MARK: Validated in the delegate
                     delegate: AnyDropDelegate(
                         component:         currentComponent,
                         completionHandler: appendModifiableContent,
@@ -124,7 +124,7 @@ struct FilePickerView : View
                     dialog.showsHiddenFiles        = false
                     dialog.allowsMultipleSelection = true
                     dialog.canChooseDirectories    = true
-                    dialog.allowedContentTypes     = [.docx, .json, .fileURL]
+                    dialog.allowedContentTypes     = [.neuronific, .json, .fileURL]
                     
                     if dialog.runModal() ==  NSApplication.ModalResponse.OK
                     {

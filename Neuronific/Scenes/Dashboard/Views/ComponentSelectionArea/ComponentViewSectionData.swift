@@ -17,13 +17,14 @@ enum Section : String, CaseIterable, Identifiable
     case framework
     case systemDefaultColors
     case searchFields
+    case nsAttributedStrings
     case tableRows
     case colorPickers
 }
 
 struct ComponentViewSections : View
 {
-    @Binding var selectedUIFramework: Int
+    @Binding var framework: Int
     
     fileprivate var sections: [(view: AnyView, tag: String)]
     {
@@ -39,7 +40,7 @@ struct ComponentViewSections : View
                         {
                             Text("Select a UI Framework")
                             
-                            Picker("", selection: $selectedUIFramework)
+                            Picker("", selection: $framework)
                             {
                                 Text("UIKit").tag(0)
                                 Text("SwiftUI").tag(1)
@@ -70,7 +71,7 @@ struct ComponentViewSections : View
                     ),
                     tag: "systemDefaultColors"
                 )
-                
+            
             case .searchFields:
                 return (view: AnyView(
                         Group
@@ -86,6 +87,23 @@ struct ComponentViewSections : View
                         }
                     ),
                     tag: "searchFields"
+                )
+                
+            case .nsAttributedStrings:
+                return (view: AnyView(
+                        Group
+                        {
+                            Text("NSAttributedString Components")
+                            
+                            NSAttributedStringViews()
+                                .padding(.bottom)
+
+                            Divider()
+                                .background(Theme.lightGray)
+                                .frame(maxWidth: .infinity, minHeight: 1.0)
+                        }
+                    ),
+                    tag: "nsAttributedStrings"
                 )
                 
             case .tableRows:
@@ -137,7 +155,7 @@ struct ComponentViewSections : View
                 {
                     $0.view
                 }
-            }            
+            }
         }
     }
 }
@@ -146,6 +164,6 @@ struct ComponentViewSections_Previews: PreviewProvider
 {
     static var previews: some View
     {
-        ComponentViewSections(selectedUIFramework: .constant(0))
+        ComponentViewSections(framework: .constant(0))
     }
 }
