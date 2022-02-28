@@ -17,69 +17,25 @@ struct ComponentSelectionAreaView : View
     @State
     private var searchText  = ""
     
+    @State
+    private var selectedUIFramework = 0
+    
     @EnvironmentObject
     private var model: AnyDragModel
     
     @ObservedObject var content: ContentDetail
-
+    
     var body: some View
     {
-        ScrollView
+        VStack(alignment: .leading)
         {
-            VStack(alignment: .leading)
-            {
-                SearchTextField(searchText: $searchText)
-                    .padding(.vertical)
-           
-                Group
-                {
-                    Text("System Default Colors")
-                    
-                    MultiColorCardViews()
-                        .padding(.bottom)
-    
-                    Divider()
-                        .background(Theme.lightGray)
-                        .frame(maxWidth: .infinity, minHeight: 1.0)
-                }
-                
-                Group
-                {
-                    Text("Search Fields")
-                    
-                    SearchFieldViews()
-                        .padding(.bottom)
-    
-                    Divider()
-                        .background(Theme.lightGray)
-                        .frame(maxWidth: .infinity, minHeight: 1.0)
-                }
-                
-                Group
-                {
-                    Text("Table Row Components")
-                    
-                    TableRowViews()
-                    
-                    Divider()
-                        .background(Theme.lightGray)
-                        .frame(maxWidth: .infinity, minHeight: 1.0)
-                }
-                
-                Group
-                {
-                    Text("Color Pickers")
-                    
-                    ColorPickerViews()
-                    
-                    Divider()
-                        .background(Theme.lightGray)
-                        .frame(maxWidth: .infinity, minHeight: 1.0)
-                }
-            }
-            .padding(.horizontal)
-            .frame(maxWidth: .infinity)
+            SearchTextField(searchText: $searchText)
+                .padding(.vertical)
+       
+            ComponentViewSections(selectedUIFramework: $selectedUIFramework)
         }
+        .padding(.horizontal)
+        .frame(maxWidth: .infinity)
     }
 }
 
