@@ -12,38 +12,30 @@ import SwiftUI
 
 public struct NSMSWordAttibutedString
 {
-    let json: JSONParser
+    let json:       JSONParser
+    let attachment: Binding <Data>
     
     public func parse() -> NSMutableAttributedString?
     {
         debugPrint("UIKit: NSAttributedString -> init -> MS Word Document -> \(json)")
         
-//        guard let fileURL = json["init"]["fileURL"].string
-//        else
-//        {
-//            debugPrint(
-//                """
-//                    UIKit: NSAttributedString -> init -> MS Word Document -> invalid string,
-//                    \(ParsedObjectError.invalidRange)
-//                """
-//            )
-//
-//            return nil
-//        }
-        
-        let tmpDirectoryURL = URL(fileURLWithPath: NSHomeDirectory())
-        
-        let fileURL = tmpDirectoryURL.appendingPathComponent("tmp.docx")
-        
-        guard let data = try? Data(
-            contentsOf: fileURL.absoluteURL,
-            options:    .mappedIfSafe
+        guard let attributedString = try? NSMutableAttributedString(
+            data:               attachment.wrappedValue,
+            options:            [.documentType: NSAttributedString.DocumentType.wordML],
+            documentAttributes: nil
         )
         else
         {
+            debugPrint(
+                """
+                    UIKit: NSAttributedString -> init -> MS Word Document -> incorrect format,
+                    \(ParsedObjectError.incorrectFormat)
+                """
+            )
+            
             return nil
         }
-        
-        return try? NSMutableAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.wordML], documentAttributes: nil)
+
+        return attributedString
     }
 }

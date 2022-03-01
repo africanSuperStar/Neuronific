@@ -12,9 +12,9 @@ import SwiftUI
 
 struct NSAttributedStringCardView : View
 {
-    let content: String
-    let type:    String
-    
+    let content:    String
+    let type:       String
+
     var body: some View
     {
         ZStack
@@ -46,8 +46,8 @@ struct NSAttributedStringCardView_Previews : PreviewProvider
     static var previews: some View
     {
         NSAttributedStringCardView(
-            content: "",
-            type:    "Microsoft Word Document"
+            content:    "",
+            type:       "Microsoft Word Document"
         )
     }
 }

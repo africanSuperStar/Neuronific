@@ -114,7 +114,7 @@ struct FilePickerView : View
             HStack
             {
                 Spacer()
-                
+
                 Button("Select File")
                 {
                     let dialog = NSOpenPanel()

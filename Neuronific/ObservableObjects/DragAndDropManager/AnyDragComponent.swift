@@ -21,15 +21,15 @@ class AnyDragComponent : NSObject, AnyDragProtocol, ObservableObject, NSItemProv
     @GestureState
     var dragAmount: CGSize = .zero
     
-    var data: Data                    = Data()
-    var content: String               = "{}"
-    var binding: Binding<AnyHashable> = .constant("{}")
+    var data:       Data                  = Data()
+    var content:    String                = "{}"
+    var binding:    Binding <AnyHashable> = .constant("{}")
     
     required convenience init(content: String, native: AnyView)
     {
         self.init()
-        self.content = content
-        self.native  = native
+        self.content    = content
+        self.native     = native
     }
     
     var uuid: String

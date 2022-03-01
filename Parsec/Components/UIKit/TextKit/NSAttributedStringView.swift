@@ -32,5 +32,12 @@ public struct NSAttributedStringView : NSViewRepresentable
         label
     }
 
-    public func updateNSView(_ nsView: NSView, context: Context) { }
+    public func updateNSView(_ nsView: NSView, context: Context)
+    {
+        guard let view = nsView as? NSTextField else { return }
+        
+        view.attributedStringValue = attributedString
+    }
 }
+
+extension NSAttributedStringView : Equatable { }

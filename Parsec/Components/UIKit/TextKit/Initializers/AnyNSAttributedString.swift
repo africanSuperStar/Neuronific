@@ -37,7 +37,8 @@ public struct AnyNSAttributedString
     @discardableResult
     // swiftlint:disable cyclomatic_complexity
     public func parse(
-        _ modifier: JSONParser
+        _ modifier: JSONParser,
+        attachment: Binding <Data>
     )
     -> NSMutableAttributedString?
     {
@@ -58,7 +59,10 @@ public struct AnyNSAttributedString
 //
 //
         case .microsoftWord:
-            return NSMSWordAttibutedString(json: modifier).parse()
+            return NSMSWordAttibutedString(
+                json:       modifier,
+                attachment: attachment
+            ).parse()
 //
 //        case .html:
 //

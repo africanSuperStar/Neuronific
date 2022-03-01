@@ -13,18 +13,14 @@ import Parsec
 
 public protocol AnyDragProtocol : NSObject, Identifiable
 {
-    var uuid:    String                { get }
-    var title:   String                { get }
-    var parser:  JSONParser            { get set }
-    var binding: Binding <AnyHashable> { get set }
-    var content: String                { get set }
-    var data:    Data                  { get set }
+    var uuid:          String                { get }
+    var title:         String                { get }
+    var parser:        JSONParser            { get set }
+    var content:       String                { get set }
+    var binding:       Binding <AnyHashable> { get set }
     
     init(content: String)
     init?(content: String, binding: Binding <AnyHashable>)
-    
-    init(data: Data)
-    init?(data: Data, binding: Binding <AnyHashable>)
     
     init?(url: URL, binding: Binding <AnyHashable>)
 }
@@ -59,48 +55,14 @@ extension AnyDragProtocol
         self.content = content
         self.binding = binding
     }
-    
-    init(data: Data)
-    {
-        self.init()
-
-        self.data = data
-    }
-
-    init(data: Data, binding: Binding <AnyHashable>)
-    {
-        self.init()
-        
-        self.data    = data
-        self.binding = binding
-    }
 
     init?(url: URL, binding: Binding <AnyHashable>)
     {
-        let pathExtension = url.pathExtension
-
         // MARK: Parse JSON Text File
         
-        if let content = try? String(contentsOfFile: url.path, encoding: .utf8),
-           pathExtension == "json"
+        if let content = try? String(contentsOfFile: url.path, encoding: .utf8)
         {
             self.init(content: content, binding: binding)
-            
-            return
-        }
-        
-        // MARK: Parse JSON Text File
-        
-        if let data = try? Data(contentsOf: url, options: .mappedIfSafe),
-           pathExtension == "docx"
-        {
-            self.init(content: "{}")
-            
-            let tmpDirectoryURL = URL(fileURLWithPath: NSHomeDirectory())
-            
-            let fileURL = tmpDirectoryURL.appendingPathComponent("tmp.docx")
-            
-            try? data.write(to: fileURL)
             
             return
         }

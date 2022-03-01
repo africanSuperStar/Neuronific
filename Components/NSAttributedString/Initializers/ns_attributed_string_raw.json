@@ -1,0 +1,7 @@
+{
+    "view": "AttributedText",
+    "init": {
+        "type": "RawString",
+        "content": "Raw NSAttributed String..."
+    }
+}

@@ -29,12 +29,12 @@ struct NSAttributedStringViews : View
             case .rawString:
                 
                 guard let contentURL = Bundle.main.url(
-                    forResource:   "ns_attributed_string_ms_word",
+                    forResource:   "ns_attributed_string_raw",
                     withExtension: "json"
                 )
                 else
                 {
-                    debugPrint("ERROR: Failed to fetch `ns_attributed_string_ms_word.json` from Bundle.main")
+                    debugPrint("ERROR: Failed to fetch `ns_attributed_string_raw.json` from Bundle.main")
                     
                     return NSAttributedStringCardView(
                         content: "",
@@ -42,10 +42,10 @@ struct NSAttributedStringViews : View
                     )
                 }
                 
-                guard let content = try? String(contentsOfFile: contentURL.absoluteString)
+                guard let content = try? String(contentsOfFile: contentURL.path)
                 else
                 {
-                    debugPrint("ERROR: Failed to read data from `ns_attributed_string_ms_word.json`")
+                    debugPrint("ERROR: Failed to read data from `ns_attributed_string_raw.json`")
                     
                     return NSAttributedStringCardView(
                         content: "",

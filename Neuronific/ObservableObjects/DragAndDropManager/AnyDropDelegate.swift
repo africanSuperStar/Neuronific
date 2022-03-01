@@ -112,7 +112,7 @@ struct AnyDropDelegate : DropDelegate
                     )
                     else
                     {
-                        Swift.debugPrint("ERROR: Failed to form URL for Item Provider Identifier)")
+                        Swift.debugPrint("ERROR: Failed to form URL for Item Provider Identifier")
                         
                         return
                     }
@@ -124,11 +124,11 @@ struct AnyDropDelegate : DropDelegate
                 }
             }
         }
-        else if info.hasItemsConforming(to: [.neuronific])
+        else if info.hasItemsConforming(to: [.neuronific, .json])
         {
             Swift.debugPrint("INFO: Item provider identifier for drop item \(info.itemProviders(for: [.neuronific]))")
             
-            let itemProviders = info.itemProviders(for: [.neuronific])
+            let itemProviders = info.itemProviders(for: [.neuronific, .json])
             
             for itemProvider in itemProviders
             {
@@ -165,12 +165,14 @@ struct AnyDropDelegate : DropDelegate
                         }
                     }
                     
-                    Swift.debugPrint("ERROR: Failed to form Component for Item Provider Identifier)")
+                    Swift.debugPrint("ERROR: Failed to form Component for Item Provider Identifier, \(itemProvider.debugDescription)")
                     
                     return
                 }
             }
         }
+        
+        Swift.debugPrint("INFO: Did handle drop data: \(handled)")
 
         return handled
     }
