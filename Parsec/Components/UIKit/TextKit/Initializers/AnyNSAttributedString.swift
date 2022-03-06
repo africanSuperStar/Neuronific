@@ -35,10 +35,9 @@ public enum AnyNSAttributedStringTags : String, CaseIterable
 public struct AnyNSAttributedString
 {
     @discardableResult
-    // swiftlint:disable cyclomatic_complexity
     public func parse(
         _ modifier: JSONParser,
-        attachment: Binding <Data>
+        attachment: Binding <Data>?
     )
     -> NSMutableAttributedString?
     {
@@ -86,7 +85,6 @@ public struct AnyNSAttributedString
 //
 //
 //        case .attachment:
-            
             
         default:
             return nil

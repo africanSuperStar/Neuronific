@@ -22,22 +22,15 @@ struct SimulatedDeviceCanvasView : View
     {
         ZStack
         {
-            ForEach(
-                Array(
-                    zip(
-                        model.modifiableComponents.indices,
-                        model.modifiableComponents
-                    )
-                ),
-                id: \.1
-            ) {
-                index, component in
+            ForEach($model.modifiableComponents, id: \.self)
+            {
+                $component in
                         
                 component.view
                     .tag(component.uuid)
                     .offset(
-                        x: model.componentTranslations[index].x,
-                        y: model.componentTranslations[index].y
+                        x: component.translation.x,
+                        y: component.translation.y
                     )
                     .gesture(
                         DragGesture(
@@ -48,13 +41,13 @@ struct SimulatedDeviceCanvasView : View
                         {
                             gesture in
                             
-                            model.componentTranslations[index] = gesture.location
+                            $component.translation.wrappedValue = gesture.location
                         }
                         .onEnded
                         {
                             gesture in
                             
-                            model.componentTranslations[index] = gesture.location
+                            $component.translation.wrappedValue = gesture.location
                         }
                     )
             }

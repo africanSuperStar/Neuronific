@@ -13,14 +13,15 @@ import SwiftUI
 public struct NSMSWordAttibutedString
 {
     let json:       JSONParser
-    let attachment: Binding <Data>
+    let attachment: Binding <Data>?
     
     public func parse() -> NSMutableAttributedString?
     {
         debugPrint("UIKit: NSAttributedString -> init -> MS Word Document -> \(json)")
         
-        guard let attributedString = try? NSMutableAttributedString(
-            data:               attachment.wrappedValue,
+        guard let attachment = attachment?.wrappedValue,
+              let attributedString = try? NSMutableAttributedString(
+            data:               attachment,
             options:            [.documentType: NSAttributedString.DocumentType.wordML],
             documentAttributes: nil
         )

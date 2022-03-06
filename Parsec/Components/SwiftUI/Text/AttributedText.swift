@@ -35,6 +35,9 @@ public struct AnyViewNSAttributedString : View
     let json: JSONParser
     
     @State
+    private var attributedText = AnyNSAttributedString()
+    
+    @State
     private var attachment = Data()
  
     @State
@@ -86,8 +89,16 @@ public struct AnyViewNSAttributedString : View
                     }
                 )
             }
-            
-            return AnyView(view)
+            else
+            {
+                return AnyView(
+                    view
+                        .onAppear
+                        {
+                            loadAttributedText()
+                        }
+                )
+            }
         }
         
         return AnyView(EmptyView())
@@ -122,7 +133,7 @@ public struct AnyViewNSAttributedString : View
                 }
                 
                 attachment = docx
-                reloadAttachment()
+                loadAttachment()
             }
         }
         else
@@ -131,18 +142,31 @@ public struct AnyViewNSAttributedString : View
         }
     }
     
-    func reloadAttachment()
+    private func loadAttributedText()
     {
-        if let attributedString = AnyNSAttributedString().parse(json, attachment: $attachment)
+        if let attributedString = attributedText.parse(json, attachment: nil)
         {
-            view = NSAttributedStringView(attributedString)
-            
-            if let attributes = json["stringAttributes"].array
+            applyAttributes(attributedString)
+        }
+    }
+    
+    private func loadAttachment()
+    {
+        if let attributedString = attributedText.parse(json, attachment: $attachment)
+        {
+            applyAttributes(attributedString)
+        }
+    }
+    
+    private func applyAttributes(_ attributedString: NSMutableAttributedString)
+    {
+        view = NSAttributedStringView(attributedString)
+        
+        if let attributes = json["stringAttributes"].array
+        {
+            for attribute in attributes
             {
-                for attribute in attributes
-                {
-                    parse(attribute, attributedString: attributedString)
-                }
+                parse(attribute, attributedString: attributedString)
             }
         }
     }

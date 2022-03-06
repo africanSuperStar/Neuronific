@@ -18,45 +18,6 @@ struct ContentConfigurationDetailView : View
         {
             Color.white
                 .opacity(0.1)
-            
-            VSplitView
-            {
-                Group
-                {
-                    Text("Rounded Rectangle")
-                        .font(.headline)
-                    
-                    HStack
-                    {
-                        Text("Corner Radius")
-                    }
-                    .frame(minHeight: 50.0)
-                }
-                    
-                Group
-                {
-                    Text("Rounded Rectangle")
-                        .font(.headline)
-                    
-                    HStack
-                    {
-                        Text("Corner Radius")
-                    }
-                    .frame(minHeight: 50.0)
-                }
-                    
-                Group
-                {
-                    Text("Rounded Rectangle")
-                        .font(.headline)
-                    
-                    HStack
-                    {
-                        Text("Corner Radius")
-                    }
-                    .frame(minHeight: 50.0)
-                }
-            }
         }
         .frame(minWidth: 0, maxWidth: 300, minHeight: 0, maxHeight: .infinity,  alignment: .center)
         .cornerRadius(Theme.cornerRadius)

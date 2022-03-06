@@ -51,9 +51,9 @@ struct FilePickerView : View
             {
                 LazyVGrid(columns: columns, spacing: 20)
                 {
-                    ForEach(model.modifiableComponents, id: \.self)
+                    ForEach($model.modifiableComponents, id: \.self)
                     {
-                        component in
+                        $component in
                         
                         VStack(spacing: .zero)
                         {
