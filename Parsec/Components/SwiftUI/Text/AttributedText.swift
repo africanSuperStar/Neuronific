@@ -24,28 +24,33 @@ public enum NSAttributedStringModifierTags : String, CaseIterable
 extension Text
 {
     @ViewBuilder
-    public static func attributedString(_ json: JSONParser) -> some View
+    public static func attributedString <T: NSAttributedStringAttachment> (_ json: JSONParser) -> some View
     {
-        AnyViewNSAttributedString(json: json)
+        AnyViewNSAttributedString <T> (observed: T(json: json))
     }
 }
 
-public struct AnyViewNSAttributedString : View
+public struct AnyViewNSAttributedString <T: NSAttributedStringAttachment> : View
 {
-    let json: JSONParser
+    @EnvironmentObject
+    var model: AnyDragModel
     
     @State
-    private var attributedText = AnyNSAttributedString()
+    private var attributedText: NSMutableAttributedString
     
-    @State
-    private var attachment = Data()
- 
-    @State
-    private var view = NSAttributedStringView(NSMutableAttributedString())
+    @ObservedObject
+    var observed: T
+    
+    init(observed: T)
+    {
+        self.observed = observed
+        
+        attributedText = observed.loadAttributedText() ?? NSMutableAttributedString()
+    }
     
     public var body: some View
     {
-        anyStringAttributes(json)
+        anyStringAttributes(observed.json)
     }
     
     @discardableResult
@@ -62,9 +67,9 @@ public struct AnyViewNSAttributedString : View
                 return AnyView(
                     VStack
                     {
-                        view
+                        NSAttributedStringView(attributedText)
                         
-                        if attachment.isEmpty
+                        if attributedText.string.isEmpty
                         {
                             Button
                             {
@@ -92,11 +97,7 @@ public struct AnyViewNSAttributedString : View
             else
             {
                 return AnyView(
-                    view
-                        .onAppear
-                        {
-                            loadAttributedText()
-                        }
+                    NSAttributedStringView(attributedText)
                 )
             }
         }
@@ -132,63 +133,26 @@ public struct AnyViewNSAttributedString : View
                     return
                 }
                 
-                attachment = docx
-                loadAttachment()
+                observed.attachment = .constant(docx)
+                
+                if let attributedString = observed.loadAttributedText()
+                {
+                    attributedText = attributedString
+                    
+                    $model.modifiableComponents.forEach
+                    {
+                        if model.currentDraggedComponent?.uuid == $0.wrappedValue.uuid
+                        {
+                            $0.view.wrappedValue = AnyView(
+                                AnyViewNSAttributedString(observed: observed)
+                            )
+                        }
+                    }
+                }
             }
         }
         else
         {
-            return
-        }
-    }
-    
-    private func loadAttributedText()
-    {
-        if let attributedString = attributedText.parse(json, attachment: nil)
-        {
-            applyAttributes(attributedString)
-        }
-    }
-    
-    private func loadAttachment()
-    {
-        if let attributedString = attributedText.parse(json, attachment: $attachment)
-        {
-            applyAttributes(attributedString)
-        }
-    }
-    
-    private func applyAttributes(_ attributedString: NSMutableAttributedString)
-    {
-        view = NSAttributedStringView(attributedString)
-        
-        if let attributes = json["stringAttributes"].array
-        {
-            for attribute in attributes
-            {
-                parse(attribute, attributedString: attributedString)
-            }
-        }
-    }
-}
-
-extension AnyViewNSAttributedString
-{
-    public func parse(
-        _ modifier:       JSONParser,
-        attributedString: NSMutableAttributedString
-    ) {
-        guard let tag = modifier["tag"].string else { return }
-        
-        switch NSAttributedStringModifierTags(tag)
-        {
-        case .dynamicFont:
-            NSDynamicAttibutedFont(json: modifier, attributedString: attributedString).parse()
-    
-        case .font:
-            NSCustomAttibutedFont(json: modifier, attributedString: attributedString).parse()
-    
-        default:
             return
         }
     }

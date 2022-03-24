@@ -12,35 +12,42 @@ import SwiftUI
 import Combine
 import UniformTypeIdentifiers
 
-import Parsec
-
 extension AnyDragComponent : Identifiable { }
 
-class AnyDragComponent : NSObject, AnyDragProtocol, ObservableObject, NSItemProviderWriting, NSItemProviderReading
+public class AnyDragComponent :
+    NSObject,
+    AnyDragProtocol,
+    ObservableObject,
+    NSItemProviderWriting,
+    NSItemProviderReading
 {
     @GestureState
-    var dragAmount: CGSize = .zero
+    public var dragAmount: CGSize = .zero
     
     @Published
-    var translation: CGPoint = .zero
+    public var translation: CGPoint = .zero
     
-    var data:       Data                  = Data()
-    var content:    String                = "{}"
-    var binding:    Binding <AnyHashable> = .constant("{}")
+    @Published
+    public var attachment: Data = Data()
     
-    required convenience init(content: String, native: AnyView)
+    var data: Data = Data()
+    
+    public var content:    String                = "{}"
+    public var binding:    Binding <AnyHashable> = .constant("{}")
+    
+    required public convenience init(content: String, native: AnyView)
     {
         self.init()
-        self.content    = content
-        self.native     = native
+        self.content = content
+        self.native  = native
     }
     
-    var uuid: String
+    public var uuid: String
     {
         return parser["uuid"].string ?? ""
     }
     
-    var view: AnyView
+    public var view: AnyView
     {
         get {
             return Self(
@@ -53,16 +60,19 @@ class AnyDragComponent : NSObject, AnyDragProtocol, ObservableObject, NSItemProv
         set { }
     }
     
-    lazy var native = AnyView(EmptyView())
+    public lazy var native = AnyView(EmptyView())
     
-    var title: String
+    public var title: String
     {
         return parser["view"].string ?? ""
     }
     
-    static var writableTypeIdentifiersForItemProvider: [String] { ["network.thebonsai.neuronific.neuronificjson"] }
+    public static var writableTypeIdentifiersForItemProvider: [String]
+    {
+        ["network.thebonsai.neuronific.neuronificjson"]
+    }
     
-    func loadData(
+    public func loadData(
         withTypeIdentifier typeIdentifier: String,
         forItemProviderCompletionHandler completionHandler: @escaping (Data?, Error?) -> Void
     )
@@ -84,9 +94,12 @@ class AnyDragComponent : NSObject, AnyDragProtocol, ObservableObject, NSItemProv
         return progress
     }
         
-    static var readableTypeIdentifiersForItemProvider: [String] { ["network.thebonsai.neuronific.neuronificjson"] }
+    public static var readableTypeIdentifiersForItemProvider: [String]
+    {
+        ["network.thebonsai.neuronific.neuronificjson"]
+    }
         
-    static func object(withItemProviderData data: Data, typeIdentifier: String) throws -> Self
+    public static func object(withItemProviderData data: Data, typeIdentifier: String) throws -> Self
     {
         guard let str = String(data: data, encoding: .utf8)
         else

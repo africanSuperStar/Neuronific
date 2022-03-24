@@ -11,8 +11,6 @@
 import SwiftUI
 import Combine
 
-import Parsec
-
 // final class TreeDragComponent : AnyDragComponent
 // {
 //    var bindings: [(component: AnyDragComponent, binding: Binding <String>)] = []

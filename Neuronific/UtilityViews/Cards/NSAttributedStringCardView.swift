@@ -9,6 +9,7 @@
 //
 
 import SwiftUI
+import Parsec
 
 struct NSAttributedStringCardView : View
 {

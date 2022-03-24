@@ -15,7 +15,7 @@ public struct NSAttributedStringView : NSViewRepresentable
 {
     public var attributedString: NSMutableAttributedString
 
-    private let label: NSTextField
+    internal let label: NSTextField
 
     init(_ attributedString: NSMutableAttributedString)
     {

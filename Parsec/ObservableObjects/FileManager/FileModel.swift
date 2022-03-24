@@ -10,9 +10,8 @@
 
 import Foundation
 import Combine
-import Parsec
 
-class FileModel : ObservableObject
+public class FileModel : ObservableObject
 {
     public static let shared = FileModel()
     
@@ -36,16 +35,16 @@ class FileModel : ObservableObject
         }
     }
     
-    @Published var contents: String = ""
+    @Published public var contents: String = ""
     
-    @Published var url = URL(string: "https://www.google.com")!
+    @Published public var url = URL(string: "https://www.google.com")!
     
-    init()
+    public init()
     {
         self.load(file: "text_view.json")
     }
     
-    func write(content: [String: AnyObject])
+    public func write(content: [String: AnyObject])
     {
         if let data = try? JSONSerialization.data(withJSONObject: content, options: [.prettyPrinted])
         {
@@ -55,7 +54,7 @@ class FileModel : ObservableObject
         }
     }
     
-    func load(file: String)
+    public func load(file: String)
     {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
 

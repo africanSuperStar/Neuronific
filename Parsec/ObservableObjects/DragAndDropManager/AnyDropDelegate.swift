@@ -10,14 +10,13 @@
 
 import SwiftUI
 import UniformTypeIdentifiers
-import Parsec
 
 extension UTType
 {
     public static var neuronific = UTType("network.thebonsai.neuronific.neuronificjson")!
 }
 
-struct AnyDropDelegate : DropDelegate
+public struct AnyDropDelegate : DropDelegate
 {
     let component: AnyDragComponent
 
@@ -26,7 +25,15 @@ struct AnyDropDelegate : DropDelegate
     @EnvironmentObject
     var model: AnyDragModel
     
-    func validateDrop(info: DropInfo) -> Bool
+    public init(
+        component:         AnyDragComponent,
+        completionHandler: @escaping (AnyDragComponent) -> Void
+    ) {
+        self.component         = component
+        self.completionHandler = completionHandler
+    }
+    
+    public func validateDrop(info: DropInfo) -> Bool
     {
         if info.hasItemsConforming(to: [.neuronific, .json, .fileURL])
         {
@@ -80,7 +87,7 @@ struct AnyDropDelegate : DropDelegate
         return component
     }
     
-    func performDrop(info: DropInfo) -> Bool
+    public func performDrop(info: DropInfo) -> Bool
     {
         var handled = false
             
@@ -154,6 +161,8 @@ struct AnyDropDelegate : DropDelegate
                                let component = handleDropData(url: url, handled: &handled)
                             {
                                 completionHandler(component)
+                                
+                                return
                             }
                         }
                         else
@@ -161,13 +170,13 @@ struct AnyDropDelegate : DropDelegate
                             if let component = handleDropData(content: content, handled: &handled)
                             {
                                 completionHandler(component)
+                                
+                                return
                             }
                         }
                     }
                     
                     Swift.debugPrint("ERROR: Failed to form Component for Item Provider Identifier, \(itemProvider.debugDescription)")
-                    
-                    return
                 }
             }
         }

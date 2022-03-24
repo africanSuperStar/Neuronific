@@ -9,15 +9,14 @@
 //
 
 import SwiftUI
-import Parsec
 
 public protocol AnyDragProtocol : NSObject, Identifiable
 {
-    var uuid:          String                { get }
-    var title:         String                { get }
-    var parser:        JSONParser            { get set }
-    var content:       String                { get set }
-    var binding:       Binding <AnyHashable> { get set }
+    var uuid:    String                { get }
+    var title:   String                { get }
+    var parser:  JSONParser            { get set }
+    var content: String                { get set }
+    var binding: Binding <AnyHashable> { get set }
     
     init(content: String)
     init?(content: String, binding: Binding <AnyHashable>)
@@ -27,7 +26,7 @@ public protocol AnyDragProtocol : NSObject, Identifiable
 
 extension AnyDragProtocol
 {
-    var parser: JSONParser
+    public var parser: JSONParser
     {
         get {
             if let _parser = try? JSONParser(data: content)
@@ -41,14 +40,14 @@ extension AnyDragProtocol
         set { }
     }
     
-    init(content: String)
+    public init(content: String)
     {
         self.init()
 
         self.content = content
     }
     
-    init(content: String, binding: Binding <AnyHashable>)
+    public init(content: String, binding: Binding <AnyHashable>)
     {
         self.init()
         
@@ -56,7 +55,7 @@ extension AnyDragProtocol
         self.binding = binding
     }
 
-    init?(url: URL, binding: Binding <AnyHashable>)
+    public init?(url: URL, binding: Binding <AnyHashable>)
     {
         // MARK: Parse JSON Text File
         

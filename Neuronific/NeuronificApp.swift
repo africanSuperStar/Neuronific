@@ -10,6 +10,7 @@
 
 import SwiftUI
 import Combine
+import Parsec
 
 @main
 struct NeuronificApp: App

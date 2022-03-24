@@ -9,6 +9,7 @@
 //
 
 import SwiftUI
+import Parsec
 
 struct SimulatedDeviceCanvasView : View
 {
@@ -29,8 +30,8 @@ struct SimulatedDeviceCanvasView : View
                 component.view
                     .tag(component.uuid)
                     .offset(
-                        x: component.translation.x,
-                        y: component.translation.y
+                        x: $component.translation.wrappedValue.x,
+                        y: $component.translation.wrappedValue.y
                     )
                     .gesture(
                         DragGesture(

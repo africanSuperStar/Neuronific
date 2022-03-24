@@ -49,6 +49,7 @@ struct SelectableComponentView : View
     let component: AnyDragComponent
     
     var body: some View
+
     {
         component.native
             .onDrag {

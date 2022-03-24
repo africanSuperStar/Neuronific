@@ -9,6 +9,7 @@
 //
 
 import SwiftUI
+import Parsec
 
 struct FilePickerView : View
 {
@@ -42,8 +43,7 @@ struct FilePickerView : View
                         of:       [.neuronific, .json, .fileURL], // MARK: Validated in the delegate
                         delegate: AnyDropDelegate(
                             component:         currentComponent,
-                            completionHandler: appendModifiableContent,
-                            model:             _model
+                            completionHandler: appendModifiableContent
                         )
                     )
             }
@@ -57,13 +57,13 @@ struct FilePickerView : View
                         
                         VStack(spacing: .zero)
                         {
-                            Text(component.title)
+                            Text($component.wrappedValue.title)
                                 .frame(maxWidth: .infinity)
                                 .font(.headline)
                                 .foregroundColor(.white)
                                 .background(Theme.primary)
                         
-                            component.view
+                            $component.wrappedValue.view
                                 .padding(Theme.smallPadding)
                         }
                         .cornerRadius(Theme.cornerRadius)
@@ -105,8 +105,7 @@ struct FilePickerView : View
                     of:       [.neuronific, .json, .fileURL], // MARK: Validated in the delegate
                     delegate: AnyDropDelegate(
                         component:         currentComponent,
-                        completionHandler: appendModifiableContent,
-                        model:             _model
+                        completionHandler: appendModifiableContent
                     )
                 )
             }

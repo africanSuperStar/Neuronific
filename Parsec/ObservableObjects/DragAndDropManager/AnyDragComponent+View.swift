@@ -9,12 +9,11 @@
 //
 
 import SwiftUI
-import Parsec
 
 extension AnyDragComponent
 {
     @discardableResult
-    func body() -> AnyView
+    public func body() -> AnyView
     {
         if let view = try? AnyView.parse(parser)
         {

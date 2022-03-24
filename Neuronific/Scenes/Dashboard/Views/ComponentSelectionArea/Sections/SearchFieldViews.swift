@@ -9,6 +9,7 @@
 //
 
 import SwiftUI
+import Parsec
 
 enum SearchFields : CaseIterable
 {
