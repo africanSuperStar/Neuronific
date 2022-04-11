@@ -63,9 +63,13 @@ struct FilePickerView : View
                                 .foregroundColor(.white)
                                 .background(Theme.primary)
                         
-                            $component.wrappedValue.view
-                                .padding(Theme.smallPadding)
+                            ScrollView
+                            {
+                                $component.wrappedValue.view
+                                    .padding(Theme.smallPadding)
+                            }
                         }
+                        .frame(maxHeight: 150.0)
                         .cornerRadius(Theme.cornerRadius)
                         .background(
                             RoundedRectangle(cornerRadius: Theme.cornerRadius)

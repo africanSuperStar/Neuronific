@@ -21,47 +21,50 @@ struct SimulatedDeviceCanvasView : View
     
     var body: some View
     {
-        ZStack
+        ScrollView
         {
-            ForEach($model.modifiableComponents, id: \.self)
+            ZStack
             {
-                $component in
-                        
-                component.native
-                    .tag(component.uuid)
-                    .offset(
-                        x: $component.translation.wrappedValue.x,
-                        y: $component.translation.wrappedValue.y
-                    )
-                    .gesture(
-                        DragGesture(
-                            minimumDistance: .zero,
-                            coordinateSpace: .local
+                ForEach($model.modifiableComponents, id: \.self)
+                {
+                    $component in
+                            
+                    component.native
+                        .tag(component.uuid)
+                        .offset(
+                            x: $component.translation.wrappedValue.x,
+                            y: $component.translation.wrappedValue.y
                         )
-                        .onChanged
-                        {
-                            gesture in
-                            
-                            $component.translation.wrappedValue = gesture.location
-                        }
-                        .onEnded
-                        {
-                            gesture in
-                            
-                            $component.translation.wrappedValue = gesture.location
-                        }
-                    )
+                        .gesture(
+                            DragGesture(
+                                minimumDistance: .zero,
+                                coordinateSpace: .local
+                            )
+                            .onChanged
+                            {
+                                gesture in
+                                
+                                $component.translation.wrappedValue = gesture.location
+                            }
+                            .onEnded
+                            {
+                                gesture in
+                                
+                                $component.translation.wrappedValue = gesture.location
+                            }
+                        )
+                }
             }
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .if(appModel.debugWindow)
-        {
-            view in
-            
-            view.rotation3DEffect(
-                .degrees(60),
-                axis: (x: .zero, y: 1.0, z: .zero)
-            )
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .if(appModel.debugWindow)
+            {
+                view in
+                
+                view.rotation3DEffect(
+                    .degrees(60),
+                    axis: (x: .zero, y: 1.0, z: .zero)
+                )
+            }
         }
     }
 }
