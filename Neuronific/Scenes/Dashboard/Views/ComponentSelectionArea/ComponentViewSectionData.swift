@@ -147,14 +147,11 @@ struct ComponentViewSections : View
     
     var body: some View
     {
-        ScrollView
+        LazyVGrid(columns: columns, alignment: .leading)
         {
-            LazyVGrid(columns: columns, alignment: .leading)
+            ForEach(sections, id: \.tag)
             {
-                ForEach(sections, id: \.tag)
-                {
-                    $0.view
-                }
+                $0.view
             }
         }
     }

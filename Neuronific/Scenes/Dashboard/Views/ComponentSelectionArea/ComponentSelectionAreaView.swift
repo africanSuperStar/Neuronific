@@ -27,12 +27,13 @@ struct ComponentSelectionAreaView : View
     
     var body: some View
     {
-        VStack(alignment: .leading)
+        ScrollView
         {
             SearchTextField(searchText: $searchText)
                 .padding(.vertical)
        
             ComponentViewSections(framework: $selectedUIFramework)
+            TextKitViewSections(framework: $selectedUIFramework)
         }
         .padding(.horizontal)
         .frame(maxWidth: .infinity)

@@ -47,17 +47,24 @@ struct TableRowNoneCardView_Previews: PreviewProvider
 
 struct TableRowLabelCardView : View
 {
+    let title: String
+    let label: String
+    
     var body: some View
     {
         HStack(alignment: .center)
         {
-            Text("Title")
+            Text(title)
+                .truncationMode(.tail)
+                .lineLimit(1)
                 .foregroundColor(Theme.darkGray)
                 .padding(.horizontal)
             
             Spacer()
             
-            Text("Label")
+            Text(label)
+                .truncationMode(.tail)
+                .lineLimit(3)
                 .foregroundColor(Theme.gray)
                 .padding(.horizontal)
         }
@@ -71,17 +78,21 @@ struct TableRowLabelCardView_Previews: PreviewProvider
 {
     static var previews: some View
     {
-        TableRowLabelCardView()
+        TableRowLabelCardView(title: "Title", label: "Label")
     }
 }
 
 struct TableRowChevronCardView : View
 {
+    let title: String
+    
     var body: some View
     {
         HStack(alignment: .center)
         {
-            Text("Title")
+            Text(title)
+                .truncationMode(.tail)
+                .lineLimit(1)
                 .foregroundColor(Theme.darkGray)
                 .padding(.horizontal)
             
@@ -101,6 +112,6 @@ struct TableRowChevronCardView_Previews: PreviewProvider
 {
     static var previews: some View
     {
-        TableRowChevronCardView()
+        TableRowChevronCardView(title: "Title")
     }
 }

@@ -19,7 +19,7 @@ enum NSAttributedStringCards: String, CaseIterable
 
 struct NSAttributedStringViews : View
 {
-    fileprivate var cards: [NSAttributedStringCardView]
+    fileprivate var cards: [TitledCardView]
     {
         NSAttributedStringCards.allCases.compactMap
         {
@@ -37,9 +37,10 @@ struct NSAttributedStringViews : View
                 {
                     debugPrint("ERROR: Failed to fetch `ns_attributed_string_raw.json` from Bundle.main")
                     
-                    return NSAttributedStringCardView(
-                        content: "",
-                        type:    card.rawValue
+                    return TitledCardView(
+                        title:   "NSAttributedString",
+                        type:    card.rawValue,
+                        content: ""
                     )
                 }
                 
@@ -48,15 +49,17 @@ struct NSAttributedStringViews : View
                 {
                     debugPrint("ERROR: Failed to read data from `ns_attributed_string_raw.json`")
                     
-                    return NSAttributedStringCardView(
-                        content: "",
-                        type:    card.rawValue
+                    return TitledCardView(
+                        title:   "NSAttributedString",
+                        type:    card.rawValue,
+                        content: ""
                     )
                 }
                 
-                return NSAttributedStringCardView(
-                    content: content,
-                    type:    card.rawValue
+                return TitledCardView(
+                    title:   "NSAttributedString",
+                    type:    card.rawValue,
+                    content: content
                 )
                 
             case .msWord:
@@ -69,9 +72,10 @@ struct NSAttributedStringViews : View
                 {
                     debugPrint("ERROR: Failed to fetch `ns_attributed_string_ms_word.json` from Bundle.main")
                     
-                    return NSAttributedStringCardView(
-                        content: "",
-                        type:    card.rawValue
+                    return TitledCardView(
+                        title:   "NSAttributedString",
+                        type:    card.rawValue,
+                        content: ""
                     )
                 }
                 
@@ -81,15 +85,17 @@ struct NSAttributedStringViews : View
                 {
                     debugPrint("ERROR: Failed to read data from `ns_attributed_string_ms_word.json`")
                     
-                    return NSAttributedStringCardView(
-                        content: "",
-                        type:    card.rawValue
+                    return TitledCardView(
+                        title:   "NSAttributedString",
+                        type:    card.rawValue,
+                        content: ""
                     )
                 }
                 
-                return NSAttributedStringCardView(
-                    content: content,
-                    type:    card.rawValue
+                return TitledCardView(
+                    title:   "NSAttributedString",
+                    type:    card.rawValue,
+                    content: content
                 )
             }
         }

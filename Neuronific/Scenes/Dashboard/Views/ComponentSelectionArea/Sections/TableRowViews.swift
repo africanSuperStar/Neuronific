@@ -44,7 +44,7 @@ struct TableRowViews : View
                 return AnyDragComponent(
                     content: "",
                     native: AnyView(
-                        TableRowLabelCardView()
+                        TableRowLabelCardView(title: "Labelled Table Row Component", label: "")
                     )
                 )
             
@@ -52,7 +52,7 @@ struct TableRowViews : View
                 return AnyDragComponent(
                     content: "",
                     native: AnyView(
-                        TableRowChevronCardView()
+                        TableRowChevronCardView(title: "Chevron Table Row Component")
                     )
                 )
             
@@ -60,7 +60,7 @@ struct TableRowViews : View
                 return AnyDragComponent(
                     content: "",
                     native: AnyView(
-                        TableRowLabelCardView()
+                        TableRowLabelCardView(title: "Chevron Labelled Table Row Component", label: "")
                     )
                 )
             
@@ -68,7 +68,7 @@ struct TableRowViews : View
                 return AnyDragComponent(
                     content: "",
                     native: AnyView(
-                        TableRowLabelCardView()
+                        TableRowLabelCardView(title: "Icon Labelled Table Row Component", label: "")
                     )
                 )
             
@@ -76,7 +76,7 @@ struct TableRowViews : View
                 return AnyDragComponent(
                     content: "",
                     native: AnyView(
-                        TableRowLabelCardView()
+                        TableRowLabelCardView(title: "Switch Labelled Table Row Component", label: "")
                     )
                 )
             
@@ -84,7 +84,7 @@ struct TableRowViews : View
                 return AnyDragComponent(
                     content: "",
                     native: AnyView(
-                        TableRowLabelCardView()
+                        TableRowLabelCardView(title: "Chevron Iconed Table Row Component", label: "")
                     )
                 )
             }
