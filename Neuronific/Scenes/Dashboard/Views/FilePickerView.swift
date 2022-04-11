@@ -18,8 +18,8 @@ struct FilePickerView : View
     
     @State private var hovered = false
     
-    @EnvironmentObject
-    var model: AnyDragModel
+    @StateObject
+    var model = AnyDragModel.shared
     
     @State
     private var currentComponent = AnyDragComponent(content: "{}")

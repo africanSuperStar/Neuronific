@@ -20,8 +20,8 @@ struct ComponentSelectionAreaView : View
     @State
     private var selectedUIFramework = 0
     
-    @EnvironmentObject
-    private var model: AnyDragModel
+    @StateObject
+    private var model = AnyDragModel.shared
     
     @ObservedObject var content: ContentDetail
     
@@ -43,13 +43,12 @@ struct SelectableComponentView : View
 {
     @State private var isDragging: Bool = false
     
-    @EnvironmentObject
-    var model: AnyDragModel
+    @StateObject
+    var model = AnyDragModel.shared
     
     let component: AnyDragComponent
     
     var body: some View
-
     {
         component.native
             .onDrag {
@@ -70,6 +69,5 @@ struct ComponentSelectionAreaView_Previews : PreviewProvider
     static var previews: some View
     {
         ComponentSelectionAreaView(content: ContentDetail())
-            .environmentObject(AnyDragModel())
     }
 }

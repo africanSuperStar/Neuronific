@@ -32,8 +32,8 @@ extension Text
 
 public struct AnyViewNSAttributedString <T: NSAttributedStringAttachment> : View
 {
-    @EnvironmentObject
-    var model: AnyDragModel
+    @StateObject
+    var model = AnyDragModel.shared
     
     @State
     private var attributedText: NSMutableAttributedString
@@ -143,7 +143,7 @@ public struct AnyViewNSAttributedString <T: NSAttributedStringAttachment> : View
                     {
                         if model.currentDraggedComponent?.uuid == $0.wrappedValue.uuid
                         {
-                            $0.view.wrappedValue = AnyView(
+                            $0.native.wrappedValue = AnyView(
                                 AnyViewNSAttributedString(observed: observed)
                             )
                         }

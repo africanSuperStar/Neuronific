@@ -62,6 +62,5 @@ struct ContentView_Previews: PreviewProvider
     {
         ContentView()
             .environmentObject(FileModel.shared)
-            .environmentObject(AnyDragModel.shared)
     }
 }

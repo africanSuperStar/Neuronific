@@ -22,9 +22,6 @@ public struct AnyDropDelegate : DropDelegate
 
     let completionHandler: (AnyDragComponent) -> Void
     
-    @EnvironmentObject
-    var model: AnyDragModel
-    
     public init(
         component:         AnyDragComponent,
         completionHandler: @escaping (AnyDragComponent) -> Void

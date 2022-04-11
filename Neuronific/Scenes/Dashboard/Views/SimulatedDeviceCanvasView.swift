@@ -16,7 +16,7 @@ struct SimulatedDeviceCanvasView : View
     @ObservedObject
     private var appModel = AppViewModel.shared
     
-    @ObservedObject
+    @StateObject
     private var model = AnyDragModel.shared
     
     var body: some View
@@ -27,7 +27,7 @@ struct SimulatedDeviceCanvasView : View
             {
                 $component in
                         
-                component.view
+                component.native
                     .tag(component.uuid)
                     .offset(
                         x: $component.translation.wrappedValue.x,

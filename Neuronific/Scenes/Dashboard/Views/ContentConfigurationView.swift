@@ -13,9 +13,6 @@ import Parsec
 
 struct ContentConfigurationView : View
 {
-    @EnvironmentObject
-    var model: AnyDragModel
-    
     var body: some View
     {
         ZStack
