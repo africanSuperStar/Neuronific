@@ -11,7 +11,6 @@
 import SwiftUI
 import Combine
 
-// swiftlint:disable class_delegate_protocol
 public protocol ParsedAttachmentDelegate : ParsedObjectDelegate
 {
     func loadAttributedText() -> NSMutableAttributedString?

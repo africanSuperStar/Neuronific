@@ -98,7 +98,7 @@ struct TitledPopoverCardView : View
     }
 }
 
-struct NSAttributedStringCardView_Previews : PreviewProvider
+struct TitledPopoverCardView_Previews : PreviewProvider
 {
     static var previews: some View
     {

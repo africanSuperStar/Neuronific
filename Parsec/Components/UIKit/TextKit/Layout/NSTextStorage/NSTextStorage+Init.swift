@@ -2,7 +2,7 @@
 //  This file is distributed under the same license as the NEURONIFIC (PTY) LTD package.
 //  Copyright (c) 2022 and Confidential to NEURONIFIC (PTY) LTD. All rights reserved.
 //
-//  NSLayoutManager+Init.swift
+//  NSTextStorage.swift
 //  Neuronific
 //
 //  Created by Cameron de Bruyn on 2022/02/27.
@@ -10,24 +10,22 @@
 
 import AppKit
 
-extension NSLayoutManager : ParsedObject
+extension NSTextStorage : ParsedObject
 {
-    public typealias Content = NSLayoutManager
+    public typealias Content = NSTextStorage
 }
 
-extension NSLayoutManager
+extension NSTextStorage
 {
     public static func parse(_ json: JSONParser) throws -> Content
     {
-        var layoutManager = NSLayoutManager()
+        let textStorage = NSTextStorage.ini
 
-        if let textKit = json["TextKit"].string,
+        if let textKit = json["textKit"].string,
         
-        textKit == "NSLayoutManager"
+        textKit == "NSTextStorage"
         {
-            layoutManager = AnyNSLayoutManagerConfiguration().parse(json, manager: layoutManager)
-            
-            return layoutManager
+            return textStorage
         }
         
         throw ParsedObjectError.failedToInitializeObject

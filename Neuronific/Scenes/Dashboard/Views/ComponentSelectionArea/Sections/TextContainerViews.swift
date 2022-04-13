@@ -29,12 +29,12 @@ struct TextKitContainerViews : View
             case .basic:
                 
                 guard let contentURL = Bundle.main.url(
-                    forResource:   "ns_attributed_string_ms_word",
+                    forResource:   "nstextcontainer_textkit",
                     withExtension: "json"
                 )
                 else
                 {
-                    debugPrint("ERROR: Failed to fetch `ns_attributed_string_ms_word.json` from Bundle.main")
+                    debugPrint("ERROR: Failed to fetch `nstextcontainer_textkit.json` from Bundle.main")
                     
                     return nil
                 }
@@ -43,7 +43,7 @@ struct TextKitContainerViews : View
                       let content     = String(data: contentData, encoding: .utf8)
                 else
                 {
-                    debugPrint("ERROR: Failed to read data from `ns_attributed_string_ms_word.json`")
+                    debugPrint("ERROR: Failed to read data from `nstextcontainer_textkit.json`")
                     
                     return nil
                 }

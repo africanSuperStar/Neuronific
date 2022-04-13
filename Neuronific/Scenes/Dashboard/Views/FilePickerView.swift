@@ -57,7 +57,7 @@ struct FilePickerView : View
                         
                         VStack(spacing: .zero)
                         {
-                            Text($component.wrappedValue.title)
+                            Text(component.title)
                                 .frame(maxWidth: .infinity)
                                 .font(.headline)
                                 .foregroundColor(.white)
@@ -65,7 +65,7 @@ struct FilePickerView : View
                         
                             ScrollView
                             {
-                                $component.wrappedValue.view
+                                component.view
                                     .padding(Theme.smallPadding)
                             }
                         }

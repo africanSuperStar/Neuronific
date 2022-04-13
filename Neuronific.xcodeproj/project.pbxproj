@@ -189,9 +189,10 @@
 		A5C7E6072639F96C00FCD9A2 /* PositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C7E5F82639F96C00FCD9A2 /* PositionTests.swift */; };
 		A5C7E6082639F96C00FCD9A2 /* GenericParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C7E5F92639F96C00FCD9A2 /* GenericParserTests.swift */; };
 		A5C7E6092639F96C00FCD9A2 /* TestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C7E5FA2639F96C00FCD9A2 /* TestUtilities.swift */; };
+		A5CE3DBA2806A48300744205 /* NSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CE3DB92806A48300744205 /* NSTextView.swift */; };
 		A5D1C7D127CBDECF003C83F0 /* NSLayoutManager+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1C7D027CBDECF003C83F0 /* NSLayoutManager+Init.swift */; };
 		A5D1C7D327CBDF97003C83F0 /* AnyNSLayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1C7D227CBDF97003C83F0 /* AnyNSLayoutManager.swift */; };
-		A5D1C7D827CBEE2D003C83F0 /* NSTextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1C7D727CBEE2D003C83F0 /* NSTextStorage.swift */; };
+		A5D1C7D827CBEE2D003C83F0 /* NSTextStorage+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1C7D727CBEE2D003C83F0 /* NSTextStorage+Init.swift */; };
 		A5D1C7DB27CBF505003C83F0 /* AnyNSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1C7DA27CBF505003C83F0 /* AnyNSAttributedString.swift */; };
 		A5D1C7DD27CC0B97003C83F0 /* NSAttributedString+Raw.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1C7DC27CC0B97003C83F0 /* NSAttributedString+Raw.swift */; };
 		A5D1C7DF27CC10FA003C83F0 /* NSAttributedString+MicrosoftWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1C7DE27CC10FA003C83F0 /* NSAttributedString+MicrosoftWord.swift */; };
@@ -442,9 +443,10 @@
 		A5C7E5F82639F96C00FCD9A2 /* PositionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionTests.swift; sourceTree = "<group>"; };
 		A5C7E5F92639F96C00FCD9A2 /* GenericParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericParserTests.swift; sourceTree = "<group>"; };
 		A5C7E5FA2639F96C00FCD9A2 /* TestUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtilities.swift; sourceTree = "<group>"; };
+		A5CE3DB92806A48300744205 /* NSTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextView.swift; sourceTree = "<group>"; };
 		A5D1C7D027CBDECF003C83F0 /* NSLayoutManager+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutManager+Init.swift"; sourceTree = "<group>"; };
 		A5D1C7D227CBDF97003C83F0 /* AnyNSLayoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyNSLayoutManager.swift; sourceTree = "<group>"; };
-		A5D1C7D727CBEE2D003C83F0 /* NSTextStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextStorage.swift; sourceTree = "<group>"; };
+		A5D1C7D727CBEE2D003C83F0 /* NSTextStorage+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextStorage+Init.swift"; sourceTree = "<group>"; };
 		A5D1C7DA27CBF505003C83F0 /* AnyNSAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyNSAttributedString.swift; sourceTree = "<group>"; };
 		A5D1C7DC27CC0B97003C83F0 /* NSAttributedString+Raw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Raw.swift"; sourceTree = "<group>"; };
 		A5D1C7DE27CC10FA003C83F0 /* NSAttributedString+MicrosoftWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+MicrosoftWord.swift"; sourceTree = "<group>"; };
@@ -532,6 +534,7 @@
 				A562992D27CACADD008C484A /* FormattedContent */,
 				A53BECBF27C968C000B933AD /* Attributes */,
 				A53BECBB27C966C200B933AD /* NSAttributedStringView.swift */,
+				A5CE3DB92806A48300744205 /* NSTextView.swift */,
 			);
 			path = TextKit;
 			sourceTree = "<group>";
@@ -1265,7 +1268,7 @@
 		A5D1C7D427CBEBB5003C83F0 /* NSTextStorage */ = {
 			isa = PBXGroup;
 			children = (
-				A5D1C7D727CBEE2D003C83F0 /* NSTextStorage.swift */,
+				A5D1C7D727CBEE2D003C83F0 /* NSTextStorage+Init.swift */,
 			);
 			path = NSTextStorage;
 			sourceTree = "<group>";
@@ -1589,7 +1592,7 @@
 				A53BECA427C92B7F00B933AD /* CALayer+ShadowOpacity.swift in Sources */,
 				A54435D5263987D3007A9B31 /* CharacterConversion.swift in Sources */,
 				A57698CE27C8F2C200077566 /* CALayer+MaskedCorners.swift in Sources */,
-				A5D1C7D827CBEE2D003C83F0 /* NSTextStorage.swift in Sources */,
+				A5D1C7D827CBEE2D003C83F0 /* NSTextStorage+Init.swift in Sources */,
 				A53BECBE27C968B600B933AD /* NSDynamicAttributedFont.swift in Sources */,
 				A5D1C7DB27CBF505003C83F0 /* AnyNSAttributedString.swift in Sources */,
 				A53BEC9827C91D9F00B933AD /* CGSize.swift in Sources */,
@@ -1613,6 +1616,7 @@
 				A5C01CCA2768DFD4005CBAA8 /* Label.swift in Sources */,
 				A5C01CBB2767DC49005CBAA8 /* Accessibility+Label.swift in Sources */,
 				A57698C127C8241B00077566 /* CGColor+sRGB.swift in Sources */,
+				A5CE3DBA2806A48300744205 /* NSTextView.swift in Sources */,
 				A53BEC9A27C91E4A00B933AD /* ParsedObject.swift in Sources */,
 				A57698C527C8281B00077566 /* ModifiedCGColor.swift in Sources */,
 				A54435DF26398C2B007A9B31 /* ExpressionParser.swift in Sources */,

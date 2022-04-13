@@ -19,7 +19,7 @@ extension NSTextContainer
 {
     public static func parse(_ json: JSONParser) throws -> Self
     {
-        if let _view = json["TextKit"].string,
+        if let _view = json["textKit"].string,
         
         _view == "NSTextContainer"
         {
