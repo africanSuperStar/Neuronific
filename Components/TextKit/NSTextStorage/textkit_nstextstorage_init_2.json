@@ -1,0 +1,8 @@
+{
+    "view": "TextKit",
+    "class": "NSTextStorage",
+    "type": "init(string:) -> NSTextStorage",
+    "init": {
+        "string": "Hello, Neuronific"
+    }
+}

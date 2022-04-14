@@ -9,6 +9,7 @@
 //
 
 import AppKit
+import SwiftUI
 
 extension NSTextStorage
 {
@@ -23,6 +24,26 @@ extension NSTextStorage
         textType  == "init() -> NSTextStorage"
         {
             return NSTextStorage()
+        }
+        
+        throw ParsedObjectError.failedToInitializeObject
+    }
+}
+
+extension NSTextStorage
+{
+    internal static func parse2(_ json: JSONParser) throws -> Content
+    {
+        if let textKit   = json["view"].string,
+           let textClass = json["class"].string,
+           let textType  = json["type"].string,
+           let initStr   = json["init"]["string"].string,
+        
+        textKit   == "TextKit",
+        textClass == "NSTextStorage",
+        textType  == "init(string:) -> NSTextStorage"
+        {
+            return NSTextStorage(string: initStr)
         }
         
         throw ParsedObjectError.failedToInitializeObject

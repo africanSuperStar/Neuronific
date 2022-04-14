@@ -21,7 +21,8 @@ extension NSTextStorage
     {
         var id: String { rawValue }
         
-        case init_1
+        case init_1 = "init() -> NSTextStorage"
+        case init_2 = "init(string:) -> NSTextStorage"
     }
 }
 
@@ -29,7 +30,9 @@ extension NSTextStorage
 {
     public static func parse(_ json: JSONParser) throws -> Content
     {
-        try Sections.allCases.reduce(NSTextStorage())
+        let textType = Sections.allCases.filter({ $0.rawValue == json["type"].string })
+        
+        return try textType.reduce(NSTextStorage())
         {
             (_, initializer) -> Content in
 
@@ -38,6 +41,10 @@ extension NSTextStorage
             case .init_1:
                 
                 return try NSTextStorage.parse1(json)
+                
+            case .init_2:
+            
+                return try NSTextStorage.parse2(json)
             }
         }
     }
