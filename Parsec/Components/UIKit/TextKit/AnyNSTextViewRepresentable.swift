@@ -12,14 +12,14 @@ import AppKit
 
 final class AnyNSTextViewRepresentable: NSView
 {
-    private var isEditable: Bool
+    private var parser:     JSONParser
     private var font:       NSFont?
     
     weak var delegate: NSTextViewDelegate?
     
     var text: String {
         didSet {
-            textView.string = text
+            textView.string = textContentStorage?.attributedString?.string ?? ""
         }
     }
     
@@ -32,6 +32,8 @@ final class AnyNSTextViewRepresentable: NSView
             textView.selectedRanges = selectedRanges
         }
     }
+    
+    private lazy var textContentStorage = try? NSTextContentStorage.parse(parser)
     
     private lazy var scrollView: NSScrollView = {
         let scrollView = NSScrollView()
@@ -48,9 +50,8 @@ final class AnyNSTextViewRepresentable: NSView
     private lazy var textView: NSTextView = {
         let contentSize = scrollView.contentSize
         
-        let textContentStorage = NSTextContentStorage()
         let textLayoutManager = NSTextLayoutManager()
-        textContentStorage.addTextLayoutManager(textLayoutManager)
+        textContentStorage?.addTextLayoutManager(textLayoutManager)
         
         let textContainer = NSTextContainer(size: scrollView.frame.size)
         textContainer.widthTracksTextView = true
@@ -66,7 +67,6 @@ final class AnyNSTextViewRepresentable: NSView
         textView.delegate                = self.delegate
         textView.drawsBackground         = true
         textView.font                    = self.font
-        textView.isEditable              = self.isEditable
         textView.isHorizontallyResizable = false
         textView.isVerticallyResizable   = true
         textView.maxSize                 = NSSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude)
@@ -79,13 +79,14 @@ final class AnyNSTextViewRepresentable: NSView
     
     // MARK: - Initializers
     
-    init(text: String, isEditable: Bool, font: NSFont?)
+    init(parser: JSONParser, font: NSFont?)
     {
+        self.parser     = parser
         self.font       = font
-        self.isEditable = isEditable
-        self.text       = text
-        
+        self.text       = ""
+                
         super.init(frame: .zero)
+
     }
     
     required init?(coder: NSCoder)

@@ -10,7 +10,7 @@
 
 import AppKit
 
-extension NSTextStorage
+extension NSTextContentStorage
 {
     internal static func parse1(_ json: JSONParser) throws -> Content
     {
@@ -22,7 +22,7 @@ extension NSTextStorage
         textClass == "NSTextStorage",
         textType  == "init() -> NSTextStorage"
         {
-            return NSTextStorage()
+            return NSTextContentStorage()
         }
         
         throw ParsedObjectError.failedToInitializeObject

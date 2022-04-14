@@ -10,12 +10,12 @@
 
 import AppKit
 
-extension NSTextStorage : ParsedObject
+extension NSTextContentStorage : ParsedObject
 {
-    public typealias Content = NSTextStorage
+    public typealias Content = NSTextContentStorage
 }
 
-extension NSTextStorage
+extension NSTextContentStorage
 {
     enum Sections : String, CaseIterable, Identifiable
     {
@@ -25,11 +25,11 @@ extension NSTextStorage
     }
 }
 
-extension NSTextStorage
+extension NSTextContentStorage
 {
     public static func parse(_ json: JSONParser) throws -> Content
     {
-        try Sections.allCases.reduce(NSTextStorage())
+        try Sections.allCases.reduce(NSTextContentStorage())
         {
             (_, initializer) -> Content in
 
@@ -37,7 +37,7 @@ extension NSTextStorage
             {
             case .init_1:
                 
-                return try NSTextStorage.parse1(json)
+                return try NSTextContentStorage.parse1(json)
             }
         }
     }

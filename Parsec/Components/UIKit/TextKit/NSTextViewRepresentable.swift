@@ -13,11 +13,9 @@ import SwiftUI
 
 struct NSTextViewRepresentable : NSViewRepresentable
 {
-    @Binding var text: String
-    
-    var isEditable: Bool = true
-    
     var font: NSFont? = .systemFont(ofSize: 14, weight: .regular)
+    
+    var parser: JSONParser
     
     var onEditingChanged: () -> Void       = {}
     var onCommit        : () -> Void       = {}
@@ -31,8 +29,7 @@ struct NSTextViewRepresentable : NSViewRepresentable
     func makeNSView(context: Context) -> AnyNSTextViewRepresentable
     {
         let textView = AnyNSTextViewRepresentable(
-            text: text,
-            isEditable: isEditable,
+            parser: parser,
             font: font
         )
         
@@ -43,7 +40,6 @@ struct NSTextViewRepresentable : NSViewRepresentable
     
     func updateNSView(_ view: AnyNSTextViewRepresentable, context: Context)
     {
-        view.text = text
         view.selectedRanges = context.coordinator.selectedRanges
     }
 }
@@ -59,42 +55,6 @@ extension NSTextViewRepresentable
         {
             self.parent = parent
         }
-        
-        func textDidBeginEditing(_ notification: Notification)
-        {
-            guard let textView = notification.object as? NSTextView
-            else
-            {
-                return
-            }
-            
-            self.parent.text = textView.string
-            self.parent.onEditingChanged()
-        }
-        
-        func textDidChange(_ notification: Notification)
-        {
-            guard let textView = notification.object as? NSTextView
-            else
-            {
-                return
-            }
-            
-            self.parent.text    = textView.string
-            self.selectedRanges = textView.selectedRanges
-        }
-        
-        func textDidEndEditing(_ notification: Notification)
-        {
-            guard let textView = notification.object as? NSTextView
-            else
-            {
-                return
-            }
-            
-            self.parent.text = textView.string
-            self.parent.onCommit()
-        }
     }
 }
 
@@ -102,6 +62,6 @@ extension NSTextViewRepresentable : Equatable
 {
     static func == (lhs: NSTextViewRepresentable, rhs: NSTextViewRepresentable) -> Bool
     {
-        return lhs.text == rhs.text
+        return lhs.parser["type"].string == rhs.parser["type"].string
     }
 }

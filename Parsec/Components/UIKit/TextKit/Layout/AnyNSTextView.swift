@@ -42,9 +42,8 @@ public struct AnyTextView : View
     public func parse(_ json: JSONParser) -> AnyView
     {
         let textView = NSTextViewRepresentable(
-            text: .constant("{ \n    planets { \n        name \n    }\n}"),
-            isEditable: true,
-            font: .userFixedPitchFont(ofSize: 14)
+            font: .userFixedPitchFont(ofSize: 14),
+            parser: json
         )
         
         return AnyView(textView)
