@@ -1,0 +1,8 @@
+{
+    "uuid": "12",
+    "view": "AttributedText",
+    "hasAttachments": true,
+    "init": {
+        "type": "MS_Word"
+    }
+}

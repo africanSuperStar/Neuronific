@@ -12,7 +12,7 @@ import SwiftUI
 
 public protocol ParsedObject : AnyObject
 {
-    var content: Content { get set }
+    var content: Content? { get set }
     
     init?(url: URL) throws
     init?(data: Data) throws
@@ -25,6 +25,16 @@ public protocol ParsedObject : AnyObject
 
 extension ParsedObject
 {
+    public var content: Content?
+    {
+        get
+        {
+            return nil
+        }
+        
+        set { }
+    }
+    
     public init?(url: URL) throws
     {
         if let data = try? Data(contentsOf: url)

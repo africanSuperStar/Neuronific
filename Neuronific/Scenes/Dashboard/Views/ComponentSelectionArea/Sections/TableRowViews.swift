@@ -9,6 +9,7 @@
 //
 
 import SwiftUI
+import Parsec
 
 enum TableRows : CaseIterable
 {
@@ -33,6 +34,7 @@ struct TableRowViews : View
             {
             case .none:
                 return AnyDragComponent(
+                    content: "",
                     native: AnyView(
                         TableRowNoneCardView()
                     )
@@ -40,43 +42,49 @@ struct TableRowViews : View
             
             case .label:
                 return AnyDragComponent(
+                    content: "",
                     native: AnyView(
-                        TableRowLabelCardView()
+                        TableRowLabelCardView(title: "Labelled Table Row Component", label: "")
                     )
                 )
             
             case .chevron:
                 return AnyDragComponent(
+                    content: "",
                     native: AnyView(
-                        TableRowChevronCardView()
+                        TableRowChevronCardView(title: "Chevron Table Row Component")
                     )
                 )
             
             case .chevronLabel:
                 return AnyDragComponent(
+                    content: "",
                     native: AnyView(
-                        TableRowLabelCardView()
+                        TableRowLabelCardView(title: "Chevron Labelled Table Row Component", label: "")
                     )
                 )
             
             case .icon:
                 return AnyDragComponent(
+                    content: "",
                     native: AnyView(
-                        TableRowLabelCardView()
+                        TableRowLabelCardView(title: "Icon Labelled Table Row Component", label: "")
                     )
                 )
             
             case .switch:
                 return AnyDragComponent(
+                    content: "",
                     native: AnyView(
-                        TableRowLabelCardView()
+                        TableRowLabelCardView(title: "Switch Labelled Table Row Component", label: "")
                     )
                 )
             
             case .chevronIcon:
                 return AnyDragComponent(
+                    content: "",
                     native: AnyView(
-                        TableRowLabelCardView()
+                        TableRowLabelCardView(title: "Chevron Iconed Table Row Component", label: "")
                     )
                 )
             }

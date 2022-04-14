@@ -1,0 +1,27 @@
+{
+    "view": "Color",
+    "init": {
+        "action": "Test.printHello",
+        "text": "Hello World",
+        "systemImage": "bolt"
+    },
+    "modifiers": [{
+        "tag": "Padding",
+        "value": 2.5
+    }, {
+        "tag": "Border",
+        "color": {
+            "red": 0.7,
+            "green": 0.2,
+            "blue": 0.35,
+            "alpha": 1.0
+        },
+        "width": 2.0
+    }, {
+        "tag":   "ForegroundColor",
+        "red":   0.0,
+        "green": 1.0,
+        "blue":  0.0,
+        "alpha": 1.0
+    }]
+}

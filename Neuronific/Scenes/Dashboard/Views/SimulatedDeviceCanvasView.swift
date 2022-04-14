@@ -9,65 +9,62 @@
 //
 
 import SwiftUI
+import Parsec
 
 struct SimulatedDeviceCanvasView : View
 {
     @ObservedObject
     private var appModel = AppViewModel.shared
     
-    @ObservedObject
+    @StateObject
     private var model = AnyDragModel.shared
     
     var body: some View
     {
-        ZStack
+        ScrollView
         {
-            ForEach(
-                Array(
-                    zip(
-                        model.modifiableComponents.indices,
-                        model.modifiableComponents
-                    )
-                ),
-                id: \.1
-            ) {
-                index, component in
-                        
-                component.view
-                    .tag(component.uuid)
-                    .offset(
-                        x: model.componentTranslations[index].x,
-                        y: model.componentTranslations[index].y
-                    )
-                    .gesture(
-                        DragGesture(
-                            minimumDistance: .zero,
-                            coordinateSpace: .local
+            ZStack
+            {
+                ForEach($model.modifiableComponents, id: \.self)
+                {
+                    $component in
+                            
+                    component.native
+                        .tag(component.uuid)
+                        .offset(
+                            x: $component.translation.wrappedValue.x,
+                            y: $component.translation.wrappedValue.y
                         )
-                        .onChanged
-                        {
-                            gesture in
-                            
-                            model.componentTranslations[index] = gesture.location
-                        }
-                        .onEnded
-                        {
-                            gesture in
-                            
-                            model.componentTranslations[index] = gesture.location
-                        }
-                    )
+                        .gesture(
+                            DragGesture(
+                                minimumDistance: .zero,
+                                coordinateSpace: .local
+                            )
+                            .onChanged
+                            {
+                                gesture in
+                                
+                                $component.translation.wrappedValue = gesture.location
+                            }
+                            .onEnded
+                            {
+                                gesture in
+                                
+                                $component.translation.wrappedValue = gesture.location
+                            }
+                        )
+                }
             }
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .if(appModel.debugWindow)
-        {
-            view in
-            
-            view.rotation3DEffect(
-                .degrees(60),
-                axis: (x: .zero, y: 1.0, z: .zero)
-            )
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .if(appModel.debugWindow)
+            {
+                view in
+                
+                view.rotation3DEffect(
+                    .degrees(60),
+                    axis: (x: .zero, y: 1.0, z: .zero)
+                )
+            }
         }
     }
 }

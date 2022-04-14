@@ -9,6 +9,7 @@
 //
 
 import SwiftUI
+import Parsec
 
 struct FilePickerView : View
 {
@@ -17,8 +18,8 @@ struct FilePickerView : View
     
     @State private var hovered = false
     
-    @EnvironmentObject
-    var model: AnyDragModel
+    @StateObject
+    var model = AnyDragModel.shared
     
     @State
     private var currentComponent = AnyDragComponent(content: "{}")
@@ -33,17 +34,16 @@ struct FilePickerView : View
         {
             if model.modifiableComponents.isEmpty
             {
-                Text("Drop Bonsai files here...")
+                Text("Drop Neuronific files here...")
                     .frame(maxWidth: .infinity, minHeight: 200)
                     .background(Theme.darkGray)
                     .cornerRadius(Theme.cornerRadius)
                     .padding()
                     .onDrop(
-                        of:       [.bonsai, .json, .fileURL], // MARK: Validated in the delegate
+                        of:       [.neuronific, .json, .fileURL], // MARK: Validated in the delegate
                         delegate: AnyDropDelegate(
                             component:         currentComponent,
-                            completionHandler: appendModifiableContent,
-                            model:             _model
+                            completionHandler: appendModifiableContent
                         )
                     )
             }
@@ -51,9 +51,9 @@ struct FilePickerView : View
             {
                 LazyVGrid(columns: columns, spacing: 20)
                 {
-                    ForEach(model.modifiableComponents, id: \.self)
+                    ForEach($model.modifiableComponents, id: \.self)
                     {
-                        component in
+                        $component in
                         
                         VStack(spacing: .zero)
                         {
@@ -63,9 +63,13 @@ struct FilePickerView : View
                                 .foregroundColor(.white)
                                 .background(Theme.primary)
                         
-                            component.view
-                                .padding(Theme.smallPadding)
+                            ScrollView
+                            {
+                                component.view
+                                    .padding(Theme.smallPadding)
+                            }
                         }
+                        .frame(maxHeight: 150.0)
                         .cornerRadius(Theme.cornerRadius)
                         .background(
                             RoundedRectangle(cornerRadius: Theme.cornerRadius)
@@ -102,11 +106,10 @@ struct FilePickerView : View
                 .background(Theme.darkGray)
                 .frame(maxWidth: .infinity, minHeight: .zero, maxHeight: 250)
                 .onDrop(
-                    of:       [.bonsai, .json, .fileURL], // MARK: Validated in the delegate
+                    of:       [.neuronific, .json, .fileURL], // MARK: Validated in the delegate
                     delegate: AnyDropDelegate(
                         component:         currentComponent,
-                        completionHandler: appendModifiableContent,
-                        model:             _model
+                        completionHandler: appendModifiableContent
                     )
                 )
             }
@@ -114,25 +117,27 @@ struct FilePickerView : View
             HStack
             {
                 Spacer()
-                
+
                 Button("Select File")
                 {
                     let dialog = NSOpenPanel()
                     
-                    dialog.title                   = "Choose a bonsai file | The Bonsai Network"
+                    dialog.title                   = "Choose a Neuronific file"
                     dialog.showsResizeIndicator    = true
                     dialog.showsHiddenFiles        = false
-                    dialog.allowsMultipleSelection = false
-                    dialog.canChooseDirectories    = false
-                    dialog.allowedContentTypes     = [.bonsai, .json]
+                    dialog.allowsMultipleSelection = true
+                    dialog.canChooseDirectories    = true
+                    dialog.allowedContentTypes     = [.neuronific, .json, .fileURL]
                     
                     if dialog.runModal() ==  NSApplication.ModalResponse.OK
                     {
-                        if let result = dialog.url
+                        let results = dialog.urls
+                        
+                        for result in results
                         {
-                            let path: String = result.path 
+                            let path: String = result.path
                             
-                            Swift.debugPrint("INFO: Selected a bonsai file with path: \(path)")
+                            Swift.debugPrint("INFO: Selected a Neuronific file with path: \(path)")
                             
                             appendModifiableContent(url: result.absoluteURL)
                         }

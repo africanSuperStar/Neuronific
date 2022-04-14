@@ -9,6 +9,7 @@
 //
 
 import SwiftUI
+import Parsec
 
 enum SearchFields : CaseIterable
 {
@@ -46,6 +47,7 @@ struct SearchFieldViews : View
             card in
             
             AnyDragComponent(
+                content: "",
                 native: AnyView(card)
             )
         }

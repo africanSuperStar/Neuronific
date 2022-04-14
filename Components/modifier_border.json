@@ -1,0 +1,17 @@
+{
+    "view": "Text",
+    "init": {
+        "description": "Component 1",
+        "content": "Hello Border"
+    },
+    "modifiers": [{
+        "tag": "Border",
+        "color": {
+            "red":   0.7,
+            "green": 1.0,
+            "blue":  1.0,
+            "alpha": 1.0
+        },
+        "width": 2.0
+    }]
+}

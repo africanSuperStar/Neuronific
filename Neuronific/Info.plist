@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>ATSApplicationFontsPath</key>
+	<string>.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDocumentTypes</key>
@@ -14,7 +16,7 @@
 				<string>bonsai.png</string>
 			</array>
 			<key>CFBundleTypeName</key>
-			<string>Neuronific File</string>
+			<string>Draggable Component JSON</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>LSHandlerRank</key>
@@ -55,7 +57,7 @@
 				<string>public.json</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Neuronific File</string>
+			<string>Draggable Component JSON</string>
 			<key>UTTypeIconFile</key>
 			<string>bonsai</string>
 			<key>UTTypeIconFiles</key>
@@ -75,8 +77,7 @@
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
-					<string>bnsi</string>
-					<string>bonsai</string>
+					<string>docx</string>
 				</array>
 			</dict>
 		</dict>
@@ -89,7 +90,7 @@
 				<string>public.json</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Neuronific File</string>
+			<string>Draggable Component JSON</string>
 			<key>UTTypeIconFile</key>
 			<string>bonsai</string>
 			<key>UTTypeIconFiles</key>
@@ -109,13 +110,10 @@
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
-					<string>bnsi</string>
-					<string>bonsai</string>
+					<string>docx</string>
 				</array>
 			</dict>
 		</dict>
 	</array>
-	<key>ATSApplicationFontsPath</key>
-	<string>.</string>
 </dict>
 </plist>

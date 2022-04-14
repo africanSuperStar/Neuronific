@@ -10,6 +10,7 @@
 
 import SwiftUI
 import Combine
+import Parsec
 
 @main
 struct NeuronificApp: App
@@ -22,7 +23,6 @@ struct NeuronificApp: App
             ContentView()
                 .environmentObject(AppViewModel.shared)
                 .environmentObject(FileModel.shared)
-                .environmentObject(AnyDragModel.shared)
-        }
+         }
     }
 }

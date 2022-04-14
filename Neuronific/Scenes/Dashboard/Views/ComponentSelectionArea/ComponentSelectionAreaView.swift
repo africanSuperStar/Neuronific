@@ -17,69 +17,26 @@ struct ComponentSelectionAreaView : View
     @State
     private var searchText  = ""
     
-    @EnvironmentObject
-    private var model: AnyDragModel
+    @State
+    private var selectedUIFramework = 0
+    
+    @StateObject
+    private var model = AnyDragModel.shared
     
     @ObservedObject var content: ContentDetail
-
+    
     var body: some View
     {
         ScrollView
         {
-            VStack(alignment: .leading)
-            {
-                SearchTextField(searchText: $searchText)
-                    .padding(.vertical)
-           
-                Group
-                {
-                    Text("System Default Colors")
-                    
-                    MultiColorCardViews()
-                        .padding(.bottom)
-    
-                    Divider()
-                        .background(Theme.lightGray)
-                        .frame(maxWidth: .infinity, minHeight: 1.0)
-                }
-                
-                Group
-                {
-                    Text("Search Fields")
-                    
-                    SearchFieldViews()
-                        .padding(.bottom)
-    
-                    Divider()
-                        .background(Theme.lightGray)
-                        .frame(maxWidth: .infinity, minHeight: 1.0)
-                }
-                
-                Group
-                {
-                    Text("Table Row Components")
-                    
-                    TableRowViews()
-                    
-                    Divider()
-                        .background(Theme.lightGray)
-                        .frame(maxWidth: .infinity, minHeight: 1.0)
-                }
-                
-                Group
-                {
-                    Text("Color Pickers")
-                    
-                    ColorPickerViews()
-                    
-                    Divider()
-                        .background(Theme.lightGray)
-                        .frame(maxWidth: .infinity, minHeight: 1.0)
-                }
-            }
-            .padding(.horizontal)
-            .frame(maxWidth: .infinity)
+            SearchTextField(searchText: $searchText)
+                .padding(.vertical)
+       
+            ComponentViewSections(framework: $selectedUIFramework)
+            TextKitViewSections(framework: $selectedUIFramework)
         }
+        .padding(.horizontal)
+        .frame(maxWidth: .infinity)
     }
 }
 
@@ -87,8 +44,8 @@ struct SelectableComponentView : View
 {
     @State private var isDragging: Bool = false
     
-    @EnvironmentObject
-    var model: AnyDragModel
+    @StateObject
+    var model = AnyDragModel.shared
     
     let component: AnyDragComponent
     
@@ -113,6 +70,5 @@ struct ComponentSelectionAreaView_Previews : PreviewProvider
     static var previews: some View
     {
         ComponentSelectionAreaView(content: ContentDetail())
-            .environmentObject(AnyDragModel())
     }
 }

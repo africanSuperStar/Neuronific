@@ -1,0 +1,18 @@
+{
+    "uuid": "3965a8c2-5b1c-4d02-95f5-562690b7a332",
+    "view": "Text",
+    "init": {
+        "content": "CA Border Color Gray Alpha"
+    },
+    "layers": [{
+        "tag": "CABorderWidth",
+        "value": 15.0
+    }, {
+        "tag": "CABorderColor",
+        "colorSpace": "sRGB",
+        "red": 0.1,
+        "green": 0.23,
+        "blue": 0.67,
+        "alpha": 0.8
+    }]
+}

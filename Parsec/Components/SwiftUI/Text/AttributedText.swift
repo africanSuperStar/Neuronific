@@ -24,91 +24,135 @@ public enum NSAttributedStringModifierTags : String, CaseIterable
 extension Text
 {
     @ViewBuilder
-    public static func attributedString(_ json: JSONParser) -> some View
+    public static func attributedString <T: NSAttributedStringAttachment> (_ json: JSONParser) -> some View
     {
-        AnyViewNSAttributedString(json: json)
+        AnyViewNSAttributedString <T> (observed: T(json: json))
     }
 }
 
-public struct AnyViewNSAttributedString : View
+public struct AnyViewNSAttributedString <T: NSAttributedStringAttachment> : View
 {
-    let json: JSONParser
- 
+    @StateObject
+    var model = AnyDragModel.shared
+    
+    @State
+    private var attributedText: NSMutableAttributedString
+    
+    @ObservedObject
+    var observed: T
+    
+    init(observed: T)
+    {
+        self.observed = observed
+        
+        attributedText = observed.loadAttributedText() ?? NSMutableAttributedString()
+    }
+    
     public var body: some View
     {
-        anyStringAttributes(json)
+        anyStringAttributes(observed.json)
     }
     
     @discardableResult
     public func anyStringAttributes(_ json: JSONParser) -> AnyView
     {
-        var attributedString = NSMutableAttributedString()
+        if let tag = json["view"].string,
         
-        if let _view = json["view"].string,
-        
-        _view == "AttributedText"
+        tag == "AttributedText"
         {
-            let initializerCount = [
-                json["init"]["content"].string != nil,
-                json["init"]["localizedStringKey"].string != nil
-            ]
-            
-            if initializerCount.filter({ $0 == true }).count != 1
-            {
-                print("SWIFTUI: Text -> init -> more than 1 initializer")
-            }
-            
-            if let _content = json["init"]["content"].string, !_content.isEmpty
-            {
-                print("SWIFTUI: Text -> init -> content -> \(_content)")
+            if let hasAttachments = json["hasAttachments"].bool,
                 
-                attributedString = NSMutableAttributedString(string: _content)
-            }
-            
-            if let _key = json["init"]["localizedStringKey"].string, !_key.isEmpty
+            hasAttachments
             {
-                print("SWIFTUI: Text -> init -> localizedStringKey -> \(_key)")
-    
-                attributedString = NSMutableAttributedString(string: LocalizedString(_key))
+                return AnyView(
+                    VStack
+                    {
+                        NSAttributedStringView(attributedText)
+                        
+                        if attributedText.string.isEmpty
+                        {
+                            Button
+                            {
+                                openFilePanel()
+                                
+                            } label: {
+                                
+                                Image(systemName: "doc.fill.badge.plus")
+                                    .resizable()
+                                    .frame(
+                                        width:  30,
+                                        height: 30
+                                    )
+                            }
+                            .offset(x: .zero, y: -15.0)
+                            .buttonStyle(CircularAddButtonStyle())
+                            
+                            Text("Add Document")
+                                .font(.subheadline)
+                                .foregroundColor(.white)
+                        }
+                    }
+                )
+            }
+            else
+            {
+                return AnyView(
+                    NSAttributedStringView(attributedText)
+                )
             }
         }
         
-        guard let attributes = json["stringAttributes"].array
+        return AnyView(EmptyView())
+    }
+    
+    private func openFilePanel()
+    {
+        let dialog = NSOpenPanel()
+        
+        dialog.title                   = "Choose a Document file"
+        dialog.showsResizeIndicator    = true
+        dialog.showsHiddenFiles        = false
+        dialog.allowsMultipleSelection = false
+        dialog.canChooseDirectories    = false
+        dialog.allowedContentTypes     = [.data]
+        
+        if dialog.runModal() ==  NSApplication.ModalResponse.OK
+        {
+            let results = dialog.urls
+            
+            for result in results
+            {
+                let path: String = result.path
+                
+                Swift.debugPrint("INFO: Selected a Neuronific file with path: \(path)")
+                
+                guard let docx = try? Data(contentsOf: result.absoluteURL)
+                else
+                {
+                    Swift.debugPrint("ERROR: Failed to decode MS Word File URL.")
+                    return
+                }
+                
+                observed.attachment = .constant(docx)
+                
+                if let attributedString = observed.loadAttributedText()
+                {
+                    attributedText = attributedString
+                    
+                    $model.modifiableComponents.forEach
+                    {
+                        if model.currentDraggedComponent?.uuid == $0.wrappedValue.uuid
+                        {
+                            $0.native.wrappedValue = AnyView(
+                                AnyViewNSAttributedString(observed: observed)
+                            )
+                        }
+                    }
+                }
+            }
+        }
         else
         {
-            return AnyView(EmptyView())
-        }
-        
-        for attribute in attributes
-        {
-            parse(attribute, attributedString: attributedString)
-        }
-        
-        let view = NSAttributedStringView(attributedString)
-        
-        return AnyView(
-            view
-        )
-    }
-}
-
-extension AnyViewNSAttributedString
-{
-    public func parse(
-        _ modifier:       JSONParser,
-        attributedString: NSMutableAttributedString
-    ) {
-        guard let tag = modifier["tag"].string else { return }
-        
-        switch NSAttributedStringModifierTags(tag)
-        {
-        case .dynamicFont:
-            NSDynamicAttibutedFont(json: modifier, attributedString: attributedString).parse()
-    
-        case .font:
-            NSCustomAttibutedFont(json: modifier, attributedString: attributedString).parse()
-    
-        default:
             return
         }
     }

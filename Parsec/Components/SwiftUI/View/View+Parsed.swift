@@ -20,6 +20,9 @@ public enum ViewTags : String, CaseIterable
     case button = "Button"
     case color  = "Color"
     
+    // MARK: TextKit
+    case textKit = "TextKit"
+    
     init?(_ view: String)
     {
         self.init(rawValue: view)
@@ -64,6 +67,15 @@ extension AnyView
                 try Color.parse(json)
                     .modify(json)
                     .layer(json)
+            )
+            
+        case .textKit:
+            return Self(
+                Text.textView(json)
+                    .frame(
+                        width:  150.0,
+                        height: 350.0
+                    )
             )
         
         default:
