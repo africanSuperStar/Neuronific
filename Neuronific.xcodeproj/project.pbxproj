@@ -198,6 +198,7 @@
 		A5D1C7DF27CC10FA003C83F0 /* NSAttributedString+MicrosoftWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1C7DE27CC10FA003C83F0 /* NSAttributedString+MicrosoftWord.swift */; };
 		A5D9F13C280796CF0066DD1C /* NSTextStorage+Init_Basic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D9F13B280796CF0066DD1C /* NSTextStorage+Init_Basic.swift */; };
 		A5D9F13E28079E740066DD1C /* AnyNSTextViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D9F13D28079E740066DD1C /* AnyNSTextViewRepresentable.swift */; };
+		A5D9F1412807B7600066DD1C /* textkit_nstextstorage_init_2.json in Resources */ = {isa = PBXBuildFile; fileRef = A5D9F13F2807B5650066DD1C /* textkit_nstextstorage_init_2.json */; };
 		A5F8390827D7F61600A4A3F2 /* ParsedObjectDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F8390727D7F61600A4A3F2 /* ParsedObjectDelegate.swift */; };
 		A5F8390A27D7F65E00A4A3F2 /* ParsedAttachmentDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F8390927D7F65E00A4A3F2 /* ParsedAttachmentDelegate.swift */; };
 		A5F8391027D8160E00A4A3F2 /* AnyDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C300F2772587E00648EA8 /* AnyDropDelegate.swift */; };
@@ -454,6 +455,7 @@
 		A5D1C7DE27CC10FA003C83F0 /* NSAttributedString+MicrosoftWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+MicrosoftWord.swift"; sourceTree = "<group>"; };
 		A5D9F13B280796CF0066DD1C /* NSTextStorage+Init_Basic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextStorage+Init_Basic.swift"; sourceTree = "<group>"; };
 		A5D9F13D28079E740066DD1C /* AnyNSTextViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyNSTextViewRepresentable.swift; sourceTree = "<group>"; };
+		A5D9F13F2807B5650066DD1C /* textkit_nstextstorage_init_2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = textkit_nstextstorage_init_2.json; sourceTree = "<group>"; };
 		A5E121722642B36200612830 /* AnyDragModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyDragModel.swift; sourceTree = "<group>"; };
 		A5F8390727D7F61600A4A3F2 /* ParsedObjectDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsedObjectDelegate.swift; sourceTree = "<group>"; };
 		A5F8390927D7F65E00A4A3F2 /* ParsedAttachmentDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsedAttachmentDelegate.swift; sourceTree = "<group>"; };
@@ -1000,6 +1002,7 @@
 			isa = PBXGroup;
 			children = (
 				A5994CC127CD4DC400E939B1 /* textkit_nstextstorage_init_1.json */,
+				A5D9F13F2807B5650066DD1C /* textkit_nstextstorage_init_2.json */,
 			);
 			path = NSTextStorage;
 			sourceTree = "<group>";
@@ -1456,6 +1459,7 @@
 				A562992827CABF8B008C484A /* Shizuru.plist in Resources */,
 				A5994CE027CD4DC400E939B1 /* textkit_nstextstorage_init_1.json in Resources */,
 				A5994C7127CD3DC100E939B1 /* Localizable.strings in Resources */,
+				A5D9F1412807B7600066DD1C /* textkit_nstextstorage_init_2.json in Resources */,
 				A5994CE427CD4DC400E939B1 /* ca_shadow_default.json in Resources */,
 				A544358726395A0E007A9B31 /* Preview Assets.xcassets in Resources */,
 				A5994CEC27CD4DC400E939B1 /* nscustomattributed_font.json in Resources */,
