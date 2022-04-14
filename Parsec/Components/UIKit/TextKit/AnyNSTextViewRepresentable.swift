@@ -19,7 +19,7 @@ final class AnyNSTextViewRepresentable: NSView
     
     var text: String {
         didSet {
-            textView.string = textContentStorage?.attributedString?.string ?? ""
+            textView.string = textContentStorage?.string ?? ""
         }
     }
     
@@ -33,7 +33,7 @@ final class AnyNSTextViewRepresentable: NSView
         }
     }
     
-    private lazy var textContentStorage = try? NSTextContentStorage.parse(parser)
+    private lazy var textContentStorage = try? NSTextStorage.parse(parser)
     
     private lazy var scrollView: NSScrollView = {
         let scrollView = NSScrollView()
@@ -50,8 +50,8 @@ final class AnyNSTextViewRepresentable: NSView
     private lazy var textView: NSTextView = {
         let contentSize = scrollView.contentSize
         
-        let textLayoutManager = NSTextLayoutManager()
-        textContentStorage?.addTextLayoutManager(textLayoutManager)
+        let layoutManager = NSLayoutManager()
+        textContentStorage?.addLayoutManager(layoutManager)
         
         let textContainer = NSTextContainer(size: scrollView.frame.size)
         textContainer.widthTracksTextView = true
@@ -59,7 +59,7 @@ final class AnyNSTextViewRepresentable: NSView
             width: contentSize.width,
             height: CGFloat.greatestFiniteMagnitude
         )
-        textLayoutManager.textContainer = textContainer
+        layoutManager.addTextContainer(textContainer)
         
         let textView                     = NSTextView(frame: .zero, textContainer: textContainer)
         textView.autoresizingMask        = .width
