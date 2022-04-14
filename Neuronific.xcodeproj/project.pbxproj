@@ -145,7 +145,7 @@
 		A5994CDD27CD4DC400E939B1 /* modifier_foregroundcolor.json in Resources */ = {isa = PBXBuildFile; fileRef = A5994CBC27CD4DC400E939B1 /* modifier_foregroundcolor.json */; };
 		A5994CDE27CD4DC400E939B1 /* button_label.json in Resources */ = {isa = PBXBuildFile; fileRef = A5994CBD27CD4DC400E939B1 /* button_label.json */; };
 		A5994CDF27CD4DC400E939B1 /* modifier_multiple.json in Resources */ = {isa = PBXBuildFile; fileRef = A5994CBE27CD4DC400E939B1 /* modifier_multiple.json */; };
-		A5994CE027CD4DC400E939B1 /* nstextcontainer_textkit.json in Resources */ = {isa = PBXBuildFile; fileRef = A5994CC127CD4DC400E939B1 /* nstextcontainer_textkit.json */; };
+		A5994CE027CD4DC400E939B1 /* textkit_nstextstorage_init_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A5994CC127CD4DC400E939B1 /* textkit_nstextstorage_init_1.json */; };
 		A5994CE127CD4DC400E939B1 /* ca_border_width.json in Resources */ = {isa = PBXBuildFile; fileRef = A5994CC427CD4DC400E939B1 /* ca_border_width.json */; };
 		A5994CE227CD4DC400E939B1 /* ca_rasterization.json in Resources */ = {isa = PBXBuildFile; fileRef = A5994CC627CD4DC400E939B1 /* ca_rasterization.json */; };
 		A5994CE327CD4DC400E939B1 /* ca_masked_corners.json in Resources */ = {isa = PBXBuildFile; fileRef = A5994CC827CD4DC400E939B1 /* ca_masked_corners.json */; };
@@ -189,13 +189,15 @@
 		A5C7E6072639F96C00FCD9A2 /* PositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C7E5F82639F96C00FCD9A2 /* PositionTests.swift */; };
 		A5C7E6082639F96C00FCD9A2 /* GenericParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C7E5F92639F96C00FCD9A2 /* GenericParserTests.swift */; };
 		A5C7E6092639F96C00FCD9A2 /* TestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C7E5FA2639F96C00FCD9A2 /* TestUtilities.swift */; };
-		A5CE3DBA2806A48300744205 /* NSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CE3DB92806A48300744205 /* NSTextView.swift */; };
+		A5CE3DBA2806A48300744205 /* NSTextViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CE3DB92806A48300744205 /* NSTextViewRepresentable.swift */; };
 		A5D1C7D127CBDECF003C83F0 /* NSLayoutManager+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1C7D027CBDECF003C83F0 /* NSLayoutManager+Init.swift */; };
 		A5D1C7D327CBDF97003C83F0 /* AnyNSLayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1C7D227CBDF97003C83F0 /* AnyNSLayoutManager.swift */; };
 		A5D1C7D827CBEE2D003C83F0 /* NSTextStorage+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1C7D727CBEE2D003C83F0 /* NSTextStorage+Init.swift */; };
 		A5D1C7DB27CBF505003C83F0 /* AnyNSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1C7DA27CBF505003C83F0 /* AnyNSAttributedString.swift */; };
 		A5D1C7DD27CC0B97003C83F0 /* NSAttributedString+Raw.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1C7DC27CC0B97003C83F0 /* NSAttributedString+Raw.swift */; };
 		A5D1C7DF27CC10FA003C83F0 /* NSAttributedString+MicrosoftWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D1C7DE27CC10FA003C83F0 /* NSAttributedString+MicrosoftWord.swift */; };
+		A5D9F13C280796CF0066DD1C /* NSTextStorage+Init_Basic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D9F13B280796CF0066DD1C /* NSTextStorage+Init_Basic.swift */; };
+		A5D9F13E28079E740066DD1C /* AnyNSTextViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D9F13D28079E740066DD1C /* AnyNSTextViewRepresentable.swift */; };
 		A5F8390827D7F61600A4A3F2 /* ParsedObjectDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F8390727D7F61600A4A3F2 /* ParsedObjectDelegate.swift */; };
 		A5F8390A27D7F65E00A4A3F2 /* ParsedAttachmentDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F8390927D7F65E00A4A3F2 /* ParsedAttachmentDelegate.swift */; };
 		A5F8391027D8160E00A4A3F2 /* AnyDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C300F2772587E00648EA8 /* AnyDropDelegate.swift */; };
@@ -397,7 +399,7 @@
 		A5994CBC27CD4DC400E939B1 /* modifier_foregroundcolor.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = modifier_foregroundcolor.json; sourceTree = "<group>"; };
 		A5994CBD27CD4DC400E939B1 /* button_label.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = button_label.json; sourceTree = "<group>"; };
 		A5994CBE27CD4DC400E939B1 /* modifier_multiple.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = modifier_multiple.json; sourceTree = "<group>"; };
-		A5994CC127CD4DC400E939B1 /* nstextcontainer_textkit.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nstextcontainer_textkit.json; sourceTree = "<group>"; };
+		A5994CC127CD4DC400E939B1 /* textkit_nstextstorage_init_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = textkit_nstextstorage_init_1.json; sourceTree = "<group>"; };
 		A5994CC427CD4DC400E939B1 /* ca_border_width.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ca_border_width.json; sourceTree = "<group>"; };
 		A5994CC627CD4DC400E939B1 /* ca_rasterization.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ca_rasterization.json; sourceTree = "<group>"; };
 		A5994CC827CD4DC400E939B1 /* ca_masked_corners.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ca_masked_corners.json; sourceTree = "<group>"; };
@@ -443,13 +445,15 @@
 		A5C7E5F82639F96C00FCD9A2 /* PositionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionTests.swift; sourceTree = "<group>"; };
 		A5C7E5F92639F96C00FCD9A2 /* GenericParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericParserTests.swift; sourceTree = "<group>"; };
 		A5C7E5FA2639F96C00FCD9A2 /* TestUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtilities.swift; sourceTree = "<group>"; };
-		A5CE3DB92806A48300744205 /* NSTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextView.swift; sourceTree = "<group>"; };
+		A5CE3DB92806A48300744205 /* NSTextViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextViewRepresentable.swift; sourceTree = "<group>"; };
 		A5D1C7D027CBDECF003C83F0 /* NSLayoutManager+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutManager+Init.swift"; sourceTree = "<group>"; };
 		A5D1C7D227CBDF97003C83F0 /* AnyNSLayoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyNSLayoutManager.swift; sourceTree = "<group>"; };
 		A5D1C7D727CBEE2D003C83F0 /* NSTextStorage+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextStorage+Init.swift"; sourceTree = "<group>"; };
 		A5D1C7DA27CBF505003C83F0 /* AnyNSAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyNSAttributedString.swift; sourceTree = "<group>"; };
 		A5D1C7DC27CC0B97003C83F0 /* NSAttributedString+Raw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Raw.swift"; sourceTree = "<group>"; };
 		A5D1C7DE27CC10FA003C83F0 /* NSAttributedString+MicrosoftWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+MicrosoftWord.swift"; sourceTree = "<group>"; };
+		A5D9F13B280796CF0066DD1C /* NSTextStorage+Init_Basic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextStorage+Init_Basic.swift"; sourceTree = "<group>"; };
+		A5D9F13D28079E740066DD1C /* AnyNSTextViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyNSTextViewRepresentable.swift; sourceTree = "<group>"; };
 		A5E121722642B36200612830 /* AnyDragModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyDragModel.swift; sourceTree = "<group>"; };
 		A5F8390727D7F61600A4A3F2 /* ParsedObjectDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsedObjectDelegate.swift; sourceTree = "<group>"; };
 		A5F8390927D7F65E00A4A3F2 /* ParsedAttachmentDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsedAttachmentDelegate.swift; sourceTree = "<group>"; };
@@ -534,7 +538,8 @@
 				A562992D27CACADD008C484A /* FormattedContent */,
 				A53BECBF27C968C000B933AD /* Attributes */,
 				A53BECBB27C966C200B933AD /* NSAttributedStringView.swift */,
-				A5CE3DB92806A48300744205 /* NSTextView.swift */,
+				A5CE3DB92806A48300744205 /* NSTextViewRepresentable.swift */,
+				A5D9F13D28079E740066DD1C /* AnyNSTextViewRepresentable.swift */,
 			);
 			path = TextKit;
 			sourceTree = "<group>";
@@ -986,17 +991,17 @@
 		A5994CBF27CD4DC400E939B1 /* TextKit */ = {
 			isa = PBXGroup;
 			children = (
-				A5994CC027CD4DC400E939B1 /* NSTextContainer */,
+				A5994CC027CD4DC400E939B1 /* NSTextStorage */,
 			);
 			path = TextKit;
 			sourceTree = "<group>";
 		};
-		A5994CC027CD4DC400E939B1 /* NSTextContainer */ = {
+		A5994CC027CD4DC400E939B1 /* NSTextStorage */ = {
 			isa = PBXGroup;
 			children = (
-				A5994CC127CD4DC400E939B1 /* nstextcontainer_textkit.json */,
+				A5994CC127CD4DC400E939B1 /* textkit_nstextstorage_init_1.json */,
 			);
-			path = NSTextContainer;
+			path = NSTextStorage;
 			sourceTree = "<group>";
 		};
 		A5994CC227CD4DC400E939B1 /* CALayer */ = {
@@ -1269,6 +1274,7 @@
 			isa = PBXGroup;
 			children = (
 				A5D1C7D727CBEE2D003C83F0 /* NSTextStorage+Init.swift */,
+				A5D9F13B280796CF0066DD1C /* NSTextStorage+Init_Basic.swift */,
 			);
 			path = NSTextStorage;
 			sourceTree = "<group>";
@@ -1448,7 +1454,7 @@
 				A5994CDE27CD4DC400E939B1 /* button_label.json in Resources */,
 				A5994CDF27CD4DC400E939B1 /* modifier_multiple.json in Resources */,
 				A562992827CABF8B008C484A /* Shizuru.plist in Resources */,
-				A5994CE027CD4DC400E939B1 /* nstextcontainer_textkit.json in Resources */,
+				A5994CE027CD4DC400E939B1 /* textkit_nstextstorage_init_1.json in Resources */,
 				A5994C7127CD3DC100E939B1 /* Localizable.strings in Resources */,
 				A5994CE427CD4DC400E939B1 /* ca_shadow_default.json in Resources */,
 				A544358726395A0E007A9B31 /* Preview Assets.xcassets in Resources */,
@@ -1597,6 +1603,7 @@
 				A5D1C7DB27CBF505003C83F0 /* AnyNSAttributedString.swift in Sources */,
 				A53BEC9827C91D9F00B933AD /* CGSize.swift in Sources */,
 				A585EAA7277A546B006F5078 /* Padding.swift in Sources */,
+				A5D9F13C280796CF0066DD1C /* NSTextStorage+Init_Basic.swift in Sources */,
 				A558261F263D037600116DD2 /* JSON.swift in Sources */,
 				A57698D327C8F57C00077566 /* ModifiedCAMaskedCorners.swift in Sources */,
 				A53BEC9C27C9216D00B933AD /* ParsedObject+Error.swift in Sources */,
@@ -1616,7 +1623,7 @@
 				A5C01CCA2768DFD4005CBAA8 /* Label.swift in Sources */,
 				A5C01CBB2767DC49005CBAA8 /* Accessibility+Label.swift in Sources */,
 				A57698C127C8241B00077566 /* CGColor+sRGB.swift in Sources */,
-				A5CE3DBA2806A48300744205 /* NSTextView.swift in Sources */,
+				A5CE3DBA2806A48300744205 /* NSTextViewRepresentable.swift in Sources */,
 				A53BEC9A27C91E4A00B933AD /* ParsedObject.swift in Sources */,
 				A57698C527C8281B00077566 /* ModifiedCGColor.swift in Sources */,
 				A54435DF26398C2B007A9B31 /* ExpressionParser.swift in Sources */,
@@ -1650,6 +1657,7 @@
 				A54435CD263985CA007A9B31 /* GenericTokenParser.swift in Sources */,
 				A5F8391127D8161200A4A3F2 /* AnyDragProtocol.swift in Sources */,
 				A57698C727C82CBF00077566 /* CALayer+BackgroundColor.swift in Sources */,
+				A5D9F13E28079E740066DD1C /* AnyNSTextViewRepresentable.swift in Sources */,
 				A54435D92639891F007A9B31 /* CharacterParsers.swift in Sources */,
 				A5A756E727C67CD600B4EA0D /* CALayer+AnchorPoint.swift in Sources */,
 				A53BEC9E27C9272D00B933AD /* CALayer+ShadowOffset.swift in Sources */,

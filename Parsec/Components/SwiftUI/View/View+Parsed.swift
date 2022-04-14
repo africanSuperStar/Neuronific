@@ -72,6 +72,10 @@ extension AnyView
         case .textKit:
             return Self(
                 Text.textView(json)
+                    .frame(
+                        width:  150.0,
+                        height: 350.0
+                    )
             )
         
         default:

@@ -13,7 +13,7 @@ import Parsec
 
 enum TextKitContainers: String, CaseIterable
 {
-    case basic = "Basic NSTextContainer Component"
+    case basic = "NSTextStorage: init()"
 }
 
 struct TextKitContainerViews : View
@@ -29,12 +29,12 @@ struct TextKitContainerViews : View
             case .basic:
                 
                 guard let contentURL = Bundle.main.url(
-                    forResource:   "nstextcontainer_textkit",
+                    forResource:   "textkit_nstextstorage_init_1",
                     withExtension: "json"
                 )
                 else
                 {
-                    debugPrint("ERROR: Failed to fetch `nstextcontainer_textkit.json` from Bundle.main")
+                    debugPrint("ERROR: Failed to fetch `textkit_nstextstorage_init_1.json` from Bundle.main")
                     
                     return nil
                 }
@@ -43,7 +43,7 @@ struct TextKitContainerViews : View
                       let content     = String(data: contentData, encoding: .utf8)
                 else
                 {
-                    debugPrint("ERROR: Failed to read data from `nstextcontainer_textkit.json`")
+                    debugPrint("ERROR: Failed to read data from `textkit_nstextstorage_init_1.json`")
                     
                     return nil
                 }
@@ -51,10 +51,9 @@ struct TextKitContainerViews : View
                 return TitledPopoverCardView(
                     title: row.rawValue,
                     type: """
-                        An NSLayoutManager uses NSTextContainer to determine where to break lines,
-                        lay out portions of text, and so on. An NSTextContainer object typically defines
-                        rectangular regions, but you can define exclusion paths inside the text container
-                        to create regions where text doesn’t flow.
+                        Implemented by subclasses to initialise a new object
+                        (the receiver) immediately after memory has been
+                        allocated for it.
                     """,
                     content: content
                 )

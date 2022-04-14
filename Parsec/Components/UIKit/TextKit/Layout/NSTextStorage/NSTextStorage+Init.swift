@@ -17,17 +17,28 @@ extension NSTextStorage : ParsedObject
 
 extension NSTextStorage
 {
+    enum Sections : String, CaseIterable, Identifiable
+    {
+        var id: String { rawValue }
+        
+        case init_1
+    }
+}
+
+extension NSTextStorage
+{
     public static func parse(_ json: JSONParser) throws -> Content
     {
-        let textStorage = NSTextStorage.ini
-
-        if let textKit = json["textKit"].string,
-        
-        textKit == "NSTextStorage"
+        try Sections.allCases.reduce(NSTextStorage())
         {
-            return textStorage
+            (_, initializer) -> Content in
+
+            switch initializer
+            {
+            case .init_1:
+                
+                return try NSTextStorage.parse1(json)
+            }
         }
-        
-        throw ParsedObjectError.failedToInitializeObject
     }
 }

@@ -1,0 +1,5 @@
+{
+    "view": "TextKit",
+    "class": "NSTextStorage",
+    "type": "init() -> NSTextStorage"
+}

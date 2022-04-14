@@ -41,50 +41,11 @@ public struct AnyTextView : View
     @discardableResult
     public func parse(_ json: JSONParser) -> AnyView
     {
-//        guard let textStorage = try? NSTextStorage.parse(json)
-//        else
-//        {
-//           debugPrint(
-//               """
-//                   UIKit: TextKit -> NSLayoutManager -> not valid or more than one initializer,
-//                   \(ParsedObjectError.failedToInitializeObject)
-//               """
-//           )
-//
-//            return AnyView(
-//                EmptyView()
-//            )
-//        }
-//
-//        guard let layoutManager = try? NSLayoutManager.parse(json)
-//        else
-//        {
-//           debugPrint(
-//               """
-//                   UIKit: TextKit -> NSLayoutManager -> not valid or more than one initializer,
-//                   \(ParsedObjectError.failedToInitializeObject)
-//               """
-//           )
-//
-//            return AnyView(
-//                EmptyView()
-//            )
-//        }
-        
-        let textStorage   = NSTextStorage(string: "Hello, World!")
-        let layoutManager = NSLayoutManager()
-        let textContainer = NSTextContainer(size: .init(width: 20.0, height: 20.0))
-        
-        textContainer.widthTracksTextView  = true
-        textContainer.heightTracksTextView = true
-        textContainer.lineBreakMode        = .byTruncatingTail
-        textContainer.textView?.backgroundColor = .red
-        
-        layoutManager.addTextContainer(textContainer)
-
-        textStorage.addLayoutManager(layoutManager)
-
-        let textView = NSTextViewRepresentable(textContainer)
+        let textView = NSTextViewRepresentable(
+            text: .constant("{ \n    planets { \n        name \n    }\n}"),
+            isEditable: true,
+            font: .userFixedPitchFont(ofSize: 14)
+        )
         
         return AnyView(textView)
     }

@@ -1,9 +1,0 @@
-{
-    "view": "TextKit",
-    "init": {
-        "size": {
-            "width": 200,
-            "height": 200
-        }
-    }
-}
