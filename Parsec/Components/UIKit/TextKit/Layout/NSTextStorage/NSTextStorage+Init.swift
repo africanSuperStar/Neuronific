@@ -23,6 +23,7 @@ extension NSTextStorage
         
         case init_1 = "init() -> NSTextStorage"
         case init_2 = "init(string:) -> NSTextStorage"
+        case init_3 = "init(attributedString:) -> NSTextStorage"
     }
 }
 
@@ -45,6 +46,10 @@ extension NSTextStorage
             case .init_2:
             
                 return try NSTextStorage.parse2(json)
+                
+            case .init_3:
+            
+                return try NSTextStorage.parse3(json)
             }
         }
     }

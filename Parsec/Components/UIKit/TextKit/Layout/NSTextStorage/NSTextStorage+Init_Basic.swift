@@ -49,3 +49,24 @@ extension NSTextStorage
         throw ParsedObjectError.failedToInitializeObject
     }
 }
+
+extension NSTextStorage
+{
+    internal static func parse3(_ json: JSONParser) throws -> Content
+    {
+        if let textKit       = json["view"].string,
+           let textClass     = json["class"].string,
+           let textType      = json["type"].string,
+        
+        textKit   == "TextKit",
+        textClass == "NSTextStorage",
+        textType  == "init(attributedString:) -> NSTextStorage"
+        {
+            let attrStr = Text.attributedString(json["init"]["attributedString"])
+            
+            return NSTextStorage(attributedString: attrStr)
+        }
+        
+        throw ParsedObjectError.failedToInitializeObject
+    }
+}

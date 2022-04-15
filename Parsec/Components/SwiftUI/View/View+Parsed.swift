@@ -51,7 +51,7 @@ extension AnyView
             
         case .attributedText:
             return Self(
-                Text.attributedString(json)
+                Text.attributedText(json)
                     .layer(json)
             )
             

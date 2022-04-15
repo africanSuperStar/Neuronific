@@ -24,9 +24,14 @@ public enum NSAttributedStringModifierTags : String, CaseIterable
 extension Text
 {
     @ViewBuilder
-    public static func attributedString <T: NSAttributedStringAttachment> (_ json: JSONParser) -> some View
+    public static func attributedText <T: NSAttributedStringAttachment> (_ json: JSONParser) -> some View
     {
         AnyViewNSAttributedString <T> (observed: T(json: json))
+    }
+    
+    public static func attributedString <T: NSAttributedStringAttachment> (_ json: JSONParser) -> some NSAttributedString
+    {
+        AnyViewNSAttributedString <T> (observed: T(json: json)).nsAttributedString
     }
 }
 
@@ -51,6 +56,13 @@ public struct AnyViewNSAttributedString <T: NSAttributedStringAttachment> : View
     public var body: some View
     {
         anyStringAttributes(observed.json)
+    }
+    
+    public var nsAttributedString: NSAttributedString
+    {
+        get {
+            return NSAttributedString(attributedString: attributedText)
+        }
     }
     
     @discardableResult

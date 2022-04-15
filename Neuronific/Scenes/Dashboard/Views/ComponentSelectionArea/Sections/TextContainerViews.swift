@@ -15,6 +15,7 @@ enum TextKitContainers: String, CaseIterable
 {
     case textKit_init_1 = "NSTextStorage: init()"
     case textKit_init_2 = "NSTextStorage: init(string:)"
+    case textKit_init_3 = "NSTextStorage: init(attributedString:)"
 }
 
 struct TextKitContainerViews : View
@@ -86,6 +87,37 @@ struct TextKitContainerViews : View
                     type: """
                         Creates an attributedString with the specified
                         string and attributes.
+                    """,
+                    content: content
+                )
+                
+            case .textKit_init_3:
+                
+                guard let contentURL = Bundle.main.url(
+                    forResource:   "textkit_nstextstorage_init_3",
+                    withExtension: "json"
+                )
+                else
+                {
+                    debugPrint("ERROR: Failed to fetch `textkit_nstextstorage_init_3.json` from Bundle.main")
+                    
+                    return nil
+                }
+                
+                guard let contentData = try? Data(contentsOf: contentURL),
+                      let content     = String(data: contentData, encoding: .utf8)
+                else
+                {
+                    debugPrint("ERROR: Failed to read data from `textkit_nstextstorage_init_3.json`")
+                    
+                    return nil
+                }
+                
+                return TitledPopoverCardView(
+                    title: row.rawValue,
+                    type: """
+                        Creates an attributed string with the characters
+                        and attributes of the specified attributed string.
                     """,
                     content: content
                 )
