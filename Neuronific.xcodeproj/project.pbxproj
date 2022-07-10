@@ -11,6 +11,7 @@
 		A50635282804BB4A004666B8 /* TextContainerViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50635272804BB4A004666B8 /* TextContainerViews.swift */; };
 		A508DA8927C2450D00D55E31 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A508DA8827C2450D00D55E31 /* AppViewModel.swift */; };
 		A508DA8B27C2478600D55E31 /* ConditionalViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A508DA8A27C2478600D55E31 /* ConditionalViewModifier.swift */; };
+		A5126BED287B25CF00C4F561 /* textkit_nstextstorage_init_3.json in Resources */ = {isa = PBXBuildFile; fileRef = A5126BEC287B25CF00C4F561 /* textkit_nstextstorage_init_3.json */; };
 		A523EE7A263F3C24003977F1 /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A523EE79263F3C24003977F1 /* UIState.swift */; };
 		A523EE81263F4320003977F1 /* JSONViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A523EE80263F4320003977F1 /* JSONViewer.swift */; };
 		A523EE83263F440F003977F1 /* JSONTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A523EE82263F440F003977F1 /* JSONTreeView.swift */; };
@@ -254,6 +255,7 @@
 		A50635272804BB4A004666B8 /* TextContainerViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextContainerViews.swift; sourceTree = "<group>"; };
 		A508DA8827C2450D00D55E31 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		A508DA8A27C2478600D55E31 /* ConditionalViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalViewModifier.swift; sourceTree = "<group>"; };
+		A5126BEC287B25CF00C4F561 /* textkit_nstextstorage_init_3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = textkit_nstextstorage_init_3.json; sourceTree = "<group>"; };
 		A523EE79263F3C24003977F1 /* UIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
 		A523EE80263F4320003977F1 /* JSONViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONViewer.swift; sourceTree = "<group>"; };
 		A523EE82263F440F003977F1 /* JSONTreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONTreeView.swift; sourceTree = "<group>"; };
@@ -1003,6 +1005,7 @@
 			children = (
 				A5994CC127CD4DC400E939B1 /* textkit_nstextstorage_init_1.json */,
 				A5D9F13F2807B5650066DD1C /* textkit_nstextstorage_init_2.json */,
+				A5126BEC287B25CF00C4F561 /* textkit_nstextstorage_init_3.json */,
 			);
 			path = NSTextStorage;
 			sourceTree = "<group>";
@@ -1401,7 +1404,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1330;
 				ORGANIZATIONNAME = "NEURONIFIC (PTY) LTD";
 				TargetAttributes = {
 					A544357B26395A0D007A9B31 = {
@@ -1484,6 +1487,7 @@
 				A5994CE127CD4DC400E939B1 /* ca_border_width.json in Resources */,
 				A5994C6C27CD3DAA00E939B1 /* Localizable.strings in Resources */,
 				A5994CE927CD4DC400E939B1 /* ca_is_opaque.json in Resources */,
+				A5126BED287B25CF00C4F561 /* textkit_nstextstorage_init_3.json in Resources */,
 				A55C302C277502D300648EA8 /* DisclosureGroup.bnsi in Resources */,
 				A5727C2927CE365A00B3A4BD /* ns_attributed_string_raw.json in Resources */,
 				A5994CEB27CD4DC400E939B1 /* nsdynamicattributed_font.json in Resources */,
@@ -1775,6 +1779,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1836,6 +1841,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

@@ -1,0 +1,15 @@
+{
+    "view": "TextKit",
+    "class": "NSTextStorage",
+    "type": "init(string:) -> NSTextStorage",
+    "init": {
+        "attributedString": {
+            "uuid": "13",
+            "view": "AttributedText",
+            "init": {
+                "type": "RawString",
+                "content": "Raw NSAttributed String..."
+            }
+        }
+    }
+}
