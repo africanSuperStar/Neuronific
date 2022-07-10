@@ -12,6 +12,7 @@
 		A508DA8927C2450D00D55E31 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A508DA8827C2450D00D55E31 /* AppViewModel.swift */; };
 		A508DA8B27C2478600D55E31 /* ConditionalViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A508DA8A27C2478600D55E31 /* ConditionalViewModifier.swift */; };
 		A5126BED287B25CF00C4F561 /* textkit_nstextstorage_init_3.json in Resources */ = {isa = PBXBuildFile; fileRef = A5126BEC287B25CF00C4F561 /* textkit_nstextstorage_init_3.json */; };
+		A5126BEF287B2C4C00C4F561 /* MenuablePopoverCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5126BEE287B2C4C00C4F561 /* MenuablePopoverCardView.swift */; };
 		A523EE7A263F3C24003977F1 /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A523EE79263F3C24003977F1 /* UIState.swift */; };
 		A523EE81263F4320003977F1 /* JSONViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A523EE80263F4320003977F1 /* JSONViewer.swift */; };
 		A523EE83263F440F003977F1 /* JSONTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A523EE82263F440F003977F1 /* JSONTreeView.swift */; };
@@ -256,6 +257,7 @@
 		A508DA8827C2450D00D55E31 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		A508DA8A27C2478600D55E31 /* ConditionalViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalViewModifier.swift; sourceTree = "<group>"; };
 		A5126BEC287B25CF00C4F561 /* textkit_nstextstorage_init_3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = textkit_nstextstorage_init_3.json; sourceTree = "<group>"; };
+		A5126BEE287B2C4C00C4F561 /* MenuablePopoverCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuablePopoverCardView.swift; sourceTree = "<group>"; };
 		A523EE79263F3C24003977F1 /* UIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
 		A523EE80263F4320003977F1 /* JSONViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONViewer.swift; sourceTree = "<group>"; };
 		A523EE82263F440F003977F1 /* JSONTreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONTreeView.swift; sourceTree = "<group>"; };
@@ -774,6 +776,7 @@
 				A56C89D6279C8AC9005DEAC9 /* SearchFieldCardView.swift */,
 				A56C89DA279C8D8A005DEAC9 /* TableRowCardView.swift */,
 				A5994C8327CD4A3000E939B1 /* TitledCardView.swift */,
+				A5126BEE287B2C4C00C4F561 /* MenuablePopoverCardView.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -1562,6 +1565,7 @@
 				A55E59BF27988EC100130859 /* ColorCardView.swift in Sources */,
 				A549567A2641CED2000DC4B9 /* ComponentView.swift in Sources */,
 				A5976DC327691EF800214A70 /* Keyboard.swift in Sources */,
+				A5126BEF287B2C4C00C4F561 /* MenuablePopoverCardView.swift in Sources */,
 				A56C89DF279C9782005DEAC9 /* SegmentedPickerViews.swift in Sources */,
 				A508DA8B27C2478600D55E31 /* ConditionalViewModifier.swift in Sources */,
 				A54956822641CF92000DC4B9 /* ContentConfigurationDetailView.swift in Sources */,

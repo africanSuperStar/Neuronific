@@ -30,36 +30,24 @@ struct TextKitViewSections : View
             switch section
             {
             case .nsTextContainer:
-                return (view: AnyView(
-                        Group
-                        {
-                            Text("NSTextContainer Components")
-                            
-                            TextKitContainerViews()
-                            
-                            Divider()
-                                .background(Theme.lightGray)
-                                .frame(maxWidth: .infinity, minHeight: 1.0)
-                        }
-                    ),
-                    tag: "nsTextContainers"
-                )
+                return (view: AnyView(TextKitContainerViews()), tag: "nsTextContainers")
             }
         }
     }
     
-    let columns = [
-        GridItem(.adaptive(minimum: .infinity))
-    ]
-    
     var body: some View
     {
-        LazyVGrid(columns: columns, alignment: .leading)
+        VStack
         {
-            ForEach(sections, id: \.tag)
-            {
-                $0.view
-            }
+            MenuablePopoverCardView(
+                title:    "NSTextContainer Components",
+                type:     "Options",
+                sections: sections
+            )
+        
+            Divider()
+                .background(Theme.lightGray)
+                .frame(maxWidth: .infinity, minHeight: 1.0)
         }
     }
 }
